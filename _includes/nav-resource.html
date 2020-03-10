@@ -1,0 +1,18 @@
+<nav>
+  <a href="#content">Popis</a>
+  {% if page.data %}
+  <a href="#preview">Ukázka dat</a>
+  <a href="#scripts">Práce s daty</a>
+  {% endif %}
+  <a href="#metadata">Katalogizační záznam</a>
+</nav>
+
+<h5 class="mt-5">V datových sadách:</h5>
+{% assign resourceId = page.path | split:"/" | last | split:"." | first %}
+{% assign datasets = site.datasets | where_exp:"item","item.resources contains resourceId" %}
+
+<nav>
+  {% for dataset in datasets %}
+  <a href="{{dataset.url}}">{{dataset.title}}</a>
+  {% endfor %}
+</nav>

@@ -1,0 +1,18 @@
+{% capture script_md %}
+``` {{include.lang}}
+{% include scripts/{{include.script}} data_url=include.data_url %}
+```
+{% endcapture %}
+
+<div class="script">
+
+  <a class="copy">
+    <i class="material-icons">content_copy</i>
+    <i class="material-icons success">check_circle</i>
+  </a>
+
+  <div class="highlight">
+    {{script_md | markdownify}}
+  </div>
+
+</div>

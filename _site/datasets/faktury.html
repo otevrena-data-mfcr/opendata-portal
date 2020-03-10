@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Faktury ministerstva financí :: Otevřená data Ministerstva financí</title>
+
+  <link rel="shortcut icon" type="image/png" href="/assets/images/opendata.ico">
+
+  <link href="/assets/fonts/lato-regular.woff2" rel="preload" as="font">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/styles/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+  <script src="/assets/scripts/jquery.csv.min.js"></script>
+  <script src="/assets/scripts/partial-json-parser.js"></script>
+  <script src="/assets/scripts/scripts.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar sticky-top navbar-expand-lg">
+      <div class="navbar-brand text-uppercase">
+        <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="material-icons" style="vertical-align:middle;">menu</i>
+        </button>
+        <a href="/index2">
+          Opendata MFČR
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/data-stories.html">Datové příběhy</a>
+          <a class="nav-item nav-link" href="/systems.html">Informační systémy</a>
+          <a class="nav-item nav-link" href="/datasets.html">Datové sady</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>    
+    <div class="row no-gutters h-100">
+  <div class="col-md-4 col-lg-3 col-xl-2 bg-dark text-light min-vh-100 sidebar">
+    
+<div class="title p-3">Datová sada</div>
+
+
+
+<nav>
+  <a class="nav-item nav-link" href="#content">Popis</a>
+  <a class="nav-item nav-link" href="#metadata">Katalogizační záznam</a>
+</nav>
+
+  </div>
+  <div class="col-md-8 col-lg-9 col-xl-10 page">
+    <h1>Faktury ministerstva financí</h1>
+
+<div class="row no-gutters h-100">
+
+  <div class="col-7">
+    <div class="py-3 px-5">
+
+      <h2 id="content" class="mt-3">Popis</h2>
+      <div class="content">
+        <p>Přehled uhrazených faktur Ministerstva financí ČR s rozpadem na rozpočtové položky a faktur z Fondu privatizace.</p>
+
+<p>Přehled uhrazených faktur Ministerstva financí ČR a seznam partnerů Ministerstva financí ČR. Soubor Seznam partnerů MF obsahuje partnery, se kterými MF v současnosti spolupracuje i partnery zneplatněné, tj. partnery, se kterými byla spolupráce ukončena. Dále je v souboru Seznam partnerů uveden kód partnera, pomocí kterého je možné tento soubor propojit s s přehledem faktur za roky 2010-2014. V Seznamu partnerů není v některých případech uvedeno IČO, což nastává z několika důvodů. Nejčastěji se jedná o fyzickou osobu bez IČ (skupina partnerů rezidenti bez IČ, kdy IČ není v IS AVIS povinný údaj) nebo partnera zahraničního. Dále se může jednat o partnera zneplatněného, tedy partnera, s nímž již aktivně nespolupracujeme, došlo ke změně v jeho údajích nebo ukončil podnikatelskou činnost a není v číselníku aktualizován. Využíváni byli i tzv. partneři hromadní, kdy jeden záznam zahrnoval celou skupinu, např. překladatelé. V minulosti byl číselník partnerů v IS AVIS doplňován i skriptem z jiných systémů, kde IČ nebylo povinným údajem, a tedy nemuselo být u některých partnerů zahrnuto. Číslo za pomlčkou je číslem pobočky partnera, kdy číslo 01 označuje sídlo partnera, následující čísla jsou pak čísly jednotlivých poboček, které jsou partnery MF pro operace (výčet poboček nemusí být úplný). Dataset s fakturami za rok 2015 obsahuje příslušné partnery již přímo v souboru.</p>
+
+<p>Soubor faktur za Fond privatizace obsahuje ekologické faktury, zádržné k ekologickým fakturám, přijaté faktury a ostatní platby. Výdaje pomocné kapitoly Fondu privatizace nejsou součástí státního rozpočtu, jedná se o jiné než rozpočtové prostředky, které hradí MF v souladu se zákonem č. 178/2005 Sb., o zrušení Fondu národního majetku. Jedná se především o výdaje pokrývající závazky státu za odstraňování ekologických škod vzniklých před privatizací podniků.</p>
+
+      </div>
+
+      <h2 id="metadata" class="mt-5 mb-3">Katalogizační záznam</h3>
+
+      <table class="table table-hover table-sm">
+        <tbody>
+          <tr>
+            <th>Název</th>
+            <td>Faktury ministerstva financí</td>
+          </tr>
+          <tr>
+            <th>Datum aktualizace</th>
+            <td>27. 02. 2020</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-5 bg-light">
+    <div class="py-4 px-5">
+
+      
+      <h3 class="mt-3 mb-3">Zdroje dat</h3>
+      <nav class="mt-3">
+        
+
+        
+        
+
+        
+        <a class="nav-item nav-link" href="/resources/faktury.html">Přehled faktur</a>
+        
+
+        
+
+        
+        
+
+        
+        <a class="nav-item nav-link" href="/resources/faktury-polozky.html">Rozpis částek faktur dle rozpočtových položek</a>
+        
+
+        
+
+        
+        
+
+        
+        <a class="nav-item nav-link" href="/resources/faktury-privatizace.html">Faktury z fondu privatizace</a>
+        
+
+        
+      </nav>
+      
+
+
+      <h3 class="mt-5">Datové příběhy</h3>
+      <nav class="mt-3">
+        
+        <a class="nav-item nav-link" href="/2020/03/10/test.html">Test</a>
+        
+        <a class="nav-item nav-link" href="/2019/11/29/zadluzenost-obci.html">Zadluženost obcí</a>
+        
+      </nav>
+
+      
+      <h3 class="mt-3 mb-3">Další zdroje</h3>
+      <nav class="mt-3">
+        
+        <a class="nav-item nav-link" href="https://www.mfcr.cz/">Web MF</a>
+        
+
+      </nav>
+      
+
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+  </main>
+</body>

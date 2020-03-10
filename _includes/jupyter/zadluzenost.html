@@ -1,0 +1,206 @@
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea output_execute_result">
+<h1 id="Zadlu&#382;enost-obc&#237;-dle-dlouhodob&#253;ch-z&#225;vazk&#367;-v-roce-2018">Zadlu&#382;enost obc&#237; dle dlouhodob&#253;ch z&#225;vazk&#367; v roce 2018<a class="anchor-link" href="#Zadlu&#382;enost-obc&#237;-dle-dlouhodob&#253;ch-z&#225;vazk&#367;-v-roce-2018">&#182;</a></h1>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>V tomto dokumentu se pokusíme prezentovat data z Monitoru státní pokladny, ve kterém nalezneme mimo jiné účetní data obcí, díky nimž můžeme získat jistý vhled do problematiky zadluženosti obcí. Pro ilustraci částek jsme využili položku rozvahy "dlouhodobé závazky". Pro srovnání pak ukazatel celkové zadluženosti, tedy podíl cizích zdrojů na celkových aktivech obce.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Nejzadlu&#382;enej&#353;&#237;-obce">Nejzadlu&#382;enej&#353;&#237; obce<a class="anchor-link" href="#Nejzadlu&#382;enej&#353;&#237;-obce">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Obec</th>
+      <th>Míra celkové zadluženosti</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Obec Turovice</td>
+      <td>839.2%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Obec Koruna</td>
+      <td>70.8%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Obec Vyšehoří</td>
+      <td>55.0%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Obec Stařechovice</td>
+      <td>52.8%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Obec Ctidružice</td>
+      <td>50.6%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Obec Přeckov</td>
+      <td>50.1%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Obec Suchohrdly u Miroslavi</td>
+      <td>49.0%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Obec Hroubovice</td>
+      <td>48.8%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Obec Grešlové Mýto</td>
+      <td>47.8%</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Obec Nasavrky</td>
+      <td>47.2%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Rozd&#283;len&#237;-obc&#237;-dle-zadlu&#382;en&#237;:">Rozd&#283;len&#237; obc&#237; dle zadlu&#382;en&#237;:<a class="anchor-link" href="#Rozd&#283;len&#237;-obc&#237;-dle-zadlu&#382;en&#237;:">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe srcdoc="
+        <!-- Load Charts.js -->
+       <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
+    
+        <canvas id='chart'></canvas>
+        <script>
+            var ctx = document.getElementById('chart').getContext('2d');
+            ctx.canvas.width  = 800 - (.1 * 800);
+            ctx.canvas.height = 420 - (.15 * 420);
+            var myNewChart = new Chart(ctx,{ type: 'bar', data: {
+    'labels': [
+        1,
+        10,
+        100,
+        1000,
+        10000,
+        100000,
+        1000000,
+        10000000,
+        100000000,
+        1000000000,
+        10000000000
+    ],
+    'datasets': [
+        {
+            'label': 'Po\u010det obc\u00ed',
+            'data': [
+                1185,
+                1,
+                0,
+                4,
+                64,
+                148,
+                425,
+                943,
+                475,
+                34,
+                3
+            ],
+            'backgroundColor': '#0099ff'
+        }
+    ]
+}, options: null });
+        </script>
+    " src="" width="800" height="420" frameborder=0 sandbox="allow-scripts"></iframe>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+ 
+

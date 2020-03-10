@@ -1,0 +1,65 @@
+<div class="preview">
+
+  <table class="table table-sm" id="resource-preview-table">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+
+  <p id="resource-preview-error">Náhled dat se bohužel nyní nedaří načíst.</p>
+
+</div>
+
+<script type="text/javascript">
+
+  (function () {
+    var pageUrl = "{{include.url}}";
+    var delimiter = ",";
+
+    function fillTable(data) {
+
+      var rows = $.csv.toArrays(data);
+      rows.pop();
+      rows.splice(10);
+
+      var headerRow = rows.shift();
+      $("#resource-preview-table thead").append(createRow(headerRow));
+
+      rows.forEach(function (row) {
+        $("#resource-preview-table tbody").append(createRow(row));
+      });
+
+    }
+
+    function createRow(cols, header) {
+      var tr = $("<tr/>");
+
+      cols.forEach(function (col) {
+        var td = $(header ? "<th/>" : "<td/>").text(col);
+        tr.append(td);
+      });
+
+      return tr;
+    }
+
+
+
+    $("#resource-preview-table").hide();
+    $("#resource-preview-error").hide();
+
+    getHeaders(pageUrl, function (headers) {
+      if (headers["accept-ranges"] !== "bytes") {
+        $("#resource-preview-error").show();
+        return;
+      }
+
+      downloadPartialData(pageUrl, 4196, function (message, text, jqXHR) {
+
+        fillTable(message);
+
+        $("#resource-preview-table").show();
+
+      });
+    });
+  })();
+
+</script>

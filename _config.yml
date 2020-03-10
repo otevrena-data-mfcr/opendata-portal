@@ -1,0 +1,59 @@
+title: Otevřená data Ministerstva financí
+description: Otevřená data Ministerstva financí
+email: martin.kopecek@mfcr.cz
+
+exports_url: "https://opendata.mfcr.cz/exports"
+
+collections_dir: collections
+
+collections:
+  resources:
+    output: true
+  datasets:
+    output: true
+  systems:
+    output: true
+  organizations:
+    output: true
+  categories:
+    output: true
+
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: resource
+  -
+    scope:
+      path: ""
+      type: "datasets"
+    values:
+      layout: "dataset"
+  -
+    scope:
+      path: ""
+      type: "systems"
+    values:
+      layout: "system"
+  -
+    scope:
+      path: ""
+      type: "organizations"
+    values:
+      layout: "organization"
+
+  -
+    scope:
+      path: ""
+      type: "categories"
+    values:
+      layout: "category"

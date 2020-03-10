@@ -1,0 +1,74 @@
+---
+layout: sidebar
+sidebar_title: Datová sada
+sidebar_nav: nav-dataset.html
+---
+<h1>{{page.title}}</h1>
+
+<div class="row no-gutters h-100">
+
+  <div class="col-7">
+    <div class="py-3 px-5">
+
+      <h2 id="content" class="mt-3">Popis</h2>
+      <div class="content">
+        {{ page.content }}
+      </div>
+
+      <h2 id="metadata" class="mt-5 mb-3">Katalogizační záznam</h3>
+
+      <table class="table table-hover table-sm">
+        <tbody>
+          <tr>
+            <th>Název</th>
+            <td>{{page.title}}</td>
+          </tr>
+          <tr>
+            <th>Datum aktualizace</th>
+            <td>{{page.lastModified | date:"%d. %m. %Y"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-5 bg-light">
+    <div class="py-4 px-5">
+
+      {% if page.resources %}
+      <h3 class="mt-3 mb-3">Zdroje dat</h3>
+      <nav class="mt-3">
+        {% for resourceId in page.resources %}
+
+        {% assign resource_path = resourceId | prepend:"_resources/" | append: ".md" %}
+        {% assign resources = site.resources | where_exp:"item","item.path == resource_path" %}
+
+        {% for resource in resources %}
+        <a class="nav-item nav-link" href="{{resource.url}}">{{resource.title}}</a>
+        {% endfor %}
+
+        {% endfor %}
+      </nav>
+      {% endif %}
+
+
+      <h3 class="mt-5">Datové příběhy</h3>
+      <nav class="mt-3">
+        {% for post in site.posts %}
+        <a class="nav-item nav-link" href="{{post.url}}">{{post.title}}</a>
+        {% endfor %}
+      </nav>
+
+      {% if page.links %}
+      <h3 class="mt-3 mb-3">Další zdroje</h3>
+      <nav class="mt-3">
+        {% for link in page.links %}
+        <a class="nav-item nav-link" href="{{link.url}}">{{link.title}}</a>
+        {% endfor %}
+
+      </nav>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

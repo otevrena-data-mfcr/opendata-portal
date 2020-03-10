@@ -1,0 +1,100 @@
+---
+layout: sidebar
+sidebar_title: Zdroj dat
+sidebar_nav: nav-resource.html
+---
+
+<h1>{{page.title}}</h1>
+
+<div class="row no-gutters">
+
+  <div class="col-md-7 col-lg-8 col-xl-9">
+
+    <div class="px-3 py-3 px-md-5">
+      <h2 id="content" class="mt-3">Popis</h2>
+
+      {{page.content}}
+
+      {% if page.data %}
+
+      {% assign numFiles = page.data | size%}
+
+      <h2 id="preview" class="mt-5">Ukázka dat</h2>
+      {% if page.data.csv %}
+      {% if numFiles > 1 %}<h3>CSV</h3>{% endif %}
+      {% include resource-preview-csv.html url=page.data.csv %}
+      {% endif %}
+
+      {% if page.data.json %}
+      {% if numFiles > 1 %}<h3>JSON</h3>{% endif %}
+      {% include resource-preview-json.html url=page.data.json %}
+      {% endif %}
+
+
+      <h2 id="scripts" class="mt-5">Práce s daty</h2>
+
+      {% if page.data.csv %}
+      {% include resource-scripts-csv.html data_url=page.data.csv %}
+
+      {% endif %}
+
+
+
+      {% endif %}
+
+      <h2 id="metadata" class="mt-5">Katalogizační záznam</h2>
+
+      <table class="table table-hover table-sm">
+        <tbody>
+          <tr>
+            <th>Název</th>
+            <td>{{page.title}}</td>
+          </tr>
+          <tr>
+            <th>Datum aktualizace</th>
+            <td>{{page.lastModified | date:"%d. %m. %Y"}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="col-md-5 col-lg-4 col-xl-3 bg-light order-first order-md-last">
+    <div class="px-5 py-3">
+
+      <h2 class="mt-3">Licence</h2>
+
+      {% if page.license and page.license_url %}
+      <a href="{{page.license_url}}" target="_blank">{{page.license}}</a>
+
+      {% else %}
+      <p>{{page.license | default: "Licence není uvedena."}}</p>
+
+      {% endif %}
+
+
+      {% if page.data %}
+      <h2 class="mt-5">Získat data</h2>
+
+
+      <div class="download mt-4">
+        {% for format in page.data %}
+        <a class="btn btn-primary mb-3" href="{{format[1]}}">
+          {% case format[0] %}
+          {% when 'csv' %}CSV
+          {% else %}{{format[0] | upcase}}
+          {% endcase %}
+        </a>
+        {% if forloop.last == false %}<br>{% endif %}
+        {% endfor %}
+        <br>
+        {% if page.api %}<a class="btn btn-success" href="{{page.api}}">API</a>{% endif %}
+        {% if page.metadata %}<a class="btn btn-success" href="{{page.metadata}}">JSON METADATA</a>{% endif %}
+      </div>
+      {% endif %}
+
+
+    </div>
+  </div>
+</div>
