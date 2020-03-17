@@ -18,9 +18,9 @@ links:
 Základní ukazatele vývoje stavebního spoření v České republice.
 
 
-Soubor obsahuje data zveřejňovaná na webových stránkách ministerstva (<https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni>) upravená do strojově čitelném formátu.
+Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni) upravená do strojově čitelném formátu.
 
-# Struktura
+## Struktura
 
 * rok
 * ctvrtleti - čtvrtletí, k jehož konci jsou data uvedena; pro starší data je k dispozici pouze konec roku, tedy 4. čtvrtletí

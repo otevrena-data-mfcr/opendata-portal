@@ -18,9 +18,9 @@ links:
 Základní ukazatele vývoje penzijního připojištění a doplňkového penzijního spoření v České republice.
 
 
-Soubor obsahuje data zveřejňovaná na webových stránkách ministerstva (<https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni>) upravená do strojově čitelném formátu.
+Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni) upravená do strojově čitelném formátu.
 
-# Struktura
+## Struktura
 
 * rok
 * ctvrtleti - čtvrtletí, k jehož konci jsou data uvedena; pro starší data je k dispozici pouze konec roku, tedy 4. čtvrtletí
