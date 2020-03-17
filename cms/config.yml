@@ -1,27 +1,82 @@
 backend:
   name: github
-  repo: otevrena-data-mfcr/opendata.mfcr.cz
-  branch: master    # Branch to update
-  base_url: https://opendata.mfcr.cz # Path to ext auth provider  
+  repo: otevrena-data-mfcr/opendata-web
+  branch: master # Branch to update
+  base_url: https://opendata.mfcr.cz # Path to ext auth provider
 
-media_folder: 'web/src/assets/content'
+media_folder: assets/content
 
-locale: 'cs'
+locale: cs
 
 collections:
-  - name: 'posts'
-    label: 'Datové příběhy'
-    folder: 'web/src/collections/_posts/'
+  - name: posts
+    label: Datové příběhy
+    label_singular: Datový příběh
+    folder: collections/_posts/
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
-    fields:      
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-  
-  - name: 'datasets'
-    label: 'Datové sady'
-    folder: 'web/src/collections/_datasets/'
-    create: true
+    editor:
+      preview: false
     fields:
+      - { label: Titulek, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, timeFormat: false, format: "YYYY-MM-DD", dateFormat: "D. M. YYYY" }
+      - { label: Obsah stránky, name: body, widget: markdown }
+
+  - name: datasets
+    label: Datové sady
+    label_singular: Datová sada
+    folder: collections/_datasets/
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: ID, name: id }
       - { label: Titulek, name: title }
+      - { label: Poslední změna metadat, name: lastModified, widget: datetime, timeFormat: false, format: "YYYY-MM-DD", dateFormat: "D. M. YYYY" }
+      - { label: Popis, name: description, widget: text }
+      - { label: Organizace, name: organizations, multiple: true, widget: relation, collection: organizations, searchFields: [title_short,title], displayFields: [title_short,title], valueField: id }
+      - { label: Zdroje dat, name: resources, multiple: true, widget: relation, collection: resources, searchFields: [title_short,title], displayFields: [title_short,title], valueField: id }
+      - { label: Odkazy, name: links, widget: list, collapsed: false, fields: [{ label: Titulek, name: title, widget: string }, { label: URL, name: url, widget: string }] }
+      - { label: Obsah stránky, name: body, widget: markdown }
+
+  - name: resources
+    label: Zdroje dat
+    label_singular: Zdroj dat
+    folder: collections/_resources/
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: ID, name: id }
+      - { label: Titulek, name: title, widget: string }
+      - label: Data
+        name: data
+        widget: object
+        fields:
+          - { label: CSV, name: csv, widget: string }
+          - { label: JSON, name: json, widget: string }
+      - { label: JSON Metadata, name: metadata, widget: string }
+      - { label: Licence, name: license, widget: string }
+      - { label: Obsah stránky, name: body, widget: markdown }
+
+  - name: organizations
+    label: Organizace
+    folder: collections/_organizations
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: ID, name: id }
+      - { label: Název organizace, name: title }
+      - { label: Zkratka organizace, name: title_short }
+
+  - name: systems
+    label: Informační systémy
+    folder: collections/_systems
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: ID, name: id }
+      - { label: Název systému, name: title }
+      - { label: Zkratka systému, name: title_short }

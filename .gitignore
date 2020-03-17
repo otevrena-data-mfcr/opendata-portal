@@ -1,3 +1,6 @@
 data
 
 docker-compose.yml
+
+.jekyll-cache
+_site
