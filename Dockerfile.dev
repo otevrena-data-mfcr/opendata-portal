@@ -1,0 +1,9 @@
+FROM jekyll/jekyll
+
+WORKDIR /srv/jekyll
+
+COPY . .
+
+ENV JEKYLL_ENV=production
+
+CMD ["jekyll", "serve"]

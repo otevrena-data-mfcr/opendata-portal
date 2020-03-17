@@ -9,7 +9,7 @@ RUN bundle install
 COPY . .
 RUN chmod 777 . -R
 ENV JEKYLL_ENV=production
-RUN jekyll build --trace
+RUN jekyll build
 
 
 
