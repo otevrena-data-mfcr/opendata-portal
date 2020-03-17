@@ -1,4 +1,5 @@
 ---
+id: faktury
 title: Přehled faktur
 data:
   csv: https://opendata.mfcr.cz/exports/faktury/csv    

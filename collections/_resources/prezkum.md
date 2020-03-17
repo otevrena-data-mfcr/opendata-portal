@@ -1,4 +1,5 @@
 ---
+id: prezkum
 title: Výsledky přezkumu hospodaření
 
 data:

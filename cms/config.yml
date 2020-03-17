@@ -4,46 +4,57 @@ backend:
   branch: master # Branch to update
   base_url: https://opendata.mfcr.cz # Path to ext auth provider
 
-media_folder: "assets/content"
+media_folder: assets/content
 
-locale: "cs"
+locale: cs
 
 collections:
-  - name: "posts"
-    label: "Datové příběhy"
-    folder: "collections/_posts/"
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  - name: posts
+    label: Datové příběhy
+    folder: collections/_posts/
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
     fields:
-      - { label: "Titulek", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: Titulek, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Body, name: body, widget: markdown }
 
-  - name: "datasets"
-    label: "Datové sady"
-    folder: "collections/_datasets/"
+  - name: datasets
+    label: Datové sady
+    folder: collections/_datasets/
     create: true
     fields:
+      - { label: ID, name: id }
       - { label: Titulek, name: title }
       - { label: Poslední změna metadat, name: lastModified, widget: date, format: 'YYYY-MM-DD'}
       - { label: Popis, name: description, widget: text }
       - { label: Organizace, name: organizations, widget: relation, collection: organizations, searchField: title, displayFields: [title_short,title], valueField: id }
       - { label: Zdroje dat, name: resources, widget: relation, collection: resources, searchField: title, displayFields: [title_short,title], valueField: id }
       - { label: Odkazy, name: links, widget: list, collapsed: false, fields: [{ label: Titulek, name: title, widget: string }, { label: URL, name: url, widget: string }] }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: Body, name: body, widget: markdown }
 
-  - name: "resources"
-    label: "Zdroje dat"
-    folder: "collections/_resources/"
+  - name: resources
+    label: Zdroje dat
+    folder: collections/_resources/
     create: true
     fields:
-      - { label: "Titulek", name: "title", widget: "string" }
-      - label: "Data"
-        name: "data"
-        widget: "object"
+      - { label: ID, name: id }
+      - { label: Titulek, name: title, widget: string }
+      - label: Data
+        name: data
+        widget: object
         fields:
-          - { label: "CSV", name: "csv", widget: "string" }
-          - { label: "JSON", name: "json", widget: "string" }
-      - { label: "JSON Metadata", name: "metadata", widget: "string" }
-      - { label: "Licence", name: "license", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+          - { label: CSV, name: csv, widget: string }
+          - { label: JSON, name: json, widget: string }
+      - { label: JSON Metadata, name: metadata, widget: string }
+      - { label: Licence, name: license, widget: string }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: organizations
+    label: Organizace
+    folder: collections/_organizations
+    create: true
+    fields:
+      - { label: ID, name: id }
+      - { label: Název organizace, name: title }
+      - { label: Zkratka organizace, name: title_short }
