@@ -4,14 +4,14 @@ backend:
   branch: master # Branch to update
   base_url: https://opendata.mfcr.cz # Path to ext auth provider
 
-media_folder: "web/src/assets/content"
+media_folder: "assets/content"
 
 locale: "cs"
 
 collections:
   - name: "posts"
     label: "Datové příběhy"
-    folder: "web/src/collections/_posts/"
+    folder: "collections/_posts/"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
@@ -21,7 +21,7 @@ collections:
 
   - name: "datasets"
     label: "Datové sady"
-    folder: "web/src/collections/_datasets/"
+    folder: "collections/_datasets/"
     create: true
     fields:
       - { label: Titulek, name: title }
@@ -33,7 +33,7 @@ collections:
 
   - name: "resources"
     label: "Datové příběhy"
-    folder: "web/src/collections/_resources/"
+    folder: "collections/_resources/"
     create: true
     fields:
       - { label: "Titulek", name: "title", widget: "string" }
