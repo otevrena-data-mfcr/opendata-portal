@@ -19,7 +19,7 @@ collections:
       preview: false
     fields:
       - { label: Titulek, name: title, widget: string }
-      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Publish Date, name: date, widget: datetime, timeFormat: false, format: "YYYY-MM-DD", dateFormat: "D. M. YYYY" }
       - { label: Obsah stránky, name: body, widget: markdown }
 
   - name: datasets
@@ -32,7 +32,7 @@ collections:
     fields:
       - { label: ID, name: id }
       - { label: Titulek, name: title }
-      - { label: Poslední změna metadat, name: lastModified, widget: datetime, format: 'YYYY-MM-DD'}
+      - { label: Poslední změna metadat, name: lastModified, widget: datetime, timeFormat: false, format: "YYYY-MM-DD", dateFormat: "D. M. YYYY" }
       - { label: Popis, name: description, widget: text }
       - { label: Organizace, name: organizations, multiple: true, widget: relation, collection: organizations, searchFields: [title_short,title], displayFields: [title_short,title], valueField: id }
       - { label: Zdroje dat, name: resources, multiple: true, widget: relation, collection: resources, searchFields: [title_short,title], displayFields: [title_short,title], valueField: id }
