@@ -32,8 +32,8 @@ collections:
       - { label: Titulek, name: title }
       - { label: Poslední změna metadat, name: lastModified, widget: date, format: 'YYYY-MM-DD'}
       - { label: Popis, name: description, widget: text }
-      - { label: Organizace, name: organizations, multiple: true, widget: relation, collection: organizations, searchField: title, displayFields: [title_short,title], valueField: id }
-      - { label: Zdroje dat, name: resources, multiple: true, widget: relation, collection: resources, searchField: title, displayFields: [title_short,title], valueField: id }
+      - { label: Organizace, name: organizations, multiple: true, widget: relation, collection: organizations, searchFields: [title_short,title], displayFields: [title_short,title], valueField: id }
+      - { label: Zdroje dat, name: resources, multiple: true, widget: relation, collection: resources, searchFields: [title_short,title], displayFields: [title_short,title], valueField: id }
       - { label: Odkazy, name: links, widget: list, collapsed: false, fields: [{ label: Titulek, name: title, widget: string }, { label: URL, name: url, widget: string }] }
       - { label: Body, name: body, widget: markdown }
 
