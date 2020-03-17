@@ -11,6 +11,7 @@ locale: cs
 collections:
   - name: posts
     label: Datové příběhy
+    label_singular: Datový příběh
     folder: collections/_posts/
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
@@ -23,6 +24,7 @@ collections:
 
   - name: datasets
     label: Datové sady
+    label_singular: Datová sada
     folder: collections/_datasets/
     create: true
     editor:
@@ -39,6 +41,7 @@ collections:
 
   - name: resources
     label: Zdroje dat
+    label_singular: Zdroj dat
     folder: collections/_resources/
     create: true
     editor:
