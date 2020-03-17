@@ -5,5 +5,3 @@ data:
   json: https://opendata.mfcr.cz/exports/faktury_polozky/json
 license: Volné dílo
 ---
-
-HOHO
