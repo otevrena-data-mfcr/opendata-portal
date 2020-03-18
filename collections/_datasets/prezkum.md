@@ -6,5 +6,8 @@ resources:
 
 organizations:
   - mf
+
+categories:
+  - kontrola
 ---
 

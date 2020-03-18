@@ -8,8 +8,11 @@ organizations:
   - mf
 
 resources:
- - penzijni
+  - penzijni
 
+categories:
+  - rozpocet
+  
 links:
   - title: Web MF
     url: https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni
