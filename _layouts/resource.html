@@ -17,34 +17,46 @@ sidebar_nav: nav-resource.html
 
       {% if page.data %}
 
-      <h2 id="scripts" class="mt-5">Práce s daty</h2>
-      <div class="pl-5">
-        <!-- Tab panes -->
-        {% if page.data.csv %}
-        <h3 class="my-4" data-toggle="collapse" data-target="#code-csv" id="tab-code-csv" role="tab" aria-controls="code-csv" aria-selected="true">
-          <span class="caret"></span>
-          CSV
-        </h3>
-        <div class="collapse show mb-5" id="code-csv" role="tabpanel" aria-labelledby="tab-code-csv">
-          <h4 id="preview">Ukázka</h4>
-          {% include resource-preview-csv.html url=page.data.csv %}
+      {% assign numFiles = page.data | size%}
 
-          <h4 id="preview" class="mt-5">Kód ke stažení</h4>
+      <h3 id="preview" class="mt-5">Ukázka dat</h3>
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        {% if page.data.csv %}
+        <li class="nav-item">
+          <a class="nav-link active" id="tab-code-csv" data-toggle="tab" href="#code-csv" role="tab" aria-controls="code-csv" aria-selected="true">CSV</a>
+        </li>
+        {% endif %}
+
+        {% if page.data.json %}
+        <li class="nav-item">
+          <a class="nav-link" id="tab-code-json" data-toggle="tab" href="#code-json" role="tab" aria-controls="code-json">JSON</a>
+        </li>
+        {% endif %}
+      </ul>
+
+
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        {% if page.data.csv %}
+        <div class="tab-pane active" id="code-csv" role="tabpanel" aria-labelledby="tab-code-csv">
+          {% include resource-preview-csv.html url=page.data.csv %}
+          <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
           {% include resource-scripts-csv.html data_url=page.data.csv %}
         </div>
         {% endif %}
 
         {% if page.data.json %}
-        <h3 class="collapsed my-4" data-toggle="collapse" data-target="#code-json" id="tab-code-json" role="tab" aria-controls="code-json" aria-selected="true">
-          <span class="caret"></span>
-          JSON
-        </h3>
-        <div class="collapse mb-5" id="code-json" role="tabpanel" aria-labelledby="tab-code-json">
-          <h4 id="preview">Ukázka</h4>
+        <div class="tab-pane" id="code-json" role="tabpanel" aria-labelledby="tab-code-json">
           {% include resource-preview-json.html url=page.data.json %}
         </div>
         {% endif %}
       </div>
+
+
+
       {% endif %}
 
       <h2 id="metadata" class="mt-5">Katalogizační záznam</h2>
