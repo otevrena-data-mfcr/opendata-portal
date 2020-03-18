@@ -17,12 +17,12 @@
     var pageUrl = "{{include.url}}";
     var delimiter = ",";
 
-    function fillCode(data){
-      var lines = data.split("\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").splice(10);
-      $("#resource-preview-csv-code").text(lines.join("\n"));
+    function fillCode(data) {
+      var lines = data.replace(/"([^"]*)\n([^"]*)"/, "$1$2").split("\n").slice(10).join("\n")
+      $("#resource-preview-csv-code").text(lines);
     }
 
-    function fillTable(data) {      
+    function fillTable(data) {
 
       var rows = $.csv.toArrays(data);
       rows.pop();
@@ -63,7 +63,7 @@
       downloadPartialData(pageUrl, 4196, function (message, text, jqXHR) {
 
         fillTable(message);
-        
+
         fillCode(message);
 
         $("#resource-preview-csv-table").show();
