@@ -4,12 +4,12 @@
     <thead></thead>
     <tbody></tbody>
   </table>
-
-  <pre id="resource-preview-csv-code"></pre>
-
-  <p id="resource-preview-csv-error">Náhled dat se bohužel nyní nedaří načíst.</p>
-
 </div>
+<div class="preview">
+  <pre id="resource-preview-csv-code"></pre>
+</div>
+
+<p id="resource-preview-csv-error">Náhled dat se bohužel nyní nedaří načíst.</p>
 
 <script type="text/javascript">
 
@@ -18,7 +18,7 @@
     var delimiter = ",";
 
     function fillCode(data) {
-      var lines = data.replace(/"([^"]*)\n([^"]*)"/, "$1$2").split("\n").slice(10).join("\n")
+      var lines = data.replace(/"([^"]*)\n([^"]*)"/, "$1$2").split("\n").slice(0,10).join("\n")
       $("#resource-preview-csv-code").text(lines);
     }
 
