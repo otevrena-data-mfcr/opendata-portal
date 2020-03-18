@@ -1,4 +1,85 @@
 ---
 layout: main
 ---
-<h1>Hello World!</h1>
+<div class="frontpage">
+  <div class="hero pt-5">
+    <div class="mt-5 container-fluid">
+      <h1 class="text-center">Otevřená data Ministerstva financí</h1>
+
+      <div class="row mt-3 mb-5 py-3">
+        <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+          {% include search.html %}
+        </div>
+      </div>
+
+      <div class="container mt-5 py-4 categories">
+        <div class="row">
+          {% for category in site.categories %}
+          <div class="col category text-center">
+            <a class="py-2" href="{{category.url}}">
+              {{category.title}}
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ribbon">
+    <div class="container stats">
+      <div class="row py-3">
+        <div class="col">
+          <a href="organizations.html">
+            {% assign organizations_count = site.organizations | size %}
+            <div class="number">{{organizations_count}}</div>
+
+            {% if organizations_count == 1 %}organizace
+            {% elsif organizations_count >= 2 and organizations_count <= 4 %}organizace
+            {% else %}organizací
+            {% endif %}
+          </a>
+        </div>
+        <div class="col">
+          <a href="systems.html">
+            {% assign systems_count = site.systems | size %}
+            <div class="number">{{systems_count}}</div>
+
+            {% if systems_count == 1 %}informační systém
+            {% elsif systems_count >= 2 and systems_count <= 4 %}informační systémy
+            {% else %}informačních systémů
+            {% endif %}
+          </a>
+        </div>
+        <div class="col">
+          <a href="datasets.html">
+            {% assign datasets_count = site.datasets | size %}
+            <div class="number">{{datasets_count}}</div>
+
+            {% if datasets_count == 1 %}datová sada
+            {% elsif datasets_count >= 2 and datasets_count <= 4 %}datové sady
+            {% else %}datových sad
+            {% endif %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-7">
+          <h2>Novinky</h2>
+        </div>
+
+        <div class="col-md-5">
+          <a class="twitter-timeline" data-lang="cs" data-height="600" href="https://twitter.com/otevrenadatamf?ref_src=twsrc%5Etfw">Tweets by otevrenadatamf</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+</div>

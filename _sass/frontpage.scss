@@ -1,0 +1,62 @@
+@import "variables";
+
+.frontpage {
+  @extend .bg-light;
+
+  min-height: 100vh;
+  .hero {
+    color: $white;
+    background-color: $blue;
+
+    h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+    }
+  }
+
+  .ribbon {
+    background-color: $white;
+    box-shadow: $shadow;
+
+    a {
+      color: inherit;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+
+    .stats {
+      text-align: center;
+      font-size: 1.5em;
+
+      .number {
+        font-size: 4em;
+        vertical-align: middle;
+      }
+
+      a:hover .number {
+        color: $blue;
+      }
+    }
+  }
+
+  .categories {
+    .category {
+      a {
+        color: inherit;
+        display: inline-block;
+
+        height: 40px;
+        border-radius: 20px;
+        padding: 10px 20px;
+      }
+      a:hover {
+        background-color: $blue-light;
+        text-decoration: none;
+      }
+    }
+    .category:last-child {
+      border-right: none;
+    }
+  }
+}

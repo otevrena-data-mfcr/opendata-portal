@@ -1,0 +1,24 @@
+@import "variables.scss";
+
+body {
+  font-family: Slack-Lato, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+a {
+  color: $blue;
+}
+
+p {
+  text-align: justify;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.4em;
+}

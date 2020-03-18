@@ -6,7 +6,11 @@ layout: sidebar-datasets
 {{ content }}
 
 <ul>
-  {% for dataset in site.datasets %}
+
+  {% assign category_id = page.slug %}  
+  {% assign datasets = site.datasets | where_exp:"item","item.categories contains category_id" %}
+  
+  {% for dataset in datasets %}
   <li><a href="{{dataset.url}}">{{dataset.title}}</a></li>
   {% endfor %}
 </ul>
