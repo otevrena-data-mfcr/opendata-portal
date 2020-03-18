@@ -51,6 +51,8 @@ sidebar_nav: nav-resource.html
         {% if page.data.json %}
         <div class="tab-pane" id="code-json" role="tabpanel" aria-labelledby="tab-code-json">
           {% include resource-preview-json.html url=page.data.json %}
+          <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
+          {% include resource-scripts-json.html data_url=page.data.json %}
         </div>
         {% endif %}
       </div>
