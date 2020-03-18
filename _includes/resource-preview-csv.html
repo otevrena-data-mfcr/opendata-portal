@@ -18,8 +18,9 @@
     var delimiter = ",";
 
     function fillCode(data) {
-      var lines = data.replace(/"([^"]*)\n([^"]*)"/, "$1$2").split("\n").slice(0,10).join("\n")
-      $("#resource-preview-csv-code").text(lines);
+      var lines = data.split("\n").slice(0,11)
+      lines.pop();
+      $("#resource-preview-csv-code").text(lines.join("\n"));
     }
 
     function fillTable(data) {
