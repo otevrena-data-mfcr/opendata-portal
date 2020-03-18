@@ -18,7 +18,7 @@
     var delimiter = ",";
 
     function fillCode(data){
-      var lines = str.split("\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").splice(10);
+      var lines = data.split("\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").splice(10);
       $("#resource-preview-csv-code").text(lines.join("\n"));
     }
 
