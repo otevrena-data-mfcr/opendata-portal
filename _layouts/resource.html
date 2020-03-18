@@ -17,29 +17,34 @@ sidebar_nav: nav-resource.html
 
       {% if page.data %}
 
-      {% assign numFiles = page.data | size%}
-
-      <h2 id="preview" class="mt-5">Ukázka dat</h2>
-      {% if page.data.csv %}
-      {% if numFiles > 1 %}<h3>CSV</h3>{% endif %}
-      {% include resource-preview-csv.html url=page.data.csv %}
-      {% endif %}
-
-      {% if page.data.json %}
-      {% if numFiles > 1 %}<h3>JSON</h3>{% endif %}
-      {% include resource-preview-json.html url=page.data.json %}
-      {% endif %}
-
-
       <h2 id="scripts" class="mt-5">Práce s daty</h2>
+      <div class="pl-5">
+        <!-- Tab panes -->
+        {% if page.data.csv %}
+        <h3 class="my-4" data-toggle="collapse" data-target="#code-csv" id="tab-code-csv" role="tab" aria-controls="code-csv" aria-selected="true">
+          <span class="caret"></span>
+          CSV
+        </h3>
+        <div class="collapse show mb-5" id="code-csv" role="tabpanel" aria-labelledby="tab-code-csv">
+          <h4 id="preview">Ukázka</h4>
+          {% include resource-preview-csv.html url=page.data.csv %}
 
-      {% if page.data.csv %}
-      {% include resource-scripts-csv.html data_url=page.data.csv %}
+          <h4 id="preview" class="mt-5">Kód ke stažení</h4>
+          {% include resource-scripts-csv.html data_url=page.data.csv %}
+        </div>
+        {% endif %}
 
-      {% endif %}
-
-
-
+        {% if page.data.json %}
+        <h3 class="collapsed my-4" data-toggle="collapse" data-target="#code-json" id="tab-code-json" role="tab" aria-controls="code-json" aria-selected="true">
+          <span class="caret"></span>
+          JSON
+        </h3>
+        <div class="collapse mb-5" id="code-json" role="tabpanel" aria-labelledby="tab-code-json">
+          <h4 id="preview">Ukázka</h4>
+          {% include resource-preview-json.html url=page.data.json %}
+        </div>
+        {% endif %}
+      </div>
       {% endif %}
 
       <h2 id="metadata" class="mt-5">Katalogizační záznam</h2>

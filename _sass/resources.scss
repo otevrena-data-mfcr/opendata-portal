@@ -8,3 +8,27 @@
     white-space: nowrap;
   }
 }
+
+h3 {
+  position: relative;
+}
+h3 .caret {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 0;
+  height: 0;
+  margin-top: -3px;
+  vertical-align: middle;
+  border-top: 6px solid;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+h3.collapsed .caret {
+  margin-top: -6px;
+  margin-left: 3px;
+  border-left: 6px solid;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
