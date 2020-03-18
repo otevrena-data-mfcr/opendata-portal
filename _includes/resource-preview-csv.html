@@ -24,9 +24,8 @@
 
     function fillTable(data) {
 
-      var rows = $.csv.toArrays(data);
+      var rows = $.csv.toArrays(data).slice(0,11)
       rows.pop();
-      rows.splice(10);
 
       var headerRow = rows.shift();
       $("#resource-preview-csv-table thead").append(createRow(headerRow));
