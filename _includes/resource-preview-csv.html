@@ -1,11 +1,13 @@
 <div class="preview">
 
-  <table class="table table-sm" id="resource-preview-table">
+  <table class="table table-sm" id="resource-preview-csv-table">
     <thead></thead>
     <tbody></tbody>
   </table>
 
-  <p id="resource-preview-error">Náhled dat se bohužel nyní nedaří načíst.</p>
+  <pre id="resource-preview-csv-code"></pre>
+
+  <p id="resource-preview-csv-error">Náhled dat se bohužel nyní nedaří načíst.</p>
 
 </div>
 
@@ -15,17 +17,22 @@
     var pageUrl = "{{include.url}}";
     var delimiter = ",";
 
-    function fillTable(data) {
+    function fillCode(data){
+      var lines = str.split("\n(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").splice(10);
+      $("#resource-preview-csv-code").text(lines.join("\n"));
+    }
+
+    function fillTable(data) {      
 
       var rows = $.csv.toArrays(data);
       rows.pop();
       rows.splice(10);
 
       var headerRow = rows.shift();
-      $("#resource-preview-table thead").append(createRow(headerRow));
+      $("#resource-preview-csv-table thead").append(createRow(headerRow));
 
       rows.forEach(function (row) {
-        $("#resource-preview-table tbody").append(createRow(row));
+        $("#resource-preview-csv-table tbody").append(createRow(row));
       });
 
     }
@@ -43,20 +50,24 @@
 
 
 
-    $("#resource-preview-table").hide();
-    $("#resource-preview-error").hide();
+    $("#resource-preview-csv-table").hide();
+    $("#resource-preview-csv-code").hide();
+    $("#resource-preview-csv-error").hide();
 
     getHeaders(pageUrl, function (headers) {
       if (headers["accept-ranges"] !== "bytes") {
-        $("#resource-preview-error").show();
+        $("#resource-preview-code-error").show();
         return;
       }
 
       downloadPartialData(pageUrl, 4196, function (message, text, jqXHR) {
 
         fillTable(message);
+        
+        fillCode(message);
 
-        $("#resource-preview-table").show();
+        $("#resource-preview-csv-table").show();
+        $("#resource-preview-csv-code").show();
 
       });
     });
