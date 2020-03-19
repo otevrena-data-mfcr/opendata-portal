@@ -15,11 +15,11 @@ layout: main
       <div class="p-3">
         <h1>Datové příběhy</h1>
 
-        <div class="posts mt-5">
-          {% for post in site.posts %}
-          <div class="post ">
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-            <p>{{post.excerpt}}</p>
+        <div class="stories mt-5">
+          {% for story in site.stories %}
+          <div class="story">
+            <h3><a href="{{ story.url }}">{{ story.title }}</a></h3>
+            <p>{{story.excerpt}}</p>
           </div>
           {% endfor %}
         </div>

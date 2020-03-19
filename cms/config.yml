@@ -10,10 +10,22 @@ locale: cs
 
 collections:
   - name: posts
-    label: Datové příběhy
-    label_singular: Datový příběh
+    label: Novinky
+    label_singular: Novinka
     folder: collections/_posts/
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: Titulek, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, timeFormat: false, format: "YYYY-MM-DD", dateFormat: "D. M. YYYY" }
+      - { label: Obsah stránky, name: body, widget: markdown }
+
+  - name: stories
+    label: Datové příběhy
+    label_singular: Datový příběh
+    folder: collections/_stories/
     create: true
     editor:
       preview: false

@@ -1,5 +1,4 @@
 ---
-layout: post-jupyter
 title: Zadluženost obcí
 notebook: jupyter/zadluzenost.html 
 ---

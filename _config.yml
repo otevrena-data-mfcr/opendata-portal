@@ -7,6 +7,8 @@ exports_url: "https://opendata.mfcr.cz/exports"
 collections_dir: collections
 
 collections:
+  stories:
+    output: true
   resources:
     output: true
   datasets:
@@ -20,39 +22,43 @@ collections:
 
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-  -
-    scope:
+
+  - scope:
+      path: ""
+      type: "stories"
+    values:
+      layout: "story"
+
+  - scope:
       path: ""
       type: "resources"
     values:
       layout: resource
-  -
-    scope:
+
+  - scope:
       path: ""
       type: "datasets"
     values:
       layout: "dataset"
-  -
-    scope:
+
+  - scope:
       path: ""
       type: "systems"
     values:
       layout: "system"
-  -
-    scope:
+
+  - scope:
       path: ""
       type: "organizations"
     values:
       layout: "organization"
 
-  -
-    scope:
+  - scope:
       path: ""
       type: "categories"
     values:
