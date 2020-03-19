@@ -30,6 +30,14 @@ function getHeaders(url, callback) {
 
 }
 
+function downloadJSON(url, callback) {
+  $.get({
+    url: url,
+    method: "GET",
+    dataType: "json"
+  }).done(callback);
+}
+
 function downloadPartialData(url, size, callback) {
   $.get({
     url: url,

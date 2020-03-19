@@ -1,0 +1,23 @@
+csv:
+  title: CSV
+
+json:
+  title: JSON
+  
+xml:
+  title: XML
+  
+xsd:
+  title: XSD
+
+zip-csv:
+  title: CSV (ZIP)
+
+json-meta:
+  title: JSON METADATA
+  color: success
+
+api:
+  title: API
+  color: success
+  

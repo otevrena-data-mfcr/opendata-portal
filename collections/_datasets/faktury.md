@@ -8,7 +8,7 @@ organizations:
   - mf
 
 categories:
-  - vydaje
+  - hospodareni
 
 resources:
  - faktury

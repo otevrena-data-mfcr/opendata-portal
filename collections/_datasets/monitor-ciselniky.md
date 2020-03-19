@@ -6,7 +6,7 @@ organizations:
   - mf
 
 categories:
-  - vydaje
+  - hospodareni
 
 resources:
   - monitor-ciselniky-aktivni-organizace
