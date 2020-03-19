@@ -52,12 +52,16 @@ sidebar_nav: nav-dataset.html
       {% endif %}
 
 
+      {% assign stories = site.stories | where_exp:"item","item.datasets contains page.slug" %}
+      {% assign stories_size = stories | size %}
+      {% if stories_size > 0 %}
       <h3 class="mt-5">Datové příběhy</h3>
       <nav class="mt-3">
-        {% for post in site.posts %}
-        <a class="nav-item nav-link" href="{{post.url}}">{{post.title}}</a>
+        {% for story in stories %}
+        <a class="nav-item nav-link" href="{{story.url}}">{{story.title}}</a>
         {% endfor %}
       </nav>
+      {% endif %}
 
       {% if page.links %}
       <h3 class="mt-3 mb-3">Další zdroje</h3>

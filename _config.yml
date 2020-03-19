@@ -7,6 +7,8 @@ exports_url: "https://opendata.mfcr.cz/exports"
 collections_dir: collections
 
 collections:
+  posts:
+    output: false
   stories:
     output: true
   resources:

@@ -51,7 +51,7 @@ layout: main
           </a>
         </div>
         <div class="col">
-          <a href="datasets.html">
+          <a href="categories.html">
             {% assign datasets_count = site.datasets | size %}
             <div class="number">{{datasets_count}}</div>
 
@@ -69,13 +69,22 @@ layout: main
     <div class="container">
       <div class="row">
 
-        <div class="col-md-7">
-          <h2>Novinky</h2>
+        <div class="col-md-7 posts">
+          {% assign posts = site.posts | slice:0,3 %}
+          {% for post in posts %}
+          <div class="post p-3">
+            <h3 class="mb-3">{{ post.title }}</h3>
+            {{post.content}}
+          </div>
+          {% endfor %}
         </div>
 
-        <div class="col-md-5">
-          <a class="twitter-timeline" data-lang="cs" data-height="600" href="https://twitter.com/otevrenadatamf?ref_src=twsrc%5Etfw">Tweets by otevrenadatamf</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="col-md-5 twitter">
+          <div class="p-3 pb-4">
+            <h3 class="mb-3">Twitter</h3>
+            <a class="twitter-timeline" data-chrome="nofooter noborders noheader transparent" data-lang="cs" data-height="600" href="https://twitter.com/otevrenadatamf?ref_src=twsrc%5Etfw">Tweets by otevrenadatamf</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
         </div>
 
       </div>

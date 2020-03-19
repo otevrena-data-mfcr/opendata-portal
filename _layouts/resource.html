@@ -15,51 +15,49 @@ sidebar_nav: nav-resource.html
 
       {{page.content}}
 
-      {% if page.data %}
-
-      {% assign numFiles = page.data | size%}
 
       <h3 id="preview" class="mt-5">Ukázka dat</h3>
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-        {% if page.data.csv %}
+        {% for format in page.data %}
         <li class="nav-item">
-          <a class="nav-link active" id="tab-code-csv" data-toggle="tab" href="#code-csv" role="tab" aria-controls="code-csv" aria-selected="true">CSV</a>
+          <a class="nav-link{% if forloop.first %} active{% endif %}" id="tab-code-csv" data-toggle="tab" href="#code-{{format[0]}}" role="tab" aria-controls="code-csv" aria-selected="true">{{format[0] | upcase}}</a>
         </li>
-        {% endif %}
-
-        {% if page.data.json %}
-        <li class="nav-item">
-          <a class="nav-link" id="tab-code-json" data-toggle="tab" href="#code-json" role="tab" aria-controls="code-json">JSON</a>
-        </li>
-        {% endif %}
+        {% endfor %}
       </ul>
 
 
 
       <!-- Tab panes -->
       <div class="tab-content">
-        {% if page.data.csv %}
-        <div class="tab-pane active" id="code-csv" role="tabpanel" aria-labelledby="tab-code-csv">
+
+        {% for format in page.data %}
+        <div class="tab-pane{% if forloop.first %} active{% endif %}" id="code-{{format[0]}}" role="tabpanel" aria-labelledby="tab-code-{{format[0]}}">
+
+          {% case format[0] %}
+
+          {% when 'csv' %}
           {% include resource-preview-csv.html url=page.data.csv %}
           <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
           {% include resource-scripts-csv.html data_url=page.data.csv %}
-        </div>
-        {% endif %}
 
-        {% if page.data.json %}
-        <div class="tab-pane" id="code-json" role="tabpanel" aria-labelledby="tab-code-json">
+          {% when 'json' %}
           {% include resource-preview-json.html url=page.data.json %}
           <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
           {% include resource-scripts-json.html data_url=page.data.json %}
+
+          {% else %}<p class="py-3">Pro tento formát zatím neumíme ukázku dat zobrazit.</p>
+
+          {% endcase %}
+
         </div>
-        {% endif %}
+        {% endfor %}
+
       </div>
 
 
 
-      {% endif %}
 
       <h2 id="metadata" class="mt-5">Katalogizační záznam</h2>
 
@@ -96,24 +94,29 @@ sidebar_nav: nav-resource.html
       {% if page.data %}
       <h2 class="mt-5">Získat data</h2>
 
-
       <div class="download mt-4">
+
         {% for format in page.data %}
-        <a class="btn btn-primary mb-3" href="{{format[1]}}">
-          {% case format[0] %}
-          {% when 'csv' %}CSV
-          {% else %}{{format[0] | upcase}}
-          {% endcase %}
-        </a>
+        <a class="btn btn-primary mb-3" href="{{format[1]}}">{{format[0] | upcase}}</a></a>
         {% if forloop.last == false %}<br>{% endif %}
         {% endfor %}
+
+
         <br>
+
         {% if page.api %}<a class="btn btn-success" href="{{page.api}}">API</a>{% endif %}
         {% if page.metadata %}<a class="btn btn-success" href="{{page.metadata}}">JSON METADATA</a>{% endif %}
       </div>
       {% endif %}
 
-
+      {% if page.links %}
+      <h3 class="mt-5 mb-3">Další zdroje</h3>
+      <nav class="mt-3">
+        {% for link in page.links %}
+        <a class="nav-item nav-link" href="{{link.url}}">{{link.title}}</a>
+        {% endfor %}
+      </nav>
+      {% endif %}
     </div>
   </div>
 </div>

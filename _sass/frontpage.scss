@@ -35,7 +35,7 @@
       font-size: calc(16px + 0.8vw);
 
       .number {
-        font-size: calc(20px + 2.5vw);;
+        font-size: calc(20px + 2.5vw);
         vertical-align: middle;
       }
 
@@ -67,4 +67,16 @@
       border-right: none;
     }
   }
+}
+
+.posts {
+  .post {
+    background-color: $white;
+    border-radius: 5px;
+  }
+}
+
+.twitter {
+  background-color: $white;
+  border-radius: 5px;
 }

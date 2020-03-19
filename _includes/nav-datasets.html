@@ -3,13 +3,13 @@
 <h5 class="mt-4">Kategorie</h5>
 <nav class="m-3">
   {% for category in site.categories %}
-  <a class="nav-item nav-link" href="{{category.url}}">{{category.title}}</a>
+  <a class="nav-item nav-link" href="{{category.url}}">{{category.title}} <span class="badge badge-pill badge-light float-right mt-1">{{site.datasets | where_exp:"item","item.categories contains category.slug" | size}}</span></a>
   {% endfor %}
 </nav>
 
 <h5>Organizace</h5>
 <nav class="m-3">
   {% for organization in site.organizations %}
-  <a class="nav-item nav-link" href="{{organization.url}}" title="{{organization.title}}">{{organization.title_short}}</a>
+  <a class="nav-item nav-link" href="{{organization.url}}" title="{{organization.title}}">{{organization.title_short}} <span class="badge badge-pill badge-light float-right mt-1">{{site.datasets | where_exp:"item","item.organizations contains organization.slug" | size}}</span></a>
   {% endfor %}
 </nav>
