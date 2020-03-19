@@ -13,8 +13,9 @@
     background-size: cover;
 
     h1 {
-      font-size: 3em;
+      font-size: calc(15pt + 2.5vw);
       text-transform: uppercase;
+      text-shadow: $shadow;
     }
   }
 
@@ -49,12 +50,15 @@
       a {
         color: inherit;
         display: inline-block;
+        background-color: rgba(255, 255, 255, 0.7);
+        color: #333;
 
         height: 40px;
         border-radius: 20px;
         padding: 10px 20px;
       }
       a:hover {
+        color: $white;
         background-color: $blue-light;
         text-decoration: none;
       }
