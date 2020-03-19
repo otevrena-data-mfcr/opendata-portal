@@ -13,7 +13,7 @@
     background-size: cover;
 
     h1 {
-      font-size: calc(15pt + 2.5vw);
+      font-size: calc(30px + 2.2vw);
       text-transform: uppercase;
       text-shadow: $shadow;
     }
@@ -32,10 +32,10 @@
 
     .stats {
       text-align: center;
-      font-size: 1.5em;
+      font-size: calc(16px + 0.8vw);
 
       .number {
-        font-size: 4em;
+        font-size: calc(20px + 2.5vw);;
         vertical-align: middle;
       }
 
@@ -50,7 +50,7 @@
       a {
         color: inherit;
         display: inline-block;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.85);
         color: #333;
 
         height: 40px;
