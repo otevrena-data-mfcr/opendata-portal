@@ -11,7 +11,7 @@
   {% endfor %}
 </nav>
 
-<h5>Organizace</h5>
+<h5 class="mt-4">Organizace</h5>
 <nav class="ml-3">
   {% for organization in site.organizations %}
   <a class="nav-item nav-link" href="{{organization.url}}" title="{{organization.title}}">{{organization.title_short}} <span class="badge badge-pill badge-light float-right mt-1">{{site.datasets | where_exp:"item","item.organizations contains organization.slug" | size}}</span></a>
