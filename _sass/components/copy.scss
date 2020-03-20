@@ -1,0 +1,15 @@
+.copy {
+  cursor: pointer;
+  .success {
+    display: none;
+  }
+}
+
+.copy.copied {
+  .action {
+    display: none;
+  }
+  .success {
+    display: inline;
+  }
+}

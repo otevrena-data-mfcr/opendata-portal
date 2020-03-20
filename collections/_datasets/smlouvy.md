@@ -1,8 +1,11 @@
 ---
-title: Smlouvy ministerstva financí
+title: Smlouvy Ministerstva financí
 
 lastModified: 2020-03-17
-description: Seznam smluv ministerstva financí
+description: Tabulkový přehled platných i neplatných smluv Ministerstva financí s vazbou na faktury.
+
+categories:
+  - hospodareni
 
 organizations:
   - mf
@@ -15,5 +18,3 @@ links:
   - title: Web MF
     url: https://www.mfcr.cz/
 ---
-
-Tabulkový přehled platných i neplatných smluv Ministerstva financí s vazbou na faktury.

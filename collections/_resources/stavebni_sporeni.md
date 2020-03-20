@@ -6,9 +6,6 @@ data:
 license: Volné dílo
 ---
 
-Vývoj stavebního spoření
-
-
 ## Struktura
 
 * rok

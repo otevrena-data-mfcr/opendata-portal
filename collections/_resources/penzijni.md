@@ -1,12 +1,11 @@
 ---
 title: Vývoj penzijního připojištění a doplňkového penzijního spoření
+
 data:
   csv: https://data.mfcr.cz/sites/default/files/SS_4-2019.csv
   xlsx: https://data.mfcr.cz/sites/default/files/SS_4-2019.xlsx
 license: Volné dílo
 ---
-
-Vývoj penzijního připojištění a doplňkového penzijního spoření
 
 ## Struktura
 

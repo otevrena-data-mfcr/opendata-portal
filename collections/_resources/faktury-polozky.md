@@ -1,6 +1,7 @@
 ---
 id: faktury-polozky
 title: Faktury dle rozpočtových položek
+description: Vazební tabulka faktur ze zdroje dat Přehled faktur na čísla rozpočtových položek z rozpočtové skladby
 
 data:
   csv: https://opendata.mfcr.cz/exports/faktury_polozky/csv
@@ -9,5 +10,3 @@ data:
 
 license: Volné dílo
 ---
-
-Vazební tabulka faktur ze zdroje dat Přehled faktur na čísla rozpočtových položek z rozpočtové skladby

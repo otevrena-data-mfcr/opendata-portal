@@ -7,4 +7,3 @@ data:
 metadata: 'https://opendata.mfcr.cz/exports/prezkum'
 license: Volné dílo
 ---
-Výsledky přezkumu hospodaření

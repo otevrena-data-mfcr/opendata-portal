@@ -1,16 +1,21 @@
 $(document).ready(function () {
 
-  $(".script .copy .success").hide();
+  $(".copy").click(function () {
 
-  $(".script .copy").click(function () {
+    var text;
 
-    var text = $(this).parent().find("pre").text();
+    if ($(this).data("copy")) {
+      text = $(this).data("copy");
+    }
+    else if ($(this).parents(".script").length) {
+      text = $(this).parent().find("pre").text();
+    }
 
     copyTextToClipboard(text);
 
-    $(this).find(".success").show();
+    $(this).addClass("copied");
 
-  })
+  });
 
 });
 
@@ -23,7 +28,7 @@ $.ajaxSetup({
 })
 
 function getGatewayUrl(url) {
-  return "https://opendata.mfcr.cz/gateway/" + url.replace("//","/");
+  return "https://opendata.mfcr.cz/gateway/" + url.replace("//", "/");
   //return url;
 }
 

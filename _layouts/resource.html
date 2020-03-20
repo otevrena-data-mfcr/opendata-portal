@@ -6,71 +6,72 @@ sidebar_nav: nav-resource.html
 
 <h1>{{page.title}}</h1>
 
-<div class="row no-gutters">
+<div class="row no-gutters content">
 
   <div class="col-lg-7 col-xl-8">
 
     <div class="px-3 py-3 px-md-5">
-      <h2 id="content" class="mt-3">Popis</h2>
+      <div>
+        {{page.content}}
+      </div>
 
-      {{page.content}}
+      <h2 class="mt-3">Data</h2>
+      <div class="mb-5">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          {% for format in page.data %}
+          {% assign format_id = format[0] %}
+          <li class="nav-item">
+            <a class="nav-link{% if forloop.first %} active{% endif %}" id="tab-code-csv" data-toggle="tab" href="#code-{{format_id}}" role="tab" aria-controls="code-csv" aria-selected="true">
+              {{site.data.formats[format_id].title | default: format_id}}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
 
 
-      <h2 class="mt-5">Data</h2>
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        {% for format in page.data %}
-        {% assign format_id = format[0] %}
-        <li class="nav-item">
-          <a class="nav-link{% if forloop.first %} active{% endif %}" id="tab-code-csv" data-toggle="tab" href="#code-{{format_id}}" role="tab" aria-controls="code-csv" aria-selected="true">
-            {{site.data.formats[format_id].title | default: format_id}}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
 
+          {% for format in page.data %}
+          {% assign format_id = format[0] %}
+          {% assign data_url = format[1] %}
+          <div class="tab-pane{% if forloop.first %} active{% endif %}" id="code-{{format_id}}" role="tabpanel" aria-labelledby="tab-code-{{format_id}}">
 
-      <!-- Tab panes -->
-      <div class="tab-content">
+            {% case format_id %}
 
-        {% for format in page.data %}
-        {% assign format_id = format[0] %}
-        {% assign data_url = format[1] %}
-        <div class="tab-pane{% if forloop.first %} active{% endif %}" id="code-{{format_id}}" role="tabpanel" aria-labelledby="tab-code-{{format_id}}">
+            {% when 'csv' %}
+            <h4 id="preview" class="mt-5">Ukázka dat</h4>
+            {% include resource-preview-csv.html url=data_url %}
+            <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
+            {% include resource-scripts-csv.html data_url=data_url %}
 
-          {% case format_id %}
+            {% when 'json' %}
+            <h4 id="preview" class="mt-5">Ukázka dat</h4>
+            {% include resource-preview-json.html url=data_url %}
+            <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
+            {% include resource-scripts-json.html data_url=data_url %}
 
-          {% when 'csv' %}
-          <h4 id="preview" class="mt-5">Ukázka dat</h4>
-          {% include resource-preview-csv.html url=data_url %}
-          <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
-          {% include resource-scripts-csv.html data_url=data_url %}
+            {% when 'json-meta' %}
+            {% include resource-preview-json-meta.html url=data_url %}
 
-          {% when 'json' %}
-          <h4 id="preview" class="mt-5">Ukázka dat</h4>
-          {% include resource-preview-json.html url=data_url %}
-          <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
-          {% include resource-scripts-json.html data_url=data_url %}
+            {% when 'zip-csv' %}
+            {% include resource-preview-zip.html url=data_url %}
 
-          {% when 'json-meta' %}
-          {% include resource-preview-json-meta.html url=data_url %}
+            {% else %}<p class="py-3">Pro tento formát zatím neumíme ukázku dat zobrazit.</p>
 
-          {% when 'zip-csv' %}
-          {% include resource-preview-zip.html url=data_url %}
+            {% endcase %}
 
-          {% else %}<p class="py-3">Pro tento formát zatím neumíme ukázku dat zobrazit.</p>
-
-          {% endcase %}
+          </div>
+          {% endfor %}
 
         </div>
-        {% endfor %}
 
       </div>
 
 
 
-
-      <h2 id="metadata" class="mt-5">Katalogizační záznam</h2>
+      <h2 id="metadata" class="my-3">Katalogizační záznam</h2>
 
       <table class="table table-hover table-sm">
         <tbody>
@@ -89,7 +90,7 @@ sidebar_nav: nav-resource.html
   </div>
 
   <div class="col-lg-5 col-xl-4 bg-light order-first order-lg-last">
-    <div class="px-5 py-3">
+    <div class="px-3 px-md-5 py-3">
 
       <h2 class="mt-3">Licence</h2>
 
@@ -108,29 +109,7 @@ sidebar_nav: nav-resource.html
       <div class="download mt-4">
 
         {% for datasource in page.data %}
-
-        {% assign format_id = datasource[0] %}
-        {% assign data_url = datasource[1] %}
-        {% assign format = site.data.formats[format_id] %}
-
-        <div class="simple-card p-3 mb-3">
-          <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{data_url}}" onclick="event.stopPropagation();"><span class="material-icons">cloud_download</span></a>
-          <h5>{{format.title | default: format_id }}</h5>
-          <table class="mt-4 table table-sm">
-            <tr>
-              <th>Velikost</th>
-              <td class="text-right">20 MB</td>
-            </tr>
-            <tr>
-              <th>Poslední změna</th>
-              <td class="text-right">1. 2. 2200</td>
-            </tr>
-            <tr>
-              <th>ETAG</th>
-              <td class="text-right">"asljdlaksjdalks"</td>
-            </tr>
-          </table>
-        </div>
+        {% include download-card.html datasource=datasource %}
         {% endfor %}
 
       </div>

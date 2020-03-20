@@ -1,5 +1,5 @@
 ---
-title: Seznam smluv
+title: Seznam smluv Ministersta financí
 data:
   csv: https://opendata.mfcr.cz/exports/smlouvy/csv    
   json: https://opendata.mfcr.cz/exports/smlouvy/json   
@@ -7,8 +7,6 @@ metadata: https://opendata.mfcr.cz/exports/smlouvy
 license: Volné dílo
 
 ---
-
-Seznam smluv ministerstva financí
 
 ## Struktura
 

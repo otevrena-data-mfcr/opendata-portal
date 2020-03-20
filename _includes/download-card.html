@@ -1,0 +1,25 @@
+{% assign format_id = include.datasource[0] %}
+{% assign data_url = include.datasource[1] %}
+{% assign format = site.data.formats[format_id] %}
+
+<div class="simple-card p-3 mb-3">
+  <div class="float-right" onclick="event.stopPropagation();">
+    <a class="btn btn-sm copy" data-copy="{{data_url}}"><span class="material-icons action">link</span><span class="material-icons success">check_circle</span></a>
+    <a class="btn btn-sm btn-{{format.color | default:"primary"}}" href="{{data_url}}"><span class="material-icons">cloud_download</span></a>
+  </div>
+  <h5>{{format.title | default: format_id }}</h5>
+  <table class="mt-4 table table-sm">
+    <tr>
+      <th>Velikost</th>
+      <td class="text-right">20 MB</td>
+    </tr>
+    <tr>
+      <th>Poslední změna</th>
+      <td class="text-right">1. 2. 2200</td>
+    </tr>
+    <tr>
+      <th>ETAG</th>
+      <td class="text-right">"asljdlaksjdalks"</td>
+    </tr>
+  </table>
+</div>

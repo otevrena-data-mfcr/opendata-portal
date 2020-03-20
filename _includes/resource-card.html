@@ -1,5 +1,5 @@
 <div class="simple-card p-3 mb-3">
   <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{include.resource.url}}" onclick="event.stopPropagation();"><span class="material-icons">arrow_forward</span></a>
   <h5 class="m-0">{{include.resource.title}}</h5>
-  {% if include.resource.excerpt %}<div class="mt-2">{{include.resource.excerpt}}</div>{% endif %}
+  {% if include.resource.description %}<p>{{include.resource.description}}</p>{% endif %}
 </div>

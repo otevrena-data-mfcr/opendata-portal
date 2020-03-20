@@ -1,5 +1,7 @@
 ---
-title: Vazba na faktury
+title: Faktury dle smluv
+description: Vazební tabulka faktur ze zdroje dat Přehled faktur na čísla smluv z datové sady Přehled smluv
+
 data:
   csv: https://opendata.mfcr.cz/exports/smlouvy-faktury/csv    
   json: https://opendata.mfcr.cz/exports/smlouvy-faktury/json   
