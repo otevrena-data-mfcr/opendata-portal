@@ -3,7 +3,7 @@
 
     {% for dataset in include.datasets %}
     <div class="dataset{% if forloop.last == false %} mr-3{% endif %}">
-      {% include dataflix-card.html dataset=dataset %}
+      {% include frontpage/dataflix-card.html dataset=dataset %}
     </div>
     {% endfor %}
 
