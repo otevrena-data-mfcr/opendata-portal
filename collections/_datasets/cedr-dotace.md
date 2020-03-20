@@ -1,5 +1,6 @@
 ---
-title: Dotace z IS CEDR III
+title: Dotace
+description: Data o dotacích ze státního rozpočtu, státních fondů, evropských dotací a dalších zdrojů.
 
 systems:
   - cedr
