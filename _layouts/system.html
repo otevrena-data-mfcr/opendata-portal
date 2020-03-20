@@ -1,55 +1,15 @@
 ---
-layout: sidebar-systems
+layout: sidebar-datasets
 ---
 <h1>{{page.title}}</h1>
 
-<div class="row no-gutters h-100">
+{% assign datasets = site.datasets | where_exp:"item","item.systems contains page.slug" | sort:"title" %}
 
-  <div class="col-7">
-    <div class="py-3 px-5">
-
-
-      {% if page.screenshot %}
-      <div class="screenshot my-3" style="background-image: url('{{page.screenshot}}');"></div>
-      {% endif %}
-
-      <h2>Popis</h2>
-
-      {{page.content}}
-
-      <h2>Katalogizační záznam</h2>
-
-      <table class="table table-hover table-sm">
-        <tbody>
-          <tr>
-            <th>Název</th>
-            <td>{{page.title}}</td>
-          </tr>
-          <tr>
-            <th>Datum aktualizace</th>
-            <td>{{page.lastModified | date:"%d. %m. %Y"}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
+<div class="row no-gutters content">
+  <div class="col-md-8">
+    {% include dataset-list.html datasets=datasets %}
   </div>
-
-  <div class="col-5 bg-light">
-    <div class="py-4 px-5">
-      <h2>Datové sady</h2>
-      <ul>
-        {% for datasetId in page.datasets %}
-
-        {% assign dataset_path = datasetId | prepend:"_datasets/" | append: ".md" %}
-        {% assign datasets = site.datasets | where_exp:"item","item.path == dataset_path" %}
-
-        {% for dataset in datasets %}
-        <li><a href="{{dataset.url}}">{{dataset.name}}</a></li>
-        {% endfor %}
-
-        {% endfor %}
-      </ul>
-    </div>
+  <div class="col-md-4 bg-light">
+    {{content}}
   </div>
 </div>

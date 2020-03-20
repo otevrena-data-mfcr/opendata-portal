@@ -17,3 +17,10 @@
   <a class="nav-item nav-link" href="{{organization.url}}" title="{{organization.title}}">{{organization.title_short}} <span class="badge badge-pill badge-light float-right mt-1">{{site.datasets | where_exp:"item","item.organizations contains organization.slug" | size}}</span></a>
   {% endfor %}
 </nav>
+
+<h5 class="mt-4">IT systémy</h5>
+<nav class="ml-3">
+  {% for system in site.systems %}
+  <a class="nav-item nav-link" href="{{system.url}}" title="{{system.title}}">{{system.title_short}} <span class="badge badge-pill badge-light float-right mt-1">{{site.datasets | where_exp:"item","item.systems contains system.slug" | size}}</span></a>
+  {% endfor %}
+</nav>
