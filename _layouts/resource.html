@@ -15,7 +15,7 @@ sidebar_nav: nav-resource.html
 
       {{page.content}}
 
-      
+
       <h2 class="mt-5">Data</h2>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -52,14 +52,11 @@ sidebar_nav: nav-resource.html
           <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
           {% include resource-scripts-json.html data_url=data_url %}
 
-          {% when 'json-meta' %}          
-          <h4 id="preview" class="mt-5">Ukázka dat</h4>
-          {% include resource-preview-json.html url=data_url %}
-          <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
-          {% include resource-scripts-json.html data_url=data_url %}
-          
-          {% when 'zip-csv' %}          
-          {% include resource-preview-zip.html url=data_url %}   
+          {% when 'json-meta' %}
+          {% include resource-preview-json-meta.html url=data_url %}
+
+          {% when 'zip-csv' %}
+          {% include resource-preview-zip.html url=data_url %}
 
           {% else %}<p class="py-3">Pro tento formát zatím neumíme ukázku dat zobrazit.</p>
 
@@ -116,9 +113,28 @@ sidebar_nav: nav-resource.html
         {% assign data_url = datasource[1] %}
         {% assign format = site.data.formats[format_id] %}
 
-        <a class="btn btn-{{format.color | default:"primary"}} mb-3" href="{{data_url}}">{{format.title}}</a></a>
-        {% if forloop.last == false %}<br>{% endif %}
-
+        <div class="card mb-3">
+          <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#downloads-{{format_id}}" aria-expanded="true" aria-controls="downloads-{{format_id}}">
+            <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{data_url}}" onclick="event.stopPropagation();"><span class="material-icons">cloud_download</span></a>
+            <h5>{{format.title}}</h5>
+          </div>
+          <div class="collapse" id="downloads-{{format_id}}">
+            <div class="card-body">
+              
+              <table class="table table-sm table-responsive">
+                <tr>
+                  <th>Poslední změna</th>
+                  <td>1. 2. 2200</td>
+                </tr>
+                <tr>
+                  <th>ETAG</th>
+                  <td>"asljdlaksjdalks"</td>
+                </tr>
+              </table>
+              
+            </div>
+          </div>
+        </div>
         {% endfor %}
 
       </div>
