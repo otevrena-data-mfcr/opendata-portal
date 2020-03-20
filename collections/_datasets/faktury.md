@@ -4,6 +4,8 @@ description: Přehled uhrazených faktur Ministerstva financí ČR
 
 lastModified: 2020-02-27
 
+featured: true
+
 organizations:
   - mf
 

@@ -1,6 +1,15 @@
 <div class="dataflix py-5">
   <h1 class="mx-4 mb-5">Datové sady</h1>
 
+  <!-- FEATURED -->
+  {% assign datasets = site.datasets | where:"featured",true | sort:"title" %}
+  {% assign datasets_size = datasets | size %}
+
+  {% if datasets_size > 0 %}
+  <h2 id="dataflix-featured" class="mt-5 mb-3 mx-4">Vybrané datové sady <a href="datasets-featured.html">otevřít</a></h2>
+  {% include frontpage/dataflix-strip.html datasets=datasets %}
+  {% endif %}
+
   <!-- CATEGORIES -->
   <a id="dataflix-categories"></a>
   {% for category in site.categories %}

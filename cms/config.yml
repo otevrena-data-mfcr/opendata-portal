@@ -44,6 +44,7 @@ collections:
     fields:
       - { label: ID, name: id }
       - { label: Titulek, name: title }
+      - { label: Vybraná datová sada, name: featured, widget: boolean, default: false }
       - { label: Poslední změna metadat, name: lastModified, widget: datetime, timeFormat: false, format: "YYYY-MM-DD", dateFormat: "D. M. YYYY" }
       - { label: Popis, name: description, widget: text }
       - { label: Organizace, name: organizations, multiple: true, widget: relation, collection: organizations, searchFields: [title_short,title], displayFields: [title_short,title], valueField: slug }

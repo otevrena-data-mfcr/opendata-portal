@@ -4,6 +4,8 @@ title: Smlouvy Ministerstva financí
 lastModified: 2020-03-17
 description: Tabulkový přehled platných i neplatných smluv Ministerstva financí s vazbou na faktury.
 
+featured: true
+
 categories:
   - hospodareni
 
