@@ -12,6 +12,5 @@ resources:
   - monitor-ciselniky-aktivni-organizace
 
 systems:
-  - monitor
-  - iissp
+- monitor  
 ---

@@ -10,6 +10,9 @@ organizations:
 
 categories:
   - hospodareni
+
+systems:  
+  - monitor
   
 links:
   - title: Popis struktury (XLS)
