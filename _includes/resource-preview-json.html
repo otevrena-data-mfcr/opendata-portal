@@ -20,7 +20,7 @@
         return;
       }
 
-      downloadPartialData(pageUrl, 1024, function (message, text, jqXHR) {
+      downloadPartialData(pageUrl, 0, 1024, function (message, text, jqXHR) {
 
         var json = partialParse(message);
 

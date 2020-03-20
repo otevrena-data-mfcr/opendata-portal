@@ -14,10 +14,22 @@ $(document).ready(function () {
 
 });
 
-function getHeaders(url, callback) {
+$.ajaxSetup({
+  beforeSend: function (jqXHR, settings) {
+    if (settings.dataType === 'binary') {
+      settings.xhr().responseType = 'arraybuffer';
+    }
+  }
+})
 
+function getGatewayUrl(url) {
+  // return "https://opendata.mfcr.cz/gateway/" + url.replace("//","/");
+  return url;
+}
+
+function getHeaders(url, callback) {
   $.ajax({
-    url: url,
+    url: getGatewayUrl(url),
     method: "HEAD",
     async: true,
     cache: false
@@ -32,21 +44,36 @@ function getHeaders(url, callback) {
 
 function downloadJSON(url, callback) {
   $.get({
-    url: url,
+    url: getGatewayUrl(url),
     method: "GET",
     dataType: "json"
-  }).done(callback);
+  }).then(callback);
 }
 
-function downloadPartialData(url, size, callback) {
+function downloadPartialData(url, start, size, callback) {
   $.get({
-    url: url,
+    url: getGatewayUrl(url),
     method: "GET",
     headers: {
-      "Range": `bytes=0-${size}`
+      "Range": `bytes=${start}-${size}`
     },
     dataType: "text"
-  }).done(callback);
+  }).then(callback);
+}
+
+function downloadPartialBinary(url, start, size, callback) {
+  var xhrOverride = new XMLHttpRequest();
+  xhrOverride.responseType = 'arraybuffer';
+  $.get({
+    url: getGatewayUrl(url),
+    method: "GET",
+    headers: {
+      "Range": `bytes=${start}-${size}`
+    },
+    xhr: function () {
+      return xhrOverride;
+    }
+  }).then(callback);
 }
 
 

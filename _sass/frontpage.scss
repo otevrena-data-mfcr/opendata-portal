@@ -67,16 +67,20 @@
       border-right: none;
     }
   }
-}
 
-.posts {
-  .post {
+  .posts {
+    .post {
+      background-color: $white;
+      border-radius: 5px;
+    }
+  }
+
+  .twitter {
     background-color: $white;
     border-radius: 5px;
   }
-}
 
-.twitter {
-  background-color: $white;
-  border-radius: 5px;
+  .search {
+    box-shadow: $shadow;
+  }
 }

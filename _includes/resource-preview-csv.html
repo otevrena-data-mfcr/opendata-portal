@@ -21,18 +21,18 @@
     var delimiter = ",";
 
     function fillCode(data) {
-      var lines = data.split("\n").slice(0,11)
+      var lines = data.split("\n").slice(0, 11)
       lines.pop();
       $("#resource-preview-csv-code").text(lines.join("\n"));
     }
 
     function fillTable(data) {
 
-      var rows = $.csv.toArrays(data).slice(0,11)
+      var rows = $.csv.toArrays(data).slice(0, 11)
       rows.pop();
 
       var headerRow = rows.shift();
-      $("#resource-preview-csv-table thead").append(createRow(headerRow));
+      $("#resource-preview-csv-table thead").append(createRow(headerRow, true));
 
       rows.forEach(function (row) {
         $("#resource-preview-csv-table tbody").append(createRow(row));
@@ -63,7 +63,7 @@
         return;
       }
 
-      downloadPartialData(pageUrl, 4196, function (message, text, jqXHR) {
+      downloadPartialData(pageUrl, 0, 4196, function (message, text, jqXHR) {
 
         fillTable(message);
 
