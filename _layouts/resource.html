@@ -53,7 +53,10 @@ sidebar_nav: nav-resource.html
           {% include resource-scripts-json.html data_url=data_url %}
 
           {% when 'json-meta' %}          
-          {% include resource-preview-json-meta.html url=data_url %}   
+          <h4 id="preview" class="mt-5">Ukázka dat</h4>
+          {% include resource-preview-json.html url=data_url %}
+          <h4 id="scripts" class="mt-5">Kód ke stažení</h4>
+          {% include resource-scripts-json.html data_url=data_url %}
           
           {% when 'zip-csv' %}          
           {% include resource-preview-zip.html url=data_url %}   
