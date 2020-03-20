@@ -1,6 +1,6 @@
 ---
 title: Dotace
-description: Data o dotacích ze státního rozpočtu, státních fondů, evropských dotací a dalších zdrojů.
+description: Data o dotacích, návratných finančních výpomocích a dalších podobných transferech ze státního rozpočtu, státních fondů, evropských fondů a jejich příjemcích.
 
 systems:
   - cedr
