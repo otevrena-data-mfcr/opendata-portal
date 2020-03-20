@@ -23,8 +23,8 @@ $.ajaxSetup({
 })
 
 function getGatewayUrl(url) {
-  // return "https://opendata.mfcr.cz/gateway/" + url.replace("//","/");
-  return url;
+  return "https://opendata.mfcr.cz/gateway/" + url.replace("//","/");
+  //return url;
 }
 
 function getHeaders(url, callback) {
