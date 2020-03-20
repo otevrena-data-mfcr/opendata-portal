@@ -1,6 +1,6 @@
 ---
-title: Plnění rozpočtu kapitol a OSS (FIN 1-12 OSS)
-description: Plnění rozpočtu kapitol a organizačních složek státu
+title: Plnění rozpočtu kapitol a OSS
+description: Plnění rozpočtu kapitol a organizačních složek státu. Reporty FIN 1-12 OSS.
 
 resources:
   - monitor-misris-2019-09
