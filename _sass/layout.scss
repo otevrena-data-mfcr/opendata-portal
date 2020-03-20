@@ -30,6 +30,11 @@ footer {
   }
 }
 
+.page {
+  height: calc(100vh - 60px);
+  overflow: auto;
+}
+
 .sidebar-layout {
   .sidebar {
     background-color: $blue;
@@ -81,10 +86,6 @@ footer {
       @extend .px-md-5;
       background-color: $blue-light;
       margin: 0;
-    }
-    @include media-breakpoint-up(md) {
-      height: calc(100vh - 60px);
-      overflow: auto;
     }
   }
 

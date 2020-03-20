@@ -1,7 +1,7 @@
 ---
 layout: main
 ---
-<div class="frontpage">
+<div class="page frontpage">
   <div class="hero pt-5">
     <div class="mt-5 container-fluid">
       <h1 class="pt-md-5 text-center">Otevřená data Ministerstva financí</h1>
@@ -12,7 +12,7 @@ layout: main
         </div>
       </div>
 
-      <div class="container mt-5 pt-5 pb-4 categories">
+      <div class="container mt-5 pt-4 pb-4 categories">
         <div class="row">
           {% for category in site.categories %}
           <div class="col category text-center">
@@ -65,25 +65,30 @@ layout: main
     </div>
 
   </div>
+
+  {% include dataflix.html %}
+
   <div class="py-5">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
 
         <div class="col-md-7 posts">
           {% assign posts = site.posts | slice:0,3 %}
           {% for post in posts %}
-          <div class="post p-3">
+          <div class="post p-3 mb-3">
             <h3 class="mb-3">{{ post.title }}</h3>
             {{post.content}}
           </div>
           {% endfor %}
         </div>
 
-        <div class="col-md-5 twitter">
-          <div class="p-3 pb-4">
-            <h3 class="mb-3">Twitter</h3>
-            <a class="twitter-timeline" data-chrome="nofooter noborders noheader transparent" data-lang="cs" data-height="600" href="https://twitter.com/otevrenadatamf?ref_src=twsrc%5Etfw">Tweets by otevrenadatamf</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="col-md-5">
+          <div class="twitter">
+            <div class="p-3 pb-4">
+              <h3 class="mb-3">Twitter</h3>
+              <a class="twitter-timeline" data-chrome="nofooter noborders noheader transparent" data-lang="cs" data-height="600" href="https://twitter.com/otevrenadatamf?ref_src=twsrc%5Etfw">Tweets by otevrenadatamf</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
           </div>
         </div>
 

@@ -3,7 +3,6 @@
 .frontpage {
   @extend .bg-light;
 
-  min-height: 100vh;
   .hero {
     color: $white;
     background-color: $blue;

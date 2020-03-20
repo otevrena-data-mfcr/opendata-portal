@@ -1,0 +1,13 @@
+<div class="strip">
+  <div class="datasets px-4 px-md-5 py-3">
+
+    {% for dataset in include.datasets %}
+    <div class="dataset{% if forloop.last == false %} mr-3{% endif %}">
+      {% include dataflix-card.html dataset=dataset %}
+    </div>
+    {% endfor %}
+
+  </div>
+  <div class="scroller scroller-left"><span class="material-icons">chevron_left</span></div>
+  <div class="scroller scroller-right"><span class="material-icons">chevron_right</span></div>
+</div>

@@ -1,0 +1,41 @@
+<div class="dataflix py-5">
+  <h1 class="mx-4 mb-5">Datové sady</h1>
+
+  <!-- CATEGORIES -->
+  {% for category in site.categories %}
+  {% assign datasets = site.datasets | where_exp:"item","item.categories contains category.slug" %}
+  {% assign datasets_size = datasets | size %}
+
+  {% if datasets_size > 0 %}
+  <h2 class="mt-5 mb-3 mx-4">{{category.title}}</h2>
+  {% include dataflix-strip.html datasets=datasets %}
+  {% endif %}
+
+  {% endfor %}
+
+
+  <!-- ORGANIZATIONS -->
+  {% for organization in site.organizations %}
+  {% assign datasets = site.datasets | where_exp:"item","item.organizations contains organization.slug" %}
+  {% assign datasets_size = datasets | size %}
+
+  {% if datasets_size > 0 %}
+  <h2 class="mt-5 mb-3 mx-4">{{organization.title}}</h2>
+  {% include dataflix-strip.html datasets=datasets %}
+  {% endif %}
+
+  {% endfor %}
+
+  <!-- SYSTEMS -->
+  {% for system in site.systems %}
+  {% assign datasets = site.datasets | where_exp:"item","item.systems contains system.slug" %}
+  {% assign datasets_size = datasets | size %}
+
+  {% if datasets_size > 0 %}
+  <h2 class="mt-5 mb-3 mx-4">{{system.title_short}} - {{system.title}}</h2>
+  {% include dataflix-strip.html datasets=datasets %}
+  {% endif %}
+
+  {% endfor %}
+
+</div>
