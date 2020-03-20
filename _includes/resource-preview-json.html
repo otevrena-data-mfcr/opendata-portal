@@ -20,11 +20,13 @@
         return;
       }
 
-      downloadPartialData(pageUrl, 0, 1024, function (message, text, jqXHR) {
+      var size = Number(headers["content-length"]);
+
+      downloadPartialData(pageUrl, 0, Math.min(1024, size - 1), function (message, text, jqXHR) {
 
         var json = partialParse(message);
 
-        if(Array.isArray(json)) json = json.slice(0,1);
+        if (Array.isArray(json)) json = json.slice(0, 1);
 
         $("#resource-preview-json").text(JSON.stringify(json, undefined, 2))
         $("#resource-preview-json").show();
