@@ -33,3 +33,21 @@ h4 {
     vertical-align: middle;
   }
 }
+
+.simple-card {
+  display: block;
+  border-radius: 5px;
+  color: $black;
+  background-color: $white;
+  box-shadow: $shadow-light;
+  h5 {
+    color: $blue;
+    line-height: 35px;
+  }
+  p {
+    margin: 0;
+    opacity: 0.8;
+    margin-right: 60px;
+    text-align: left;
+  }
+}

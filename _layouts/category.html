@@ -5,12 +5,13 @@ layout: sidebar-datasets
 
 {{ content }}
 
-<ul>
+{% assign datasets = site.datasets | where_exp:"item","item.categories contains page.slug" | sort:"title" %}
 
-  {% assign category_id = page.slug %}  
-  {% assign datasets = site.datasets | where_exp:"item","item.categories contains category_id" %}
-  
-  {% for dataset in datasets %}
-  <li><a href="{{dataset.url}}">{{dataset.title}}</a></li>
-  {% endfor %}
-</ul>
+<div class="row">
+  <div class="col-md-8">
+    {% include dataset-list.html datasets=datasets %}
+  </div>
+  <div class="col-md-4 bg-light">
+    {{content}}
+  </div>
+</div>

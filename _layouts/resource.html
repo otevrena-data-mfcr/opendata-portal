@@ -23,7 +23,7 @@ sidebar_nav: nav-resource.html
         {% assign format_id = format[0] %}
         <li class="nav-item">
           <a class="nav-link{% if forloop.first %} active{% endif %}" id="tab-code-csv" data-toggle="tab" href="#code-{{format_id}}" role="tab" aria-controls="code-csv" aria-selected="true">
-            {{site.data.formats[format_id].title}}
+            {{site.data.formats[format_id].title | default: format_id}}
           </a>
         </li>
         {% endfor %}
@@ -113,27 +113,23 @@ sidebar_nav: nav-resource.html
         {% assign data_url = datasource[1] %}
         {% assign format = site.data.formats[format_id] %}
 
-        <div class="card mb-3">
-          <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#downloads-{{format_id}}" aria-expanded="true" aria-controls="downloads-{{format_id}}">
-            <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{data_url}}" onclick="event.stopPropagation();"><span class="material-icons">cloud_download</span></a>
-            <h5>{{format.title}}</h5>
-          </div>
-          <div class="collapse" id="downloads-{{format_id}}">
-            <div class="card-body">
-              
-              <table class="table table-sm table-responsive">
-                <tr>
-                  <th>Poslední změna</th>
-                  <td>1. 2. 2200</td>
-                </tr>
-                <tr>
-                  <th>ETAG</th>
-                  <td>"asljdlaksjdalks"</td>
-                </tr>
-              </table>
-              
-            </div>
-          </div>
+        <div class="simple-card p-3 mb-3">
+          <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{data_url}}" onclick="event.stopPropagation();"><span class="material-icons">cloud_download</span></a>
+          <h5>{{format.title | default: format_id }}</h5>
+          <table class="mt-4 table table-sm">
+            <tr>
+              <th>Velikost</th>
+              <td class="text-right">20 MB</td>
+            </tr>
+            <tr>
+              <th>Poslední změna</th>
+              <td class="text-right">1. 2. 2200</td>
+            </tr>
+            <tr>
+              <th>ETAG</th>
+              <td class="text-right">"asljdlaksjdalks"</td>
+            </tr>
+          </table>
         </div>
         {% endfor %}
 

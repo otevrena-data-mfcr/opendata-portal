@@ -3,11 +3,13 @@ layout: sidebar-datasets
 ---
 <h1>{{page.title}}</h1>
 
-{% assign organizationId = page.path | split:"/" | last | split:"." | first %}
-{% assign organizationDatasets = site.datasets | where_exp:"item","item.organizations contains organizationId" %}
+{% assign datasets = site.datasets | where_exp:"item","item.organizations contains page.slug" | sort:"title" %}
 
-<div class="p-3 px-lg-5">
-  {% for dataset in organizationDatasets %}
-  {% include dataset-card.html dataset=dataset %}
-  {% endfor %}
+<div class="row">
+  <div class="col-md-8">
+    {% include dataset-list.html datasets=datasets %}
+  </div>
+  <div class="col-md-4 bg-light">
+    {{content}}
+  </div>
 </div>

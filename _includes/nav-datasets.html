@@ -1,5 +1,9 @@
 {% include search.html %}
 
+<nav class="mt-5">
+  <a class="nav-item nav-link" href="/datasets.html">Všechny datové sady <span class="badge badge-pill badge-light float-right mt-1">{{site.datasets | size}}</span></a>
+</nav>
+
 <h5 class="mt-4">Kategorie</h5>
 <nav class="m-3">
   {% for category in site.categories %}

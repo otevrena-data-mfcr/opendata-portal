@@ -44,20 +44,20 @@ layout: main
             {% assign systems_count = site.systems | size %}
             <div class="number">{{systems_count}}</div>
 
-            {% if systems_count == 1 %}informační systém
-            {% elsif systems_count >= 2 and systems_count <= 4 %}informační systémy
-            {% else %}informačních systémů
+            {% if systems_count == 1 %}IT systém
+            {% elsif systems_count >= 2 and systems_count <= 4 %}IT systémy
+            {% else %}IT systémů
             {% endif %}
           </a>
         </div>
         <div class="col">
-          <a href="categories.html">
-            {% assign datasets_count = site.datasets | size %}
-            <div class="number">{{datasets_count}}</div>
+          <a href="datasets.html">
+            {% assign resources_count = site.resources | size %}
+            <div class="number">{{resources_count}}</div>
 
-            {% if datasets_count == 1 %}datová sada
-            {% elsif datasets_count >= 2 and datasets_count <= 4 %}datové sady
-            {% else %}datových sad
+            {% if resources_count == 1 %}zdroj sada
+            {% elsif resources_count >= 2 and resources_count <= 4 %}zdroje dat
+            {% else %}zdrojů dat
             {% endif %}
           </a>
         </div>

@@ -1,1 +1,25 @@
-<a href="{{include.dataset.url}}">{{include.dataset.title}}</a>
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">{{include.dataset.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{include.dataset.description}}</h6>
+    <p class="card-text">{{include.dataset.excerpt}}</p>
+    {% assign resources_size = include.dataset.resources | size %}
+
+    <a class="card-link">
+      {{resources_size}}
+      {% if resources_size == 1 %}zdroj dat
+      {% elsif resources_size >=2 and resources_size <= 4 %}zdroje dat
+      {% else %} zdrojů dat
+      {% endif %}
+    </a>
+
+    <a class="card-link">
+      {% for organizationId in include.dataset.organizations %}
+      {% assign organization = site.organizations | where_exp:"item","item.slug == organizationId" | first %}
+      {{organization.title_short}}{% if forloop.last == false %}, {% endif %}
+      {% endfor %}
+    </a>
+
+    <a href="{{include.dataset.url}}" class="card-link float-right">Otevřít</a>
+  </div>
+</div>
