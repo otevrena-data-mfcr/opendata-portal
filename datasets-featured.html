@@ -1,0 +1,15 @@
+---
+layout: sidebar-datasets
+---
+<h1>Vybrané datové sady</h1>
+
+{% assign datasets = site.datasets | where:"featured",true | sort:"title" %}
+
+<div class="row no-gutters content">
+  <div class="col-md-8">
+    {% include dataset-list.html datasets=datasets %}
+  </div>
+  <div class="col-md-4 bg-light">
+    
+  </div>
+</div>
