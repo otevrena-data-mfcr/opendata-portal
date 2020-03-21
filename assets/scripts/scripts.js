@@ -18,11 +18,11 @@ $(document).ready(function () {
   });
 
   function assignAnimatedScroll(target) {
-    target.on("click", function (e) {
+    $(target).on("click", function (e) {
       e.preventDefault();
       var target = $($(this).attr("href"));
       var scrollTarget = $(this).data("scroll-target") ? $($(this).data("scroll-target")) : $('.page');
-      var offset = target.offset().top - scrollTarget.offset().top - 50;      
+      var offset = target.offset().top - scrollTarget.offset().top - 50;
       scrollTarget.animate({ scrollTop: offset }, '250ms');
     });
   }
@@ -56,6 +56,22 @@ $(document).ready(function () {
       $(toc).append(tocLink);
     })
 
+  });
+
+  $(".dataflix .strip").each(function () {
+    var scrollTarget = $(this).children(".datasets").first();
+    var leftArrow = $(this).children(".scroller-left").first();
+    var rightArrow = $(this).children(".scroller-right").first();
+
+    var scrollAmount = $(this).find(".dataset").first().outerWidth(true) || 416;
+    var scrollWidth = scrollTarget[0].scrollWidth;
+
+    rightArrow.on("click", function () {
+      scrollTarget.animate({ scrollLeft: Math.min(scrollWidth, Math.ceil(scrollTarget.scrollLeft() / scrollAmount + 1) * scrollAmount) }, "250ms");
+    })
+    leftArrow.on("click", function () {
+      scrollTarget.animate({ scrollLeft: Math.max(0, Math.ceil(scrollTarget.scrollLeft() / scrollAmount - 1) * scrollAmount) }, "250ms");
+    })
   })
 
 });

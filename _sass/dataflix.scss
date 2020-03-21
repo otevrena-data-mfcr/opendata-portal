@@ -25,6 +25,7 @@
       background-color: rgba(0, 0, 0, 0.3);
       transition: 250ms opacity;
       cursor: pointer;
+      user-select: none;
       span {
         position: absolute;
         top: 50%;
