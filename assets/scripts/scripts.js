@@ -101,7 +101,9 @@ function getHeaders(url, callback) {
   }).done(function (message, text, jqXHR) {
     callback({
       "accept-ranges": jqXHR.getResponseHeader('Accept-Ranges'),
-      "content-length": jqXHR.getResponseHeader('Content-Length')
+      "content-length": jqXHR.getResponseHeader('Content-Length'),
+      "last-modified": jqXHR.getResponseHeader('Last-Modified'),
+      "etag": jqXHR.getResponseHeader('ETag'),
     });
   });
 
