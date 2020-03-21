@@ -170,9 +170,9 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 function prettyBytes(size) {
-  if (size > 1024 * 1024 * 1024) return Math.round(size / (1024 * 1024 * 1024) * 100) / 100 + "GB";
-  if (size > 1024 * 1024) return Math.round(size / (1024 * 1024) * 100) / 100 + "MB";
-  if (size > 1024) return Math.round(size / (1024) * 100) / 100 + "kB";
+  if (size > 1024 * 1024 * 1024) return Math.round(size / (1024 * 1024 * 1024) * 100) / 100 + " GB";
+  if (size > 1024 * 1024) return Math.round(size / (1024 * 1024) * 100) / 100 + " MB";
+  if (size > 1024) return Math.round(size / (1024) * 100) / 100 + " kB";
   return size + "B";
 }
 
