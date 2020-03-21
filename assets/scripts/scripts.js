@@ -64,13 +64,13 @@ $(document).ready(function () {
     var rightArrow = $(this).children(".scroller-right").first();
 
     var scrollAmount = $(this).find(".dataset").first().outerWidth(true) || 416;
-    var scrollWidth = scrollTarget[0].scrollWidth;
+    var viewportWidth = scrollTarget.width();
 
-    rightArrow.on("click", function () {
-      scrollTarget.animate({ scrollLeft: Math.min(scrollWidth, Math.ceil(scrollTarget.scrollLeft() / scrollAmount + 1) * scrollAmount) }, "250ms");
-    })
     leftArrow.on("click", function () {
       scrollTarget.animate({ scrollLeft: Math.max(0, Math.ceil(scrollTarget.scrollLeft() / scrollAmount - 1) * scrollAmount) }, "250ms");
+    })
+    rightArrow.on("click", function () {
+      scrollTarget.animate({ scrollLeft: scrollTarget.scrollLeft() + scrollAmount - (scrollTarget.scrollLeft() + viewportWidth) % scrollAmount }, "250ms");
     })
   })
 
