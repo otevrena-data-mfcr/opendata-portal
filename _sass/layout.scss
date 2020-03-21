@@ -38,10 +38,6 @@ footer {
 .sidebar-layout {
   .sidebar {
     background-color: $blue;
-    @include media-breakpoint-up(md) {
-      height: calc(100vh - 60px);
-      overflow: auto;
-    }
 
     .title {
       @extend h1;
@@ -75,6 +71,20 @@ footer {
       a:active {
         background-color: rgba(255, 255, 255, 0.2);
       }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .sidebar {
+      height: calc(100vh - 60px);
+      overflow: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+    .sidebar::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0;
     }
   }
 
