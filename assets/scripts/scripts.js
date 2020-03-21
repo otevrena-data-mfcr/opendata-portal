@@ -18,12 +18,11 @@ $(document).ready(function () {
   });
 
   function assignAnimatedScroll(target) {
-    target.click(function (e) {
+    target.on("click", function (e) {
       e.preventDefault();
       var target = $($(this).attr("href"));
       var scrollTarget = $(this).data("scroll-target") ? $($(this).data("scroll-target")) : $('.page');
-      var offset = target.offset().top - scrollTarget.offset().top - 50;
-      console.log("scrolling", scrollTarget);
+      var offset = target.offset().top - scrollTarget.offset().top - 50;      
       scrollTarget.animate({ scrollTop: offset }, '250ms');
     });
   }
