@@ -1,5 +1,5 @@
 ---
-title: Vývoj penzijního připojištění a doplňkového penzijního spoření
+title: Penzijní připojištění a spoření
 
 lastModified: 2020-03-17
 description: Základní ukazatele vývoje penzijního připojištění a doplňkového penzijního spoření v České republice.
