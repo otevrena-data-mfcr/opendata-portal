@@ -10,6 +10,7 @@ organizations:
 
 categories:
   - hospodareni
+  - rozpocet
 
 systems:  
   - monitor
