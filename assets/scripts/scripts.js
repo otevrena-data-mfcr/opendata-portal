@@ -17,15 +17,49 @@ $(document).ready(function () {
 
   });
 
-});
-
-$.ajaxSetup({
-  beforeSend: function (jqXHR, settings) {
-    if (settings.dataType === 'binary') {
-      settings.xhr().responseType = 'arraybuffer';
-    }
+  function assignAnimatedScroll(target) {
+    target.click(function (e) {
+      e.preventDefault();
+      var target = $($(this).attr("href"));
+      var scrollTarget = $(this).data("scroll-target") ? $($(this).data("scroll-target")) : $('.page');
+      var offset = target.offset().top - scrollTarget.offset().top - 50;
+      console.log("scrolling", scrollTarget);
+      scrollTarget.animate({ scrollTop: offset }, '250ms');
+    });
   }
-})
+  $("a[href*=\\#]").each(function () {
+    assignAnimatedScroll(this);
+  })
+
+  var tocLastId = 0;
+
+  $(".autotoc").each(function () {
+    var toc = this;
+    var targetId = $(this).data("target");
+    var levels = $(this).data("levels") || "h1,h2";
+
+    var tocLinkTemplate = $("<a/>");
+
+    if ($(this).data("scroll-target")) tocLinkTemplate.data("scroll-target", $(this).data("scroll-target"));
+
+    var tocItems = $(targetId).find(levels).toArray();
+    tocItems.sort(function (a, b) { return $(a).offset().top - $(b).offset().top; });
+
+    tocItems.forEach(function (tocItem) {
+      var id = $(tocItem).attr("id");
+      if (!id) {
+        tocLastId++;
+        id = "toc_" + tocLastId;
+        $(tocItem).attr("id", id);
+      }
+      var tocLink = tocLinkTemplate.clone(true).text($(tocItem).text()).attr("href", "#" + id);
+      assignAnimatedScroll(tocLink);
+      $(toc).append(tocLink);
+    })
+
+  })
+
+});
 
 function getGatewayUrl(url) {
   return "https://opendata.mfcr.cz/gateway/" + url.replace("//", "/");
