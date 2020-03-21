@@ -2,7 +2,7 @@
 {% assign data_url = include.datasource[1] %}
 {% assign format = site.data.formats[format_id] %}
 
-<div class="simple-card p-3 mb-3">
+<div class="simple-card download-card p-3 mb-3" data-url="{{data_url}}">
   <div class="float-right" onclick="event.stopPropagation();">
     <a class="btn btn-sm copy" data-copy="{{data_url}}"><span class="material-icons action">link</span><span class="material-icons success">check_circle</span></a>
     <a class="btn btn-sm btn-{{format.color | default:"primary"}}" href="{{data_url}}"><span class="material-icons">cloud_download</span></a>
@@ -11,15 +11,15 @@
   <table class="mt-4 table table-sm">
     <tr>
       <th>Velikost</th>
-      <td class="text-right">20 MB</td>
+      <td class="text-right size"></td>
     </tr>
     <tr>
       <th>Poslední změna</th>
-      <td class="text-right">1. 2. 2200</td>
+      <td class="text-right date"></td>
     </tr>
     <tr>
       <th>ETAG</th>
-      <td class="text-right">"asljdlaksjdalks"</td>
+      <td class="text-right etag"></td>
     </tr>
   </table>
 </div>

@@ -72,6 +72,17 @@ $(document).ready(function () {
     rightArrow.on("click", function () {
       scrollTarget.animate({ scrollLeft: scrollTarget.scrollLeft() + scrollAmount - (scrollTarget.scrollLeft() + viewportWidth) % scrollAmount }, "250ms");
     })
+  });
+
+  $(".download-card").each(function () {
+    var url = $(this).data("url");
+    var card = $(this);
+
+    getHeaders(url, function (headers) {
+      card.find(".size").text(prettyBytes(Number(headers["content-length"])));
+      card.find(".date").text(headers["last-modified"]);
+      card.find(".etag").text(headers["etag"]);
+    });
   })
 
 });
@@ -154,6 +165,13 @@ function fallbackCopyTextToClipboard(text) {
   }
 
   document.body.removeChild(textArea);
+}
+
+function prettyBytes(size) {
+  if (size > 1024 * 1024 * 1024) return Math.round(size / (1024 * 1024 * 1024) * 100) / 100 + "GB";
+  if (size > 1024 * 1024) return Math.round(size / (1024 * 1024) * 100) / 100 + "MB";
+  if (size > 1024) return Math.round(size / (1024) * 100) / 100 + "kB";
+  return size + "B";
 }
 
 function copyTextToClipboard(text) {
