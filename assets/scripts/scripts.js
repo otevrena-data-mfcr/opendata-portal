@@ -22,7 +22,7 @@ $(document).ready(function () {
       e.preventDefault();
       var target = $($(this).attr("href"));
       var scrollTarget = $(this).data("scroll-target") ? $($(this).data("scroll-target")) : $('.page');
-      var offset = target.offset().top - scrollTarget.offset().top - 50;
+      var offset = target.offset().top - scrollTarget.offset().top + scrollTarget.scrollTop() - 50;
       scrollTarget.animate({ scrollTop: offset }, '250ms');
     });
   }
