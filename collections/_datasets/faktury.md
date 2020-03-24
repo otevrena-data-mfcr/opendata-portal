@@ -13,9 +13,12 @@ categories:
   - hospodareni
 
 resources:
- - faktury
- - faktury-polozky
- - smlouvy-faktury
+  - faktury
+  - faktury-polozky
+  - smlouvy-faktury
+
+systems:
+  - avis
 
 links:
   - title: Web MF
