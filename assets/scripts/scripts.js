@@ -84,6 +84,7 @@ $(document).ready(function () {
       card.find(".size").text(prettyBytes(Number(headers["content-length"])));
       card.find(".date").text(headers["last-modified"]);
       card.find(".etag").text(headers["etag"]);
+      card.find(".type").text(headers["content-type"]);
     });
   })
 
@@ -105,7 +106,8 @@ function getHeaders(url, callback) {
       "accept-ranges": jqXHR.getResponseHeader('Accept-Ranges'),
       "content-length": jqXHR.getResponseHeader('Content-Length'),
       "last-modified": jqXHR.getResponseHeader('Last-Modified'),
-      "etag": jqXHR.getResponseHeader('ETag'),
+      "content-type": jqXHR.getResponseHeader('Content-Type'),
+      "etag": jqXHR.getResponseHeader('ETag')
     });
   });
 
