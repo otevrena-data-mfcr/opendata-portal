@@ -17,6 +17,9 @@ json-meta:
   title: JSON METADATA
   color: success
 
+rdf:
+  title: RDF
+
 api:
   title: API
   color: success
