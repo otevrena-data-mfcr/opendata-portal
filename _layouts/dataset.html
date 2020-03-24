@@ -63,9 +63,8 @@ sidebar_nav: nav-dataset.html
       <h3 class="mt-5 mb-3">Další zdroje</h3>
       <nav class="mt-3">
         {% for link in page.links %}
-        <a class="nav-item nav-link" href="{{link.url}}">{{link.title}}</a>
+        {% include link-card.html link=link %}
         {% endfor %}
-
       </nav>
       {% endif %}
 

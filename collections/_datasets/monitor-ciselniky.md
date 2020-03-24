@@ -1,5 +1,5 @@
 ---
-title: MONITOR - číselníky
+title: MONITOR - Číselníky
 description: Číselníky v systému MONITOR Státní pokladny
 
 organizations:
