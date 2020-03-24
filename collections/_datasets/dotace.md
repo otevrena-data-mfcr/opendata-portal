@@ -14,6 +14,8 @@ categories:
   - dotace
 
 resources:
+  - cedr-dotace
+  - cedr-rozhodnuti
 
 links:
   - title: Webové rozhraní IS CEDR III
