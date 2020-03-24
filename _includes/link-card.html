@@ -1,5 +1,5 @@
 <div class="simple-card p-3 mb-3">
-  <a class="btn btn-sm btn-secondary float-right" href="{{include.link.url}}" onclick="event.stopPropagation();"><span class="material-icons">arrow_forward</span></a>
+  <a class="btn btn-sm btn-success float-right" href="{{include.link.url}}" onclick="event.stopPropagation();"><span class="material-icons">{% if include.link.download %}cloud_download{% else %}arrow_forward{% endif %}</span></a>
   <h5 class="m-0">{{include.link.title}}</h5>
   {% if include.link.description %}<p>{{include.link.description}}</p>{% endif %}
 </div>

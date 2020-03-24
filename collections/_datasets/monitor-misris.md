@@ -18,4 +18,5 @@ systems:
 links:
   - title: Popis struktury (XLS)
     url: https://monitor.statnipokladna.cz/data/struktura/misris.xlsx
+    download: true
 ---
