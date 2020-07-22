@@ -6,10 +6,7 @@
           {% assign organizations_count = site.organizations | size %}
           <div class="number">{{organizations_count}}</div>
 
-          {% if organizations_count == 1 %}organizace
-          {% elsif organizations_count >= 2 and organizations_count <= 4 %}organizace
-          {% else %}organizací
-          {% endif %}
+          {% include phrases/organizations-count.html count=organizations_count %}
         </a>
       </div>
       <div class="col">
@@ -17,21 +14,15 @@
           {% assign systems_count = site.systems | size %}
           <div class="number">{{systems_count}}</div>
 
-          {% if systems_count == 1 %}IT systém
-          {% elsif systems_count >= 2 and systems_count <= 4 %}IT systémy
-          {% else %}IT systémů
-          {% endif %}
+          {% include phrases/systems-count.html count=systems_count %}
         </a>
       </div>
       <div class="col">
         <a href="#dataflix-featured">
-          {% assign resources_count = site.resources | size %}
-          <div class="number">{{resources_count}}</div>
+          {% assign datasets_count = site.datasets | size %}
+          <div class="number">{{datasets_count}}</div>
 
-          {% if resources_count == 1 %}zdroj sada
-          {% elsif resources_count >= 2 and resources_count <= 4 %}zdroje dat
-          {% else %}zdrojů dat
-          {% endif %}
+          {% include phrases/datasets-count.html count=datasets_count %}
         </a>
       </div>
     </div>

@@ -1,31 +1,5 @@
 <div class="simple-card p-3 mb-3">
-  <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{include.dataset.url}}"><span class="material-icons">arrow_forward</span></a>
-  <h5>{{include.dataset.title}}</h5>
-  <p>{{include.dataset.description}}</p>
-
-  {% assign resources_size = include.dataset.resources | size %}
-
-  <span class="card-link">
-    {{resources_size}}
-    {% if resources_size == 1 %}zdroj dat
-    {% elsif resources_size >=2 and resources_size <= 4 %}zdroje dat
-    {% else %} zdrojů dat
-    {% endif %}
-  </span>
-
-  <span class="card-link">
-    {% for organizationId in include.dataset.organizations %}
-    {% assign organization = site.organizations | where_exp:"item","item.slug == organizationId" | first %}
-    <a href="{{organization.url}}">{{organization.title_short}}</a>{% if forloop.last == false %}, {% endif %}
-    {% endfor %}
-  </span>
-
-  <span class="card-link">
-    {% for systemId in include.dataset.systems %}
-    {% assign system = site.systems | where_exp:"item","item.slug == systemId" | first %}
-    <a href="{{system.url}}">{{system.title_short}}</a>{% if forloop.last == false %}, {% endif %}
-    {% endfor %}
-  </span>
-
-  
+  <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{include.resource.url}}" onclick="event.stopPropagation();"><span class="material-icons">arrow_forward</span></a>
+  <h5 class="m-0">{{include.resource.title}}</h5>
+  {% if include.resource.description %}<p>{{include.resource.description}}</p>{% endif %}
 </div>

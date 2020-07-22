@@ -1,12 +1,29 @@
 ---
 title: Vývoj stavebního spoření
-data:
-  csv: https://data.mfcr.cz/sites/default/files/SS_4-2019.csv
-  xlsx: https://data.mfcr.cz/sites/default/files/SS_4-2019.xlsx
-license: Volné dílo
+
+lastModified: 2020-03-17
+description: Základní ukazatele vývoje stavebního spoření v České republice.
+
+categories:
+  - hospodareni-statu
+
+organizations:
+  - mf
+
+resources:
+ - stavebni_sporeni
+
+links:
+  - title: Web MF
+    url: https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni
 ---
 
-## Struktura
+
+## Popis
+
+Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni) upravená do strojově čitelném formátu.
+
+### Struktura
 
 * rok
 * ctvrtleti - čtvrtletí, k jehož konci jsou data uvedena; pro starší data je k dispozici pouze konec roku, tedy 4. čtvrtletí

@@ -4,6 +4,9 @@ title: Faktury z fondu privatizace
 lastModified: 2020-02-27
 description: Přehled uhrazených faktur z fondu privatizace
 
+categories:
+  - hospodareni-statu
+  
 organizations:
   - mf
 

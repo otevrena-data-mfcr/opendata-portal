@@ -1,13 +1,13 @@
 ---
-layout: sidebar-datasets
+layout: sidebar-topics
 ---
 <h1>Vybrané datové sady</h1>
 
-{% assign datasets = site.datasets | where:"featured",true | sort:"title" %}
+{% assign topics = site.topics | where:"featured",true | sort:"title" %}
 
 <div class="row no-gutters content">
   <div class="col-md-8">
-    {% include dataset-list.html datasets=datasets %}
+    {% include topic-list.html topics=topics %}
   </div>
   <div class="col-md-4 bg-light">
     

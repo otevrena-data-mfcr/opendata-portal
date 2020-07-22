@@ -1,6 +1,6 @@
 ---
-title: Faktury Ministerstva financí
-description: Přehled uhrazených faktur Ministerstva financí ČR
+title: Faktury
+description: Přehled uhrazených faktur v resortu Ministerstva financí ČR
 
 lastModified: 2020-02-27
 
@@ -10,7 +10,7 @@ organizations:
   - mf
 
 categories:
-  - hospodareni
+  - hospodareni-resortu
 
 resources:
   - faktury

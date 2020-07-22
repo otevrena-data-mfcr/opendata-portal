@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>{% if page.title %}{{ page.title }} ::{% endif %} Otevřená data Ministerstva financí</title>
+  <title>{% if page.title %}{{ page.title }} ::{% endif %} {{ site.title }}</title>
 
   <link rel="shortcut icon" type="image/png" href="/assets/images/opendata.ico">
 
@@ -33,21 +33,24 @@
         <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <i class="material-icons" style="vertical-align:middle;">menu</i>
         </button>
-        <a href="/index2">
-          Opendata MFČR
+        <a href="/index2" class="mr-5">
+          <span class="d-inline d-md-none">{{ site.title_short }}</span>
+          <span class="d-none d-md-inline">{{ site.title }}</span>
         </a>
       </div>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/stories.html">Datové příběhy</a>
-          <a class="nav-item nav-link" href="/datasets.html">Datové sady</a>
+          <a class="nav-item nav-link" href="/topics.html">Témata</a>
+          <a class="nav-item nav-link" href="/stories.html">Články</a>
           <a class="nav-item nav-link" href="/api.html">API</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <main>    
+  <main>
     {{ content }}
   </main>
+
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>

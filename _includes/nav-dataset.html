@@ -1,1 +1,11 @@
 <nav class="autotoc" data-target=".content" data-levels="h2" data-scroll-target=".content"></nav>
+
+<h5 class="mt-5">V datových sadách:</h5>
+{% assign resourceId = page.path | split:"/" | last | split:"." | first %}
+{% assign datasets = site.datasets | where_exp:"item","item.resources contains resourceId" %}
+
+<nav>
+  {% for dataset in datasets %}
+  <a class="pr-3" href="{{dataset.url}}">{{dataset.title}}</a>
+  {% endfor %}
+</nav>

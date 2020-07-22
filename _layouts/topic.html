@@ -1,0 +1,59 @@
+---
+layout: sidebar
+sidebar_title: Datová sada
+sidebar_nav: nav-topic.html
+---
+<h1>{{page.title}}</h1>
+
+<div class="row no-gutters content">
+
+  <div class="col-lg-7">
+    <div class="py-3 px-3 px-md-5">
+
+      <div class="mt-3 mb-5">
+        {{ page.content }}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-lg-5 bg-light order-first order-md-last">
+    <div class="py-4 px-3 px-md-5">
+
+      {% if page.resources %}
+      <h3 class="mt-3 mb-3">Datové sady</h3>
+      <nav class="mt-3">
+        {% for dataset_id in page.datasets %}
+
+        {% assign dataset = site.datasets | where_exp:"item","item.slug == dataset_id" | first %}
+
+        {% include resource-card.html resource=resource %}
+
+        {% endfor %}
+      </nav>
+      {% endif %}
+
+      {% assign stories = site.stories | where_exp:"item","item.datasets contains page.slug" %}
+      {% assign stories_size = stories | size %}
+
+      {% if stories_size > 0 %}
+      <h3 class="mt-5">Datové příběhy</h3>
+      <nav class="mt-3">
+        {% for story in stories %}
+        <a class="nav-item nav-link" href="{{story.url}}">{{story.title}}</a>
+        {% endfor %}
+      </nav>
+      {% endif %}
+
+      {% if page.links %}
+      <h3 class="mt-5 mb-3">Další zdroje</h3>
+      <nav class="mt-3">
+        {% for link in page.links %}
+        {% include link-card.html link=link %}
+        {% endfor %}
+      </nav>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

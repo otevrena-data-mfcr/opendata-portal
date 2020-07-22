@@ -1,4 +1,5 @@
 title: Otevřená data Ministerstva financí
+title_short: Otevřená data MFČR
 description: Otevřená data Ministerstva financí
 email: martin.kopecek@mfcr.cz
 
@@ -11,7 +12,7 @@ collections:
     output: false
   stories:
     output: true
-  resources:
+  topics:
     output: true
   datasets:
     output: true
@@ -38,9 +39,9 @@ defaults:
 
   - scope:
       path: ""
-      type: "resources"
+      type: "topics"
     values:
-      layout: resource
+      layout: topic
 
   - scope:
       path: ""

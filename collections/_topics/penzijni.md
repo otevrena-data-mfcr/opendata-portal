@@ -1,13 +1,31 @@
 ---
-title: Vývoj penzijního připojištění a doplňkového penzijního spoření
+title: Penzijní připojištění a spoření
 
-data:
-  csv: https://data.mfcr.cz/sites/default/files/SS_4-2019.csv
-  xlsx: https://data.mfcr.cz/sites/default/files/SS_4-2019.xlsx
-license: Volné dílo
+lastModified: 2020-03-17
+description: Základní ukazatele vývoje penzijního připojištění a doplňkového penzijního spoření v České republice.
+
+organizations:
+  - mf
+
+resources:
+  - penzijni
+
+categories:
+  - hospodareni-statu
+  - dane
+  
+links:
+  - title: Web MF
+    url: https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni
 ---
 
-## Struktura
+
+
+## Popis
+
+Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni) upravená do strojově čitelném formátu.
+
+### Struktura
 
 * rok
 * ctvrtleti - čtvrtletí, k jehož konci jsou data uvedena; pro starší data je k dispozici pouze konec roku, tedy 4. čtvrtletí

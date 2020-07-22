@@ -18,7 +18,7 @@ header {
 }
 
 footer {
-  padding: 5vh 0;
+  padding: 2vh 0;
   background-color: $blue;
   color: #fff;
 
@@ -27,6 +27,9 @@ footer {
   }
   a:hover {
     color: inherit;
+  }
+  p {
+    margin: 0;
   }
 }
 

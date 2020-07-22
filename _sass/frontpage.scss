@@ -10,6 +10,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 
     h1 {
       font-size: calc(30px + 2.2vw);
@@ -17,6 +18,20 @@
       text-shadow: $shadow;
       font-weight: bold;
     }
+  }
+
+  .hero > * {
+    position: relative;
+  }
+
+  .hero::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .ribbon {
@@ -33,10 +48,10 @@
 
     .stats {
       text-align: center;
-      font-size: calc(16px + 0.8vw);
+      font-size: calc(10px + 0.5vw);
 
       .number {
-        font-size: calc(20px + 2.5vw);
+        font-size: calc(12px + 2vw);
         vertical-align: middle;
       }
 
@@ -47,22 +62,11 @@
   }
 
   .categories {
-    .category {
-      a {
-        color: inherit;
-        display: inline-block;
-        background-color: rgba(255, 255, 255, 0.85);
-        color: #333;
+    bacgkround-color: #fff;
 
-        height: 40px;
-        border-radius: 20px;
-        padding: 10px 20px;
-      }
-      a:hover {
-        color: $white;
-        background-color: $blue-light;
-        text-decoration: none;
-      }
+    .category {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 5px;
     }
     .category:last-child {
       border-right: none;
@@ -77,6 +81,11 @@
   }
 
   .twitter {
+    background-color: $white;
+    border-radius: 5px;
+  }
+
+  .stats {
     background-color: $white;
     border-radius: 5px;
   }
