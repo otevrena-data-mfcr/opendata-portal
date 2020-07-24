@@ -1,5 +1,10 @@
 @import "variables.scss";
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: Slack-Lato, "Helvetica Neue", Helvetica, sans-serif;
 }
@@ -32,4 +37,8 @@ h4 {
   .material-icons {
     vertical-align: middle;
   }
+}
+
+.bg-white {
+  background-color: $white;
 }

@@ -1,14 +1,20 @@
 @import "variables.scss";
 
 main {
-  background-color: #fff;
+  padding-top: 60px;
+  height: 100%;
 }
 
 header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+
   background-color: #fff;
   z-index: 1000;
   box-shadow: $shadow;
-  position: relative;
+
   .navbar-brand {
     a:hover {
       text-decoration: none;
@@ -18,7 +24,12 @@ header {
 }
 
 footer {
-  padding: 2vh 0;
+  // @include media-breakpoint-up(lg) {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  // }
   background-color: $blue;
   color: #fff;
 
@@ -31,11 +42,6 @@ footer {
   p {
     margin: 0;
   }
-}
-
-.page {
-  height: calc(100vh - 60px);
-  overflow: auto;
 }
 
 .sidebar-layout {

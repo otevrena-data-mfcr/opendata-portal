@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html>
+---
+title: Aplikační rozhraní
+layout: main
+---
+<h1>Metadata datových sad</h1>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="//unpkg.com/swagger-ui-dist@3/swagger-ui.css" >
-</head>
+<a>SparQL endpoint</a>
 
-<body>
+<h1>Data z datových sad</h1>
 
-  <div id="swagger-ui"></div>
-
-  <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
-  <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
-
-  <script>
-    window.onload = function () {
-      // Begin Swagger UI call region
-      const ui = SwaggerUIBundle({
-        url: "https://opendata.mfcr.cz/api/",
-        dom_id: '#swagger-ui',
-        deepLinking: true,
-        presets: [
-          SwaggerUIBundle.presets.apis,
-          SwaggerUIStandalonePreset
-        ],
-        plugins: [
-          SwaggerUIBundle.plugins.DownloadUrl
-        ],
-        layout: "BaseLayout"
-      })
-      // End Swagger UI call region
-      window.ui = ui
-    }
-  </script>
-</body>
-
-</html>
+<a href="/openapi.html">OpenAPI</a>

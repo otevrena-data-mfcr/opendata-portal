@@ -61,26 +61,14 @@
     }
   }
 
-  .categories {
-    bacgkround-color: #fff;
-
-    .category {
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 5px;
-    }
-    .category:last-child {
-      border-right: none;
-    }
-  }
-
-  .posts {
+  .stories {
     .post {
       background-color: $white;
       border-radius: 5px;
     }
   }
 
-  .twitter {
+  .news {
     background-color: $white;
     border-radius: 5px;
   }

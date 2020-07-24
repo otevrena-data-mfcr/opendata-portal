@@ -1,0 +1,5 @@
+<div class="simple-card p-3 mb-3">
+  <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{include.story.url}}" onclick="event.stopPropagation();"><span class="material-icons">arrow_forward</span></a>
+  <h5 class="m-0">{{include.story.title}}</h5>
+  {% if include.story.description %}<p>{{include.story.description}}</p>{% endif %}
+</div>
