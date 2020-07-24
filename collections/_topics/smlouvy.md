@@ -12,13 +12,11 @@ categories:
 organizations:
   - mf
 
-resources:
- - smlouvy
- - smlouvy-faktury
-
 links:
-  - title: Web MF
-    url: https://www.mfcr.cz/
+  - title: Smlouvy MF v Registru smluv
+    url: https://smlouvy.gov.cz/vyhledavani?subject_idnum=00006947&all_versions=0&search=Vyhledat&do=detailedSearchForm-submit
+  - title: Smlouvy GFŘ v Registru smluv
+    url: https://smlouvy.gov.cz/vyhledavani?subject_idnum=72080043&all_versions=0&search=Vyhledat&do=detailedSearchForm-submit
 ---
 
 ## Popis
@@ -27,7 +25,7 @@ Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 
 ## Struktura
 
-### Přehled smluv
+### Ministerstvo financí - přehled smluv
 
 | Název sloupce        | Popis                                                                |
 |----------------------|----------------------------------------------------------------------|
@@ -45,7 +43,7 @@ Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 | zverejnit_v_rs       | smlouva byla zveřejněna v [rejstříku smluv](https://smlouvy.gov.cz/) |
 {: .table .table-sm}
 
-### Seznam vazeb smluv na odpovídající fakturu
+### Ministerstvo financí - Seznam vazeb smluv na odpovídající fakturu
 
 | Název sloupce    | Popis                                                     |
 |------------------|-----------------------------------------------------------|
