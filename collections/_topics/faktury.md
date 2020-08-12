@@ -30,4 +30,4 @@ Přehled uhrazených faktur Ministerstva financí ČR sestává z jediné tabulk
 
 Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohové faktury přijaté ('Z') a jiné daňové doklady ('W').
 
-Struktura vychází z velké části z draftu otevřené formální normy pro zveřejňování faktur (https://ofn.gov.cz/faktury/draft/#P%C5%99ehled).
+Struktura vychází z velké části z [draftu otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft/#P%C5%99ehled "Otevřené formální normy - faktury").
