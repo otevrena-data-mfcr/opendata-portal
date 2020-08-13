@@ -86,7 +86,44 @@ $(document).ready(function () {
       card.find(".etag").text(headers["etag"]);
       card.find(".type").text(headers["content-type"]);
     });
-  })
+  });
+
+  $(".dataset").each(function () {
+
+    var self = $(this);
+    var iri = self.data("iri");
+    if (!iri) return;
+
+    var query = `
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT ?iri ?title
+WHERE
+{
+  <https://data.gov.cz/zdroj/datové-sady/Poskytovatel2/9999996/d0d4ffaad3693ddc7db3833666901c4a> a dcat:Dataset;
+      dct:title ?title ;
+      dct:identifier ?iri .
+  FILTER(str(?iri) = "${iri}") .
+}
+LIMIT 10
+    `;
+    
+    $.ajax({
+      url: "https://dev.nkod.opendata.cz/sparql",
+      data: { query },
+      dataType: "json",
+      success: function (data) {
+        var item = data.results.bindings[0];
+        if (!item) return;
+
+        console.log(self.find(".title"), item.title.value)
+        self.find(".title").text(item.title.value);
+      }
+
+    })
+  });
+
 
 });
 

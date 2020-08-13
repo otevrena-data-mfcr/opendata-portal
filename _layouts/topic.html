@@ -33,16 +33,17 @@ layout: main
         {% endfor %}
       </nav>
 
+      {% assign datasets_count = page.datasets | size %}
+      <h3 class="mt-5">Datové sady</h3>
+      {% include dataset-list.html datasets=page.datasets %}
+
       <h3 class="mt-5">Zdroje</h3>
       <nav class="mt-3">
-        {% assign datasets_count = page.datasets | size %}
+
         {% assign links_count = page.links | size %}
 
-        {% for dataset_id in page.datasets %}
-        {% assign dataset = site.datasets | where_exp:"item","item.slug == dataset_id" | first %}
-        {% include dataset-card.html resource=resource %}
-        {% endfor %}
-        
+
+
         {% for link in page.links %}
         {% include link-card.html link=link %}
         {% endfor %}
