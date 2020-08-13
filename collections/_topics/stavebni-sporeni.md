@@ -5,7 +5,7 @@ lastModified: 2020-03-17
 description: Základní ukazatele vývoje stavebního spoření v České republice.
 
 categories:
-  - hospodareni-statu
+  - dane
 
 organizations:
   - mf

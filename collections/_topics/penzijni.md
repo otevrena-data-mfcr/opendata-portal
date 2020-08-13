@@ -11,7 +11,6 @@ resources:
   - penzijni
 
 categories:
-  - hospodareni-statu
   - dane
   
 links:
