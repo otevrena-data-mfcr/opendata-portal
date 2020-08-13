@@ -106,7 +106,7 @@ WHERE
       dct:identifier ?iri .
   FILTER(str(?iri) = "${iri}") .
 }
-LIMIT 10
+LIMIT 1
     `;
     
     $.ajax({
