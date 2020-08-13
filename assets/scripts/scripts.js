@@ -101,7 +101,7 @@ PREFIX dct: <http://purl.org/dc/terms/>
 SELECT ?iri ?title
 WHERE
 {
-  <https://data.gov.cz/zdroj/datové-sady/Poskytovatel2/9999996/d0d4ffaad3693ddc7db3833666901c4a> a dcat:Dataset;
+  ?s a dcat:Dataset;
       dct:title ?title ;
       dct:identifier ?iri .
   FILTER(str(?iri) = "${iri}") .

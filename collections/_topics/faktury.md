@@ -14,7 +14,7 @@ categories:
 
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/prehled-faktur-ministerstva-financi-cr
-  # - https://data.gov.cz/zdroj/datové-sady/Poskytovatel2/9999996/d0d4ffaad3693ddc7db3833666901c4a
+  - https://opendata.mfcr.cz/lod/katalog/prehled-faktur-uzsvm
 
 systems:
   - avis
