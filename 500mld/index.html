@@ -289,7 +289,7 @@
         data[i].children.forEach(function (category) {
           var categoryEl = categoryTpl.clone(true).removeClass("template");
           $(categoryEl).find(".title").text(category.name);
-          $(categoryEl).find(".description").text(category.description);
+          $(categoryEl).find(".description").html(category.description);
           var width = Math.round(category.value / categoryMax * 100);
           $(categoryEl).find(".bar").css({ width: width + "%" });
           $("#categories").append(categoryEl);
