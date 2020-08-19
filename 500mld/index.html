@@ -143,7 +143,7 @@
       {
         name: "Původní schodek",
         value: 15,
-        children: [{}]
+        children: [{ name: "Původní schodek rozpočtu", description: "", value: 0 }]
       },
       {
         name: "Přímá pomoc",
@@ -170,8 +170,8 @@
         name: "Propad příjmů kvůli pandemii",
         value: 60,
         children: [
-          { name: "daňové příjmy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "nedaňové příjmy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
+          { name: "Daňové příjmy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
+          { name: "Nedaňové příjmy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
         ]
       },
       {
@@ -187,7 +187,7 @@
         value: 3,
         children: [
           { name: "SFDI", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "silnice II a III třídy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
+          { name: "Silnice II a III třídy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
           { name: "Kůrovcová kalamita", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
         ]
       },
@@ -195,9 +195,9 @@
         name: "Ostatní",
         value: 38,
         children: [
-          { name: "obsluha státního dluhu", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "odměny", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "výdaje na sociální dávky", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
+          { name: "Obsluha státního dluhu", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
+          { name: "Odměny", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
+          { name: "Výdaje na sociální dávky", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
         ]
       },
 
@@ -284,6 +284,7 @@
 
         var categoryTpl = $("#categories .category.template").first();
         $("#categories .category").not(".template").remove();
+
         var categoryMax = data[i].children.reduce(function (acc, cur) { return Math.max(acc, cur.value) }, 0)
         data[i].children.forEach(function (category) {
           var categoryEl = categoryTpl.clone(true).removeClass("template");
