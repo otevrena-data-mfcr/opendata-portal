@@ -243,6 +243,10 @@
             display: false,
             position: 'bottom'
           },
+          animation: {
+            animateRotate: false,
+            animateScale: true
+          },
           tooltips: {
             callbacks: {
               label: function (tooltipItem, data) {
@@ -298,7 +302,7 @@
         openCategory(i, element);
       }
 
-      setTimeout(function () { openCategory(0, chart.getDatasetMeta(0).data[0]) }, 1000);
+      openCategory(0, chart.getDatasetMeta(0).data[0]);
 
       console.log(chart.getDatasetMeta(0).data[0]);
     })
@@ -322,10 +326,10 @@
       </div>
 
       <div class="col-md-6" id="details-container">
-        <h2 class="title mt-3 mb-3"><span id="catTitle" class="underline">HH</span></h2>
+        <h2 class="title mt-3 mb-3"><span id="catTitle" class="underline"></span></h2>
         <div class="box shadow-1 p-5" id="categories">
           <div class="category template mb-3">
-            <h3 class="title">Kompenzační bonus pro OSVČ</h3>
+            <h3 class="title"></h3>
             <div class="bar my-1" style="width:80%;"></div>
             <p class="description small"></p>
           </div>
