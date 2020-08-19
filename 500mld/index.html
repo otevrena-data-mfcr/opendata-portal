@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <style type="text/css">
+    body {
+      background-color: #ffd5ab;
+      font-size: 12pt;
+    }
+
+    h1 {}
+
+    h2 {}
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .shadow-1 {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    .shadow-2 {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .shadow-3 {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .shadow-4 {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .shadow-5 {
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    }
+
+    .box {
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    #details-container .bar {
+      height: 1vh;
+      background-color: rgb(245, 113, 90);
+    }
+
+    .underline {
+      position: relative;
+    }
+
+    .underline::before {
+      content: " ";
+
+      position: absolute;
+      left: 10px;
+      right: -15px;
+      top: 0;
+      bottom: -5%;
+
+      z-index: -1;
+
+      background-image: url("assets/img/underline.svg");
+      /* TODO: replace >C.D image with own svg image */
+      background-repeat: repeat-x;
+      background-position: left 80%;
+      background-size: auto 20%;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <script type="application/javascript">
+    const data = [
+      {
+        name="Původní schodek",
+        children: [{}]
+      },
+      {
+        name="Přímá pomoc",
+        children: [{ name: "Kompenzační bonus pro OSVČ" }, { name: "Kompenzační bonus pro společníky malých s.r.o." }, { name: "Ošetřovné pro zaměstnance" }, { name: "Ošetřovné pro OSVČ" }, { name: "Antivirus" }, { name: "Příspěvek pro obce" }]
+      },
+      {
+        name="Úlevy na daních o odvodech",
+        children: [{ name: "Liberační balíček I+II+III" }, { name: "Zrušení daně z nabytí nemovitých věcí" }, { name: "Protikrizový daňový balíček" }]
+      },
+      {
+        name="Propad příjmů kvůli pandemii",
+        children: [{ name: "daňové příjmy" }, { name: "nedaňové příjmy" }]
+      },
+      {
+        name="Vládní rozpočtová rezerva",
+        children: [{ name: "Nákup ochranných prostředků a jiné výdaje v souvislosti s COVID-19" }, { name: "Oddlužení nemocnic" }]
+      },
+      {
+        name="Navýšení investic do rozvoje ekonomiky",
+        children: [{ name: "SFDI" }, { name: "silnice II a III třídy" }, { name: "Kůrovcová kalamita" }]
+      },
+      {
+        name="Ostatní",
+        children: [{ name: "obsluha státního dluhu" }, { name: "odměny" }, { name: "výdaje na sociální dávky" }]
+      },
+
+    ]
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Kam peníze půjdou?</h1>
+    <div class="row">
+
+      <div class="col-md-6 chart-container">
+
+      </div>
+
+      <div class="col-md-6" id="details-container">
+        <h2 class="title mt-5 mb-3"><span class="underline">Přímá pomoc</span></h2>
+        <div class="box shadow-1 p-5">
+          <div class="category">
+            <h3>Kompenzační bonus pro OSVČ</h3>
+            <div class="bar" style="width:80%;"></div>
+            <p class="small">Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč</p>
+          </div>
+
+          <div class="category">
+            <h3>Kompenzační bonus pro společníky malých s.r.o.</h3>
+            <div class="bar" style="width:60%;"></div>
+            <p class="small">Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč</p>
+          </div>
+          
+          <div class="category">
+            <h3>Ošetřovné pro zaměstnance</h3>
+            <div class="bar" style="width:40%;"></div>
+            <p class="small">Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</body>
+
+</html>
