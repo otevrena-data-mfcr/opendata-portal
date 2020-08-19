@@ -38,10 +38,10 @@ Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](htt
 * se_zamestnavatelem_celkem - PP a DPS s vedenými příspěvky zaměstnavatele
 * se_zamestnavatelem_PP
 * se_zamestnavatelem_DPS
-* statni_celkem - státní příspěvky poukázané za příslušné období v miliardách Kč
+* statni_celkem - státní příspěvky poukázané za příslušné období v Kč
 * statni_PP
 * statni_DPS
-* ucastniku_celkem - příspěvky účastníků v miliardách Kč
+* ucastniku_celkem - příspěvky účastníků v Kč
 * ucastniku_PP
 * ucastniku_DPS
 * prumer_statni_celkem - průměrný měsíční státní příspěvek v Kč
