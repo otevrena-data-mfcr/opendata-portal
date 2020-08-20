@@ -1,20 +1,22 @@
 ---
 title: Penzijní připojištění a spoření
 
-lastModified: 2020-03-17
 description: Základní ukazatele vývoje penzijního připojištění a doplňkového penzijního spoření v České republice.
 
 organizations:
   - mf
 
-resources:
-  - penzijni
-
 categories:
   - dane
+
+stories:
+  - navod-sporeni
+
+datasets:
+  - https://opendata.mfcr.cz/lod/katalog/vyvoj-penzijniho-pripojisteni-doplnkoveho-penzijniho-sporeni
   
 links:
-  - title: Web MF
+  - title: Penzijní připojištění a spoření na webu MF
     url: https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni
 ---
 
