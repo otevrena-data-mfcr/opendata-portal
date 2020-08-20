@@ -20,11 +20,9 @@ links:
     url: https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni
 ---
 
-
-
 ## Popis
 
-Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni) upravená do strojově čitelném formátu.
+Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni) upravená do strojově čitelného formátu.
 
 ### Struktura
 

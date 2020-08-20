@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 main {
-  padding-top: 60px;
+  padding-top: 87px;
   padding-bottom: 32px;
   height: 100%;
 }
@@ -21,6 +21,14 @@ header {
       text-decoration: none;
     }
   }
+
+  .navbar-nav {
+    flex-grow: 1;
+  }
+
+  .search {
+    width: 100%;
+  }
   min-height: 60px;
 }
 
@@ -29,7 +37,7 @@ footer {
   left: 0;
   bottom: 0;
   right: 0;
-  height:32px;
+  height: 32px;
 
   background-color: $blue;
   color: #fff;
@@ -85,16 +93,8 @@ footer {
 }
 
 @include media-breakpoint-up(md) {
-  .sidebar {
-    height: calc(100vh - 60px);
-    overflow: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-  }
-  .sidebar::-webkit-scrollbar {
-    /* WebKit */
-    width: 0;
-    height: 0;
+  header .search {
+    width: 400px;
   }
 }
 
