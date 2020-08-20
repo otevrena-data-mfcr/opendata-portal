@@ -17,52 +17,41 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="/assets/styles/style.css">
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
 
-  <script src="/assets/scripts/jquery.csv.min.js"></script>
-  <script src="/assets/scripts/partial-json-parser.js"></script>
-  <script src="/assets/scripts/components.js"></script>
   <script src="/assets/scripts/scripts.js"></script>
-  
+
 </head>
 
 <body class="bg-light">
-  <div id="app">
-    {% include header.html %}
+  {% include header.html %}
 
-    <main>
-      {{ content }}
-    </main>
+  <main>
+    {{ content }}
+  </main>
 
-    <footer>
-      <div class="container-fluid py-1 px-4 px-md-5">
-        <div class="row">
+  <footer>
+    <div class="container-fluid py-1 px-4 px-md-5">
+      <div class="row">
 
-          <div class="col-6">
-            <a href="https://www.mfcr.cz">
-              <span class="d-none d-md-block">Ministerstvo financí ČR</span>
-              <span class="d-md-none">MFČR</span>
-            </a>
-          </div>
-
-          <div class="col-6">
-            <p class="text-right">
-              <a href="mailto:otevrenadata@mfcr.cz">otevrenadata@mfcr.cz</a>
-            </p>
-          </div>
-
+        <div class="col-6">
+          <a href="https://www.mfcr.cz">
+            <span class="d-none d-md-block">Ministerstvo financí ČR</span>
+            <span class="d-md-none">MFČR</span>
+          </a>
         </div>
-      </div>
-    </footer>
-  </div>
 
-  <script type="application/javascript">
-    var app = new Vue({
-      el: "#app",
-      delimiters: ['{(', ')}']
-    })
-  </script>
+        <div class="col-6">
+          <p class="text-right">
+            <a href="mailto:otevrenadata@mfcr.cz">otevrenadata@mfcr.cz</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>

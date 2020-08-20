@@ -66,4 +66,33 @@ $(document).ready(function () {
   });
 
 
+  // až bude sparql endpoint, tohle bude jeden dotaz
+  $("#dataset-count").each(function () {
+
+    $(this).addClass("loading");
+
+    var el = $(this);
+    var count = 0;
+    var loading = 3;
+
+    $.get("https://opendata.mfcr.cz/lod/cedr/").then(function (data) {
+      el.text((Number(el.text()) || 0) + data.datová_sada.length);
+      loading--;
+      if (!loading) el.removeClass("loading");
+    });
+
+    $.get("https://opendata.mfcr.cz/lod/monitor/").then(function (data) {
+      el.text((Number(el.text()) || 0) + data.datová_sada.length);
+      loading--;
+      if (!loading) el.removeClass("loading");
+    });
+
+    $.get("https://opendata.mfcr.cz/lod/katalog/").then(function (data) {
+      el.text((Number(el.text()) || 0) + data.datová_sada.length);
+      loading--;
+      if (!loading) el.removeClass("loading");
+    });
+  });
+
+
 });

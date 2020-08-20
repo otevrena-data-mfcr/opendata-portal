@@ -1,5 +1,6 @@
 ---
-title: Faktury
+title: Faktury resortu Ministerstva financí
+short_title: Faktury
 description: Přehled uhrazených faktur v resortu Ministerstva financí ČR
 
 lastModified: 2020-02-27

@@ -2,7 +2,7 @@
   <div class="container stats">
     <div class="row py-3">
       <div class="col">
-        <a href="/catalog">
+        <a href="/organizations.html">
           {% assign organizations_count = site.organizations | size %}
           <div class="number">{{organizations_count}}</div>
 
@@ -10,7 +10,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="/catalog">
+        <a href="/systems.html">
           {% assign systems_count = site.systems | size %}
           <div class="number">{{systems_count}}</div>
 
@@ -20,9 +20,7 @@
       <div class="col">
         <a href="/catalog">
 
-          <div class="number">
-            <dataset-count></dataset-count>
-          </div>
+          <div class="number" id="dataset-count">?</div>
 
           {% include phrases/datasets-count.html count=datasets_count %}
         </a>

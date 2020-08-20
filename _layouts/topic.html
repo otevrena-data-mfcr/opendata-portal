@@ -1,24 +1,21 @@
 ---
 layout: main
 ---
-<div class="row no-gutters content h-100">
+
+{% include hero.html title=page.title %}
+
+<div class="row no-gutters h-100">
 
   <div class="d-none d-lg-block col-lg-2">
-    <div class="pt-5 px-3 h-100 sidebar">
-      <nav>
-        <a href="/index2">Hlavní strana</a>
-
-        <nav class="autotoc" style="margin-top:0 !important" data-target=".content" data-levels="h2"></nav>
-      </nav>
+    <div class="pt-3 px-3 h-100 sidebar">
+      <nav class="autotoc" data-target=".content" data-levels="h2,h3"></nav>
     </div>
   </div>
 
   <div class="col-lg-6 bg-white">
-    <div class="pt-5 px-3 px-md-5">
+    <div class="pt-3 px-3 px-md-5">
 
-      <h1>{{page.title}}</h1>
-
-      <div class="mt-3 mb-5 md-content">
+      <div class="mt-3 mb-5 md-content content">
         {{ page.content }}
       </div>
 
@@ -26,7 +23,7 @@ layout: main
   </div>
 
   <div class="col-lg-4 bg-light">
-    <div class="pt-5 px-3 px-md-5">
+    <div class="pt-3 px-3 px-md-5">
 
 
       {% assign stories = site.stories | where_exp:"item","item.datasets contains page.slug" %}
@@ -47,7 +44,7 @@ layout: main
       {% assign datasets_count = page.datasets | size %}
       <h3 class="mt-5 mb-3">Datové sady</h3>
       {% include dataset-list.html datasets=page.datasets %}
-      
+
       {% if datasets_count == 0 %}
       <p><i>K tomuto tématu jsme zatím nepublikovali žádné datové sady.</i></p>
       {% endif %}
