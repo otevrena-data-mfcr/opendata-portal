@@ -1,9 +1,9 @@
 @import "variables.scss";
 
 main {
-  margin-top: 60px;
-  height:100%;
-
+  padding-top: 60px;
+  padding-bottom: 32px;
+  height: 100%;
 }
 
 header {
@@ -25,12 +25,12 @@ header {
 }
 
 footer {
-  // @include media-breakpoint-up(lg) {
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
-  // }
+  height:32px;
+
   background-color: $blue;
   color: #fff;
 
@@ -108,4 +108,3 @@ footer {
     margin: 0;
   }
 }
-
