@@ -3,12 +3,22 @@ layout: main
 ---
 <div class="row no-gutters content h-100">
 
-  <div class="col-lg-8 bg-white">
+  <div class="d-none d-lg-block col-lg-2">
+    <div class="pt-5 px-3 h-100 sidebar">
+      <nav>
+        <a href="/index2">Hlavní strana</a>
+
+        <nav class="autotoc" style="margin-top:0 !important" data-target=".content" data-levels="h2"></nav>
+      </nav>
+    </div>
+  </div>
+
+  <div class="col-lg-6 bg-white">
     <div class="pt-5 px-3 px-md-5">
 
       <h1>{{page.title}}</h1>
 
-      <div class="mt-3 mb-5">
+      <div class="mt-3 mb-5 md-content">
         {{ page.content }}
       </div>
 
@@ -22,7 +32,7 @@ layout: main
       {% assign stories = site.stories | where_exp:"item","item.datasets contains page.slug" %}
       {% assign stories_size = stories | size %}
 
-      <h3 class="mt-5">Články</h3>
+      <h3 class="mt-5 mb-3">Články</h3>
       <nav class="mt-3">
         {% for story in stories %}
         <a class="nav-item nav-link" href="{{story.url}}">{{story.title}}</a>
@@ -33,25 +43,25 @@ layout: main
         {% endfor %}
       </nav>
 
+
       {% assign datasets_count = page.datasets | size %}
-      <h3 class="mt-5">Datové sady</h3>
+      <h3 class="mt-5 mb-3">Datové sady</h3>
       {% include dataset-list.html datasets=page.datasets %}
+      
+      {% if datasets_count == 0 %}
+      <p><i>K tomuto tématu jsme zatím nepublikovali žádné datové sady.</i></p>
+      {% endif %}
 
-      <h3 class="mt-5">Zdroje</h3>
+
+      {% assign links_count = page.links | size %}
+      {% if links_count %}
+      <h3 class="mt-5 mb-3">Další zdroje</h3>
       <nav class="mt-3">
-
-        {% assign links_count = page.links | size %}
-
-
-
         {% for link in page.links %}
         {% include link-card.html link=link %}
         {% endfor %}
-
-        {% if datasets_count == 0 and links_count == 0 %}
-        <p><i>K tomuto tématu nejsou zatím publikované žádné zdroje.</i></p>
-        {% endif %}
       </nav>
+      {% endif %}
 
     </div>
   </div>

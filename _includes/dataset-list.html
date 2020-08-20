@@ -1,5 +1,3 @@
 {% for iri in include.datasets %}
-<div class="dataset" data-iri="{{iri}}">
-  <strong class="title"></strong>
-</div>
+  {% include dataset-card.html iri=iri %}
 {% endfor %}

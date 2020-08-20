@@ -17,64 +17,59 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="/assets/styles/style.css">
 
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- production version, optimized for size and speed -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
 
-  <script src="/assets/lib/rdflib/rdflib.min.js"></script>
-  
   <script src="/assets/scripts/jquery.csv.min.js"></script>
   <script src="/assets/scripts/partial-json-parser.js"></script>
+  <script src="/assets/scripts/components.js"></script>
   <script src="/assets/scripts/scripts.js"></script>
+  
 </head>
 
 <body class="bg-light">
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="navbar-brand text-uppercase">
-        <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="material-icons" style="vertical-align:middle;">menu</i>
-        </button>
-        <a href="/index2" class="mr-5">
-          <span class="d-inline d-md-none">{{ site.title_short }}</span>
-          <span class="d-none d-md-inline">{{ site.title }}</span>
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="https://data.mfcr.cz/cs/dataset">Katalog</a>
-          <a class="nav-item nav-link" href="/stories.html">Články</a>
-          <a class="nav-item nav-link" href="/api.html">API</a>
+  <div id="app">
+    {% include header.html %}
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <div class="container-fluid py-1 px-4 px-md-5">
+        <div class="row">
+
+          <div class="col-6">
+            <a href="https://www.mfcr.cz">
+              <span class="d-none d-md-block">Ministerstvo financí ČR</span>
+              <span class="d-md-none">MFČR</span>
+            </a>
+          </div>
+
+          <div class="col-6">
+            <p class="text-right">
+              <a href="mailto:otevrenadata@mfcr.cz">otevrenadata@mfcr.cz</a>
+            </p>
+          </div>
+
         </div>
       </div>
-    </nav>
-  </header>
+    </footer>
+  </div>
 
-  <main class="h-100">
-    {{ content }}
-  </main>
-
-  <footer>
-    <div class="container-fluid py-1 px-4 px-md-5">
-      <div class="row">
-
-        <div class="col-6">
-          <a href="https://www.mfcr.cz">
-            <span class="d-none d-md-block">Ministerstvo financí ČR</span>
-            <span class="d-md-none">MFČR</span>
-          </a>
-        </div>
-
-        <div class="col-6">
-          <p class="text-right">
-            <a href="mailto:otevrenadata@mfcr.cz">otevrenadata@mfcr.cz</a>
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-
+  <script type="application/javascript">
+    var app = new Vue({
+      el: "#app",
+      delimiters: ['{(', ')}']
+    })
+  </script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>

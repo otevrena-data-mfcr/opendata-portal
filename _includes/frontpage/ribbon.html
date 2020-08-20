@@ -2,7 +2,7 @@
   <div class="container stats">
     <div class="row py-3">
       <div class="col">
-        <a href="#dataflix-organizations">
+        <a href="/catalog">
           {% assign organizations_count = site.organizations | size %}
           <div class="number">{{organizations_count}}</div>
 
@@ -10,7 +10,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="#dataflix-systems">
+        <a href="/catalog">
           {% assign systems_count = site.systems | size %}
           <div class="number">{{systems_count}}</div>
 
@@ -18,9 +18,11 @@
         </a>
       </div>
       <div class="col">
-        <a href="#dataflix-featured">
-          {% assign datasets_count = site.datasets | size %}
-          <div class="number">{{datasets_count}}</div>
+        <a href="/catalog">
+
+          <div class="number">
+            <dataset-count></dataset-count>
+          </div>
 
           {% include phrases/datasets-count.html count=datasets_count %}
         </a>

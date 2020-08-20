@@ -1,8 +1,9 @@
 @import "variables.scss";
 
 main {
-  padding-top: 60px;
-  height: 100%;
+  margin-top: 60px;
+  height:100%;
+
 }
 
 header {
@@ -20,7 +21,7 @@ header {
       text-decoration: none;
     }
   }
-  height: 60px;
+  min-height: 60px;
 }
 
 footer {
@@ -44,74 +45,67 @@ footer {
   }
 }
 
-.sidebar-layout {
-  .sidebar {
-    background-color: $blue;
+.sidebar {
+  background-color: $dark;
+  color: $white;
 
-    .title {
-      @extend h1;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    h3,
-    h4,
-    h5,
-    h6 {
-      @extend .ml-4;
-    }
-
-    nav {
-      @extend .mt-3;
-
-      a {
-        @extend .pl-4;
-        @extend .py-2;
-        display: block;
-        color: #fff;
-        text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      a:last-child {
-        border-bottom: none;
-      }
-
-      a:hover,
-      a:active {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
+  .title {
+    @extend h1;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
-  @include media-breakpoint-up(md) {
-    .sidebar {
-      height: calc(100vh - 60px);
-      overflow: auto;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* Internet Explorer 10+ */
-    }
-    .sidebar::-webkit-scrollbar {
-      /* WebKit */
-      width: 0;
-      height: 0;
-    }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .ml-4;
   }
 
-  .page {
-    h1 {
-      @extend .text-light;
-      @extend .py-3;
-      @extend .px-3;
-      @extend .px-md-5;
-      background-color: $blue-light;
-      margin: 0;
-    }
-  }
+  nav {
+    @extend .mt-3;
 
-  .content {
-    @include media-breakpoint-up(md) {
-      height: calc(100vh - 60px - 70px);
-      overflow: auto;
+    a {
+      @extend .pl-4;
+      @extend .py-2;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    a:last-child {
+      border-bottom: none;
+    }
+
+    a:hover,
+    a:active {
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
 }
+
+@include media-breakpoint-up(md) {
+  .sidebar {
+    height: calc(100vh - 60px);
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  .sidebar::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+  }
+}
+
+.page {
+  h1 {
+    @extend .text-light;
+    @extend .py-3;
+    @extend .px-3;
+    @extend .px-md-5;
+    background-color: $blue-light;
+    margin: 0;
+  }
+}
+

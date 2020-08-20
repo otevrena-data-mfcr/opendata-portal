@@ -1,5 +1,7 @@
-<div class="simple-card p-3 mb-3">
-  <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{include.resource.url}}" onclick="event.stopPropagation();"><span class="material-icons">arrow_forward</span></a>
-  <h5 class="m-0">{{include.resource.title}}</h5>
-  {% if include.resource.description %}<p>{{include.resource.description}}</p>{% endif %}
+<div class="dataset" data-iri="{{include.iri}}">
+  <div class="simple-card p-3 mb-3">
+    <a class="btn btn-sm btn-primary float-right link" href="/catalog/dataset.html?iri={{include.iri}}" onclick="event.stopPropagation();"><span class="material-icons">arrow_forward</span></a>
+    <h5 class="m-0 title"></h5>
+    <p class="description mb-0"></p>
+  </div>
 </div>

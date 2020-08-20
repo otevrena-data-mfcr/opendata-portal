@@ -21,9 +21,15 @@ $(document).ready(function () {
     $(target).on("click", function (e) {
       e.preventDefault();
       var target = $($(this).attr("href"));
-      var scrollTarget = $(this).data("scroll-target") ? $($(this).data("scroll-target")) : $('.page');
-      var offset = target.offset().top - scrollTarget.offset().top + scrollTarget.scrollTop() - 50;
-      scrollTarget.animate({ scrollTop: offset }, '250ms');
+      var scrollTarget = $(this).data("scroll-target") ? $($(this).data("scroll-target")) : undefined;
+      if (scrollTarget) {
+        var offset = target.offset().top - scrollTarget.offset().top + scrollTarget.scrollTop() - 50;
+        scrollTarget.animate({ scrollTop: offset }, '250ms');
+      }
+      else {
+        console.log(target.offset().top);
+        $([document.documentElement, document.body]).animate({ scrollTop: target.offset().top }, '250ms');
+      }
     });
   }
   $("a[href*=\\#]").each(function () {
@@ -58,24 +64,6 @@ $(document).ready(function () {
 
   });
 
-  $(".dataflix .strip").each(function () {
-    var scrollTarget = $(this).children(".datasets").first();
-    var leftArrow = $(this).children(".scroller-left").first();
-    var rightArrow = $(this).children(".scroller-right").first();
-
-    var scrollAmount = $(this).find(".dataset").first().outerWidth(true) || 416;
-    var rightMargin = parseInt($(this).find(".dataset").first().css("marginRight").replace('px', ''));
-    var viewportWidth = scrollTarget.width();
-    console.log(rightMargin);
-
-    leftArrow.on("click", function () {
-      scrollTarget.animate({ scrollLeft: Math.max(0, Math.ceil(scrollTarget.scrollLeft() / scrollAmount - 1) * scrollAmount) }, "250ms");
-    })
-    rightArrow.on("click", function () {
-      scrollTarget.animate({ scrollLeft: scrollTarget.scrollLeft() + scrollAmount - ((scrollTarget.scrollLeft() + viewportWidth + rightMargin) % scrollAmount) }, "250ms");
-    })
-  });
-
   $(".download-card").each(function () {
     var url = $(this).data("url");
     var card = $(this);
@@ -94,34 +82,16 @@ $(document).ready(function () {
     var iri = self.data("iri");
     if (!iri) return;
 
-    var query = `
-PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct: <http://purl.org/dc/terms/>
+    self.find(".title").text("Načítání...");
 
-SELECT ?iri ?title
-WHERE
-{
-  ?s a dcat:Dataset;
-      dct:title ?title ;
-      dct:identifier ?iri .
-  FILTER(str(?iri) = "${iri}") .
-}
-LIMIT 1
-    `;
-    
-    $.ajax({
-      url: "https://dev.nkod.opendata.cz/sparql",
-      data: { query },
-      dataType: "json",
-      success: function (data) {
-        var item = data.results.bindings[0];
-        if (!item) return;
+    $.get(iri)
+      .then(function (data) {
+        self.find(".title").text(data.název.cs);
+        self.find(".description").text(data.popis.cs);
+      })
+      .catch(function (err) {
 
-        console.log(self.find(".title"), item.title.value)
-        self.find(".title").text(item.title.value);
-      }
-
-    })
+      })
   });
 
 
@@ -228,4 +198,3 @@ function copyTextToClipboard(text) {
     console.error('Async: Could not copy text: ', err);
   });
 }
-
