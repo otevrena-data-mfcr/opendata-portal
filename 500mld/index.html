@@ -85,6 +85,20 @@
       text-align: center;
     }
 
+    #chart-container .hover {
+      font-family: TeutonNormal, sans-serif;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -75px;
+      font-size: 1rem;
+      width: 150px;
+      height: 150px;
+      /* line-height: 50px; */
+      text-align: center;
+    }
+
     #details-container .bar {
       height: 1vh;
       background-color: rgb(0, 157, 234);
@@ -204,22 +218,22 @@
     ];
 
     var backgroundColors = [
-      'rgba(0,157, 234, 0.2)',
-      'rgba(0,157, 234, 0.2)',
-      'rgba(0,157, 234, 0.2)',
-      'rgba(0,157, 234, 0.2)',
-      'rgba(0,157, 234, 0.2)',
-      'rgba(0,157, 234, 0.2)',
-      'rgba(0,157, 234, 0.2)',
+      'rgba(0, 157, 234, 0.2)',
+      'rgba(0, 157, 234, 0.2)',
+      'rgba(0, 157, 234, 0.2)',
+      'rgba(0, 157, 234, 0.2)',
+      'rgba(0, 157, 234, 0.2)',
+      'rgba(0, 157, 234, 0.2)',
+      'rgba(0, 157, 234, 0.2)',
     ];
     var hoverBackgroundColors = [
-      'rgba(0,157, 234, 1)',
-      'rgba(0,157, 234, 1)',
-      'rgba(0,157, 234, 1)',
-      'rgba(0,157, 234, 1)',
-      'rgba(0,157, 234, 1)',
-      'rgba(0,157, 234, 1)',
-      'rgba(0,157, 234, 1)',
+      'rgba(0, 157, 234, 1)',
+      'rgba(0, 157, 234, 1)',
+      'rgba(0, 157, 234, 1)',
+      'rgba(0, 157, 234, 1)',
+      'rgba(0, 157, 234, 1)',
+      'rgba(0, 157, 234, 1)',
+      'rgba(0, 157, 234, 1)',
     ];
 
     $(document).ready(function () {
@@ -248,6 +262,7 @@
             animateScale: true
           },
           tooltips: {
+            enabled: false,
             callbacks: {
               label: function (tooltipItem, data) {
 
@@ -303,12 +318,41 @@
         openCategory(i, element);
       }
 
+      var hoverVisible = false;
+      var hoverIndex = null;
+      $("#chart-container .number").show();
+      $("#chart-container .hover").hide();
+
+      chart.options.onHover = function (event, elements) {
+
+        var element = elements[0];
+
+        if (event.type === "mousemove" && element) {
+          $("#chart-container .number").hide();
+          if (!hoverVisible) {
+            $("#chart-container .hover").fadeIn(250);
+            hoverVisible = true;
+          }
+          if (hoverIndex !== element._index) {
+            $("#chart-container .hover .title").text(data[element._index].name);
+            $("#chart-container .hover .value").html(data[element._index].value + "&nbsp;mld.&nbsp;Kč");
+            hoverIndex = element._index;
+          }
+        }
+
+        if (event.type === "mouseout") {
+          $("#chart-container .number").fadeIn(250);
+          $("#chart-container .hover").hide();
+          hoverVisible = false;
+          hoverIndex = null;
+        }
+
+
+      };
+
       openCategory(0, chart.getDatasetMeta(0).data[0]);
 
-      console.log(chart.getDatasetMeta(0).data[0]);
-    })
-
-
+    });
   </script>
 
 </head>
@@ -321,6 +365,7 @@
       <div class="col-md-6">
         <div class="px-md-5">
           <div id="chart-container">
+            <div class="hover"><span class="title"></span><br><span class="value"></span></div>
             <div class="number">500<br>mld.</div>
             <canvas id="chart" width="400" height="400"></canvas>
           </div>
