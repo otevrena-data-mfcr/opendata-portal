@@ -285,7 +285,11 @@
 
       function openCategory(i, element) {
 
-        chart.options.rotation = -(element._view.startAngle + element._view.endAngle) / 2 + chart.options.rotation;
+        var oldRotation = chart.options.rotation;
+        var newRotation = -(element._view.startAngle + element._view.endAngle) / 2 + chart.options.rotation;
+        if (Math.abs(newRotation - oldRotation) > Math.abs((newRotation + 2 * Math.PI) - oldRotation)) newRotation += 2 * Math.PI;
+        if (Math.abs(newRotation - oldRotation) > Math.abs((newRotation - 2 * Math.PI) - oldRotation)) newRotation -= 2 * Math.PI;
+        chart.options.rotation = newRotation;
         chart.data.datasets[element._datasetIndex].backgroundColor = backgroundColors.slice(0)
         chart.data.datasets[element._datasetIndex].backgroundColor[i] = hoverBackgroundColors[i];
         chart.update();
