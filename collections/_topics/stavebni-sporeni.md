@@ -22,7 +22,7 @@ links:
 
 ## Popis
 
-Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni) upravená do strojově čitelném formátu.
+Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni) upravená do strojově čitelného formátu.
 
 ### Struktura
 
