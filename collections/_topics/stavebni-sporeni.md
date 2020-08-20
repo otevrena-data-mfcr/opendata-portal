@@ -1,7 +1,5 @@
 ---
 title: Vývoj stavebního spoření
-
-lastModified: 2020-03-17
 description: Základní ukazatele vývoje stavebního spoření v České republice.
 
 categories:
