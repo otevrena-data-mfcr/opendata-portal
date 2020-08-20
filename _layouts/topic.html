@@ -26,18 +26,20 @@ layout: main
     <div class="pt-3 px-3 px-md-5">
 
 
-      {% assign stories = site.stories | where_exp:"item","item.datasets contains page.slug" %}
-      {% assign stories_size = stories | size %}
 
+      {% assign stories_count = page.stories | size %}
       <h3 class="mt-5 mb-3">Články</h3>
       <nav class="mt-3">
+        {% for story_slug in page.stories %}
+        {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
         {% for story in stories %}
-        <a class="nav-item nav-link" href="{{story.url}}">{{story.title}}</a>
-
-        {% else %}
-        <p><i>K tomuto tématu jsme zatím nepublikovali žádné články.</i></p>
-
+        {% include story-card.html story=story %}
         {% endfor %}
+        {% endfor %}
+        
+        {% if stories_count == 0 %}
+        <p><i>K tomuto tématu jsme zatím nepublikovali žádné články.</i></p>
+        {% endif %}
       </nav>
 
 

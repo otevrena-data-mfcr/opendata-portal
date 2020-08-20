@@ -10,11 +10,14 @@ categories:
 organizations:
   - mf
 
-resources:
- - stavebni_sporeni
+datasets:
+  - https://opendata.mfcr.cz/lod/katalog/vyvoj-stavebniho-sporeni
+
+stories:
+  - navod-sporeni
 
 links:
-  - title: Web MF
+  - title: Vývoj stavebního spoření na webu MF
     url: https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni
 ---
 
