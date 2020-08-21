@@ -13,9 +13,16 @@ organizations:
 categories:
   - dotace
 
-resources:
-  - cedr-dotace
-  - cedr-rozhodnuti
+datasets:
+  - https://opendata.mfcr.cz/lod/cedr/cedr
+  - https://opendata.mfcr.cz/lod/cedr/mmr
+  - https://opendata.mfcr.cz/lod/cedr/csu
+  - https://opendata.mfcr.cz/lod/cedr/szcr
+  - https://opendata.mfcr.cz/lod/cedr/ruian
+  - https://opendata.mfcr.cz/lod/cedr/edssmvs
+  - https://opendata.mfcr.cz/lod/cedr/ares
+  - https://opendata.mfcr.cz/lod/cedr/rob
+  - https://opendata.mfcr.cz/lod/cedr/isdp
 
 links:
   - title: Webové rozhraní IS CEDR III
