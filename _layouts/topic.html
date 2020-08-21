@@ -7,7 +7,7 @@ layout: main
 <div class="row no-gutters h-100">
 
   <div class="d-none d-lg-block col-lg-2 bg-white">
-    <div class="pt-5 px-3 h-100 sidebar">
+    <div class="pt-5 px-3 pl-xl-5 h-100 sidebar">
       <nav class="autotoc" data-target=".content" data-levels="h1,h2,h3"></nav>
     </div>
   </div>
@@ -28,7 +28,7 @@ layout: main
 
 
       {% assign stories_count = page.stories | size %}
-      <h3 class="mt-5 mb-3">Články</h3>
+      <h3 class="mt-4 mb-3">Články</h3>
       <nav class="mt-3">
         {% for story_slug in page.stories %}
         {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
