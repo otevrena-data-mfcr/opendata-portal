@@ -1,9 +1,11 @@
-<div class="stories">
+<div class="stories row">
   {% assign stories = site.stories | slice:0,3 %}
   {% for story in stories %}
-  <div class="post p-3 mb-3">
-    <h2 class="mb-3">{{ story.title }}</h2>
-    {{story.content}}
+  <div class="col-md-6">
+    <div class="post p-3 mb-3">
+      <h2 class="mb-3">{{ story.title }}</h2>
+      {{story.content}}
+    </div>
   </div>
   {% endfor %}
 </div>
