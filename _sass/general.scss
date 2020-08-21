@@ -44,9 +44,25 @@ h4 {
 }
 
 .md-content {
-  h2,
-  h3 {
+  h1 {
+    font-size: 1.7em;
     @extend .mt-5;
+    @extend .mb-3;
+  }
+  h2 {
+    font-size: 1.4em;
+    @extend .mt-5;
+    @extend .mb-3;
+  }
+  h3 {
+    font-size: 1.2em;
+    @extend .mb-1;
+    @extend .mt-3;
+  }
+  h3 {
+    font-size: 1em;
+    @extend .mb-1;
+    @extend .mt-3;
   }
 }
 

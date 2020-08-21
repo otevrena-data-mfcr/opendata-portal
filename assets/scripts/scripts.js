@@ -57,11 +57,24 @@ $(document).ready(function () {
 
     $.get(iri)
       .then(function (data) {
+
         self.find(".title").text(data.název.cs);
         self.find(".description").text(data.popis.cs);
+
+        if (data.distribuce) {
+          data.distribuce.forEach(function (resource) {
+            console.log(resource);
+            var el = $("<a/>")
+              .attr("href", resource.soubor_ke_stažení || resource.přístupové_url)
+              .text(resource.formát.split("/").pop().toUpperCase())
+            self.find(".download").append(el);
+          });
+        }
+
       })
       .catch(function (err) {
-
+        self.find(".title").text("Neznámá datová sada")
+        self.find(".description").text("Nastala chyba při stahování informací o datové sadě. Zkuste zobrazit informace kliknutím na tlačítko níže.")
       })
   });
 

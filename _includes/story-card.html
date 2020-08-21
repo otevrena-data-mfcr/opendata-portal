@@ -1,5 +1,7 @@
-<div class="simple-card p-3 mb-3">
-  <a class="btn btn-sm btn-{{format.color | default:"primary"}} float-right" href="{{include.story.url}}" onclick="event.stopPropagation();"><span class="material-icons">arrow_forward</span></a>
-  <h5 class="m-0">{{include.story.title}}</h5>
+<div class="simple-card mb-3">
+  <h5 class="m-0"><a href="{{include.story.url}}">{{include.story.title}}</a></h5>
   <p>{{include.story.excerpt}}</p>
+  <div class="actions">
+    <a href="{{include.story.url}}">Otevřít</a>
+  </div>
 </div>
