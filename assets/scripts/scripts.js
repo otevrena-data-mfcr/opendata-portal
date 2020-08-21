@@ -56,19 +56,29 @@ $(document).ready(function () {
     self.find(".title").text("Načítání...");
 
     $.get(iri)
-      .then(function (data) {
+      .then(function (dataset) {
 
-        self.find(".title").text(data.název.cs);
-        self.find(".description").text(data.popis.cs);
+        self.find(".title").text(dataset.název.cs);
+        self.find(".description").text(dataset.popis.cs);
 
-        if (data.distribuce) {
-          data.distribuce.forEach(function (resource) {
-            console.log(resource);
-            var el = $("<a/>")
-              .attr("href", resource.soubor_ke_stažení || resource.přístupové_url)
-              .text(resource.formát.split("/").pop().toUpperCase())
-            self.find(".download").append(el);
-          });
+
+        if (dataset.dokumentace) {
+          var el = $("<a/>")
+            .attr("href", dataset.dokumentace)
+            .text("Dokumentace")
+          self.find(".actions").append(el);
+        }
+
+        if (dataset.distribuce) {
+          dataset.distribuce
+            .filter(function (resource) { return !!resource.formát; })
+            .forEach(function (resource) {
+              console.log(resource);
+              var el = $("<a/>")
+                .attr("href", resource.soubor_ke_stažení || resource.přístupové_url)
+                .text(resource.formát.split("/").pop().toUpperCase())
+              self.find(".download").append(el);
+            });
         }
 
       })
