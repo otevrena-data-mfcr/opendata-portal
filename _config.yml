@@ -4,7 +4,7 @@ description: Otevřená data Ministerstva financí
 email: martin.kopecek@mfcr.cz
 
 exports_url: "https://opendata.mfcr.cz/exports"
-catalog_url: "https://data.mfcr.cz"
+catalog_url: "https://opendata.mfcr.cz/catalog"
 
 collections_dir: collections
 
