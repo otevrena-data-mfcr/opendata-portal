@@ -20,8 +20,8 @@ Obecné informace o mezinárodních arbitrážích jsou k dispozici na [webovýc
 # Struktura
 
 | Pole | Popis |
-| ---- | ---- |
-| rok | |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| rok | Kalendářní rok |
 | zalobce | Název žalobce |
 | castka | Částka v Kč |
 {: .table .table-sm .table-responsive}
