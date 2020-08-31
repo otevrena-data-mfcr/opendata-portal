@@ -1,3 +1,4 @@
-endpoint: https://dev.nkod.opendata.cz/sparql
-publishers:
-  - https://data.gov.cz/zdroj/ovm/MinFin
+# endpoint: http://localhost:3030/lkod/sparql
+endpoint: https://opendata.mfcr.cz/lod/sparql
+# publishers:
+#   - https://data.gov.cz/zdroj/ovm/MinFin
