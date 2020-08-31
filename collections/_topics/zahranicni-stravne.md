@@ -23,5 +23,5 @@ Ministerstvo financí každoročně stanovuje výši základních sazeb zahrani�
 | Měnový kód | Abecední kód měny |
 | Měna | Název měny |
 | Základní sazby zahraničního stravného | Sazba v dané měně |
-| Rok | |
+| Rok | Kalendářní rok |
 {: .table .table-sm .table-responsive}
