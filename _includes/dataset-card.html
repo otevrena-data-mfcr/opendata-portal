@@ -1,9 +1,9 @@
 <div class="dataset" data-iri="{{include.iri}}">
   <div class="simple-card mb-3">
-    <h5 class="mt-0"><a href="{{site.catalog_url}}/dataset.html?iri={{include.iri}}" class="title"></a></h5>
+    <h5 class="mt-0"><a href="{{site.catalog_url}}/#/iri/dataset.html?iri={{include.iri | url_encode}}" class="title"></a></h5>
     <p class="description"></p>
     <div class="actions">
-      <a href="{{site.catalog_url}}/#/identifier/{{include.iri}}" class="primary">Datová sada</a><span class="download"></span>
+      <a href="{{site.catalog_url}}/#/iri/{{include.iri | url_encode}}" class="primary">Datová sada</a><span class="download"></span>
     </div>
   </div>
 </div>
