@@ -15,7 +15,7 @@ $(document).ready(function () {
       }
     });
   }
-  $("a[href*=\\#]").each(function () {
+  $("a.animated-scroll").each(function () {
     assignAnimatedScroll(this);
   })
 
@@ -27,6 +27,7 @@ $(document).ready(function () {
     var levels = $(this).data("levels") || "h1,h2";
 
     var tocLinkTemplate = $("<a/>");
+    tocLinkTemplate.addClass("animated-scroll");
 
     if ($(this).data("scroll-target")) tocLinkTemplate.data("scroll-target", $(this).data("scroll-target"));
 
