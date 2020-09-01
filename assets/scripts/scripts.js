@@ -90,9 +90,10 @@ $(document).ready(function () {
   });
 
   $.get("https://opendata.mfcr.cz/lod/stats").then(function (data) {
-    $("#stats-publishers").text(data.publishers);
-    $("#stats-sources").text(data.distributions);
-    $("#stats-size").text(Math.round(data.bytes / Math.pow(10,7))/100);
+    $("#stats-publishers").text(data.publishers.toLocaleString("cs"));
+    $("#stats-sources").text(data.distributions.toLocaleString("cs"));
+    var bytes = (Math.round(data.bytes / Math.pow(10,7))/100)
+    $("#stats-size").text(bytes.toLocaleString("cs"));
   });
 
 });
