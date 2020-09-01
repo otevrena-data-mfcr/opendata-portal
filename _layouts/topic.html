@@ -21,43 +21,34 @@ layout: main
   <div class="col-lg-3">
     <div class="pt-3 px-3 px-lg-5 mb-5">
 
-
-
       {% assign stories_count = page.stories | size %}
+      {% if stories_count > 0 %}
       <h3 class="mt-4 mb-3">Články</h3>
-      <nav class="mt-3">
-        {% for story_slug in page.stories %}
-        {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
-        {% for story in stories %}
-        {% include story-card.html story=story %}
-        {% endfor %}
-        {% endfor %}
-
-        {% if stories_count == 0 %}
-        <p><i>K tomuto tématu jsme zatím nepublikovali žádné články.</i></p>
-        {% endif %}
-      </nav>
+      {% for story_slug in page.stories %}
+      {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
+      {% for story in stories %}
+      {% include story-card.html story=story %}
+      {% endfor %}
+      {% endfor %}
+      {% endif %}
 
 
       {% assign datasets_count = page.datasets | size %}
-      <h3 class="mt-5 mb-3">Datové sady</h3>
+
+      {% if datasets_count > 0 %}
+      <h3 class="mt-4 mb-3">Datové sady</h3>
       {% for iri in page.datasets %}
       {% include dataset-card.html iri=iri %}
       {% endfor %}
-
-      {% if datasets_count == 0 %}
-      <p><i>K tomuto tématu jsme zatím nepublikovali žádné datové sady.</i></p>
       {% endif %}
 
 
       {% assign links_count = page.links | size %}
       {% if links_count > 0 %}
-      <h3 class="mt-5 mb-3">Další zdroje</h3>
-      <nav class="mt-3">
-        {% for link in page.links %}
-        {% include link-card.html link=link %}
-        {% endfor %}
-      </nav>
+      <h3 class="mt-4 mb-3">Další zdroje</h3>
+      {% for link in page.links %}
+      {% include link-card.html link=link %}
+      {% endfor %}
       {% endif %}
 
     </div>
