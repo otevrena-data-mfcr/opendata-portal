@@ -11,18 +11,14 @@
       </div>
       <div class="col">
         <a href="/systems.html">
-          {% assign systems_count = site.systems | size %}
-          <div class="number">{{systems_count}}</div>
-
-          {% include phrases/systems-count.html count=systems_count %}
+          <div class="number" id="stats-sources">?</div>
+          datových souborů
         </a>
       </div>
       <div class="col">
         <a href="/catalog">
-
-          <div class="number" id="dataset-count">?</div>
-
-          {% include phrases/datasets-count.html count=datasets_count %}
+          <div class="number" id="stats-size">?</div>
+          GB dat
         </a>
       </div>
     </div>
