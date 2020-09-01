@@ -4,9 +4,6 @@ description: Data o dotacích, návratných finančních výpomocích a dalšíc
 
 featured: true
 
-systems:
-  - cedr
-
 organizations:
   - gfr
 

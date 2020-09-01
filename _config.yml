@@ -17,8 +17,6 @@ collections:
     output: false
   stories:
     output: true
-  systems:
-    output: true
   topics:
     output: true
 
@@ -41,12 +39,6 @@ defaults:
       type: "topics"
     values:
       layout: topic
-      
-  - scope:
-      path: ""
-      type: "systems"
-    values:
-      layout: "system"
 
   - scope:
       path: ""

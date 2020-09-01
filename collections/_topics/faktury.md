@@ -17,9 +17,6 @@ datasets:
   - https://opendata.mfcr.cz/lod/katalog/faktury-ministerstva-financi-cr
   - https://opendata.mfcr.cz/lod/katalog/prehled-faktur-uzsvm
 
-systems:
-  - avis
-
 links:
   - title: Aplikace Supervizor
     description: Supervizor zobrazuje faktury ministerstva financí v přehledné rozklikávací vizualizaci
