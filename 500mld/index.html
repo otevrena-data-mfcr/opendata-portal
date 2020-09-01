@@ -19,7 +19,7 @@
 
     body {
       background-color: #fff;
-      font-size: 12pt;
+      font-size: 11pt;
       font-family: Arial, sans-serif;
     }
 
@@ -34,7 +34,7 @@
 
     h3 {
       font-family: TeutonNormal, sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.2em;
     }
 
     .shadow-1 {
@@ -154,90 +154,144 @@
 
   <script type="application/javascript">
     var data = [
+      { name: "původní schodek", category: "původní schodek", children: [{ name: "původní schodek", value: 40000.0 },] },
       {
-        name: "Přímá pomoc",
-        value: 40,
-        children: [
-          { name: "Kompenzační bonus pro OSVČ", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Kompenzační bonus pro společníky malých s.r.o.", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Ošetřovné pro zaměstnance", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Ošetřovné pro OSVČ", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Antivirus", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Příspěvek pro obce", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 }
-        ]
+        name: "pokles příjmů", category: "příjmy", children: [{ name: "pokles příjmů z pojistného na sociální zabezpečení", value: 47600.0 },
+        { name: "výpadek daňových příjmů", value: 107500.0 },]
       },
       {
-        name: "Úlevy na daních a odvodech",
-        value: 15,
-        children: [
-          { name: "Liberační balíček I+II+III", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 10 },
-          { name: "Zrušení daně z nabytí nemovitých věcí", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 20 },
-          { name: "Protikrizový daňový balíček", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 30 },
-        ]
+        name: "vládní opatření v oblasti příjmů", category: "příjmy", children: [{ name: "kompenzační bonus, prominutí záloh", value: 26300.0 },
+        { name: "zrušení daně z nabytí nemovitých věcí", value: 8600.0 },
+        { name: "snížení příjmů z daně z příjmů právnických osob - zpětné uplatnění ztráty (3. novela)", value: 12200.0 },]
       },
       {
-        name: "Propad příjmů kvůli pandemii",
-        value: 60,
-        children: [
-          { name: "Daňové příjmy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Nedaňové příjmy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-        ]
+        name: "ostatní", category: "příjmy", children: [{ name: "snížení plánovaných příjmů z výnosů aukce kmitočtů (1. novela)", value: 7000.0 },
+        { name: "snížení příjmů z prodeje zboží v kap. SSHR (1. novela)", value: 600.0 },
+        { name: "snížení příjmů z prodeje emisních povolenek (3. novela)", value: 2000.0 },
+        { name: "výpadek příjmů z dividend od Letiště Praha, a.s. (1. novela)", value: 1500.0 },]
       },
       {
-        name: "Vládní rozpočtová rezerva",
-        value: 5,
-        children: [
-          { name: "Nákup ochranných prostředků a jiné výdaje v souvislosti s COVID-19", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Oddlužení nemocnic", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-        ]
+        name: "bezpečnost", category: "výdaje", children: [{ name: "navýšení služebních příjmů příslušníků Policie a HZS", value: 1200.0 },
+        { name: "platy a příslušenství Vězeňské služby", value: 71.8 },
+        { name: "platy vojáků", value: 48.3 },
+        { name: "výdaje na sociální dávky v kap. MV", value: 750.0 },
+        { name: "nákup ochranných prostředků", value: 10625.9 },
+        { name: "pořízení státních hmotných rezerv", value: 1642.8 },
+        { name: "sociální dávky MSpr", value: 185.0 },
+        { name: "prodloužení dočasného znovuzavedení ochrany hranic", value: 53.2 },]
       },
       {
-        name: "Navýšení investic do rozvoje ekonomiky",
-        value: 3,
-        children: [
-          { name: "SFDI", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Silnice II a III třídy", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Kůrovcová kalamita", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-        ]
+        name: "doprava", category: "výdaje", children: [{ name: "silnice II. a III. Třídy", value: 4000.0 },
+        { name: "výstavba a modernizace železnic, silnic a dálnic", value: 20000.0 },]
       },
       {
-        name: "Původní schodek",
-        value: 15,
-        children: [{ name: "Původní schodek rozpočtu", description: "", value: 0 }]
+        name: "kultura", category: "výdaje", children: [{ name: "příspěvek na provoz příspěvkových organizací Ministerstva kultury", value: 300.0 },
+        { name: "program COVID-Kultura", value: 900.0 },
+        { name: "podpora subjektů v oblasti kultury", value: 1070.0 },
+        { name: "investice do MTZ státních kulturních zařízení", value: 1000.0 },]
       },
       {
-        name: "Ostatní",
-        value: 38,
-        children: [
-          { name: "Obsluha státního dluhu", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Odměny", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-          { name: "Výdaje na sociální dávky", description: "Podpoříme OSVČ jednorázovým příspěvkem 1&nbsp;500&nbsp;Kč", value: 0 },
-        ]
+        name: "rozvoj venkova", category: "výdaje", children: [{ name: "příspěvek obcím - kompenzace poklesu daňových příjmů", value: 13367.4 },
+        { name: "povodně 2020 MMR", value: 500.0 },
+        { name: "investice do majetku obcí a krajů MMR", value: 3800.0 },
+        { name: "vodohospodářské projekty obcí MŽP", value: 2000.0 },
+        { name: "vodní hospodářství Mze", value: 2600.0 },
+        { name: "akce financované z rozhodnutí PSP a vlády - byty", value: 660.0 },
+        { name: "kůrovcová kalamita", value: 8200.0 },]
       },
+      {
+        name: "podpora podnikání", category: "výdaje", children: [{ name: "prostředky na podporu podnikání", value: 5789.6 },
+        { name: "program COVID-Ubytování", value: 3310.4 },
+        { name: "opatření Podpůrného a garančního rolnického a lesnického fondu", value: 1000.0 },
+        { name: "řešení potřeb podnikatelů v zemědělství, potravinářství a lesnictví", value: 3300.0 },
+        { name: "podpora lázeňství v kap. MMR", value: 1000.0 },
+        { name: "program Ošetřovné pro OSVČ", value: 2500.0 },
+        { name: "vklad do fondu EGAP", value: 4000.0 },
+        { name: "program COVID-NÁJEMNÉ", value: 5000.0 },
+        { name: "zvýšení základního kapitálu PRISKO", value: 1273.0 },]
+      },
+      {
+        name: "program Antivirus a ošetřovné pro zaměstnance", category: "výdaje", children: [{ name: "ošetřovné", value: 10000.0 },
+        { name: "program Antivirus", value: 26476.0 },]
+      },
+      {
+        name: "sociální služby", category: "výdaje", children: [{ name: "dotace na sociální služby", value: 5200.0 },
+        { name: "odměny sociálním pracovníkům", value: 50.0 },
+        { name: "výstavba zařízení sociálních služeb", value: 400.0 },]
+      },
+      {
+        name: "školství/sport", category: "výdaje", children: [{ name: "odměny zaměstnancům dětských domovů + provozní výdaje zařízení ústavní výchovy", value: 200.0 },
+        { name: "program COVID-SPORT", value: 1000.0 },
+        { name: "podpora vybavení škol", value: 1284.5 },
+        { name: "akce financované z rozhodnutí PSP a vlády - školy", value: 3100.0 },]
+      },
+      {
+        name: "zdravotnictví", category: "výdaje", children: [{ name: "navýšení platby za státní pojištěnce", value: 22300.0 },
+        { name: "mimořádné finanční ohodnocení zaměstnanců a poskytovatelů lůžkové péče", value: 10000.0 },
+        { name: "odměny zdravotnickým pracovníkům", value: 1750.0 },
+        { name: "oddlužení nemocnic", value: 6595.8 },
+        { name: "odměny pro zdravotnické pracovníky a mobilní odběrové týmy", value: 1152.5 },
+        { name: "zvýšené provozní a osobní náklady SZÚ", value: 75.0 },
+        { name: "změna systemizace KHS", value: 89.7 },
+        { name: "osobní a provozní výdaje MZdr a KHS", value: 76.5 },
+        { name: "chytrá karanténa", value: 176.5 },]
+      },
+      {
+        name: "ostatní", category: "výdaje", children: [{ name: "poskytnutí peněžního daru krajanským spolkům ve Velké Británii", value: 0.3 },
+        { name: "repatriace občanů ze zahraničí", value: 111.0 },
+        { name: "obsluha státního dluhu", value: 8000.0 },]
+      },
+      { name: "rezerva", category: "výdaje", children: [{ name: "vládní rozpočtová rezerva", value: 48514.8 },] },
 
     ];
+
+    data.forEach(function (item) {
+      item.value = item.children.reduce(function (acc, cur) { return acc + cur.value; }, 0);
+      item.children.sort(function (a, b) { return b.value - a.value; });
+    });
 
     var backgroundColors = [
-      'rgba(0, 157, 234, 0.2)',
-      'rgba(0, 157, 234, 0.2)',
-      'rgba(0, 157, 234, 0.2)',
-      'rgba(0, 157, 234, 0.2)',
-      'rgba(0, 157, 234, 0.2)',
-      'rgba(0, 157, 234, 0.2)',
-      'rgba(0, 157, 234, 0.2)',
+      '#FFD96499',
+      '#F6A65799',
+      '#E9754D99',
+      '#E94C5599',
+
+      '#7CCDEF99',
+      '#51B7E999',
+      '#2896D399',
+      '#2983AB99',
+      '#1A6E8F99',
+      '#7CCDEF99',
+      '#236A7599',
+      '#66BFAE99',
+      '#73BE8B99',
+
+      '#C6C6C699',
+      '#9D9D9C99'
     ];
     var hoverBackgroundColors = [
-      'rgba(0, 157, 234, 1)',
-      'rgba(0, 157, 234, 1)',
-      'rgba(0, 157, 234, 1)',
-      'rgba(0, 157, 234, 1)',
-      'rgba(0, 157, 234, 1)',
-      'rgba(0, 157, 234, 1)',
-      'rgba(0, 157, 234, 1)',
+      '#FFD964',
+      '#F6A657',
+      '#E9754D',
+      '#E94C55',
+
+      '#7CCDEF',
+      '#51B7E9',
+      '#2896D3',
+      '#2983AB',
+      '#1A6E8F',
+      '#7CCDEF',
+      '#236A75',
+      '#66BFAE',
+      '#73BE8B',
+
+      '#C6C6C6',
+      '#9D9D9C'
     ];
 
     $(document).ready(function () {
       var ctx = document.getElementById('chart').getContext('2d');
+
       var chart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -273,7 +327,7 @@
                   label += ': ';
                 }
                 label += data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                label += " mld. Kč"
+                label += " mil. Kč"
                 return label;
               }
             }
@@ -281,6 +335,7 @@
           // rotation: 0
         }
       });
+
 
       function openCategory(i, element) {
 
@@ -307,7 +362,7 @@
         var categoryMax = data[i].children.reduce(function (acc, cur) { return Math.max(acc, cur.value) }, 0)
         data[i].children.forEach(function (category) {
           var categoryEl = categoryTpl.clone(true).removeClass("template");
-          $(categoryEl).find(".title").text(category.name);
+          $(categoryEl).find(".title").html(category.name + " (" + category.value.toLocaleString("cs").replace(" ","&nbsp;") + "&nbsp;mil.&nbsp;Kč)");
           $(categoryEl).find(".description").html(category.description);
           var width = Math.round(category.value / categoryMax * 100);
           $(categoryEl).find(".bar").css({ width: width + "%" });
@@ -339,7 +394,7 @@
           }
           if (hoverIndex !== element._index) {
             $("#chart-container .hover .title").text(data[element._index].name);
-            $("#chart-container .hover .value").html(data[element._index].value + "&nbsp;mld.&nbsp;Kč");
+            $("#chart-container .hover .value").html((Math.round(data[element._index].value / 100) / 10).toLocaleString("cs").replace(" ","&nbsp;") + "&nbsp;mld.&nbsp;Kč");
             hoverIndex = element._index;
           }
         }
