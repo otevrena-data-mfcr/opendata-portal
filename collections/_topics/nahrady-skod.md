@@ -6,9 +6,6 @@ description: Náhrady škod způsobených při výkonu veřejné moci.
 organizations:
   - mf
 
-categories:
-  - soudni-spory
-
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/nahrady-skod
 ---

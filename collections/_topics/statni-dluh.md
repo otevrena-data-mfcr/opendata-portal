@@ -1,6 +1,4 @@
 ---
 title: Státní dluh
-
-categories:
-  - hospodareni-statu
+description: Statistiky státního dluhu
 ---

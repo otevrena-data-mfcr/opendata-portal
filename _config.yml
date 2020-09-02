@@ -9,8 +9,6 @@ catalog_url: "https://opendata.mfcr.cz/catalog"
 collections_dir: collections
 
 collections:
-  categories:
-    output: true
   organizations:
     output: true
   posts:
@@ -45,9 +43,3 @@ defaults:
       type: "organizations"
     values:
       layout: "organization"
-
-  - scope:
-      path: ""
-      type: "categories"
-    values:
-      layout: "category"

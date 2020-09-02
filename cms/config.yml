@@ -48,7 +48,6 @@ collections:
       - { label: Poslední změna metadat, name: lastModified, widget: datetime, timeFormat: false, format: "YYYY-MM-DD", dateFormat: "D. M. YYYY" }
       - { label: Popis, name: description, widget: text }
       - { label: Organizace, name: organizations, multiple: true, widget: relation, collection: organizations, searchFields: [title_short,title], displayFields: [title_short,title], valueField: slug }
-      - { label: Kategorie, name: categories, multiple: true, widget: relation, collection: categories, searchFields: [title], displayFields: [title], valueField: slug }
       - { label: Zdroje dat, name: resources, multiple: true, widget: relation, collection: resources, searchFields: [title_short,title], displayFields: [title_short,title], valueField: slug }
       - { label: Odkazy, name: links, widget: list, collapsed: false, fields: [{ label: Titulek, name: title, widget: string }, { label: URL, name: url, widget: string }] }
       - { label: Obsah stránky, name: body, widget: markdown }

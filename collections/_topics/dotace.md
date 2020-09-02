@@ -1,13 +1,9 @@
 ---
 title: Dotace
-
-featured: true
+description: Přehled dotací ze státního rozpočtu a z EU
 
 organizations:
   - gfr
-
-categories:
-  - dotace
 
 datasets:
   - https://opendata.mfcr.cz/lod/cedr/cedr

@@ -1,8 +1,6 @@
 ---
-title: Makroekonomická predikce
-
-categories:
-  - statistiky
+title: Makroekonomika
+description: Makroekonomické predikce Ministerstva financí
 
 links:
   - title: Makroekonomická predikce na webu MF

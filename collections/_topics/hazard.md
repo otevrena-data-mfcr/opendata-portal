@@ -1,5 +1,6 @@
 ---
-title: Přehledy a statistiky hazardních her
+title: Hazard
+description: Přehledy o stavu a regulaci hazardních her
 
 categories:
   - hazard

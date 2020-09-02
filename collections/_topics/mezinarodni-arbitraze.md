@@ -6,9 +6,6 @@ description: Náklady spojené s mezinárodními arbitrážemi
 organizations:
   - mf
 
-categories:
-  - soudni-spory
-
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/naklady-statu-za-pravni-zastoupeni
 ---

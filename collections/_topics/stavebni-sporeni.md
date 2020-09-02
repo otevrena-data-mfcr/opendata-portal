@@ -1,9 +1,6 @@
 ---
-title: Vývoj stavebního spoření
-description: Základní ukazatele vývoje stavebního spoření v České republice.
-
-categories:
-  - dane
+title: Stavební spoření
+description: Vývoj stavebního spoření v České republice.
 
 organizations:
   - mf
