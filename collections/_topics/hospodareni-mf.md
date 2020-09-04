@@ -13,6 +13,10 @@ datasets:
   - https://opendata.mfcr.cz/lod/katalog/prehled-faktur-uzsvm
 
 links:
+  - title: Aplikace MONITOR
+    description: MONITOR umožňuje veřejnosti volný přístup k rozpočtovým a účetním informacím ze všech úrovní státní správy a samosprávy
+    url: https://monitor.statnipokladna.cz/
+
   - title: Aplikace Supervizor
     description: Supervizor zobrazuje faktury ministerstva financí v přehledné rozklikávací vizualizaci
     url: https://supervizor.mfcr.cz/
@@ -20,17 +24,26 @@ links:
 
 # Úvod
 
-# Aplikace Supervizor
-
 # MONITOR Státní pokladny
 
 ![MONITOR Státní pokladny - snímek obrazovky](/assets/content/monitor.png)
 
-# Smlouvy
+MONITOR je specializovaný informační portál Ministerstva financí, který umožňuje veřejnosti volný přístup k rozpočtovým a účetním informacím ze všech úrovní státní správy a samosprávy. Prezentované informace pocházejí ze systému Státní pokladny (IISSP – Integrovaný informační systém státní pokladny) a Centrálního systému účetních informací (CSÚIS) a jsou čtvrtletně aktualizovány.
 
-Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
+MONITOR dále zajišťuje zveřejňování účetních závěrek organizačních složek státu podle § 21 a zákona č. 563/1991 Sb., o účetnictví, ve znění pozdějších předpisů.
+
+Základní verze portálu byla spuštěna v květnu 2013. V prosinci 2013 byla zpřístupněna analytická část portálu, která umožňuje dynamickou analýzu dat pomocí pokročilého nástroje pro reporting.
+
+Své dotazy a náměty můžete zasílat na adresu [infomonitor@mfcr.cz](mailto:infomonitor@mfcr.cz).
+
+# Aplikace Supervizor
+
+# Datové sady
+
+Jednotlivé organizace resortu Ministerstva financí jsou samostatnými účetními jednotkami a mají tedy částečně odlišné vedení faktur a smluv. V současnosti se snažíme o sjednocení exportů otevření dat dle [otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft) dle Ministerstva vnitra. Tato norma je ale bohužel stále ve fázi draftu a tak se exporty budou ještě pravděpodobně měnit.
 
 ## Přehled smluv MF
+Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 
 | Název sloupce        | Popis                                                                |
 |----------------------|----------------------------------------------------------------------|
@@ -61,9 +74,7 @@ Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 | cstredisko_nazev |                                                           |
 {: .table .table-sm}
 
-# Faktury
 
-Jednotlivé organizace resortu Ministerstva financí jsou samostatnými účetními jednotkami a mají tedy částečně odlišné vedení faktur. V současnosti se snažíme o sjednocení exportů otevření dat dle [otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft) dle Ministerstva vnitra. Tato norma je ale bohužel stále ve fázi draftu a tak se exporty budou ještě pravděpodobně měnit.
 
 ## Faktury MF
 Přehled uhrazených faktur Ministerstva financí ČR sestává z jediné tabulky, která obsahuje jak přehled jednotlivých faktur, tak jejich členění dle položky rozpočtu. Pro každou fakturu je uveden jeden záznam souhrnný a několik (nemusí být žádný) řádků položkových. Pro přehled všech faktur bez členění podle položky rozpočtu je tedy potřeba brát v potaz pouze záznamy souhrnné (typ_záznamu = 'souhrnný'). Naopak pro přehled částek za konkrétní položku rozpočtu je třeba sledovat sloupec částka_za_položku_rozpočtu a nikoli částky vztahující se k faktuře jako celku.
@@ -72,4 +83,4 @@ Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohov
 
 ## Faktury ÚZSVM
 
-
+# Náklady projektu Otevřená data MF
