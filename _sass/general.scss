@@ -59,10 +59,14 @@ h4 {
     @extend .mb-1;
     @extend .mt-3;
   }
-  h3 {
+  h4 {
     font-size: 1em;
     @extend .mb-1;
     @extend .mt-3;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 

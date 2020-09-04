@@ -1,8 +1,19 @@
 .autotoc {
   @extend .pr-3;
   @extend .pb-5;
-  
-  text-align:right;
-  border-right:1px solid $grey;
 
+  // text-align: right;
+  border-right: 1px solid $grey;
+
+  .toc-level-h1 {
+    font-weight: bold;
+    position: relative;
+  }
+  .toc-level-h2 {
+    @extend .ml-3;
+    opacity: 0.6;
+  }
+  .toc-level-h2:hover {
+    opacity: 0.8;
+  }
 }

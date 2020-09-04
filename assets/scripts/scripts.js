@@ -1,17 +1,20 @@
 $(document).ready(function () {
 
-  function assignAnimatedScroll(target) {
+  function assignAnimatedScroll(target, topOffset) {
+
+    if (!topOffset) topOffset = 0;
+
     $(target).on("click", function (e) {
       e.preventDefault();
       var target = $($(this).attr("href"));
       var scrollTarget = $(this).data("scroll-target") ? $($(this).data("scroll-target")) : undefined;
       if (scrollTarget) {
-        var offset = target.offset().top - scrollTarget.offset().top + scrollTarget.scrollTop() - 50;
+        var offset = target.offset().top - scrollTarget.offset().top + scrollTarget.scrollTop() - topOffset;
         scrollTarget.animate({ scrollTop: offset }, '250ms');
       }
       else {
-        console.log(target.offset().top);
-        $([document.documentElement, document.body]).animate({ scrollTop: target.offset().top }, '250ms');
+        var offset = target.offset().top - topOffset;
+        $([document.documentElement, document.body]).animate({ scrollTop: offset }, '250ms');
       }
     });
   }
@@ -25,6 +28,8 @@ $(document).ready(function () {
     var toc = this;
     var targetId = $(this).data("target");
     var levels = $(this).data("levels") || "h1,h2";
+    var topOffset = $(this).data("top-offset") ? Number($(this).data("top-offset")) : 0;
+
 
     var tocLinkTemplate = $("<a/>");
     tocLinkTemplate.addClass("animated-scroll");
@@ -36,13 +41,20 @@ $(document).ready(function () {
 
     tocItems.forEach(function (tocItem) {
       var id = $(tocItem).attr("id");
+
       if (!id) {
         tocLastId++;
         id = "toc_" + tocLastId;
         $(tocItem).attr("id", id);
       }
-      var tocLink = tocLinkTemplate.clone(true).text($(tocItem).text()).attr("href", "#" + id);
-      assignAnimatedScroll(tocLink);
+
+      var tocLink = tocLinkTemplate.clone(true)
+        .text($(tocItem).text())
+        .attr("href", "#" + id)
+        .addClass("toc-level-" + $(tocItem).prop("tagName").toLowerCase());
+
+      assignAnimatedScroll(tocLink, topOffset);
+
       $(toc).append(tocLink);
     })
 
@@ -74,7 +86,6 @@ $(document).ready(function () {
           dataset.distribuce
             .filter(function (resource) { return !!resource.formát; })
             .forEach(function (resource) {
-              console.log(resource);
               var el = $("<a/>")
                 .attr("href", resource.soubor_ke_stažení || resource.přístupové_url)
                 .text(resource.formát.split("/").pop().toUpperCase())
@@ -92,7 +103,7 @@ $(document).ready(function () {
   $.get("https://opendata.mfcr.cz/lod/stats").then(function (data) {
     $("#stats-publishers").text(data.publishers.toLocaleString("cs"));
     $("#stats-sources").text(data.distributions.toLocaleString("cs"));
-    var bytes = (Math.round(data.bytes / Math.pow(10,7))/100)
+    var bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100)
     $("#stats-size").text(bytes.toLocaleString("cs"));
   });
 
