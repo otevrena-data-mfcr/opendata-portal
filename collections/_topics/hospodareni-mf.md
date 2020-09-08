@@ -6,16 +6,13 @@ organizations:
   - mf
 
 datasets:
-  - https://opendata.mfcr.cz/lod/monitor/MONITOR
   - https://opendata.mfcr.cz/lod/katalog/smlouvy-ministerstva-financi-cr-seznam-smluv
   - https://opendata.mfcr.cz/lod/katalog/smlouvy-ministerstva-financi-cr-vazba-na-faktury
   - https://opendata.mfcr.cz/lod/katalog/faktury-ministerstva-financi-cr
   - https://opendata.mfcr.cz/lod/katalog/prehled-faktur-uzsvm
 
 links:
-  - title: Aplikace MONITOR
-    description: MONITOR umožňuje veřejnosti volný přístup k rozpočtovým a účetním informacím ze všech úrovní státní správy a samosprávy
-    url: https://monitor.statnipokladna.cz/
+
 
   - title: Aplikace Supervizor
     description: Supervizor zobrazuje faktury ministerstva financí v přehledné rozklikávací vizualizaci
@@ -23,20 +20,6 @@ links:
 ---
 
 # Úvod
-
-# MONITOR Státní pokladny
-
-![MONITOR Státní pokladny - snímek obrazovky](/assets/content/monitor.png)
-
-MONITOR je specializovaný informační portál Ministerstva financí, který umožňuje veřejnosti volný přístup k rozpočtovým a účetním informacím ze všech úrovní státní správy a samosprávy. Prezentované informace pocházejí ze systému Státní pokladny (IISSP – Integrovaný informační systém státní pokladny) a Centrálního systému účetních informací (CSÚIS) a jsou čtvrtletně aktualizovány.
-
-MONITOR dále zajišťuje zveřejňování účetních závěrek organizačních složek státu podle § 21 a zákona č. 563/1991 Sb., o účetnictví, ve znění pozdějších předpisů.
-
-Základní verze portálu byla spuštěna v květnu 2013. V prosinci 2013 byla zpřístupněna analytická část portálu, která umožňuje dynamickou analýzu dat pomocí pokročilého nástroje pro reporting.
-
-Své dotazy a náměty můžete zasílat na adresu [infomonitor@mfcr.cz](mailto:infomonitor@mfcr.cz).
-
-# Aplikace Supervizor
 
 # Datové sady
 
@@ -82,5 +65,7 @@ Přehled uhrazených faktur Ministerstva financí ČR sestává z jediné tabulk
 Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohové faktury přijaté ('Z') a jiné daňové doklady ('W').
 
 ## Faktury ÚZSVM
+
+# Aplikace Supervizor
 
 # Náklady projektu Otevřená data MF
