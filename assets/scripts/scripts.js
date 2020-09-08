@@ -68,33 +68,61 @@ $(document).ready(function () {
 
     self.find(".title").text("Načítání...");
 
-    $.get(iri)
-      .then(function (dataset) {
+    var datasetQuery = `PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?title ?description ?docs
+WHERE {
+  <${iri}> a dcat:Dataset;
+    dct:title ?title;
+    dct:description ?description .
+  FILTER (LANG(?title) = 'cs' && LANG(?description) = 'cs')
+  OPTIONAL {<${iri}> foaf:page ?docs}
+}`;
 
-        self.find(".title").text(dataset.název.cs);
-        self.find(".description").text(dataset.popis.cs);
+    var distributionQuery = `PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?iri ?format ?downloadUrl ?accessURL
+WHERE {
+  <${iri}> a dcat:Dataset; dcat:distribution ?iri .
+  ?iri dct:format ?format .
+  OPTIONAL { ?iri dcat:downloadURL ?downloadUrl } 
+  OPTIONAL { ?iri dcat:accessURL ?accessURL } 
+}`;
 
+    $.get("https://opendata.mfcr.cz/lod/sparql", { query: datasetQuery })
+      .then(function (result) {
 
-        if (dataset.dokumentace) {
+        var dataset = result.results.bindings[0];
+
+        self.find(".title").text(dataset.title.value);
+        self.find(".description").text(dataset.description.value);
+
+        if (dataset.docs) {
           var el = $("<a/>")
-            .attr("href", dataset.dokumentace)
+            .attr("href", dataset.docs.value)
             .text("Dokumentace")
           self.find(".actions").append(el);
         }
 
-        if (dataset.distribuce) {
-          dataset.distribuce
-            .filter(function (resource) { return !!resource.formát; })
-            .forEach(function (resource) {
-              var el = $("<a/>")
-                .attr("href", resource.soubor_ke_stažení || resource.přístupové_url)
-                .text(resource.formát.split("/").pop().toUpperCase())
-              self.find(".download").append(el);
-            });
-        }
+        $.get("https://opendata.mfcr.cz/lod/sparql", { query: distributionQuery })
+          .then(function (result) {
+
+            var distributions = result.results.bindings;
+
+            distributions
+              .forEach(function (distribution) {
+                var el = $("<a/>")
+                  .attr("href", distribution.downloadUrl ? distribution.downloadUrl.value : (distribution.accessUrl ? distribution.accessUrl.value : ""))
+                  .text(distribution.format.value.split("/").pop().toUpperCase())
+                self.find(".download").append(el);
+              });
+          });
 
       })
       .catch(function (err) {
+        console.error(err);
         self.find(".title").text("Neznámá datová sada")
         self.find(".description").text("Nastala chyba při stahování informací o datové sadě. Zkuste zobrazit informace kliknutím na tlačítko níže.")
       })
