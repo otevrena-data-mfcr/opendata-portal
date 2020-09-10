@@ -6,6 +6,12 @@ main {
   height: 100%;
 }
 
+
+.page {
+  padding-bottom: 20vh;
+}
+
+
 header {
   position: fixed;
   left: 0;
@@ -54,7 +60,6 @@ footer {
 }
 
 .sidebar {
-
   .title {
     @extend h1;
     background-color: rgba(255, 255, 255, 0.1);
@@ -68,7 +73,6 @@ footer {
   }
 
   nav {
-
     a {
       @extend .pl-4;
       @extend .py-2;
@@ -92,16 +96,5 @@ footer {
 @include media-breakpoint-up(md) {
   header .search {
     width: 400px;
-  }
-}
-
-.page {
-  h1 {
-    @extend .text-light;
-    @extend .py-3;
-    @extend .px-3;
-    @extend .px-md-5;
-    background-color: $blue-light;
-    margin: 0;
   }
 }

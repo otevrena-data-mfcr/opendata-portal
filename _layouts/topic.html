@@ -4,53 +4,55 @@ layout: main
 
 {% include hero.html title=page.title %}
 
-<div class="row no-gutters h-100">
+<div class="page">
+  <div class="row no-gutters h-100">
 
-  <div class="d-none d-xl-block col-xl-3">
-    <div class="pt-5 px-3 px-lg-5 h-100 sidebar text-right">
-      <nav class="autotoc d-inline-block text-left" data-target=".content" data-top-offset="100" data-levels="h1,h2"></nav>
+    <div class="d-none d-xl-block col-xl-3">
+      <div class="pt-5 px-3 px-lg-5 h-100 sidebar text-right">
+        <nav class="autotoc d-inline-block text-left" data-target=".content" data-top-offset="100" data-levels="h1,h2"></nav>
+      </div>
     </div>
-  </div>
 
-  <div class="col-md-8 col-xl-5">
-    <div class="pt-3 px-3 px-lg-5 mb-5 md-content content">
-      {{ page.content }}
+    <div class="col-md-8 col-xl-5">
+      <div class="pt-5 px-3 px-lg-5 mb-5 md-content content">
+        {{ page.content }}
+      </div>
     </div>
-  </div>
 
-  <div class="col-md-4 col-xl-4">
-    <div class="pt-3 px-3 px-lg-5 mb-5">
+    <div class="col-md-4 col-xl-4">
+      <div class="pt-4 px-3 px-lg-5 mb-5">
 
-      {% assign stories_count = page.stories | size %}
-      {% if stories_count > 0 %}
-      <h3 class="mt-4 mb-3">Články</h3>
-      {% for story_slug in page.stories %}
-      {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
-      {% for story in stories %}
-      {% include story-card.html story=story %}
-      {% endfor %}
-      {% endfor %}
-      {% endif %}
-
-
-      {% assign datasets_count = page.datasets | size %}
-
-      {% if datasets_count > 0 %}
-      <h3 class="mt-4 mb-3">Datové sady</h3>
-      {% for iri in page.datasets %}
-      {% include dataset-card.html iri=iri %}
-      {% endfor %}
-      {% endif %}
+        {% assign stories_count = page.stories | size %}
+        {% if stories_count > 0 %}
+        <h3 class="mt-4 mb-3">Články</h3>
+        {% for story_slug in page.stories %}
+        {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
+        {% for story in stories %}
+        {% include story-card.html story=story %}
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
 
 
-      {% assign links_count = page.links | size %}
-      {% if links_count > 0 %}
-      <h3 class="mt-4 mb-3">Další zdroje</h3>
-      {% for link in page.links %}
-      {% include link-card.html link=link %}
-      {% endfor %}
-      {% endif %}
+        {% assign datasets_count = page.datasets | size %}
 
+        {% if datasets_count > 0 %}
+        <h3 class="mt-4 mb-3">Datové sady</h3>
+        {% for iri in page.datasets %}
+        {% include dataset-card.html iri=iri %}
+        {% endfor %}
+        {% endif %}
+
+
+        {% assign links_count = page.links | size %}
+        {% if links_count > 0 %}
+        <h3 class="mt-4 mb-3">Další zdroje</h3>
+        {% for link in page.links %}
+        {% include link-card.html link=link %}
+        {% endfor %}
+        {% endif %}
+
+      </div>
     </div>
   </div>
 </div>

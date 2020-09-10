@@ -46,8 +46,10 @@ h4 {
 .md-content {
   h1 {
     font-size: 1.7em;
-    @extend .mt-4;
     @extend .mb-3;
+  }
+  h1:not(:first-child) {
+    @extend .mt-5;
   }
   h2 {
     font-size: 1.4em;
