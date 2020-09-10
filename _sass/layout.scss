@@ -6,11 +6,9 @@ main {
   height: 100%;
 }
 
-
 .page {
   padding-bottom: 20vh;
 }
-
 
 header {
   position: fixed;
@@ -56,6 +54,13 @@ footer {
   }
   p {
     margin: 0;
+  }
+
+  .twitter {
+    img {
+      height: 24px;
+      vertical-align: baseline;
+    }
   }
 }
 

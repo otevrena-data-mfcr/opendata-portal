@@ -69,3 +69,14 @@ Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohov
 # Aplikace Supervizor
 
 # Náklady projektu Otevřená data MF
+
+| Platba                                                                                                                     |      Cena | Počet |    Celkem |
+|----------------------------------------------------------------------------------------------------------------------------|----------:|------:|----------:|
+| **Provoz aplikačního serveru**<br><small>provoz dle modelu IaaS</small>                                                   |  2 707 Kč |     1 |  2 707 Kč |
+| **Provoz databázového serveru PostgreSQL 11**<br><small>provoz dle modelu SaaS; server je sdílen s jiným projektem</small> | 20 232 Kč |   0,5 | 10 116 Kč |
+| **Zaměstnanec #1**<br><small>odhadovaný čas, mzdové náklady</small>                                                        |    150 Kč |    20 |  3 000 Kč |
+| **Zaměstnanec #2**<br><small>odhadovaný čas, mzdové náklady</small>                                                        |    409 Kč |    60 | 24 522 Kč |
+{: .table .table-sm}
+
+**Celkové měsíční náklady**: 40 345 Kč  
+**Celkové roční náklady**: 484 140 Kč 
