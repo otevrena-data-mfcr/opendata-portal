@@ -12,8 +12,6 @@ datasets:
 links:
   - title: Webové rozhraní IS CEDR III
     url: https://cedr.mfcr.cz/cedr3internetv419/default.aspx
-  - title: Dokumentace IS CEDR III
-    url: https://cedropendata.mfcr.cz/c3lod/C3_OpenData%20-%20datová%20sada%20IS%20CEDR%20III.pdf
   - title: Webové rozhraní IS Dotinfo
     url: https://www.dotinfo.cz/
 ---
