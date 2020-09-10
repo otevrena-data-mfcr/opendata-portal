@@ -21,9 +21,9 @@ links:
 
 # Úvod
 
-# Datové sady
-
 Jednotlivé organizace resortu Ministerstva financí jsou samostatnými účetními jednotkami a mají tedy částečně odlišné vedení faktur a smluv. V současnosti se snažíme o sjednocení exportů otevření dat dle [otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft) dle Ministerstva vnitra. Tato norma je ale bohužel stále ve fázi draftu a tak se exporty budou ještě pravděpodobně měnit.
+
+# Datové sady
 
 ## Přehled smluv MF
 Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
