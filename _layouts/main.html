@@ -30,28 +30,7 @@
     {{ content }}
   </main>
 
-  <footer>
-    <div class="container-fluid py-1 px-4 px-md-5">
-      <div class="row">
-
-        <div class="col-5">
-          <a href="https://www.mfcr.cz">
-            <span class="d-none d-md-block">Ministerstvo financí ČR</span>
-            <span class="d-md-none">MFČR</span>
-          </a>
-        </div>
-        <div class="col-2 text-center">
-          <a href="https://twitter.com/otevrenadatamf" class="twitter" target="_blank"><img src="/assets/images/twitter.png"></a>
-        </div>
-        <div class="col-5">
-          <p class="text-right">
-            <a href="mailto:otevrenadata@mfcr.cz">otevrenadata@mfcr.cz</a>
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </footer>
+  {% include footer.html %}
 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
