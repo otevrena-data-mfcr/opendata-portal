@@ -7,7 +7,7 @@ stories:
   - navod-sporeni
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/vyvoj-penzijniho-pripojisteni-doplnkoveho-penzijniho-sporeni
+  - https://opendata.mfcr.cz/lod/katalog/penzijni-pripojisteni-doplnkove-penzijni-sporeni
   
 links:
   - title: Penzijní připojištění a spoření na webu MF
