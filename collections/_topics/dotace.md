@@ -20,6 +20,14 @@ links:
 
 ## IS CEDR III
 
+Centrální evidence dotací z rozpočtu nebo také Centrální registr dotací, je databáze obsahující údaje o dotacích, návratných finančních výpomocích a dalších podobných transferech poskytovaných ze státního rozpočtu, státních fondů, státních finančních aktiv a Národního fondu (včetně evropských dotací) a jejich příjemcích.
+
+Data jsou poskytována jak v balících CSV, tak ve formátu RDF linked data.
+
+### Struktura
+
+[![Struktura IS CEDR III](/assets/content/cedr.png)](/assets/content/cedr.png)
+
 Sem zkopírovat nějaké věci z té dokumentace, třeba ten obrázek návaznosti datasetů
 
 ## Dotinfo
