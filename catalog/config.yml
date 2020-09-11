@@ -4,3 +4,5 @@ endpoint: https://opendata.mfcr.cz/lod/sparql
 ordering: "arq_collation" # use function http://jena.apache.org/ARQ/function#collation for ordering taking into account locale. works only with Jena Fuseki SPARQL endpoint
 
 corsGateway: "https://opendata.mfcr.cz/gateway/"
+
+hideChild: true
