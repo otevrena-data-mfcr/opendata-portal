@@ -3,8 +3,8 @@ layout: main
 ---
 
 {% include hero.html title="Katalog otevřených dat" %}
-<opendata-catalog></opendata-catalog>
+<div class="container-fluid">
+  <opendata-catalog></opendata-catalog>
+</div>
 
-<script src="dist/runtime.js" defer></script>
-<script src="dist/polyfills.js" defer></script>
-<script src="dist/main.js" defer></script>
+<script src="package/catalog.js" defer></script>
