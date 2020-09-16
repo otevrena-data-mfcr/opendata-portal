@@ -12,8 +12,9 @@ ENV JEKYLL_ENV=production
 RUN jekyll build
 
 
-
 FROM nginx:alpine
+
+WORKDIR /srv
 
 COPY --from=build /srv/app/_site .
 
