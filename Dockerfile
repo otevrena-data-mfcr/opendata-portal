@@ -16,3 +16,5 @@ RUN jekyll build
 FROM nginx:alpine
 
 COPY --from=build /srv/app/_site .
+
+COPY nginx.conf /etc/nginx/nginx.conf
