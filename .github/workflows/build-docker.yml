@@ -1,0 +1,20 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-docker:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@master
+      - name: Build the Docker image
+        run: docker build ./server --tag otevrenadatamfcr/opendata-portal
+      - name: Login to DockerHub
+        run: docker login --username="${{secrets.DOCKER_USERNAME}}" --password="${{secrets.DOCKER_PASSWORD}}"
+      - name: Push to DockerHub
+        run: docker push otevrenadatamfcr/opendata-portal
