@@ -1,11 +1,11 @@
 <div class="topics">
   <div class="row">
     {% for topic in site.topics %}
-    <div class="col-md-6 col-lg-4 mb-5">
-      <div class="p-3 h-100 topic">
-        <h2><a href="{{topic.url}}">{{topic.title}}</a></h2>
-        <p>{{topic.description}}</p>
-      </div>
+    <div class="col-md-12 col-lg-4 mb-5">
+      <a href="{{topic.url}}" class="h-100 topic">
+        <h3 class="p-3">{{topic.title}}</h3>
+        <p class="px-3 pb-3">{{topic.description}}</p>
+      </a>
     </div>
     {% endfor %}
   </div>

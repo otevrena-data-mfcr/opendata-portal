@@ -1,11 +1,15 @@
 @import "variables";
 
 .frontpage {
-  @extend .bg-light;
+  // @extend .bg-light;
 
   .hero {
-
+    color:$white;
     background-image: url("/assets/images/mf.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 
     h1 {
       font-size: calc(30px + 2.2vw);
@@ -19,10 +23,19 @@
     position: relative;
   }
 
+  .hero::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 
   .ribbon {
-    background-color: $white;
-    box-shadow: $shadow;
+    // background-color: $white;
+    // box-shadow: $shadow;
     position: relative;
 
     a {
@@ -34,10 +47,13 @@
 
     .stats {
       text-align: center;
-      font-size: calc(10px + 0.5vw);
+      font-size: calc(10px + 0.3vw);
+      color: $darkGrey;
+      background-color: rgba(255, 255, 255, 0.7);
+      // border-radius: 5px;
 
       .number {
-        font-size: calc(12px + 2vw);
+        font-size: calc(12px + 1.5vw);
         vertical-align: middle;
       }
 
@@ -47,24 +63,47 @@
     }
   }
 
+  .hot {
+    .button {
+      background-color: $blue;
+      display: block;
+      text-decoration: none;
+      color: $white;
+    }
+    .button:hover {
+      background-color: $lightBlue;
+      transition: background-color 200ms;
+    }
+  }
+
   .stories {
     .post {
-      background-color: $white;
-      border-radius: 5px;
+      @extend .bg-light;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 200ms;
     }
   }
 
   .news {
-    background-color: $white;
-    border-radius: 5px;
+    border-left: 1px solid #eee;
   }
 
-  .stats {
-    background-color: $white;
-    border-radius: 5px;
-  }
+  .topics {
+    .topic {
+      @extend .bg-light;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 200ms;
 
-  .search {
-    box-shadow: $shadow;
+      h3 {
+        border-bottom: 1px solid $white;
+      }
+      p {
+        text-align: left;
+      }
+    }
   }
 }

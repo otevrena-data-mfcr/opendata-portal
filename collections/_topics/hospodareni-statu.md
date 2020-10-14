@@ -1,6 +1,6 @@
 ---
 title: Hospodaření státu
-description: Hospodaření České republiky
+description: Hospodaření České republiky v aplikaci MONITOR Státní pokladny
 
 datasets:
   - https://opendata.mfcr.cz/lod/monitor/MONITOR

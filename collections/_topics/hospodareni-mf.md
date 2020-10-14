@@ -1,5 +1,5 @@
 ---
-title: Hospodaření resortu MF
+title: Hospodaření Ministerstva financí
 description: Hospodaření v resortu Ministerstva financí ČR
 
 organizations:
@@ -21,7 +21,7 @@ links:
 
 # Úvod
 
-Jednotlivé organizace resortu Ministerstva financí jsou samostatnými účetními jednotkami a mají tedy částečně odlišné vedení faktur a smluv. V současnosti se snažíme o sjednocení exportů otevření dat dle [otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft) dle Ministerstva vnitra. Tato norma je ale bohužel stále ve fázi draftu a tak se exporty budou ještě pravděpodobně měnit.
+Jednotlivé organizace resortu Ministerstva financí jsou samostatnými účetními jednotkami a mají tedy částečně odlišné vedení faktur a smluv. V současnosti se snažíme o sjednocení exportů otevření dat dle [otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft) Ministerstva vnitra. Tato norma je ale stále ve fázi draftu a tak se exporty budou bohužel ještě pravděpodobně měnit.
 
 # Datové sady
 
