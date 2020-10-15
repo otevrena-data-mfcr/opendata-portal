@@ -1,0 +1,21 @@
+---
+---
+[
+
+  {% for topic in site.topics %}
+    {
+      "title"    : "{{ topic.title | escape }}",
+      "content" : "{{ topic.content | strip_html | newline_to_br | strip_newlines | replace: '<br />','\n' | escape }}",
+      "url"     : "{{ topic.url }}"
+    },
+  {% endfor %}
+
+  {% for story in site.stories %}
+    {
+      "title"    : "{{ story.title | escape }}",
+      "content" : "{{ story.content | strip_html | newline_to_br | strip_newlines | replace: '<br />','\n' | escape }}",
+      "url"     : "{{ story.url }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  
+]

@@ -3,4 +3,80 @@ title: Hledání v otevřených datech
 layout: main
 ---
 
-<h1>Hledání v otevřených datech</h1>
+{% include hero.html title="Vyhledávání" %}
+
+<div class="container-fluid">
+  <div class="mx-xl-5 px-xl-5">
+
+    <div id="resultsPortal" class="mt-5"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  const urlParams = new URLSearchParams(window.location.search);
+  const needle = urlParams.get('q');
+
+  console.log("[search] loading data...");
+  $.get("/search.json")
+    .then(function (data) {
+
+      console.log("[search] processing...");
+
+      const options = {
+        isCaseSensitive: false,
+        includeScore: true,
+        shouldSort: true,
+        includeMatches: true,
+        findAllMatches: false,
+        minMatchCharLength: needle.length,
+        // location: 0,
+        threshold: 0.2,
+        // distance: 100,
+        // useExtendedSearch: false,
+        ignoreLocation: true,
+        // ignoreFieldNorm: false,
+        keys: [
+          { name: "title", weight: 10 },
+          { name: "content", weight: 5 },
+        ]
+      };
+
+      const fuse = new Fuse(data, options);
+
+      console.log("[search] searching for " + needle);
+      const results = fuse.search(needle);
+
+      console.log(results);
+      results.forEach(function (result) {
+
+        const resultEl = $("<div />").addClass("result");
+        resultEl.append($("<h3 />").text(result.item.title))
+
+        const matches = [];
+        result.matches.forEach(function (match) {
+          match.indices.slice(0, 5).forEach(function (i) {
+            matches.push(match.value.substring(i[0] - 20, i[0]).replace(/^\S+\s/,"") + "<em>" + match.value.substring(i[0], i[1] + 1) + "</em>" + match.value.substring(i[1] + 1, i[1] + 20).replace(/\s\S+$/,""));
+          });
+        });
+
+        resultEl.append($("<p />").html(matches.join(" &hellip; ")));
+
+        $("#resultsPortal").append(resultEl);
+      })
+
+
+
+    })
+    .catch(console.error);
+
+</script>

@@ -19,11 +19,21 @@ layout: main
 
   <div class="container pt-5">
     <div class="row hot mb-5">
-      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/koronavirus.html" class="py-2 text-center button"><h3 class="m-0">Koronavirus</h3></a></div>
-      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/ares.html" class="py-2 text-center button"><h3 class="m-0">ARES</h3></a></div>
-      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/hospodareni-statu.html" class="py-2 text-center button"><h3 class="m-0">MONITOR</h3></a></div>
-      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/dotace.html" class="py-2 text-center button"><h3 class="m-0">CEDR</h3></a></div>
-      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/hospodareni-mf.html" class="py-2 text-center button"><h3 class="m-0">Faktury a smlouvy</h3></a></div>
+      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/koronavirus.html" class="py-2 text-center button">
+          <h3 class="m-0">Koronavirus</h3>
+        </a></div>
+      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/ares.html" class="py-2 text-center button">
+          <h3 class="m-0">ARES</h3>
+        </a></div>
+      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/hospodareni-statu.html" class="py-2 text-center button">
+          <h3 class="m-0">MONITOR</h3>
+        </a></div>
+      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/dotace.html" class="py-2 text-center button">
+          <h3 class="m-0">CEDR</h3>
+        </a></div>
+      <div class="col-lg mb-3 mb-lg-0"><a href="/topics/hospodareni-mf.html" class="py-2 text-center button">
+          <h3 class="m-0">Faktury a smlouvy</h3>
+        </a></div>
     </div>
     <div class="row">
 
@@ -45,3 +55,14 @@ layout: main
   </div>
 
 </div>
+
+<script type="text/javascript">
+
+  $.get("https://opendata.mfcr.cz/lod/stats").then(function (data) {
+    $("#stats-publishers").text(data.publishers.toLocaleString("cs"));
+    $("#stats-sources").text(data.distributions.toLocaleString("cs"));
+    var bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100)
+    $("#stats-size").text(bytes.toLocaleString("cs"));
+  });
+
+</script>
