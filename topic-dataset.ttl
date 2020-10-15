@@ -11,5 +11,5 @@
 
 # DATASET TOPIC LABELS 
 {% for topic in site.topics %}<{{site.site_url}}/topics/{{topic.slug}}> a <http://www.w3.org/2004/02/skos/core#Concept> ;
-  skos:prefLabel "{{topic.title}}"@cs ;
+  skos:prefLabel "{{topic.title}}"@cs .
 {% endfor %}
