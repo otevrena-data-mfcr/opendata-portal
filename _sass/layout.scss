@@ -8,6 +8,9 @@ main {
 
 .page {
   padding-bottom: 20vh;
+
+  @extend .mx-xl-5;
+  @extend .px-xl-5;
 }
 
 .hero {
