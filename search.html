@@ -21,18 +21,47 @@ layout: main
       </li>
     </ul>
 
-    <div class="row mb-5">
-      <div class="col-xl-6">
 
-        <div class="tab-content p-3" id="myTabContent">
-          <div class="tab-pane fade show active" id="resultsPortal"></div>
-          <div class="tab-pane fade" id="resultsSparql"></div>
-          <div class="tab-pane fade" id="resultsData"></div>
+    <div class="tab-content p-3" id="myTabContent">
+
+      <div class="tab-pane fade show active" id="resultsPortal">
+        <div class="row mb-5">
+          <div class="col-xl-6">
+            <div class="results"></div>
+          </div>
         </div>
+      </div>
 
+      <div class="tab-pane fade" id="resultsSparql">
+        <div class="row mb-5">
+          <div class="col-xl-6">
+            <div class="results"></div>
+          </div>
+        </div>
+      </div>
 
+      <div class="tab-pane fade" id="resultsData">
+        <div class="row mb-5">
+          <div class="col-xl-6">
+            <div class="results"></div>
+          </div>
+          <div class="col-xl-6 text-right">
+            <div class="d-inline-block text-left">
+              <p>Vyhledávání v datech prochází tyto datové sady:</p>
+              <ul>
+                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Ff…financi-cr%2F649107b9-e2d8-4b47-92c5-024c6a200c0a">Faktury Ministerstva financí</a></li>
+                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fs…znam-smluv%2Fbdcd22b4-3461-4978-b19d-e767c574255f">Smlouvy Ministerstva financí</a></li>
+                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fo…objednavek%2Fc6c61e5a-27ef-4242-bde4-9a4f6b0388c1">Přehled objednávek Ministerstva financí</a></li>
+                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fo…-cr-detail%2Fe0b462a5-5176-47ef-b831-02d9db7af58d">Přehled objednávek Ministerstva financí - detail</a></li>
+                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fcedr%2FDotace%2Fcsv">CEDR - Dotace</a></li>
+                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fcedr%2FPrijemcePomoci%2Fcsv">CEDR - Prijemce pomoci</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 
 </div>
@@ -51,9 +80,14 @@ layout: main
 
   function search(needle) {
 
-    $("#resultsPortal").addClass("searching").html("");
-    $("#resultsData").addClass("searching").html("");
-    $("#resultsSparql").addClass("searching").html("");
+    $("#resultsPortal").addClass("searching");
+    $("#resultsPortal .results").html("");
+    
+    $("#resultsData").addClass("searching");
+    $("#resultsData .results").html("");
+    
+    $("#resultsSparql").addClass("searching");
+    $("#resultsSparql .results").html("");
 
     console.log("[search] loading data...");
     $.get("/search.json")
@@ -85,11 +119,11 @@ layout: main
         console.log("[search] searching for " + needle);
         const results = fuse.search(needle);
         console.log("[search] found results: " + results.length);
-        
+
         $("#resultsPortalCount").text(results.length);
-        
+
         if (!results.length) {
-          $("#resultsPortal").append($("<p />").text("Nebyly nalezeny žádné shody."));
+          $("#resultsPortal .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
           $("#resultsPortal").removeClass("searching");
           return;
         }
@@ -108,7 +142,7 @@ layout: main
 
           resultEl.append($("<p />").html(matches.join(" &hellip; ")));
 
-          $("#resultsPortal").append(resultEl);
+          $("#resultsPortal .results").append(resultEl);
         })
 
         $("#resultsPortal").removeClass("searching");
@@ -136,7 +170,7 @@ WHERE
       $("#resultsSparqlCount").text(matches.length);
 
       if (!matches.length) {
-        $("#resultsSparql").append($("<p />").text("Nebyly nalezeny žádné shody."));
+        $("#resultsSparql .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
         $("#resultsSparql").removeClass("searching");
         return;
       }
@@ -146,7 +180,7 @@ WHERE
         resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(match.iri)).html(match.title.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>"))));
         resultEl.append($("<p />").html(match.description.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>")));
 
-        $("#resultsSparql").append(resultEl);
+        $("#resultsSparql .results").append(resultEl);
       });
 
       $("#resultsSparql").removeClass("searching");
@@ -170,11 +204,11 @@ WHERE
         })
 
       });
-      
-      $("#resultsDataCount").text(results.length);
+
+      $("#resultsDataCount").text(results.length === 100 ? results.length + "+" : results.length);
 
       if (!results.length) {
-        $("#resultsData").append($("<p />").text("Nebyly nalezeny žádné shody."));
+        $("#resultsData .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
         $("#resultsData").removeClass("searching");
         return;
       }
@@ -188,7 +222,7 @@ WHERE
 
         resultEl.append($("<p />").html(string));
 
-        $("#resultsData").append(resultEl);
+        $("#resultsData .results").append(resultEl);
       });
 
       $("#resultsData").removeClass("searching");
@@ -198,6 +232,9 @@ WHERE
 
   const urlParams = new URLSearchParams(window.location.search);
   const needle = urlParams.get('q');
+
+  $(".search input").val(needle);
+  $("h1").text("Vyhledávání: " + needle);
 
   if (needle) search(needle);
 
