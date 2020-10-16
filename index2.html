@@ -9,7 +9,25 @@ layout: main
       <h1 class="my-md-3 text-center">{{ site.title }}</h1>
 
       <div class="mb-3 mt-5">
-        {% include frontpage/ribbon.html %}
+        <div class="ribbon">
+          <div class="container">
+            <div class="row py-3 stats">
+              <div class="col">
+                <div class="number">6</div>
+                organizací
+              </div>
+              <div class="col">
+                <div class="number" id="stats-sources">?</div>
+                datových souborů
+              </div>
+              <div class="col">
+                <div class="number" id="stats-size">?</div>
+                GB dat
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -61,8 +79,8 @@ layout: main
   $.get("https://opendata.mfcr.cz/lod/stats").then(function (data) {
     $("#stats-publishers").text(data.publishers.toLocaleString("cs"));
     $("#stats-sources").text(data.distributions.toLocaleString("cs"));
-    var bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100)
-    $("#stats-size").text(bytes.toLocaleString("cs"));
+    var bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100);
+    $("#stats-size").text(bytes.toLocaleString("cs", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
   });
 
 </script>
