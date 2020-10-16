@@ -99,12 +99,12 @@ WHERE {
         self.find(".title").text(dataset.title.value);
         self.find(".description").text(dataset.description.value);
 
-        if (dataset.docs) {
-          var el = $("<a/>")
-            .attr("href", dataset.docs.value)
-            .text("Dokumentace")
-          self.find(".actions").append(el);
-        }
+        // if (dataset.docs) {
+        //   var el = $("<a/>")
+        //     .attr("href", dataset.docs.value)
+        //     .text("Dokumentace")
+        //   self.find(".actions").append(el);
+        // }
 
         $.get("https://opendata.mfcr.cz/lod/sparql", { query: distributionQuery })
           .then(function (result) {

@@ -77,11 +77,15 @@ layout: main
 <script type="text/javascript">
 
   $.get("https://opendata.mfcr.cz/lod/stats").then(function (data) {
+
     $("#stats-publishers").text(data.publishers.toLocaleString("cs"));
     $("#stats-sources").text(data.distributions.toLocaleString("cs"));
-    var bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100);
+
+    const bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100);
     $("#stats-size").text(bytes.toLocaleString("cs", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
-    $("#stats").attr("title", data.timestamp);
+
+    const date = new Date(data.timestamp);
+    $("#stats").attr("title", "Naposledy aktualizováno " + (date.valueOf() ? date.toLocaleString() : data.timestamp));
   });
 
 </script>

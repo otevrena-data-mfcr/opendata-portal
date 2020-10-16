@@ -23,7 +23,7 @@ layout: main
 
         {% assign stories_count = page.stories | size %}
         {% if stories_count > 0 %}
-        <h3 class="mt-4 mb-3">Články</h3>
+        <h3 class="mt-4 mb-3">Návody</h3>
         {% for story_slug in page.stories %}
         {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
         {% for story in stories %}

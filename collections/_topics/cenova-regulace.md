@@ -8,6 +8,7 @@ datasets:
 
 links:
   - title: Výsledky kontrolní činnosti na webu MF
+    description: Informace o výsledcích kontrolní činnosti odboru 16 - Cenová politika, oddělení 1602 - Cenová kontrola
     url: https://www.mfcr.cz/cs/soukromy-sektor/cenova-regulace-a-kontrola/vysledky-kontrolni-cinnosti
 ---
 
