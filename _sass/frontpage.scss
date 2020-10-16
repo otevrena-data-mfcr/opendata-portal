@@ -4,7 +4,7 @@
   // @extend .bg-light;
 
   .hero {
-    color:$white;
+    color: $white;
     background-image: url("/assets/images/mf.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -69,6 +69,7 @@
       display: block;
       text-decoration: none;
       color: $white;
+      border-radius: 2px;
     }
     .button:hover {
       background-color: $lightBlue;
