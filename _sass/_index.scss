@@ -1,0 +1,22 @@
+
+:root{
+  --primary: #007bff;
+}
+
+@import "bootstrap/bootstrap.scss";
+@import "bootstrap-overrides";
+
+@import "fonts";
+
+@import "general";
+
+@import "layout";
+
+@import "components";
+
+@import "resources";
+@import "stories";
+
+@import "frontpage";
+
+@import "search-results";

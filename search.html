@@ -5,11 +5,36 @@ layout: main
 
 {% include hero.html title="Vyhledávání" %}
 
-<div class="container-fluid">
+<div class="container-fluid search-results">
+
   <div class="mx-xl-5 px-xl-5">
 
-    <div id="resultsPortal" class="mt-5"></div>
+    <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#resultsPortal" role="tab" aria-controls="home" aria-selected="true">Vyhledávání v portálu otevřených dat<span id="resultsPortalCount" class="badge badge-inverse"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#resultsSparql" role="tab" aria-controls="profile" aria-selected="false">Vyhledávání v datových sadách<span id="resultsSparqlCount" class="badge badge-inverse"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#resultsData" role="tab" aria-controls="contact" aria-selected="false">Vyhledávání v datech<span id="resultsDataCount" class="badge badge-inverse"></span></a>
+      </li>
+    </ul>
+
+    <div class="row">
+      <div class="col-xl-6">
+
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="resultsPortal"></div>
+          <div class="tab-pane fade" id="resultsSparql"></div>
+          <div class="tab-pane fade" id="resultsData"></div>
+        </div>
+
+
+      </div>
+    </div>
   </div>
+
 </div>
 
 
@@ -23,60 +48,157 @@ layout: main
 
 
 <script type="text/javascript">
-  const urlParams = new URLSearchParams(window.location.search);
-  const needle = urlParams.get('q');
 
-  console.log("[search] loading data...");
-  $.get("/search.json")
-    .then(function (data) {
+  function search(needle) {
 
-      console.log("[search] processing...");
+    $("#resultsPortal").addClass("searching").html("");
+    $("#resultsData").addClass("searching").html("");
+    $("#resultsSparql").addClass("searching").html("");
 
-      const options = {
-        isCaseSensitive: false,
-        includeScore: true,
-        shouldSort: true,
-        includeMatches: true,
-        findAllMatches: false,
-        minMatchCharLength: needle.length,
-        // location: 0,
-        threshold: 0.2,
-        // distance: 100,
-        // useExtendedSearch: false,
-        ignoreLocation: true,
-        // ignoreFieldNorm: false,
-        keys: [
-          { name: "title", weight: 10 },
-          { name: "content", weight: 5 },
-        ]
-      };
+    console.log("[search] loading data...");
+    $.get("/search.json")
+      .then(function (data) {
 
-      const fuse = new Fuse(data, options);
+        console.log("[search] processing...");
 
-      console.log("[search] searching for " + needle);
-      const results = fuse.search(needle);
+        const options = {
+          isCaseSensitive: false,
+          includeScore: true,
+          shouldSort: true,
+          includeMatches: true,
+          findAllMatches: false,
+          minMatchCharLength: needle.length,
+          // location: 0,
+          threshold: 0.2,
+          // distance: 100,
+          // useExtendedSearch: false,
+          ignoreLocation: true,
+          // ignoreFieldNorm: false,
+          keys: [
+            { name: "title", weight: 10 },
+            { name: "content", weight: 5 },
+          ]
+        };
 
-      console.log(results);
+        const fuse = new Fuse(data, options);
+
+        console.log("[search] searching for " + needle);
+        const results = fuse.search(needle);
+        console.log("[search] found results: " + results.length);
+        
+        $("#resultsPortalCount").text(results.length);
+        
+        if (!results.length) {
+          $("#resultsPortal").append($("<p />").text("Nebyly nalezeny žádné shody."));
+          $("#resultsPortal").removeClass("searching");
+          return;
+        }
+
+        results.forEach(function (result) {
+
+          const resultEl = $("<div />").addClass("result");
+          resultEl.append($("<h3 />").append($("<a />").attr("href", result.item.url).text(result.item.title)));
+
+          const matches = [];
+          result.matches.forEach(function (match) {
+            match.indices.slice(0, 10).forEach(function (i) {
+              matches.push(match.value.substring(i[0] - 20, i[0]).replace(/^\S+\s/, "") + "<em>" + match.value.substring(i[0], i[1] + 1) + "</em>" + match.value.substring(i[1] + 1, i[1] + 20).replace(/\s\S+$/, ""));
+            });
+          });
+
+          resultEl.append($("<p />").html(matches.join(" &hellip; ")));
+
+          $("#resultsPortal").append(resultEl);
+        })
+
+        $("#resultsPortal").removeClass("searching");
+
+      })
+      .catch(console.error);
+
+    const sparqlQuery = `PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT ?iri ?title ?description
+WHERE
+{
+  ?iri a dcat:Dataset ; dct:title ?title .
+  OPTIONAL { ?iri dct:description ?description . }
+  FILTER ( REGEX(?title, "${needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}", "i") || REGEX(?description, "${needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}", "i")) .
+  FILTER (LANG(?title) = "cs") .
+}`;
+    $.get("https://opendata.mfcr.cz/lod/sparql", { query: sparqlQuery }).then(function (data) {
+
+      const matches = data.results.bindings.map(function (binding) {
+        return { iri: binding.iri.value, title: binding.title.value, description: binding.description && binding.description.value };
+      });
+
+      $("#resultsSparqlCount").text(matches.length);
+
+      if (!matches.length) {
+        $("#resultsSparql").append($("<p />").text("Nebyly nalezeny žádné shody."));
+        $("#resultsSparql").removeClass("searching");
+        return;
+      }
+
+      matches.forEach(function (match) {
+        const resultEl = $("<div />").addClass("result");
+        resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(match.iri)).text(match.title)));
+        resultEl.append($("<p />").text(match.description));
+
+        $("#resultsSparql").append(resultEl);
+      });
+
+      $("#resultsSparql").removeClass("searching");
+
+    });
+
+    $.get("https://opendata.mfcr.cz/lod/search", { q: needle }).then(function (results) {
+
+      const sources = {};
+
+      results.forEach(function (result) {
+        if (!sources[result.source.iri]) {
+          sources[result.source.iri] = result.source;
+          sources[result.source.iri].matches = [];
+        }
+
+        sources[result.source.iri].matches.push({
+          index: result.index,
+          property: result.property,
+          value: result.value,
+        })
+
+      });
+      
+      $("#resultsDataCount").text(results.length);
+
+      if (!results.length) {
+        $("#resultsData").append($("<p />").text("Nebyly nalezeny žádné shody."));
+        $("#resultsData").removeClass("searching");
+        return;
+      }
+
       results.forEach(function (result) {
 
         const resultEl = $("<div />").addClass("result");
-        resultEl.append($("<h3 />").text(result.item.title))
+        resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(result.source.iri)).text("Dokument č. " + result.index + " - " + result.source.name)));
 
-        const matches = [];
-        result.matches.forEach(function (match) {
-          match.indices.slice(0, 5).forEach(function (i) {
-            matches.push(match.value.substring(i[0] - 20, i[0]).replace(/^\S+\s/,"") + "<em>" + match.value.substring(i[0], i[1] + 1) + "</em>" + match.value.substring(i[1] + 1, i[1] + 20).replace(/\s\S+$/,""));
-          });
-        });
+        let string = result.property + ": " + result.value.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>");;
 
-        resultEl.append($("<p />").html(matches.join(" &hellip; ")));
+        resultEl.append($("<p />").html(string));
 
-        $("#resultsPortal").append(resultEl);
-      })
+        $("#resultsData").append(resultEl);
+      });
 
+      $("#resultsData").removeClass("searching");
+    });
 
+  }
 
-    })
-    .catch(console.error);
+  const urlParams = new URLSearchParams(window.location.search);
+  const needle = urlParams.get('q');
+
+  if (needle) search(needle);
 
 </script>

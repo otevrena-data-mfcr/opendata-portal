@@ -1,0 +1,15 @@
+.search-results {
+  .result {
+    @extend .mt-3;
+    
+    em {
+      font-style: normal;
+      background-color: $grey;
+    }
+    p {
+      @extend .small;
+      @extend .text-muted;
+      @extend .text-left;
+    }
+  }
+}

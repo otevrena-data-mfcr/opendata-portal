@@ -17,11 +17,11 @@ links:
 ---
 
 
-## Popis
+# Popis
 
-Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni) upravená do strojově čitelného formátu.
+Soubor obsahuje základní ukazatele vývoje stavebního spoření v České republice zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni) upravená do strojově čitelného formátu.
 
-### Struktura
+# Struktura datové sady
 
 * rok
 * ctvrtleti - čtvrtletí, k jehož konci jsou data uvedena; pro starší data je k dispozici pouze konec roku, tedy 4. čtvrtletí
