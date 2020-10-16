@@ -9,7 +9,7 @@ layout: main
       <h1 class="my-md-3 text-center">Otevřená data Ministerstva financí</h1>
 
       <div class="mb-3 mt-5">
-        <div class="ribbon">
+        <div class="ribbon" id="stats">
           <div class="container">
             <div class="row py-3 stats">
               <div class="col">
@@ -81,6 +81,7 @@ layout: main
     $("#stats-sources").text(data.distributions.toLocaleString("cs"));
     var bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100);
     $("#stats-size").text(bytes.toLocaleString("cs", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+    $("#stats").attr("title", data.timestamp);
   });
 
 </script>
