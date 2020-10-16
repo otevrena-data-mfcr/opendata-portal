@@ -182,9 +182,9 @@ WHERE
       results.forEach(function (result) {
 
         const resultEl = $("<div />").addClass("result");
-        resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(result.source.iri)).text("Dokument č. " + result.index + " - " + result.source.name)));
+        resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(result.source.iri)).text(result.source.name)));
 
-        let string = "<strong>" + result.property + "</strong>: " + result.value.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>");
+        let string = "<strong>Dokument č.</strong> " + result.index + ", <strong>Pole &bdquo;" + result.property + "&rdquo;</strong>: " + result.value.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>");
 
         resultEl.append($("<p />").html(string));
 
