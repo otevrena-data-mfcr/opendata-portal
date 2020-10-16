@@ -67,7 +67,7 @@ Popis xml elementů lze vyčíst ze schémat.
 
 ## Přístup pomocí metody GET
 
-Následující seznam nabízí výběr aplikací, které poskytují data zARES v XML pro dotazy metodou GET bez nutnosti digitálního podpisu.Název služby je současně příkladem dotazu do příslušné služby. 
+Následující seznam nabízí výběr aplikací, které poskytují data zARES v XML pro dotazy metodou GET bez nutnosti digitálního podpisu. Název služby je současně příkladem dotazu do příslušné služby. 
  - základní dotaz na výpis identifikačních údajů: Standard (doplňující informace)
  - dotaz na seznam registrací subjektu ve zdrojích VR, RES a RŽP: Seznam_Reg
  - základní výpis z více registrů: Basic (doplňující informace)
@@ -86,22 +86,22 @@ Následující seznam nabízí výběr aplikací, které poskytují data zARES v
  - elektronický opis Veřejného rejstříku: Vypis_VREO(doplňující informace)
 
 ### Poznámky a doporučení
-- Výstupy jsou uváděny buď v plné verzi, tj. plnými názvy elementů, neboúsporné ve zkratkách (parametr ver). Implicitně jsou nastaveny u jednotlivýchvýstupů úsporné verze, protože šetří přenosové linky. Pokud to je možné,doporučujeme parametr ver nepoužívat. Převod mezi plnými názvy a zkratkamije v souboru zkratek.
-- Pokud nevyhovují výstupy ve zkratkách, je možno volat plné verze sparametrem:
+- Výstupy jsou uváděny buď v plné verzi, tj. plnými názvy elementů, neboúsporné ve zkratkách (parametr ver). Implicitně jsou nastaveny u jednotlivých výstupů úsporné verze, protože šetří přenosové linky. Pokud to je možné, doporučujeme parametr ver nepoužívat. Převod mezi plnými názvy a zkratkamije v souboru zkratek.
+- Pokud nevyhovují výstupy ve zkratkách, je možno volat plné verze s parametrem:
   - VR - ver=1.0.2,
   - RŽP - ver=1.0.4,
   - RCNS - ver=1.0.1,
   - RES - ver=1.0.0,
   - Basic - ver=1.0.2,
 - SKO - ver=1.0.4.
-- Formát výstupu je určen parametrem xml. Tento parametr je náhradou za dvojiciparametrů odp, xslt v předchozí verzi ARES. Po přechodnoudobu budou funkční obě verze parametrů. Přípustné hodnoty parametru xml: 
+- Formát výstupu je určen parametrem xml. Tento parametr je náhradou za dvojici parametrů odp, xslt v předchozí verzi ARES. Po přechodnou dobu budou funkční obě verze parametrů. Přípustné hodnoty parametru xml: 
   - xml=0 výstup je v xml 
   - xml=1 výstup je v html, transformce z xml probíhá v prohlížeči uživatele 
   - xml=2 výstup je v html, transformace z xml probíhá na serveru 
 
-- Implicitní nastavení transformací je v prohlížeči klienta, protože přiopakovaných dotazech je pro klienta i server rychlejší.
+- Implicitní nastavení transformací je v prohlížeči klienta, protože při opakovaných dotazech je pro klienta i server rychlejší.
 - Pokud by se html po transformaci na klientu nezobrazovalo korektně, použijte transformaci na serveru (ve formuláři volba "HTML server").
-- V případě výskytu problémů s transformacemi jako první radu doporučujemevymazání cache Vašeho prohlížeče, ukončení práce v prohlížeči a případně irestart počítače. Pokud tato jednoduchá rada nepomůže, můžete kontaktovattechnickou podporu na adrese ares@mfcr.cz.Prosím, v e-mailu uveďte informace o:
+- V případě výskytu problémů s transformacemi jako první radu doporučujeme vymazání cache Vašeho prohlížeče, ukončení práce v prohlížeči a případně i restart počítače. Pokud tato jednoduchá rada nepomůže, můžete kontaktovattechnickou podporu na adrese ares@mfcr.cz.Prosím, v e-mailu uveďte informace o:
     1. hardware Vašeho počítače (stačí typ procesoru a množství paměti RAM)
     2. číslo verze Vašeho operačního systému
     3. číslo verze Vámi používaného prohlížeče
