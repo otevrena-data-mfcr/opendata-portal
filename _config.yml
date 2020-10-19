@@ -12,13 +12,14 @@ collections_dir: collections
 collections:
   organizations:
     output: true
+  apps:
+    output: false
   posts:
     output: false
   stories:
     output: true
   topics:
     output: true
-
 
 defaults:
   - scope:
