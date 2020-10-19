@@ -4,14 +4,14 @@ title: Aplikace a vizualizace
 ---
 {% include hero.html title=page.title %}
 <div class="container apps mt-5">
-  <div class="row justify-content-center">
+  <div class="row">
     {% for app in site.apps %}
     <div class="col-md-6 col-xl-4">
       <div class="app mx-3">
-        <a href="{{app.link}}">
+        <a href="{{app.link}}" target="_blank">
           <img src="{{app.image | default: "/assets/content/apps/placeholder.png"}}" alt="{{app.title}}">
         </a>
-        <h3 class="mt-4"><a href="{{app.link}}">{{app.title}}</a></h3>
+        <h3 class="mt-4"><a href="{{app.link}}" target="_blank">{{app.title}}</a></h3>
         <p>{{app.content}}</p>
       </div>
     </div>
