@@ -16,7 +16,7 @@ links:
 
 # MONITOR Státní pokladny
 
-![MONITOR Státní pokladny - snímek obrazovky](/assets/content/monitor.png)
+![MONITOR Státní pokladny - snímek obrazovky](/assets/content/apps/monitor.png)
 
 MONITOR je specializovaný informační portál Ministerstva financí, který umožňuje veřejnosti volný přístup k rozpočtovým a účetním informacím ze všech úrovní státní správy a samosprávy. Prezentované informace pocházejí ze systému Státní pokladny (IISSP – Integrovaný informační systém státní pokladny) a Centrálního systému účetních informací (CSÚIS) a jsou čtvrtletně aktualizovány.
 
