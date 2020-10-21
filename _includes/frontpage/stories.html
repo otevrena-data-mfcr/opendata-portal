@@ -3,8 +3,8 @@
   {% for story in stories %}
     <a href="{{story.url}}" class="post p-3 mb-3">
       <h3 class="mb-3">{{ story.title }}</h3>
-      {{story.content}}
+      {{story.description}}
     </a>
     {% endfor %}
-    <a href="/stories">Všechny návody a vizualizace</a>
+    <a href="/stories">Všechny návody a analýzy</a>
 </div>

@@ -5,15 +5,23 @@ hideFooter: true
 {% include hero.html title=page.title %}
 
 <div class="story">
-  <iframe src="{{page.iframe}}" seamless></iframe>
 
-  {% if page.github %}
   <div class="github text-center p-3">
     <a href="{{page.github}}" target="_blank">
       <img src="/assets/images/github.png">
       <br>
-      Zdrojové kódy
+      Zdrojový kód
     </a>
   </div>
-  {% endif %}
+
+  <div class="container">
+
+    {% if page.type == 'jupyter' %}
+    <div class="jupyter mt-4 mb-5">
+      {{ content | remove_first: page.excerpt }}
+    </div>
+    {% endif %}
+
+
+  </div>
 </div>

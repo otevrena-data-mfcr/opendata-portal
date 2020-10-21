@@ -6,30 +6,20 @@ title: Návody a analýzy
 
 {% include hero.html title=page.title %}
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3 col-xl-2 offset-xl-1">
-      <div class="pt-5 px-3 px-lg-5 h-100 text-right">
-        <nav class="nav nav-pills flex-column">
-          <a class="nav-item nav-link active">Vše</a>
-          <a class="nav-item nav-link">Návody</a>
-          <a class="nav-item nav-link">Analýzy</a>
-          <a class="nav-item nav-link">Vizualizace</a>
-        </nav>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="pt-5 px-3 px-lg-5 h-100">
+<div class="container">
+  <!-- <nav class="nav nav-pills mt-5 mb-4">
+    <a class="nav-item nav-link active">Vše</a>
+    <a class="nav-item nav-link">Návody</a>
+    <a class="nav-item nav-link">Analýzy</a>
+  </nav> -->
 
-        {% for story in site.stories %}
-        <div>
-          <a href="{{story.url}}">
-            <h2>{{story.title}}</h2>
-          </a>
-          {{story.excerpt}}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
+  {% for story in site.stories %}
+  <div class="story my-5">
+    <a href="{{story.url}}">
+      <h2>{{story.title}}</h2>
+    </a>
+    {{story.excerpt}}
   </div>
+  {% endfor %}
+
 </div>

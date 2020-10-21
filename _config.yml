@@ -5,7 +5,7 @@ email: martin.kopecek@mfcr.cz
 
 site_url: "https://opendata.mfcr.cz"
 exports_url: "https://opendata.mfcr.cz/exports"
-catalog_url: "https://opendata.mfcr.cz/catalog"
+catalog_url: "/catalog"
 
 collections_dir: collections
 

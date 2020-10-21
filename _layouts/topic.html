@@ -3,23 +3,23 @@ layout: main
 ---
 
 {% include hero.html title=page.title %}
-<div class="page">
-  <div class="row no-gutters h-100">
+<div class="container">
+  <div class="row h-100">
 
-    <div class="d-none d-xl-block col-xl-3">
+    <div class="d-none col-xl-3">
       <div class="pt-5 px-3 px-lg-5 h-100 sidebar text-right">
         <nav class="autotoc d-inline-block text-left" data-target=".content" data-top-offset="100" data-levels="h1,h2"></nav>
       </div>
     </div>
 
-    <div class="col-md-8 col-xl-5">
-      <div class="pt-5 px-3 px-lg-5 mb-5 md-content content">
+    <div class="col-md-8 col-xl-8">
+      <div class="pt-5 mb-5 md-content content">
         {{ page.content }}
       </div>
     </div>
 
     <div class="col-md-4 col-xl-4">
-      <div class="pt-4 px-3 px-lg-5 mb-5">
+      <div class="pt-4 mb-5">
 
         {% assign stories_count = page.stories | size %}
         {% if stories_count > 0 %}
