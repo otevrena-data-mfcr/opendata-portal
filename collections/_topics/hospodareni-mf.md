@@ -11,10 +11,7 @@ datasets:
   - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-detail
   - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-seznam-objednavek
   - https://opendata.mfcr.cz/lod/katalog/report-provoznich-nakladu-mf
-links:
-  - title: test
-    description: testf
-    url: testg
+
 ---
 
 # Úvod
