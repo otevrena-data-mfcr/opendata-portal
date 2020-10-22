@@ -9,20 +9,6 @@ media_folder: assets/content
 locale: cs
 
 collections:
-  - name: stories
-    label: Návody
-    label_singular: Návod
-    folder: collections/_stories/
-    create: true
-    editor:
-      preview: false
-    fields:
-      - { label: Titulek, name: title, widget: string }
-      - { label: Krátké shrnutí, name: description, widget: string, required: false }
-      - { label: Typ, name: type, widget: select, options: ["jupyter", "html"] }
-      - { label: GitHub, name: github, widget: string, required: false }
-      - { label: Obsah stránky, name: body, widget: markdown }
-
   - name: topics
     label: Témata
     label_singular: Téma
@@ -49,4 +35,30 @@ collections:
           - {label: Krátké shrnutí, name: description, widget: string }
           - {label: URL, name: url, widget: string }
         required: false
+      - { label: Obsah stránky, name: body, widget: markdown }
+
+  - name: stories
+    label: Návody
+    label_singular: Návod
+    folder: collections/_stories/
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: Titulek, name: title, widget: string }
+      - { label: Krátké shrnutí, name: description, widget: string, required: false }
+      - { label: Typ, name: type, widget: select, options: ["jupyter", "html"] }
+      - { label: GitHub, name: github, widget: string, required: false }
+      - { label: Obsah stránky, name: body, widget: markdown }
+  
+  - name: apps
+    label: Aplikace
+    folder: collections/_apps
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: Titulek, name: title, widget: string }
+      - { label: Obrázek, name: description, widget: image, required: false }
+      - { label: Odkaz, name: link, widget: string }
       - { label: Obsah stránky, name: body, widget: markdown }
