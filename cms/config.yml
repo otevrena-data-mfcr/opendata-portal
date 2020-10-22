@@ -38,6 +38,7 @@ collections:
         label_singular: Datová sada
         name: datasets
         widget: list
+        summary: '{{fields.iri}}'
         field: { label: IRI datové sady, name: iri, widget: string }
         required: false
       - label: Jiné zdroje
