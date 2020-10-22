@@ -34,7 +34,7 @@ collections:
       - { label: Titulek, name: title, widget: string }
       - { label: Zkrácený titulek, name: short_title, widget: string }
       - { label: Krátké shrnutí, name: description, widget: string }
-      - { label: Datové sady, name: type, widget: list }
+      - { label: Datové sady, name: datasets, widget: list }
       - label: Jiné zdroje
         name: links
         widget: list
