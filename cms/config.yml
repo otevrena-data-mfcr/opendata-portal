@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update
   base_url: https://opendata.mfcr.cz # Path to ext auth provider
 
-media_folder: assets/content
+media_folder: assets/content/uploads
 
 locale: cs
 
