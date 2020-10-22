@@ -22,6 +22,8 @@ datasets:
 
 # Úvod
 
+Resort ministerstva financí je tvořen šesti organizacemi: Ministerstvem financí (MF), Generálním finančním ředitelstvím (GFŘ), Generálním ředitelstvím cel (GŘC), Úřadem pro zastupování státu ve věcech majetkových (ÚZSVM), Finančním analytickým úřadem (FAÚ) a Kanceláří finančního arbitra (KFA). Tato stránka se zabývá hospodařením pouze resortní organizace Ministerstvo financí.
+
 Jednotlivé organizace resortu Ministerstva financí jsou samostatnými účetními jednotkami a mají tedy částečně odlišné vedení faktur a smluv. V současnosti se snažíme o sjednocení exportů otevření dat dle [otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft) Ministerstva vnitra. Tato norma je ale stále ve fázi draftu a tak se exporty budou bohužel ještě pravděpodobně měnit.
 
 # Přehled smluv MF
@@ -45,7 +47,7 @@ Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 
 # Přehled faktur MF
 
-Přehled uhrazených faktur Ministerstva financí ČR sestává z jediné tabulky, která obsahuje jak přehled jednotlivých faktur, tak jejich členění dle položky rozpočtu. Pro každou fakturu je uveden jeden záznam souhrnný a několik (nemusí být žádný) řádků položkových. Pro přehled všech faktur bez členění podle položky rozpočtu je tedy potřeba brát v potaz pouze záznamy souhrnné (typ_záznamu = 'souhrnný'). Naopak pro přehled částek za konkrétní položku rozpočtu je třeba sledovat sloupec částka_za_položku_rozpočtu a nikoli částky vztahující se k faktuře jako celku.
+Přehled uhrazených faktur Ministerstva financí ČR sestává z jediné tabulky, která obsahuje jak přehled jednotlivých faktur, tak jejich členění dle položky rozpočtu. Pro každou fakturu je uveden jeden záznam souhrnný a několik (nemusí být žádný) řádků položkových. Pro přehled všech faktur bez členění podle položky rozpočtu je tedy potřeba brát v potaz pouze záznamy souhrnné (typ_záznamu = 'souhrnný'). Naopak pro přehled částek za konkrétní položku rozpočtu je třeba sledovat pouze záznamy položkové (typ_záznamu = 'položkové').
 
 Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohové faktury přijaté ('Z') a jiné daňové doklady ('W').
 
@@ -53,7 +55,7 @@ Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohov
 
 | Název sloupce    | Popis                                                     |
 |------------------|-----------------------------------------------------------|
-| cislo_smlouvy    |                                                           |
+| cislo_smlouvy    | číslo smlouvy odpovídající číslu faktury v seznamu smluv  |
 | cislo_faktury    | číslo faktury odpovídající číslu faktury v seznamu faktur |
 | castka           | částka faktury                                            |
 | mena             |                                                           |
@@ -65,19 +67,4 @@ Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohov
 # Report provozních nákladů MF
 
 Skutečné provozní náklady Ministerstva financí za sledované období. Údaje vypovídají o spotřebě materiálu, služeb a mzdových prostředků MF v daném období. Údaje jsou uvedeny v tisících Kč.
-
-<!-- # Aplikace Supervizor -->
-
-<!-- # Náklady projektu Otevřená data MF
-
-| Platba                                                                                                                     |      Cena | Počet |    Celkem |
-|----------------------------------------------------------------------------------------------------------------------------|----------:|------:|----------:|
-| **Provoz aplikačního serveru**<br><small>provoz dle modelu IaaS</small>                                                   |  2 707 Kč |     1 |  2 707 Kč |
-| **Provoz databázového serveru PostgreSQL 11**<br><small>provoz dle modelu SaaS; server je sdílen s jiným projektem</small> | 20 232 Kč |   0,5 | 10 116 Kč |
-| **Zaměstnanec #1**<br><small>odhadovaný čas, mzdové náklady</small>                                                        |    150 Kč |    20 |  3 000 Kč |
-| **Zaměstnanec #2**<br><small>odhadovaný čas, mzdové náklady</small>                                                        |    409 Kč |    60 | 24 522 Kč |
-{: .table .table-sm}
-
-**Celkové měsíční náklady**: 40 345 Kč  
-**Celkové roční náklady**: 484 140 Kč  -->
 

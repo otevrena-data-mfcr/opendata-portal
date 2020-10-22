@@ -26,11 +26,11 @@ Data jsou poskytována jak v balících CSV, tak ve formátu RDF linked data.
 
 Hlavními tabulkami jsou **PrijemcePomoci**, **Dotace**, **Rozhodnuti** a **RozpoctoveObdobi**.
 
-Tabulka **PrijemcePomoci** obsahuje statiské informace o příjemcích. Tyto informace jsou přejímány z různých systémů a vázány na různé dotace a proto pro jednoho příjemce obsahuje tabulka několik záznamů. Pro spojení těchto záznamů je k dispozici IČO příjemce. 
+Tabulka **PrijemcePomoci** obsahuje statické informace o příjemcích. Tyto informace jsou přejímány z různých systémů a vázány na různé dotace a proto pro jednoho příjemce obsahuje tabulka několik záznamů. Pro spojení těchto záznamů je k dispozici IČO příjemce. 
 
 Tabulka **Dotace** obsahuje metadata o dotaci jako její název (pole **projektNazev**) a kategorizaci.
 
-Tabulka **Rozhodnuti** obsahuje zejména požadovanou částku (**castkaPozadovana**) a reálně rozho&shy;dnutou částku (**caskaRozhodnuta**), ale také zdroj, ze kterého mají být tyto částky vyplaceny.
+Tabulka **Rozhodnuti** obsahuje zejména požadovanou částku (**castkaPozadovana**) a reálně rozho&shy;dnutou částku (**caskaRozhodnuta**), ale také například zdroj, ze kterého mají být tyto částky vyplaceny.
 
 Tabulka **RozpoctoveObdobi** obsahuje výše čerpání v daném ropzočtovém období. Jedná se o pole **castkaCerpana**, **castkaSpotrebovana**, **castkaUvolnena** a **castkaVracena**.
 
