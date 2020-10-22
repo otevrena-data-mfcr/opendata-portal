@@ -2,10 +2,8 @@
 title: Hospodaření Ministerstva financí
 short_title: Hospodaření MF
 description: Faktury, smlouvy a objednávky Ministerstva financí
-
 organizations:
   - mf
-
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/smlouvy-ministerstva-financi-cr-seznam-smluv
   - https://opendata.mfcr.cz/lod/katalog/vazebni-tabulka-smlouv-faktur-ministerstva-financi-cr
@@ -13,11 +11,10 @@ datasets:
   - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-detail
   - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-seznam-objednavek
   - https://opendata.mfcr.cz/lod/katalog/report-provoznich-nakladu-mf
-
-# links:
-#   - title: Aplikace Supervizor
-#     description: Supervizor zobrazuje faktury ministerstva financí v přehledné rozklikávací vizualizaci
-#     url: https://supervizor.mfcr.cz/
+links:
+  - title: test
+    description: testf
+    url: testg
 ---
 
 # Úvod
