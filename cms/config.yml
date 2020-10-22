@@ -11,16 +11,16 @@ locale: cs
 collections:
   - name: stories
     label: Návody
-    label_singular: Návody
+    label_singular: Návod
     folder: collections/_stories/
     create: true
     editor:
       preview: false
     fields:
       - { label: Titulek, name: title, widget: string }
-      - { label: Krátké shrnutí, name: description, widget: string }
+      - { label: Krátké shrnutí, name: description, widget: string, required: false }
       - { label: Typ, name: type, widget: select, options: ["jupyter", "html"] }
-      - { label: GitHub, name: github, widget: string }
+      - { label: GitHub, name: github, widget: string, required: false }
       - { label: Obsah stránky, name: body, widget: markdown }
 
   - name: topics
@@ -32,9 +32,14 @@ collections:
       preview: true
     fields:
       - { label: Titulek, name: title, widget: string }
-      - { label: Zkrácený titulek, name: short_title, widget: string }
-      - { label: Krátké shrnutí, name: description, widget: string }
-      - { label: Datové sady, name: datasets, widget: list }
+      - { label: Zkrácený titulek, name: short_title, widget: string, required: false}
+      - { label: Krátké shrnutí, name: description, widget: string, required: false }
+      - label: Datové sady
+        label_singular: Datová sada
+        name: datasets
+        widget: list
+        field: { label: IRI datové sady, name: iri, widget: string }
+        required: false
       - label: Jiné zdroje
         name: links
         widget: list
@@ -42,3 +47,5 @@ collections:
           - {label: Název, name: title, widget: string }
           - {label: Krátké shrnutí, name: description, widget: string }
           - {label: URL, name: url, widget: string }
+        required: false
+      - { label: Obsah stránky, name: body, widget: markdown }
