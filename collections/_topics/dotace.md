@@ -16,10 +16,6 @@ links:
     url: https://www.dotinfo.cz/
 ---
 
-# Úvod
-
-TODO: vysvětlit, jaké máme systémy na dotace (CEDR, Dotinfo, EDS/SMVS) a jaké jsou mezi nima vazby.
-
 # Centrální evidence dotací
 
 IS CEDR III, Centrální evidence dotací z rozpočtu nebo také Centrální registr dotací, je databáze obsahující údaje o dotacích, návratných finančních výpomocích a dalších podobných transferech poskytovaných ze státního rozpočtu, státních fondů, státních finančních aktiv a Národního fondu (včetně evropských dotací) a jejich příjemcích.
