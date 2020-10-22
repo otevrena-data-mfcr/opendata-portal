@@ -1,7 +1,6 @@
 ---
-title: Daně a odvody
-
-description: Daně a penzijní připojištění
+title: Penzijní připojištění
+description: Penzijní připojištění a doplňkové penzijní spoření
 
 stories:
   - navod-sporeni
@@ -16,11 +15,9 @@ links:
 
 # Úvod
 
-# Penzijní připojištění a doplňkové penzijní spoření
-
 Základní ukazatele vývoje penzijního připojištění a doplňkového penzijního spoření v České republice. Soubor obsahuje data zveřejňovaná na [webových stránkách ministerstva](https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni) upravená do strojově čitelném formátu.
 
-## Struktura
+# Struktura
 
 | Pole                      | Popis                                                                                                                                                                       |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -21,6 +21,17 @@ layout: main
     <div class="col-md-4 col-xl-4">
       <div class="pt-4 mb-5">
 
+        {% assign topics_count = page.topics | size %}
+        {% if topics_count > 0 %}
+        <h3 class="mt-4 mb-3">Související témata</h3>
+        {% for topic_slug in page.topics %}
+        {% assign topics = site.topics | where_exp:"item","item.slug == topic_slug" %}
+        {% for topic in topics %}
+        {% include topic-card.html topic=topic %}
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+
         {% assign stories_count = page.stories | size %}
         {% if stories_count > 0 %}
         <h3 class="mt-4 mb-3">Návody</h3>

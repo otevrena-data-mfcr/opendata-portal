@@ -177,7 +177,7 @@ WHERE
 
       matches.forEach(function (match) {
         const resultEl = $("<div />").addClass("result");
-        resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(match.iri)).html(match.title.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>"))));
+        resultEl.append($("<h3 />").append($("<a />").attr("href", "{{site.catalog_url}}/#/iri/" + encodeURIComponent(match.iri)).html(match.title.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>"))));
         resultEl.append($("<p />").html(match.description.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>")));
 
         $("#resultsSparql .results").append(resultEl);

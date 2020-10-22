@@ -1,6 +1,7 @@
 ---
 title: Hospodaření Ministerstva financí
-description: Hospodaření v resortu Ministerstva financí ČR
+short_title: Hospodaření MF
+description: Faktury, smlouvy a objednávky Ministerstva financí
 
 organizations:
   - mf
@@ -9,23 +10,21 @@ datasets:
   - https://opendata.mfcr.cz/lod/katalog/smlouvy-ministerstva-financi-cr-seznam-smluv
   - https://opendata.mfcr.cz/lod/katalog/vazebni-tabulka-smlouv-faktur-ministerstva-financi-cr
   - https://opendata.mfcr.cz/lod/katalog/faktury-ministerstva-financi-cr
-  - https://opendata.mfcr.cz/lod/katalog/prehled-faktur-uzsvm
+  - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-detail
+  - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-seznam-objednavek
+  - https://opendata.mfcr.cz/lod/katalog/report-provoznich-nakladu-mf
 
-links:
-
-
-  - title: Aplikace Supervizor
-    description: Supervizor zobrazuje faktury ministerstva financí v přehledné rozklikávací vizualizaci
-    url: https://supervizor.mfcr.cz/
+# links:
+#   - title: Aplikace Supervizor
+#     description: Supervizor zobrazuje faktury ministerstva financí v přehledné rozklikávací vizualizaci
+#     url: https://supervizor.mfcr.cz/
 ---
 
 # Úvod
 
 Jednotlivé organizace resortu Ministerstva financí jsou samostatnými účetními jednotkami a mají tedy částečně odlišné vedení faktur a smluv. V současnosti se snažíme o sjednocení exportů otevření dat dle [otevřené formální normy pro zveřejňování faktur](https://ofn.gov.cz/faktury/draft) Ministerstva vnitra. Tato norma je ale stále ve fázi draftu a tak se exporty budou bohužel ještě pravděpodobně měnit.
 
-# Datové sady
-
-## Přehled smluv MF
+# Přehled smluv MF
 Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 
 | Název sloupce        | Popis                                                                |
@@ -44,7 +43,13 @@ Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 | zverejnit_v_rs       | smlouva byla zveřejněna v [rejstříku smluv](https://smlouvy.gov.cz/) |
 {: .table .table-sm}
 
-## Přehled smluv MF - Vazby smluv a faktur
+# Přehled faktur MF
+
+Přehled uhrazených faktur Ministerstva financí ČR sestává z jediné tabulky, která obsahuje jak přehled jednotlivých faktur, tak jejich členění dle položky rozpočtu. Pro každou fakturu je uveden jeden záznam souhrnný a několik (nemusí být žádný) řádků položkových. Pro přehled všech faktur bez členění podle položky rozpočtu je tedy potřeba brát v potaz pouze záznamy souhrnné (typ_záznamu = 'souhrnný'). Naopak pro přehled částek za konkrétní položku rozpočtu je třeba sledovat sloupec částka_za_položku_rozpočtu a nikoli částky vztahující se k faktuře jako celku.
+
+Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohové faktury přijaté ('Z') a jiné daňové doklady ('W').
+
+# Vazby smluv a faktur MF
 
 | Název sloupce    | Popis                                                     |
 |------------------|-----------------------------------------------------------|
@@ -57,18 +62,13 @@ Přehled platných i neplatných smluv, které uzavřelo ministerstvo financí.
 | cstredisko_nazev |                                                           |
 {: .table .table-sm}
 
+# Report provozních nákladů MF
 
+Skutečné provozní náklady Ministerstva financí za sledované období. Údaje vypovídají o spotřebě materiálu, služeb a mzdových prostředků MF v daném období. Údaje jsou uvedeny v tisících Kč.
 
-## Faktury MF
-Přehled uhrazených faktur Ministerstva financí ČR sestává z jediné tabulky, která obsahuje jak přehled jednotlivých faktur, tak jejich členění dle položky rozpočtu. Pro každou fakturu je uveden jeden záznam souhrnný a několik (nemusí být žádný) řádků položkových. Pro přehled všech faktur bez členění podle položky rozpočtu je tedy potřeba brát v potaz pouze záznamy souhrnné (typ_záznamu = 'souhrnný'). Naopak pro přehled částek za konkrétní položku rozpočtu je třeba sledovat sloupec částka_za_položku_rozpočtu a nikoli částky vztahující se k faktuře jako celku.
+<!-- # Aplikace Supervizor -->
 
-Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohové faktury přijaté ('Z') a jiné daňové doklady ('W').
-
-## Faktury ÚZSVM
-
-# Aplikace Supervizor
-
-# Náklady projektu Otevřená data MF
+<!-- # Náklady projektu Otevřená data MF
 
 | Platba                                                                                                                     |      Cena | Počet |    Celkem |
 |----------------------------------------------------------------------------------------------------------------------------|----------:|------:|----------:|
@@ -79,4 +79,5 @@ Soubor taktéž obsahuje jak faktury přijaté (typ_dokladu = 'F'), tak zálohov
 {: .table .table-sm}
 
 **Celkové měsíční náklady**: 40 345 Kč  
-**Celkové roční náklady**: 484 140 Kč 
+**Celkové roční náklady**: 484 140 Kč  -->
+

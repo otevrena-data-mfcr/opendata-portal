@@ -1,15 +1,10 @@
 ---
-title: Cenová regulace
-description: Sazby a přehledy cenové regulace
+title: Sazby stravného
+description: Sazby zahraničního stravného
 
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/zakladni-sazby-zahranicniho-stravneho
 
-
-links:
-  - title: Výsledky kontrolní činnosti na webu MF
-    description: Informace o výsledcích kontrolní činnosti odboru 16 - Cenová politika, oddělení 1602 - Cenová kontrola
-    url: https://www.mfcr.cz/cs/soukromy-sektor/cenova-regulace-a-kontrola/vysledky-kontrolni-cinnosti
 ---
 
 # Základní sazby zahraničního stravného

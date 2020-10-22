@@ -1,33 +1,33 @@
 ---
 title: Hospodaření státu
-description: Hospodaření České republiky v aplikaci MONITOR Státní pokladny
+description: Informace o hospodaření České republiky
+
+topics:
+  - monitor
 
 datasets:
-  - https://opendata.mfcr.cz/lod/monitor/MONITOR
-  - https://opendata.mfcr.cz/lod/katalog/faktury-uhrazene-z-fondu-privatizace
+  - https://opendata.mfcr.cz/lod/katalog/pokladni-plneni-statniho-rozpoctu
+  - https://opendata.mfcr.cz/lod/katalog/centralni-registr-administrativnich-budov
 
 links:
-  - title: Aplikace MONITOR
-    description: MONITOR umožňuje veřejnosti volný přístup k rozpočtovým a účetním informacím ze všech úrovní státní správy a samosprávy
-    url: https://monitor.statnipokladna.cz/
   - title: Majetek státu na webu MF
     url: https://www.mfcr.cz/cs/verejny-sektor/majetek-statu
 ---
 
-# MONITOR Státní pokladny
+# Finanční výkazy
 
-![MONITOR Státní pokladny - snímek obrazovky](/assets/content/apps/monitor.png)
+  - Plnění rozpočtu kapitol a organizačních složek státu (KAP a OSS) 
+  - Plnění rozpočtu státních fondů (SF)
+  - Plnění rozpočtu státních příspěvkových organizací (SPO)
 
-MONITOR je specializovaný informační portál Ministerstva financí, který umožňuje veřejnosti volný přístup k rozpočtovým a účetním informacím ze všech úrovní státní správy a samosprávy. Prezentované informace pocházejí ze systému Státní pokladny (IISSP – Integrovaný informační systém státní pokladny) a Centrálního systému účetních informací (CSÚIS) a jsou čtvrtletně aktualizovány.
+# Pokladní plnění státního rozpočtu
 
-MONITOR dále zajišťuje zveřejňování účetních závěrek organizačních složek státu podle § 21 a zákona č. 563/1991 Sb., o účetnictví, ve znění pozdějších předpisů.
+Pokladní plnění státního rozpočtu eviduje denní přírůstky příjmů a výdajů státního rozpočtu.
 
-Základní verze portálu byla spuštěna v květnu 2013. V prosinci 2013 byla zpřístupněna analytická část portálu, která umožňuje dynamickou analýzu dat pomocí pokročilého nástroje pro reporting.
+# Centrální registr administrativních budov
 
-Své dotazy a náměty můžete zasílat na adresu [infomonitor@mfcr.cz](mailto:infomonitor@mfcr.cz).
+Centrální registr administrativních budov (CRAB) je informační systém veřejné správy určený k podpoře hospodárného využívání administrativních budov patřících státu nebo státem užívaných. Registr spravuje ÚZSVM, avšak data do registru zadávají samy státní instituce, které jsou garanty správnosti svých dat.
 
-# Majetek státu
-
-# Fond privatizace
-
-Výdaje pomocné kapitoly Fondu privatizace nejsou součástí státního rozpočtu, jedná se o jiné než rozpočtové prostředky, které hradí MF v souladu se zákonem č. 178/2005 Sb., o zrušení Fondu národního majetku. Jedná se především o výdaje pokrývající závazky státu za odstraňování ekologických škod vzniklých před privatizací podniků.
+Údaje o administrativních budovách zadávané do CRAB jsou stanoveny nařízením vlády č. 41/2017 Sb. Pro každý objekt se povinně eviduje např. státem užívaná kancelářská plocha nebo počet zaměstnanců, výdaje jako hrazené nájemné, roční spotřeba elektřiny nebo studené vody. Většina údajů se vkládá pouze při prvním zaevidování objektu do systému, přičemž některé údaje systém přebírá ze stávajících registrů (např. katastr nemovitostí). Při aktualizaci dat je povinných pouze:
+ - v oblasti nových užívacích vztahů 23 údajů,
+ - u vykazování výdajů a příjmů maximálně 52 hodnot v roční periodě.
