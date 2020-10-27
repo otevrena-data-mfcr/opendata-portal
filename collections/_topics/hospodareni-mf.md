@@ -6,7 +6,7 @@ organizations:
   - mf
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/smlouvy-ministerstva-financi-cr-seznam-smluv
-  - https://opendata.mfcr.cz/lod/katalog/vazebni-tabulka-smlouv-faktur-ministerstva-financi-cr
+  - https://opendata.mfcr.cz/lod/katalog/vazebni-tabulka-smluv-faktur-ministerstva-financi-cr
   - https://opendata.mfcr.cz/lod/katalog/faktury-ministerstva-financi-cr
   - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-detail
   - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-seznam-objednavek
