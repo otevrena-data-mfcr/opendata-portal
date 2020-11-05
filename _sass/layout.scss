@@ -19,8 +19,8 @@ main {
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.08) 0%,
-    rgba(0, 0, 0, 0.10) 10%,
-    rgba(0, 0, 0, 0.10) 41%,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.1) 41%,
     #f8f9fa 80%,
     #f8f9fa 100%
   );
@@ -64,6 +64,13 @@ header {
   .search {
     width: 100%;
   }
+
+  @include media-breakpoint-up(md) {
+    .search {
+      width: 300px;
+    }
+  }
+
   min-height: 60px;
 }
 
@@ -126,11 +133,5 @@ footer {
     a:active {
       background-color: rgba(255, 255, 255, 0.2);
     }
-  }
-}
-
-@include media-breakpoint-up(md) {
-  header .search {
-    width: 400px;
   }
 }

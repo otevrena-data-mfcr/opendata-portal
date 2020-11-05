@@ -1,13 +1,28 @@
-$blue: #0a77bd;
-$lightBlue: #54a0d1;
-$white: #fff;
-$shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-$shadow-light: 0 0 5px rgba(0,0,0,.1);
-$black: #000;
+$blue: #093d93;
+$lightBlue: #009feb;
+$linkBlue: #093d93;
 
-$grey: #ddd;
+$accentBlue: #0087c8;
+$accentGreen: #00a5a5;
+$accentRed: #e12323;
+$accentPurple: #7d5d9f;
+
+$white: #fff;
+$black: #000;
+$grey: #777;
 $darkGrey: #333;
 $lightGrey: #f9f9f9;
+
+$themeColors: (
+  "primary": $accentBlue,
+  "success": $accentGreen,
+  "danger": $accentRed,
+);
+
+$shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+$shadow-light: 0 0 5px rgba(0, 0, 0, 0.1);
+
+$borderRadius: 2px;
 
 // $baseFont: Arial, Helvetica, sans-serif;
 $baseFont: Slack-Lato, "Helvetica Neue", Helvetica, sans-serif;

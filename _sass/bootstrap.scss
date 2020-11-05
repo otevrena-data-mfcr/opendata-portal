@@ -1,3 +1,10 @@
+@import "variables";
+
+$theme-colors: $themeColors;
+
+@import "bootstrap/bootstrap.scss";
+
+
 /* Remove the top border when a table is missing the header */
 .table > tbody > tr:first-child {
   > td,
@@ -13,3 +20,5 @@
     border-top: 1px solid #ddd;
   }
 }
+
+.card, .btn, .form-control { border-radius: $borderRadius; }

@@ -23,7 +23,7 @@ layout: main
 
         {% assign topics_count = page.topics | size %}
         {% if topics_count > 0 %}
-        <h3 class="mt-4 mb-3">Související témata</h3>
+        <h2 class="mt-4 mb-3">Související témata</h3>
         {% for topic_slug in page.topics %}
         {% assign topics = site.topics | where_exp:"item","item.slug == topic_slug" %}
         {% for topic in topics %}
@@ -34,7 +34,7 @@ layout: main
 
         {% assign stories_count = page.stories | size %}
         {% if stories_count > 0 %}
-        <h3 class="mt-4 mb-3">Návody</h3>
+        <h2 class="mt-4 mb-3">Návody</h3>
         {% for story_slug in page.stories %}
         {% assign stories = site.stories | where_exp:"item","item.slug == story_slug" %}
         {% for story in stories %}
@@ -47,7 +47,7 @@ layout: main
         {% assign datasets_count = page.datasets | size %}
 
         {% if datasets_count > 0 %}
-        <h3 class="mt-4 mb-3">Datové sady</h3>
+        <h2 class="mt-4 mb-3">Datové sady</h3>
         {% for iri in page.datasets %}
         {% include dataset-card.html iri=iri %}
         {% endfor %}
@@ -56,7 +56,7 @@ layout: main
 
         {% assign links_count = page.links | size %}
         {% if links_count > 0 %}
-        <h3 class="mt-4 mb-3">Další zdroje</h3>
+        <h2 class="mt-4 mb-3">Další zdroje</h3>
         {% for link in page.links %}
         {% include link-card.html link=link %}
         {% endfor %}

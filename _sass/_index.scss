@@ -1,10 +1,5 @@
 
-:root{
-  --primary: #007bff;
-}
-
-@import "bootstrap/bootstrap.scss";
-@import "bootstrap-overrides";
+@import "bootstrap";
 
 @import "highlight";
 
