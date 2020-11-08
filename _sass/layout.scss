@@ -51,6 +51,11 @@ header {
   z-index: 1000;
   // box-shadow: $shadow;
 
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
   .navbar-brand {
     a:hover {
       text-decoration: none;
