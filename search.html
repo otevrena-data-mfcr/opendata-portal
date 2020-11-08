@@ -7,68 +7,61 @@ layout: main
 
 <div class="container search-results">
 
-  <div class="mx-xl-5 px-xl-5">
-
-    <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#resultsPortal" role="tab" aria-controls="home" aria-selected="true">Vyhledávání na portálu otevřených dat<span id="resultsPortalCount" class="badge badge-inverse"></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#resultsSparql" role="tab" aria-controls="profile" aria-selected="false">Vyhledávání v katalogu datových sad<span id="resultsSparqlCount" class="badge badge-inverse"></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#resultsData" role="tab" aria-controls="contact" aria-selected="false">Vyhledávání v datech<span id="resultsDataCount" class="badge badge-inverse"></span></a>
-      </li>
-    </ul>
+  <ul class="nav nav-tabs mt-5" role="tablist" id="resultsTabs">
+    <li class="nav-item" id="resultsPortalTab">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#resultsPortal" role="tab" aria-controls="home" aria-selected="true">Vyhledávání na portálu otevřených dat<span class="count badge badge-inverse"></span></a>
+    </li>
+    <li class="nav-item" id="resultsSparqlTab">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#resultsSparql" role="tab" aria-controls="profile" aria-selected="false">Vyhledávání v katalogu datových sad<span class="count badge badge-inverse"></span></a>
+    </li>
+    <li class="nav-item" id="resultsDataTab">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#resultsData" role="tab" aria-controls="contact" aria-selected="false">Vyhledávání v datech<span class="count badge badge-inverse"></span></a>
+    </li>
+  </ul>
 
 
-    <div class="tab-content p-3" id="myTabContent">
+  <div class="tab-content p-3">
 
-      <div class="tab-pane fade show active" id="resultsPortal">
-        <div class="row mb-5">
-          <div class="col-xl-6">
-            <div class="results"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="resultsSparql">
-        <div class="row mb-5">
-          <div class="col-xl-6">
-            <div class="results"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="resultsData">
-        <div class="row mb-5">
-          <div class="col-xl-6">
-            <div class="results"></div>
-          </div>
-          <div class="col-xl-6 text-right">
-            <div class="d-inline-block text-left">
-              <p>Vyhledávání v datech prochází tyto datové sady:</p>
-              <ul>
-                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Ff…financi-cr%2F649107b9-e2d8-4b47-92c5-024c6a200c0a">Faktury Ministerstva financí</a></li>
-                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fs…znam-smluv%2Fbdcd22b4-3461-4978-b19d-e767c574255f">Smlouvy Ministerstva financí</a></li>
-                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fo…objednavek%2Fc6c61e5a-27ef-4242-bde4-9a4f6b0388c1">Přehled objednávek Ministerstva financí</a></li>
-                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fo…-cr-detail%2Fe0b462a5-5176-47ef-b831-02d9db7af58d">Přehled objednávek Ministerstva financí - detail</a></li>
-                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fcedr%2FDotace%2Fcsv">CEDR - Dotace</a></li>
-                <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fcedr%2FPrijemcePomoci%2Fcsv">CEDR - Prijemce pomoci</a></li>
-              </ul>
-            </div>
-          </div>
+    <div class="tab-pane fade show active" id="resultsPortal">
+      <div class="row mb-5">
+        <div class="col-xl-6">
+          <div class="results"></div>
         </div>
       </div>
     </div>
 
+    <div class="tab-pane fade" id="resultsSparql">
+      <div class="row mb-5">
+        <div class="col-xl-6">
+          <div class="results"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="resultsData">
+      <div class="row mb-5">
+        <div class="col-xl-6">
+          <div class="results"></div>
+        </div>
+        <div class="col-xl-6 text-right">
+          <div class="d-inline-block text-left">
+            <p>Vyhledávání v datech prochází tyto datové sady:</p>
+            <ul>
+              <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Ff…financi-cr%2F649107b9-e2d8-4b47-92c5-024c6a200c0a">Faktury Ministerstva financí</a></li>
+              <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fs…znam-smluv%2Fbdcd22b4-3461-4978-b19d-e767c574255f">Smlouvy Ministerstva financí</a></li>
+              <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fo…objednavek%2Fc6c61e5a-27ef-4242-bde4-9a4f6b0388c1">Přehled objednávek Ministerstva financí</a></li>
+              <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Fo…-cr-detail%2Fe0b462a5-5176-47ef-b831-02d9db7af58d">Přehled objednávek Ministerstva financí - detail</a></li>
+              <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fcedr%2FDotace%2Fcsv">CEDR - Dotace</a></li>
+              <li><a href="https://opendata.mfcr.cz/catalog/#/iri/https%3A%2F%2Fopendata.mfcr.cz%2Flod%2Fcedr%2FPrijemcePomoci%2Fcsv">CEDR - Prijemce pomoci</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
+
 </div>
-
-
-
-
 
 
 
@@ -82,15 +75,16 @@ layout: main
 
     $("#resultsPortal").addClass("searching");
     $("#resultsPortal .results").html("");
-    
+
     $("#resultsData").addClass("searching");
     $("#resultsData .results").html("");
-    
+
     $("#resultsSparql").addClass("searching");
     $("#resultsSparql .results").html("");
 
     console.log("[search] loading data...");
-    $.get("/search.json")
+
+    const searchPortal = $.get("/search.json")
       .then(function (data) {
 
         console.log("[search] processing...");
@@ -120,7 +114,8 @@ layout: main
         const results = fuse.search(needle);
         console.log("[search] found results: " + results.length);
 
-        $("#resultsPortalCount").text(results.length);
+        $("#resultsPortalTab .count").text(results.length);
+        if (!results.length) $("#resultsPortalTab").addClass("noresults");
 
         if (!results.length) {
           $("#resultsPortal .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
@@ -161,13 +156,14 @@ WHERE
   FILTER ( REGEX(?title, "${needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}", "i") || REGEX(?description, "${needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}", "i")) .
   FILTER (LANG(?title) = "cs") .
 }`;
-    $.get("https://opendata.mfcr.cz/lod/sparql", { query: sparqlQuery }).then(function (data) {
+    const searchCatalog = $.get("https://opendata.mfcr.cz/lod/sparql", { query: sparqlQuery }).then(function (data) {
 
       const matches = data.results.bindings.map(function (binding) {
         return { iri: binding.iri.value, title: binding.title.value, description: binding.description && binding.description.value };
       });
 
-      $("#resultsSparqlCount").text(matches.length);
+      $("#resultsSparqlTab .count").text(matches.length);
+      if (!matches.length) $("#resultsSparqlTab").addClass("noresults");
 
       if (!matches.length) {
         $("#resultsSparql .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
@@ -187,7 +183,7 @@ WHERE
 
     });
 
-    $.get("https://opendata.mfcr.cz/lod/search", { q: needle }).then(function (results) {
+    const searchData = $.get("https://opendata.mfcr.cz/lod/search", { q: needle }).then(function (results) {
 
       const sources = {};
 
@@ -205,7 +201,8 @@ WHERE
 
       });
 
-      $("#resultsDataCount").text(results.length === 100 ? results.length + "+" : results.length);
+      $("#resultsDataTab .count").text(results.length === 100 ? results.length + "+" : results.length);
+      if (!results.length) $("#resultsDataTab").addClass("noresults");
 
       if (!results.length) {
         $("#resultsData .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
@@ -227,6 +224,13 @@ WHERE
 
       $("#resultsData").removeClass("searching");
     });
+
+    if (Promise) {
+      Promise.all([searchPortal, searchCatalog, searchData]).then(() => {
+        $("#resultsTabs:not(.noresults) a").click();
+        console.log($("#resultsTabs:not(.noresults) a").first().get())
+      });
+    }
 
   }
 

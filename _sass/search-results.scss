@@ -1,10 +1,17 @@
 .search-results {
+  #resultsTabs {
+    li.noresults a {
+      @extend .text-muted;
+    }
+  }
+
   .result {
     @extend .mt-3;
-    
+
     em {
       font-style: normal;
       background-color: $accentGreen;
+      color: $white;
     }
     p {
       @extend .small;
