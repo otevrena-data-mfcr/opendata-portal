@@ -96,7 +96,7 @@ layout: main
 
     console.log("[Fuse] loading data...");
 
-    const searchPortal = $.get("/search.json")
+    const searchPortal = $.get("/search/data.json")
       .then(function (data) {
 
         console.log("[Fuse] creating index...");
@@ -170,16 +170,24 @@ layout: main
             .filter(function (item) { return item.key === "content" })
             .forEach(function (match) {
               match.indices
+                .sort(function (a, b) { return a[0] - b[0]; })
                 .slice(0, 10)
                 .forEach(function (i) {
-                  contentMatches.push(result.item.content.substring(i[0] - 20, i[0]).replace(/^\S+\s/, "") + "<em>" + result.item.content.substring(i[0], i[1] + 1) + "</em>" + result.item.content.substring(i[1] + 1, i[1] + 20).replace(/\s\S+$/, ""));
+                  let previous = result.item.content.substring(Math.max(0, i[0] - 30), i[0]);
+                  let em = result.item.content.substring(i[0], i[1] + 1);
+                  let next = result.item.content.substring(i[1] + 1, i[1] + 30);
+
+                  if (i[0] - 30 > 0) previous = previous.replace(/^\S+\s/, "");
+                  if (i[1] + 30 < result.item.content.length) next = next.replace(/\s\S+$/, "");
+
+                  contentMatches.push(previous + "<em>" + em + "</em>" + next);
                 });
             });
 
           const resultEl = $("<div />").addClass("result");
           resultEl.append($("<h3 />").append($("<a />").attr("href", result.item.url).html(titleMatches.length ? titleMatches.join("") : title)));
 
-          resultEl.append($("<p />").html(contentMatches.join(" &hellip; ")));
+          resultEl.append($("<p />").html((contentMatches.length ? contentMatches.join(" &hellip; ") : result.item.content.substr(0, 200).replace(/\s\S+$/, "")) + " &hellip;"));
 
           $("#resultsPortal .results").append(resultEl);
         })
