@@ -7,6 +7,18 @@ site_url: "https://opendata.mfcr.cz"
 exports_url: "https://opendata.mfcr.cz/exports"
 catalog_url: "/catalog"
 
+kramdown:
+  header_offset: 1
+  smart_quotes: sbquo,rsquo,bdquo,rdquo
+  auto_id_prefix: toc-
+
+plugins:
+  - jekyll-toc
+
+toc:
+  min_level: 2 # default: 1
+  max_level: 3 # default: 6
+
 collections_dir: collections
 
 collections:
