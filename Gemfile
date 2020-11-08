@@ -9,6 +9,8 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.0"
 
+gem 'jekyll-toc'
+
 
 # group :jekyll_plugins do  
 #   gem "jekyll-feed", "~> 0.6"
