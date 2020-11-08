@@ -227,7 +227,7 @@ WHERE
 
     if (Promise) {
       Promise.all([searchPortal, searchCatalog, searchData]).then(() => {
-        $("#resultsTabs:not(.noresults) a").click();
+        $("#resultsTabs li:not(.noresults) a").first().click();
         console.log($("#resultsTabs:not(.noresults) a").first().get())
       });
     }
