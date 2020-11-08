@@ -24,7 +24,7 @@ layout: main
 
     <div class="tab-pane fade active show">
       <div class="row mb-5">
-        <div class="col-xl-6">
+        <div class="col-xl-8">
           <p>Nebyly nalezeny žádné shody.</p>
         </div>
       </div>
@@ -32,7 +32,7 @@ layout: main
 
     <div class="tab-pane fade" id="resultsPortal">
       <div class="row mb-5">
-        <div class="col-xl-6">
+        <div class="col-xl-8">
           <div class="results"></div>
         </div>
       </div>
@@ -40,7 +40,7 @@ layout: main
 
     <div class="tab-pane fade" id="resultsSparql">
       <div class="row mb-5">
-        <div class="col-xl-6">
+        <div class="col-xl-8">
           <div class="results"></div>
         </div>
       </div>
@@ -48,10 +48,10 @@ layout: main
 
     <div class="tab-pane fade" id="resultsData">
       <div class="row mb-5">
-        <div class="col-xl-6">
+        <div class="col-xl-8">
           <div class="results"></div>
         </div>
-        <div class="col-xl-6 text-right">
+        <div class="col-xl-4 text-left mt-5 text-xl-right mt-xl-0">
           <div class="d-inline-block text-left">
             <p>Vyhledávání v datech prochází tyto datové sady:</p>
             <ul>
@@ -79,6 +79,10 @@ layout: main
 
 <script type="text/javascript">
 
+  function removeAccents(string) {
+    return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
   function search(needle) {
 
     $("#resultsPortal").addClass("searching");
@@ -90,12 +94,12 @@ layout: main
     $("#resultsSparql").addClass("searching");
     $("#resultsSparql .results").html("");
 
-    console.log("[search] loading data...");
+    console.log("[Fuse] loading data...");
 
     const searchPortal = $.get("/search.json")
       .then(function (data) {
 
-        console.log("[search] processing...");
+        console.log("[Fuse] creating index...");
 
         const options = {
           isCaseSensitive: false,
@@ -113,14 +117,24 @@ layout: main
           keys: [
             { name: "title", weight: 10 },
             { name: "content", weight: 5 },
-          ]
+          ],
+
+          getFn: function (obj, keys) {
+            if (typeof keys === "object") {
+              return keys.map(function (key) { return removeAccents(obj[key]); });
+            }
+            else {
+              return removeAccents(obj[keys])
+            }
+          }
         };
 
         const fuse = new Fuse(data, options);
 
-        console.log("[search] searching for " + needle);
-        const results = fuse.search(needle);
-        console.log("[search] found results: " + results.length);
+
+        console.log("[Fuse] searching for " + needle);
+        const results = fuse.search(removeAccents(needle));
+        console.log("[Fuse] found results: " + results.length);
 
         $("#resultsPortalTab .count").text(results.length);
         if (!results.length) $("#resultsPortalTab").addClass("noresults");
@@ -133,17 +147,39 @@ layout: main
 
         results.forEach(function (result) {
 
-          const resultEl = $("<div />").addClass("result");
-          resultEl.append($("<h3 />").append($("<a />").attr("href", result.item.url).text(result.item.title)));
+          console.log(result);
 
-          const matches = [];
-          result.matches.forEach(function (match) {
-            match.indices.slice(0, 10).forEach(function (i) {
-              matches.push(match.value.substring(i[0] - 20, i[0]).replace(/^\S+\s/, "") + "<em>" + match.value.substring(i[0], i[1] + 1) + "</em>" + match.value.substring(i[1] + 1, i[1] + 20).replace(/\s\S+$/, ""));
+          const title = result.item.title;
+          const titleMatches = [];
+          const contentMatches = [];
+
+          result.matches
+            .filter(function (item) { return item.key === "title" })
+            .forEach(function (match) {
+              match.indices
+                .sort(function (a, b) { return a[0] - b[0]; })
+                .forEach(function (item, i, array) {
+                  if (i === 0) titleMatches.push(title.substring(0, item[0]));
+                  titleMatches.push("<em>" + title.substring(item[0], item[1] + 1) + "</em>");
+                  if (array[i + 1]) titleMatches.push(title.substring(item[1] + 1, array[i + 1][0]));
+                  else titleMatches.push(title.substring(item[1] + 1));
+                });
             });
-          });
 
-          resultEl.append($("<p />").html(matches.join(" &hellip; ")));
+          result.matches
+            .filter(function (item) { return item.key === "content" })
+            .forEach(function (match) {
+              match.indices
+                .slice(0, 10)
+                .forEach(function (i) {
+                  contentMatches.push(result.item.content.substring(i[0] - 20, i[0]).replace(/^\S+\s/, "") + "<em>" + result.item.content.substring(i[0], i[1] + 1) + "</em>" + result.item.content.substring(i[1] + 1, i[1] + 20).replace(/\s\S+$/, ""));
+                });
+            });
+
+          const resultEl = $("<div />").addClass("result");
+          resultEl.append($("<h3 />").append($("<a />").attr("href", result.item.url).html(titleMatches.length ? titleMatches.join("") : title)));
+
+          resultEl.append($("<p />").html(contentMatches.join(" &hellip; ")));
 
           $("#resultsPortal .results").append(resultEl);
         })
@@ -236,7 +272,6 @@ WHERE
     if (Promise) {
       Promise.all([searchPortal, searchCatalog, searchData]).then(() => {
         $("#resultsTabs li:not(.noresults) a").first().click();
-        console.log($("#resultsTabs:not(.noresults) a").first().get())
       });
     }
 
