@@ -1,5 +1,6 @@
 ---
 title: Hazard
+description: Přehledy povolených zařízení
 
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/prehled-povolenych-technickych-hernich-zarizeni
