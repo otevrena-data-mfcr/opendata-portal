@@ -2,43 +2,42 @@
 title: MONITOR Státní pokladny
 short_title: MONITOR
 description: Datové sady MONITORu státní pokladny
-
 topics:
   - hospodareni-statu
   - hospodareni-obci
-
 datasets:
   - https://opendata.mfcr.cz/lod/monitor/MONITOR
   - https://opendata.mfcr.cz/lod/monitor/soap
   - https://opendata.mfcr.cz/lod/monitor/ciselniky
-
 ---
-
-# Datové sady
+# Datové sady MONITORu
 
 V rámci datové sady MONITOR Státní pokladny najdete následující podřízené datové sady.
 
 ## Rozpočty státních institucí
- - Plnění rozpočtu KAP a OSS 
- - Plnění rozpočtu KAP, OSS a SF (2010 - 2014)
- - Plnění rozpočtu SF
- - Plnění rozpočtu SPO
- - Plnění rozpočtu ÚSC
+
+* Plnění rozpočtu KAP a OSS 
+* Plnění rozpočtu KAP, OSS a SF (2010 - 2014)
+* Plnění rozpočtu SF
+* Plnění rozpočtu SPO
+* Plnění rozpočtu ÚSC
 
 ## Finanční výkazy
- - Přehled o změnách vlastního kapitálu
- - Přehled peněžních toků
- - Příloha
- - Rozvaha
- - Schválení účetní závěrky
- - Výkaz zisku a ztráty
+
+* Přehled o změnách vlastního kapitálu
+* Přehled peněžních toků
+* Příloha
+* Rozvaha
+* Schválení účetní závěrky
+* Výkaz zisku a ztráty
 
 ## Monitoring obcí
- - Monitoring obcí
+
+* Monitoring obcí
 
 ## Číselníky
- - Číselníky z aplikace MONITOR Státní pokladny
 
+* Číselníky z aplikace MONITOR Státní pokladny
 
 # Webová služba
 
