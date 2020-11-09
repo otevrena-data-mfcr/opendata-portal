@@ -7,7 +7,7 @@
       <a href="{{topic.url}}" class="h-100 topic">
         <h3 class="p-3">{{topic.short_title | default: topic.title}}</h3>
         <p class="px-3">{{topic.description}}</p>
-        <p class="px-3 pb-3 small">{{datasetsCount}} {% include phrases/datasets-count.html count=datasetsCount %}</p>
+        <p class="px-3 small">{{datasetsCount}} {% include phrases/datasets-count.html count=datasetsCount %}</p>
       </a>
     </div>
     {% endfor %}
