@@ -54,7 +54,7 @@
       // border-radius: 5px;
 
       .number {
-        font-family: $headingFont;
+        @include headingFont;
         font-size: calc(12px + 1.5vw);
         vertical-align: middle;
       }

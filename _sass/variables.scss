@@ -15,6 +15,7 @@ $lightGrey: #f9f9f9;
 
 $themeColors: (
   "primary": $accentBlue,
+  "secondary": $white,
   "success": $accentGreen,
   "danger": $accentRed,
 );
@@ -25,5 +26,15 @@ $shadow-light: 0 0 5px rgba(0, 0, 0, 0.1);
 $borderRadius: 2px;
 
 // $baseFont: Arial, Helvetica, sans-serif;
-$baseFont: Slack-Lato, "Helvetica Neue", Helvetica, sans-serif;
-$headingFont: TeutonNormal, Arial, Helvetica, sans-serif;
+@mixin baseFont {
+  // font-family: Slack-Lato, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 350;
+  @supports (font-variation-settings: normal) {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+@mixin headingFont {
+  font-family: TeutonNormal, Arial, Helvetica, sans-serif;
+}
