@@ -15,7 +15,7 @@ collections:
     folder: collections/_topics/
     create: true
     editor:
-      preview: true
+      preview: false
     fields:
       - { label: Titulek, name: title, widget: string }
       - { label: Zkrácený titulek, name: short_title, widget: string, required: false}
