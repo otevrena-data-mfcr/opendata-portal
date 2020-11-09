@@ -115,6 +115,7 @@ WHERE {
               .forEach(function (distribution) {
                 var el = $("<a/>")
                   .attr("href", distribution.downloadUrl ? distribution.downloadUrl.value : (distribution.accessUrl ? distribution.accessUrl.value : ""))
+                  .addClass("btn btn-secondary")
                   .text(distribution.format.value.split("/").pop().toUpperCase())
                 self.find(".download").append(el);
               });
