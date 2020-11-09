@@ -67,10 +67,7 @@
 
   .hot {
     .btn {
-      font-size: 1.6em;
-      @include headingFont;
-      span {
-        display: block;
+      h3 {
         margin-bottom: -3px;
       }
     }
