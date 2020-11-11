@@ -1,21 +1,33 @@
 ---
 layout: main
+hideFooter: true
 ---
 {% include hero.html title=page.title %}
 
 <div class="story">
 
-  <div class="github text-center p-3">
-    <a href="{{page.github}}" target="_blank">
-      <img src="/assets/images/github.png">
-      <br>
-      Zdrojový kód
-    </a>
-  </div>
-
   <div class="container">
 
-    {% if page.type == 'jupyter' %}
+    <div class="info text-right">
+      {% if page.author and page.author_mail %}<span class="item">Autor: <a href="mailto:{{page.author_mail}}">{{page.author}}</a></span>
+      {% elsif page.author %}<span class="item">Autor: {{page.author}}</span>
+      {% endif %}
+
+      {% if page.date %}
+      <span class="item">Aktualizováno: {{page.date | date: "%e. %-m. %Y"}}</span>
+      {% endif %}
+
+      {% if page.github or page.gitlab %}
+      <span class="item">
+        Zdrojový kód:
+        {% if page.github %}<span class="item"><a href="{{page.github}}">GitHub</a></span>{% endif %}
+        {% if page.gitlab %}<span class="item"><a href="{{page.gitlab}}">GitLab</a></span>{% endif %}
+      </span>
+      {% endif %}
+    </div>
+
+
+    {% if page.format == 'jupyter' %}
     <div class="jupyter mt-4 mb-5">
       {{ content }}
     </div>
