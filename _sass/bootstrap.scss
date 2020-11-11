@@ -4,7 +4,6 @@ $theme-colors: $themeColors;
 
 @import "bootstrap/bootstrap.scss";
 
-
 /* Remove the top border when a table is missing the header */
 .table > tbody > tr:first-child {
   > td,
@@ -21,4 +20,9 @@ $theme-colors: $themeColors;
   }
 }
 
-.card, .btn, .form-control { border-radius: $borderRadius; }
+.card,
+.btn,
+.form-control,
+.nav-pills .nav-link {
+  border-radius: $borderRadius;
+}
