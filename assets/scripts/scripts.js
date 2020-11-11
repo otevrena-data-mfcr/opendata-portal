@@ -112,6 +112,7 @@ WHERE {
             var distributions = result.results.bindings;
 
             distributions
+              .sort(function (a, b) { return a.format.value.localeCompare(b.format.value); })
               .forEach(function (distribution) {
                 var el = $("<a/>")
                   .attr("href", distribution.downloadUrl ? distribution.downloadUrl.value : (distribution.accessUrl ? distribution.accessUrl.value : ""))
