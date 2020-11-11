@@ -18,12 +18,12 @@ hideFooter: true
 
     {% if page.type == 'jupyter' %}
     <div class="jupyter mt-4 mb-5">
-      {{ content | remove_first: page.excerpt }}
+      {{ content }}
     </div>
 
     {% else %}
     <div class="html mt-4 mb-5">
-      {{ content | remove_first: page.excerpt }}
+      {{ content }}
     </div>
 
     {% endif %}
