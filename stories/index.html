@@ -6,20 +6,15 @@ title: Návody a analýzy
 
 {% include hero.html title=page.title %}
 
-<div class="container">
+<div class="container stories">
   <!-- <nav class="nav nav-pills mt-5 mb-4">
     <a class="nav-item nav-link active">Vše</a>
     <a class="nav-item nav-link">Návody</a>
     <a class="nav-item nav-link">Analýzy</a>
   </nav> -->
 
-  {% for story in site.stories %}
-  <div class="story my-5">
-    <a href="{{story.url}}">
-      <h2>{{story.title}}</h2>
-    </a>
-    {{story.description}}
-  </div>
-  {% endfor %}
+  {% assign stories = site.stories | sort:"date" | reverse %}
+
+  {% include story-list.html stories=stories %}
 
 </div>

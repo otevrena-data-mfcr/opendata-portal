@@ -1,0 +1,21 @@
+{% for story in include.stories %}
+<div class="my-5">
+
+
+  <h2 class="mb-0"><a href="{{story.url}}">{{story.title}}</a></h2>
+  
+  <p class="info text-muted small">
+    <span class="item">{{story.date | date: "%e. %-m. %Y"}}</span>
+    {% if story.author %}<span class="item">{{story.author}}</span>{% endif %}
+  </p>
+
+  <p>{{story.description}}</p>
+
+  {% assign tags = story.tags | sort %}
+  <div class="tags">
+    <span class="badge badge-pill py-2 px-3 badge-primary mr-2">{{story.type}}</span>
+    {% for tag in story.tags %}<span class="badge badge-pill py-2 px-3 badge-success mr-1">{{tag}}</span>{% endfor %}
+  </div>
+
+</div>
+{% endfor %}

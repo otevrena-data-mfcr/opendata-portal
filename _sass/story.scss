@@ -1,5 +1,15 @@
+.stories {
+  .info {
+    .item:not(:last-child)::after {
+      content: " | ";
+    }
+  }
+}
 .story {
   .info {
+    // .item:not(:last-child){
+    //   @extend .mr-4;
+    // }
     .item:not(:last-child)::after {
       content: ",";
     }

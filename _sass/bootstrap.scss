@@ -23,6 +23,12 @@ $theme-colors: $themeColors;
 .card,
 .btn,
 .form-control,
+.badge:not(.badge-pill),
 .nav-pills .nav-link {
   border-radius: $borderRadius;
+}
+
+.badge {
+  @include baseFont;
+  font-weight: bold;
 }
