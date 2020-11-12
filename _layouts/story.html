@@ -2,29 +2,33 @@
 layout: main
 hideFooter: true
 ---
+{% assign story = page %}
 {% include hero.html title=page.title %}
 
 <div class="story">
 
   <div class="container">
 
-    <div class="info text-right">
-      <span class="item">Aktualizováno: {{page.date | date: "%e. %-m. %Y"}}</span>
-      
-      {% if page.author and page.author_mail %}<span class="item">Autor: <a href="mailto:{{page.author_mail}}">{{page.author}}</a></span>
-      {% elsif page.author %}<span class="item">Autor: {{page.author}}</span>
+    <div class="info text-muted text-right">
+      <span class="item">Aktualizováno: {{story.date | date: "%e. %-m. %Y"}}</span>
+
+      {% if story.author and story.author_mail %}<span class="item">Autor: <a href="mailto:{{page.author_mail}}">{{story.author}}</a></span>
+      {% elsif story.author %}<span class="item">Autor: {{story.author}}</span>
       {% endif %}
 
-      {% if page.github or page.gitlab %}
+      {% if story.github %}<span class="item">Zdrojový kód: <a href="{{story.github}}">GitHub</a></span>{% endif %}
+
+      {% if story.topics %}
       <span class="item">
-        Zdrojový kód:
-        {% if page.github %}<span class="item"><a href="{{page.github}}">GitHub</a></span>{% endif %}
-        {% if page.gitlab %}<span class="item"><a href="{{page.gitlab}}">GitLab</a></span>{% endif %}
+        Data:
+        {% for topic_slug in story.topics %}
+        {% assign topic = site.topics | where_exp:"item","item.slug == topic_slug" | first %}
+        <a href="{{topic.url}}">{{topic.short_title | default: topic.title}}</a>{% unless forloop.last %},{% endunless %}{% endfor %}
       </span>
       {% endif %}
     </div>
 
-    {% if page.format == 'jupyter' %}
+    {% if story.format == 'jupyter' %}
     <div class="jupyter mt-3 mb-5">
       {{ content }}
     </div>

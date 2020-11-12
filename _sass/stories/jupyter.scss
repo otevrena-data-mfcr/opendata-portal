@@ -1,7 +1,12 @@
 #notebook {
+  @extend .mb-5;
 
   pre {
     font-size: 10pt;
+  }
+
+  code {
+    font-size: 0.9em;
   }
 
   @include media-breakpoint-up(sm) {
