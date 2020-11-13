@@ -9,6 +9,12 @@ catalog_url: "/catalog"
 
 # BUILD SETTINGS
 url: https://opendata.mfcr.cz/
+exclude:
+  - docker-compose.yml
+  - docker-compose.prod.yml
+  - Dockerfile
+  - nginx.conf
+
 kramdown:
   header_offset: 1
   smart_quotes: sbquo,rsquo,bdquo,rdquo
