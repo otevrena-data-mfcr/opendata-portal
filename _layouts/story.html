@@ -30,7 +30,11 @@ hideFooter: true
 
     {% if story.format == 'jupyter' %}
     <div class="jupyter mt-3 mb-5">
-      {{ content }}
+      <div id="notebook">
+        <div id="notebook-container">
+          {{ content }}
+        </div>
+      </div> 
     </div>
 
     {% else %}
