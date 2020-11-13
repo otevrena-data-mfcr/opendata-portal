@@ -7,6 +7,8 @@ site_url: "https://opendata.mfcr.cz"
 exports_url: "https://opendata.mfcr.cz/exports"
 catalog_url: "/catalog"
 
+# BUILD SETTINGS
+url: https://opendata.mfcr.cz/
 kramdown:
   header_offset: 1
   smart_quotes: sbquo,rsquo,bdquo,rdquo
