@@ -1,3 +1,4 @@
+# SITE METADATA
 title: Portál otevřených dat Ministerstva financí
 title_short: Otevřená data MFČR
 description: Otevřená data Ministerstva financí
@@ -22,6 +23,7 @@ kramdown:
 
 plugins:
   - jekyll-toc
+  - jekyll-redirect-from
 
 toc:
   min_level: 2 # default: 1
