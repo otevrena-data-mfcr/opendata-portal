@@ -9,7 +9,7 @@ exports_url: "https://opendata.mfcr.cz/exports"
 catalog_url: "/catalog"
 
 # BUILD SETTINGS
-url: https://opendata.mfcr.cz/
+url: https://opendata.mfcr.cz
 exclude:
   - docker-compose.yml
   - docker-compose.prod.yml
