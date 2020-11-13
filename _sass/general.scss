@@ -3,9 +3,6 @@
 html,
 body {
   height: 100%;
-}
-
-html {
   @include baseFont;
   font-size: 15px;
 }
