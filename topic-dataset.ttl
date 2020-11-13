@@ -4,12 +4,21 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-# DATASET THEME AND DOCUMENTATION LINKS 
-{% for topic in site.topics %}{% for dataset in topic.datasets %}<{{dataset}}> dcat:theme <{{site.site_url}}/topics/{{topic.slug}}> ;
-  foaf:page <{{site.site_url}}/topics/{{topic.slug}}> .
-{% endfor %}{% endfor %}
+# DATASET TOPIC SCHEME
+<{{site.site_url}}/topics> a skos:ConceptScheme ;
+  skos:prefLabel "Themes of Datasets by Ministry of Finance of the Czech Republic"@en ;
+  skos:prefLabel "Témata datových sad Ministerstva financí České republiky"@cs .
 
 # DATASET TOPIC LABELS 
-{% for topic in site.topics %}<{{site.site_url}}/topics/{{topic.slug}}> a <http://www.w3.org/2004/02/skos/core#Concept> ;
-  skos:prefLabel "{{topic.title}}"@cs .
+{% for topic in site.topics %}<{{site.site_url}}/topics/{{topic.slug}}> a skos:Concept ;
+  skos:prefLabel "{{topic.title}}"@cs ;
+  skos:inScheme <{{site.site_url}}/topics> .
+
 {% endfor %}
+
+# DATASET THEME AND DOCUMENTATION LINKS 
+{% for topic in site.topics %}{% for dataset in topic.datasets %}<{{dataset}}>
+  dcat:theme <{{site.site_url}}/topics/{{topic.slug}}> ;
+  foaf:page <{{site.site_url}}/topics/{{topic.slug}}> .
+
+{% endfor %}{% endfor %}
