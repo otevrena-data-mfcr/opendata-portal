@@ -1,13 +1,6 @@
 .jupyter {
   @import "notebook";
 
-  .rendered_html {
-    td,
-    th {
-      text-align: left;
-    }
-  }
-
   @extend .mb-5;
 
   pre {
