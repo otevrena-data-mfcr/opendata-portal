@@ -1,6 +1,5 @@
 ---
 layout: main
-hideFooter: true
 ---
 {% assign story = page %}
 {% include hero.html title=page.title %}
@@ -28,32 +27,41 @@ hideFooter: true
       {% endif %}
     </div>
 
-    {% if story.format == 'jupyter' %}
-    <div class="jupyter mt-3 mb-5">
-      <div id="notebook">
-        <div id="notebook-container">
-          {{ content }}
+    <div class="disclaimer bg-light p-3 mt-3">
+      <p class="m-0">
+        <strong>Upozornění</strong>: Tento dokument je analýzou nad otevřenými daty MF, která slouží jako příklad jak s nimi pracovat a nepředstavuje oficiální stanovisko MF.
+      </p>
+    </div>
+
+    <div class="content mt-3 mb-5">
+
+      {% if story.format == 'jupyter' %}
+      <div class="jupyter">
+        <div id="notebook">
+          <div id="notebook-container">
+            {{ content }}
+          </div>
         </div>
-      </div> 
+      </div>
+
+      {% elsif story.format == 'markdown' %}
+      <div class="md-content">
+        {{ content }}
+      </div>
+
+      {% elsif story.format == 'html' %}
+      <div class="html">
+        {{ content }}
+      </div>
+
+      {% else %}
+      <div class="html">
+        {{ content }}
+      </div>
+
+      {% endif %}
+
     </div>
-
-    {% elsif story.format == 'markdown' %}
-    <div class="md-content mt-3 mb-5">
-      {{ content }}
-    </div>
-
-    {% elsif story.format == 'html' %}
-    <div class="html mt-3 mb-5">
-      {{ content }}
-    </div>
-
-    {% else %}
-    <div class="html mt-3 mb-5">
-      {{ content }}
-    </div>
-
-    {% endif %}
-
 
   </div>
 </div>
