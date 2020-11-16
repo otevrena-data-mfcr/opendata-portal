@@ -21,7 +21,7 @@
   {% for story in site.stories %}
     {
       "title"    : "{{story.type}}: {{ story.title | escape }}",
-      "content" : "{{ story.excerpt | strip_html | replace: "\","\\\\" | strip_newlines | replace: '<br />',' ' | escape }} Tagy: {{story.tags | join:", "}}",
+      "content" : "{{ story.content | strip_html | replace: "\","\\\\" | strip_newlines | replace: '<br />',' ' | escape }} Tagy: {{story.tags | join:", "}}",
       "url"     : "{{ story.url }}"
     }{% unless forloop.last %},{% endunless %}
   {% endfor %}
