@@ -14,6 +14,8 @@ author: Karolína Štollová
 
 # Úvod
 
+**Upozornění**: Tento dokument je analýzou nad otevřenými daty MF, která slouží jako příklad jak s nimi pracovat a nepředstavuje oficiální stanovisko MF.
+
 Předmětem této analýzy je rozpočtové hospodaření obcí s rozšířenou působností (bez statutárních měst a hlavního města Prahy) v roce 2019. Analýza má tři dílčí části.
 
 Zaprvé se analýza zabývá průběhem čerpání finančních prostředků jednotlivých paragrafů.
