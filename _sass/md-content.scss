@@ -15,4 +15,10 @@
   h3:first-child {
     @extend .mt-0;
   }
+
+  .footnotes {
+    padding-top: 10px;
+    border-top: 1px solid $black;
+    font-size: 0.85em;
+  }
 }
