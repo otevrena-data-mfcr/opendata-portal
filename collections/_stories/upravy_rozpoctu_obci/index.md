@@ -25,7 +25,7 @@ Třetí dílčí část se věnuje korelacím, vztahu čerpání finančních pr
 putují. Volně tak navazuje na předchozí části, které determinují průběh čerpání a přesuny prostředků, k nimž dochází.
 
 
-## Průběh čerpání finančních prostředků
+# Průběh čerpání finančních prostředků
 
 Zajímavým zjištěním analýzy je, že obecně lze nalézt paragrafy rozpočtu, jejichž čerpání se s blížícím koncem roku zvyšuje, zatímco směrodatná odchylka zůstavá relativně malá[^1]. Ovšem z analýzy nevyplývají paragrafy, jejichž čerpání by mělo opačnou tendenci, tedy s průběhem roku by čerpání vykazovalo klesající trend, zatímco směrodatná odchylka by zůstavala relativně malá. To může být dáno tendencí obcí zpočátku roku zpravidla šetřit peníze na nečekané výdaje v průběhu roku.
 
@@ -40,7 +40,7 @@ Pro tento článek byly vybrány paragrafy Mateřské školy a Péče o vzhled o
 
 [^1]: Pro účely analýzy byla směrodatná odchylka definována jako menší než 15 procentních bodů.
 
-## Přesuny finančních prostředků
+# Přesuny finančních prostředků
 
 Druhá část analýzy se zaměřuje na paragrafy, u nichž často dochází k velkým přesunům v rozpočtu. Konkrétně jsou přesuny charakterizovány jako největší změny v rozpočtu po změnách mezi druhým a čtvrtým kvartálem roku 2019 určitého paragrafu. Velké přesuny se dají považovat za indikátor nedostatečného finančního plánování.
 
@@ -48,7 +48,7 @@ K největším kladným změnám dochází u paragrafů, jež pokrývají výdaj
 
 Co se týče paragrafů, jejichž rozpočty se naproti tomu během roku 2019 nejvýrazněji snížily, jedná se o odvádění a čištění odpadních vod a nakládání s kaly, čištění spodní vody a dekontaminaci půdy. Finanční prostředky byly přesunuty také z rozpočtu dopravy (paragrafy Provoz veřejné silniční dopravy, Ostatní záležitosti pozemních komunikací). Dále se rozpočet během roku významně snížil na výdaje spojené s územním rozvojem a plánováním, službami v sociální oblasti a politiky nezaměstnanosti, knihovnickými činnostmi a pohřebnictvím.
 
-### Navýšené
+## Navýšené paragrafy
 
 | Pořadí | ID   | Paragraf                                           | Rozpočet po změnách 2.kv. | Celková změna | Průměrná změna |   Odchylka | Četnost |
 |--------|------|----------------------------------------------------|--------------------------:|--------------:|---------------:|-----------:|--------:|
@@ -64,7 +64,7 @@ Co se týče paragrafů, jejichž rozpočty se naproti tomu během roku 2019 nej
 | 10     | 3613 | Nebytové hospodářství                              |             2 290 272 898 |    61 400 473 |        369 882 |  5 158 192 |     166 |
 {:.table .table-responsive .table-sm .table-striped .text-nowrap}
 
-### Snížené
+## Snížené paragrafy
 
 | Pořadí | ID   | Paragraf                                                     | Rozpočet po změnách 2.kv. | Celková změna | Průměrná změna |   Odchylka | Četnost |
 |--------|------|--------------------------------------------------------------|--------------------------:|--------------:|---------------:|-----------:|--------:|
@@ -80,7 +80,7 @@ Co se týče paragrafů, jejichž rozpočty se naproti tomu během roku 2019 nej
 | 10     | 3635 | Územní plánování                                             |               230 814 744 |   -12 654 042 |        -75 322 |  1 053 431 |     168 |
 {:.table .table-responsive .table-sm .table-striped .text-nowrap}
 
-## Korelace
+# Korelace
 
 Závěrečná část analýzy odpovídá na otázku, k jakým významným změnám v rozpočtu v průběhu roku dochází. Intuitivně bychom se mohli ptát, kam tyto peníze putují (v případě záporné změny), nebo z jakého paragrafu byli přesunuty (v případě změny kladné). Cílem třetí části analýzy je podívat se, zdali spolu rozpočty po změnách jednotlivých paragrafů korelují a s jistým zjednodušením by se tedy dalo říct, že prostředky z paragrafu A plynou zpravidla na paragraf B (obdobně rostoucí prostředky na paragraf X se během roku přesunuly zpravidla z paragrafu Y).
 
