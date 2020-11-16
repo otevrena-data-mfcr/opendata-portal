@@ -1,4 +1,13 @@
-#notebook {
+.jupyter {
+  @import "notebook";
+
+  .rendered_html {
+    td,
+    th {
+      text-align: left;
+    }
+  }
+
   @extend .mb-5;
 
   pre {
@@ -19,6 +28,9 @@
       top: 0;
       right: 100%;
       height: 100%;
+    }
+    div.output_subarea {
+      max-width: 100%;
     }
     .input,
     .output {
