@@ -28,8 +28,8 @@ layout: main
     </div>
 
     <div class="disclaimer bg-light p-3 mt-3">
-      <p class="m-0">
-        <strong>Upozornění</strong>: Tento dokument je analýzou nad otevřenými daty MF, která slouží jako příklad jak s nimi pracovat a nepředstavuje oficiální stanovisko MF.
+      <p class="m-0 text-center">
+        <strong>Upozornění</strong>: Tento dokument slouží jako příklad práce s otevřenými daty a nepředstavuje oficiální stanovisko Ministerstva financí.
       </p>
     </div>
 
@@ -37,8 +37,8 @@ layout: main
 
       {% if story.format == 'jupyter' %}
       <div class="jupyter">
-            {{ content }}
-          </div>
+        {{ content }}
+      </div>
 
       {% elsif story.format == 'markdown' %}
       <div class="md-content">
