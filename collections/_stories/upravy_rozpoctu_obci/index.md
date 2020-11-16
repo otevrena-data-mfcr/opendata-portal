@@ -7,14 +7,12 @@ type: Analýza
 tags:
   - MS Excel
 
-date: 2020-11-16
+date: 2020-08-09
 author: Karolína Štollová
 
 ---
 
 # Úvod
-
-**Upozornění**: Tento dokument je analýzou nad otevřenými daty MF, která slouží jako příklad jak s nimi pracovat a nepředstavuje oficiální stanovisko MF.
 
 Předmětem této analýzy je rozpočtové hospodaření obcí s rozšířenou působností (bez statutárních měst a hlavního města Prahy) v roce 2019. Analýza má tři dílčí části.
 
