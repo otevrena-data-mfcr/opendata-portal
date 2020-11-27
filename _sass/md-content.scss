@@ -17,8 +17,12 @@
   }
 
   .footnotes {
+    @extend .mt-5;
     padding-top: 10px;
     border-top: 1px solid $black;
     font-size: 0.85em;
+    p{
+      @extend .mb-1;
+    }
   }
 }
