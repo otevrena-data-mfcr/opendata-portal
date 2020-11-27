@@ -7,8 +7,13 @@ topics:
 
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/rozpoctova-skladba
+  - https://opendata.mfcr.cz/lod/katalog/pokladni-plneni-statniho-rozpoctu
 
 ---
+
+# Pokladní plnění státního rozpočtu
+
+Tato datová sada eviduje denní přírůstky příjmů a výdajů státního rozpočtu.
 
 # Tabulkové přílohy státního rozpočtu
 

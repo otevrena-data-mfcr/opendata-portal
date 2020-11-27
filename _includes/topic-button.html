@@ -1,0 +1,2 @@
+{% assign topic = site.topics | where_exp:"item","item.slug == include.id" | first %}
+<a class="btn btn-success" href="{{topic.url}}">Více o tématu {{topic.title}} &rArr;</a>
