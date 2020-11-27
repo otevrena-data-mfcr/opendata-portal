@@ -1,7 +1,7 @@
 ---
 title: ARES - Administrativní registr ekonomických subjektů
 short_title: ARES
-description: Administrativní registr ekonomických subjektů
+description: Informace o ekonomických subjektech v České republice
 
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/ares-administrativni-registr-ekonomickych-subjektu
