@@ -59,6 +59,6 @@ Z hlediska odvětvového se třídí příjmy a výdaje podle odvětví. Výdaje
 
 
 
-[^vyhlaska-odpovednostni]: [§ 1 vyhlášky č. 323/2002 Sb. o rozpočtové skladbě](https://www.zakonyprolidi.cz/cs/2002-323#p2-1)
-[^vyhlaska-druhove]: [§ 2 vyhlášky č. 323/2002 Sb. o rozpočtové skladbě](https://www.zakonyprolidi.cz/cs/2002-323#p2-2)
-[^vyhlaska-odvetvove]: [§ 3 vyhlášky č. 323/2002 Sb. o rozpočtové skladbě](https://www.zakonyprolidi.cz/cs/2002-323#p2-3)
+[^vyhlaska-odpovednostni]: [§ 2 odst. 1 vyhlášky č. 323/2002 Sb. o rozpočtové skladbě](https://www.zakonyprolidi.cz/cs/2002-323#p2-1)
+[^vyhlaska-druhove]: [§ 2 odst. 2 vyhlášky č. 323/2002 Sb. o rozpočtové skladbě](https://www.zakonyprolidi.cz/cs/2002-323#p2-2)
+[^vyhlaska-odvetvove]: [§ 2 odst. 3 vyhlášky č. 323/2002 Sb. o rozpočtové skladbě](https://www.zakonyprolidi.cz/cs/2002-323#p2-3)
