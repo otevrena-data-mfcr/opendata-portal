@@ -5,7 +5,7 @@ description: Informace o hospodaření České republiky
 topics:
   - monitor
   - statni-rozpocet
-  - crab
+  - budovy
 
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/pokladni-plneni-statniho-rozpoctu
@@ -27,6 +27,6 @@ Tyto a další výkazy najdete v tématu {% include phrases/topic-link.html id="
 
 Tato datová sada eviduje denní přírůstky příjmů a výdajů státního rozpočtu.
 
-# Centrální registr administrativních budov
+# Administartivní budovy ve vlastnictví státu
 
-Údaje o státních administrativních najdete v tématu {% include phrases/topic-link.html id="crab" %}.
+Údaje o státních administrativních budovách najdete v tématu {% include phrases/topic-link.html id="budovy" %}.

@@ -1,12 +1,14 @@
 ---
-title: CRAB - Centrální registr administrativních budov
-short_title: CRAB
-description: Informace o nemovitostech ve vlastnictví státu
+title: Administrativních budov v majektu státu
+short_title: Budovy
+description: Informace o státních nemovitostech ze systému CRAB
 
 datasets:
   - https://opendata.mfcr.cz/lod/katalog/centralni-registr-administrativnich-budov
 
 ---
+
+# Centrální registr administrativních budov
 
 Centrální registr administrativních budov (CRAB) je informační systém veřejné správy určený k podpoře hospodárného využívání administrativních budov patřících státu nebo státem užívaných. Registr spravuje ÚZSVM, avšak data do registru zadávají samy státní instituce, které jsou garanty správnosti svých dat.
 
