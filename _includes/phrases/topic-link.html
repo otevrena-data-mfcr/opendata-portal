@@ -1,0 +1,2 @@
+{% assign topic = site.topics | where_exp:"item","item.slug == include.id" | first %}
+<a href="{{topic.url}}">{{topic.title}}</a>

@@ -5,7 +5,7 @@
     {% assign datasetsCount = topic.datasets | size %}
     <div class="col-md-12 col-lg-4 my-3">
       <a href="{{topic.url}}" class="h-100 topic">
-        <h3 class="p-3">{{topic.short_title | default: topic.title}}</h3>
+        <h3 class="p-3" title="{{topic.title}}">{{topic.short_title | default: topic.title}}</h3>
         <p class="px-3">{{topic.description}}</p>
         <p class="px-3 small">{{datasetsCount}} {% include phrases/datasets-count.html count=datasetsCount %}</p>
       </a>
