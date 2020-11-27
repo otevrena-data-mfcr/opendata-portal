@@ -1,5 +1,5 @@
 ---
-title: Administrativních budov v majektu státu
+title: Administrativní budovy v majetku státu
 short_title: Budovy
 description: Informace o státních nemovitostech ze systému CRAB
 
