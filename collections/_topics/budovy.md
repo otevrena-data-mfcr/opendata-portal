@@ -1,6 +1,6 @@
 ---
 title: Administrativní budovy státu
-short_title: Budovy
+short_title: Administrativní budovy
 description: Informace o státních nemovitostech ze systému CRAB
 
 datasets:
