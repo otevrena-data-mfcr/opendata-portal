@@ -1,0 +1,55 @@
+---
+layout: main
+
+title: Statistiky
+---
+
+{% include hero.html title=page.title %}
+
+<div class="container mt-5">
+  <table class="table table-sm table-responsive table-striped table-hover" id="stats-table">
+    <thead>
+      <tr>
+        <th>Datová sada</th>
+        <th>Aktuální</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+  </table>
+</div>
+
+<script type="text/javascript">
+
+  $.get("https://opendata.mfcr.cz/lod/stats/distributions", function (data) {
+    const tbody = $("#stats-table tbody");
+
+    data.forEach(function (distribution) {
+      const tr = $("<tr/>");
+      tbody.append(tr);
+
+      tr.append($("<td/>").append($("<a/>").attr("href","/catalog/#/iri/" + encodeURIComponent(distribution.datasetIri)).text(distribution.datasetTitle)));
+      tr.append($("<td/>").text(checkFrequency(distribution)));
+
+    });
+
+  });
+
+  function checkFrequency(distribution) {
+
+    if (!distribution.frequency) return "⚠️ N/A";
+    if (!distribution.lastModified) return "⚠️ ERROR";
+
+    const frequency = distribution.frequency.split("/").pop();
+
+    if (frequency === "NEVER") return "✅ NEVER";
+    if (frequency === "IRREG") return "❓ IRREG";
+    if (frequency === "UNKNOWN") return "⚠️ UNKNOWN";
+    
+    return `❌ ${frequency} vs. ${(new Date(distribution.lastModified)).toISOString().split("T")[0]}`;
+
+  }
+
+</script>
