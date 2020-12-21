@@ -5,9 +5,11 @@ layout: main
 {% include hero.html title="Katalog datových sad" %}
 
 <div class="container">
-  <opendata-catalog></opendata-catalog>
+  <opendata-catalog
+                    endpoint="https://opendata.mfcr.cz/lod/sparql"
+                    ordering="generic"
+                    cors-gateway="https://opendata.mfcr.cz/lod/gateway/"
+                    hide-child="false"
+                    themes-prefix="https://opendata.mfcr.cz/topics/"></opendata-catalog>
+  <script src="https://cdn.jsdelivr.net/npm/@otevrena-data-mfcr/opendata-catalog@latest/package/catalog.min.js"></script>
 </div>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@otevrena-data-mfcr/opendata-catalog@1.0.1/package/styles.css" integrity="sha256-sgQhTVP6zN6ioaXtClVwbeAog5IRxg2Rmdn1SWVdM2M=" crossorigin="anonymous">
-
-<script src="https://cdn.jsdelivr.net/npm/@otevrena-data-mfcr/opendata-catalog@1.0.1/package/catalog.min.js"></script>  
