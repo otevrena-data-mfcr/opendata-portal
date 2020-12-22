@@ -13,11 +13,16 @@ $grey: #777;
 $darkGrey: #333;
 $lightGrey: #f9f9f9;
 
-$themeColors: (
-  "primary": $accentBlue,
-  "secondary": $white,
-  "success": $accentGreen,
-  "danger": $accentRed,
+$primary: $blue;
+$secondary: #777;
+$success: $accentGreen;
+$danger: $accentRed;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
 );
 
 $shadow: 0 0 8px rgba(0, 0, 0, 0.5);
