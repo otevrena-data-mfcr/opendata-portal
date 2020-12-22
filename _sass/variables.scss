@@ -1,29 +1,20 @@
 $blue: #093d93;
 $lightBlue: #009feb;
-$linkBlue: #093d93;
-
-$accentBlue: #0087c8;
-$accentGreen: #00a5a5;
-$accentRed: #e12323;
-$accentPurple: #7d5d9f;
-
 $white: #fff;
 $black: #000;
 $grey: #777;
 $darkGrey: #333;
 $lightGrey: #f9f9f9;
 
-$primary: $blue;
-$secondary: #777;
-$success: $accentGreen;
-$danger: $accentRed;
+$link-color: #093d93;
 
-$theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "danger": $danger,
-);
+$accentBlue: #0087c8;
+$accentGreen: #00a5a5;
+$accentRed: #e12323;
+$accentPurple: #7d5d9f;
+
+$primary: $accentBlue;
+$secondary: $accentGreen;
 
 $shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 $shadow-light: 0 0 5px rgba(0, 0, 0, 0.1);
