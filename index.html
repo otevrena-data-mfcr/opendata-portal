@@ -21,8 +21,8 @@ redirect_from:
                 organizací
               </div>
               <div class="col">
-                <div class="number" id="stats-sources">?</div>
-                datových souborů
+                <div class="number" id="stats-datasets">?</div>
+                datových sad
               </div>
               <div class="col">
                 <div class="number" id="stats-size">?</div>
@@ -93,7 +93,7 @@ redirect_from:
   $.get("https://opendata.mfcr.cz/lod/stats").then(function (data) {
 
     $("#stats-publishers").text(data.publishers.toLocaleString("cs"));
-    $("#stats-sources").text(data.distributions.toLocaleString("cs"));
+    $("#stats-datasets").text(data.datasets.toLocaleString("cs"));
 
     const bytes = (Math.round(data.bytes / Math.pow(10, 7)) / 100);
     $("#stats-size").text(bytes.toLocaleString("cs", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
