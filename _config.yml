@@ -42,6 +42,8 @@ collections:
     output: true
   topics:
     output: true
+  pages:
+    output: true
 
 defaults:
   - scope:
@@ -67,3 +69,5 @@ defaults:
       type: "organizations"
     values:
       layout: "organization"
+
+
