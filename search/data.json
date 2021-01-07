@@ -2,6 +2,14 @@
 ---
 [
 
+  {% for page in site.pages %}
+    {
+      "title"    : "{{ page.title | escape }}",
+      "content" : "{{ page.content | strip_html | newline_to_br | strip_newlines | replace: '<br />',' ' | escape }}",
+      "url"     : "{{ page.url }}"
+    },
+  {% endfor %}
+
   {% for topic in site.topics %}
     {
       "title"    : "{{ topic.title | escape }}",
