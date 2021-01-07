@@ -195,7 +195,13 @@ layout: main
         $("#resultsPortal").removeClass("searching");
 
       })
-      .catch(console.error);
+      .catch(function (err) {
+        $("#resultsPortal .results").append($("<p />").text("Nastala chyba při vyhledávání."));
+        console.error(err)
+      });
+
+
+
 
     const sparqlQuery = `PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct: <http://purl.org/dc/terms/>
@@ -208,74 +214,87 @@ WHERE
   FILTER ( REGEX(?title, "${needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}", "i") || REGEX(?description, "${needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}", "i")) .
   FILTER (LANG(?title) = "cs") .
 }`;
-    const searchCatalog = $.get("https://opendata.mfcr.cz/lod/sparql", { query: sparqlQuery }).then(function (data) {
+    const searchCatalog = $.get("https://opendata.mfcr.cz/lod/sparql", { query: sparqlQuery })
+      .then(function (data) {
 
-      const matches = data.results.bindings.map(function (binding) {
-        return { iri: binding.iri.value, title: binding.title.value, description: binding.description && binding.description.value };
-      });
+        const matches = data.results.bindings.map(function (binding) {
+          return { iri: binding.iri.value, title: binding.title.value, description: binding.description && binding.description.value };
+        });
 
-      $("#resultsSparqlTab .count").text(matches.length);
-      if (!matches.length) $("#resultsSparqlTab").addClass("noresults");
+        $("#resultsSparqlTab .count").text(matches.length);
+        if (!matches.length) $("#resultsSparqlTab").addClass("noresults");
 
-      if (!matches.length) {
-        $("#resultsSparql .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
-        $("#resultsSparql").removeClass("searching");
-        return;
-      }
-
-      matches.forEach(function (match) {
-        const resultEl = $("<div />").addClass("result");
-        resultEl.append($("<h3 />").append($("<a />").attr("href", "{{site.catalog_url}}/#/iri/" + encodeURIComponent(match.iri)).html(match.title.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>"))));
-        resultEl.append($("<p />").html(match.description.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>")));
-
-        $("#resultsSparql .results").append(resultEl);
-      });
-
-      $("#resultsSparql").removeClass("searching");
-
-    });
-
-    const searchData = $.get("https://opendata.mfcr.cz/lod/search", { q: needle }).then(function (results) {
-
-      const sources = {};
-
-      results.forEach(function (result) {
-        if (!sources[result.source.iri]) {
-          sources[result.source.iri] = result.source;
-          sources[result.source.iri].matches = [];
+        if (!matches.length) {
+          $("#resultsSparql .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
+          $("#resultsSparql").removeClass("searching");
+          return;
         }
 
-        sources[result.source.iri].matches.push({
-          index: result.index,
-          property: result.property,
-          value: result.value,
-        })
+        matches.forEach(function (match) {
+          const resultEl = $("<div />").addClass("result");
+          resultEl.append($("<h3 />").append($("<a />").attr("href", "{{site.catalog_url}}/#/iri/" + encodeURIComponent(match.iri)).html(match.title.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>"))));
+          resultEl.append($("<p />").html(match.description.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>")));
 
+          $("#resultsSparql .results").append(resultEl);
+        });
+
+        $("#resultsSparql").removeClass("searching");
+
+      })
+      .catch(function (err) {
+        $("#resultsSparql .results").append($("<p />").text("Nastala chyba při vyhledávání."));
+        console.error(err)
       });
 
-      $("#resultsDataTab .count").text(results.length === 100 ? results.length + "+" : results.length);
-      if (!results.length) $("#resultsDataTab").addClass("noresults");
 
-      if (!results.length) {
-        $("#resultsData .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
+
+
+    const searchData = $.get("https://opendata.mfcr.cz/lod/search", { q: needle })
+      .then(function (results) {
+
+        const sources = {};
+
+        results.forEach(function (result) {
+          if (!sources[result.source.iri]) {
+            sources[result.source.iri] = result.source;
+            sources[result.source.iri].matches = [];
+          }
+
+          sources[result.source.iri].matches.push({
+            index: result.index,
+            property: result.property,
+            value: result.value,
+          })
+
+        });
+
+        $("#resultsDataTab .count").text(results.length === 100 ? results.length + "+" : results.length);
+        if (!results.length) $("#resultsDataTab").addClass("noresults");
+
+        if (!results.length) {
+          $("#resultsData .results").append($("<p />").text("Nebyly nalezeny žádné shody."));
+          $("#resultsData").removeClass("searching");
+          return;
+        }
+
+        results.forEach(function (result) {
+
+          const resultEl = $("<div />").addClass("result");
+          resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(result.source.iri)).text(result.source.name)));
+
+          let string = "<strong>Dokument č.</strong> " + result.index + ", <strong>Pole &bdquo;" + result.property + "&rdquo;</strong>: " + result.value.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>");
+
+          resultEl.append($("<p />").html(string));
+
+          $("#resultsData .results").append(resultEl);
+        });
+
         $("#resultsData").removeClass("searching");
-        return;
-      }
-
-      results.forEach(function (result) {
-
-        const resultEl = $("<div />").addClass("result");
-        resultEl.append($("<h3 />").append($("<a />").attr("href", "https://opendata.mfcr.cz/catalog/#/iri/" + encodeURIComponent(result.source.iri)).text(result.source.name)));
-
-        let string = "<strong>Dokument č.</strong> " + result.index + ", <strong>Pole &bdquo;" + result.property + "&rdquo;</strong>: " + result.value.replace(new RegExp("(" + needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + ")", "ig"), "<em>$1</em>");
-
-        resultEl.append($("<p />").html(string));
-
-        $("#resultsData .results").append(resultEl);
+      })
+      .catch(function (err) {
+        $("#resultsData .results").append($("<p />").text("Nastala chyba při vyhledávání."));
+        console.error(err)
       });
-
-      $("#resultsData").removeClass("searching");
-    });
 
     if (Promise) {
       Promise.all([searchPortal, searchCatalog, searchData]).then(() => {
