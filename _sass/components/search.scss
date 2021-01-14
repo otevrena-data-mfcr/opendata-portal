@@ -19,7 +19,7 @@
     position: absolute;
     top: 0;
     left: 25px;
-    right: 30px;
+    right: 48px;
     bottom: 0;
     height: 50px;
   }
@@ -27,5 +27,17 @@
     position: absolute;
     top: 1px;
     right: 1px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 12px;
+    border-radius: 24px;
+
+    img {
+      display: block;
+    }
+  }
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.04);
   }
 }
