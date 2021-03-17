@@ -1,0 +1,37 @@
+<style scoped>
+  @import "https://unpkg.com/@triply/yasgui/build/yasgui.min.css";
+
+  #yasgui {
+    margin: 30px 0;
+  }
+</style>
+
+<div id="yasgui" class="mb-5"></div>
+
+<script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
+<script>
+  const yasgui = new Yasgui(document.getElementById("yasgui"), {
+    requestConfig: { endpoint: "{{include.url}}" },
+    copyEndpointOnNewTab: false,
+    endpointCatalogueOptions: {
+      getData: () => {
+        return [
+          { endpoint: "{{include.url}}" },
+        ];
+      },
+    }
+  });
+
+  let tab;
+  while (tab = yasgui.getTab()) {
+    tab.close();
+  }
+
+  tab = yasgui.addTab(
+    true, // set as active tab
+    { requestConfig: { endpoint: "{{include.url}}" }, name: "Vzorový dotaz" }
+  );
+
+  tab.setQuery(`{{include.query}}`);
+
+</script>
