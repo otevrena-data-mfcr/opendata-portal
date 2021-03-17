@@ -1,59 +1,13 @@
-<!DOCTYPE html>
-<html lang="cs">
+---
+layout: basic
+---
 
-<head>
+{% include header.html %}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<main>
+  {{ content }}
+</main>
 
-  <meta property="og:url" content="{{site.url}}{{page.url}}" />
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} :: {% endif %}{{ site.title }}" />
-  <meta property="og:description" content="{{ page.description | default: 'Portál otevřených dat Ministerstva financí nabízí stovky datových souborů ke stažení, návody, aplikace a analýzy dat resortu.'}}" />
-  <meta property="og:image" content="{% if page.image %}{{page.image}}{% else %}{{site.url}}/assets/images/mf.jpg{% endif %}" />
-  
-  <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}" />  
-  <meta name="twitter:site" content="@otevrenadatamf" />
-  {% if page.author_twitter %}<meta name="twitter:creator" content="{{page.author_twitter}}" />{% endif %}
-
-  <title>{% if page.title %}{{ page.title }} :: {% endif %}{{ site.title }}</title>
-
-  <link rel="shortcut icon" type="image/png" href="/assets/images/opendata.ico">
-
-  <link rel="stylesheet" href="/assets/libraries/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/styles/style.css">
-
-  <script src="/assets/libraries/jquery-3.5.1.min.js"></script>
-  <script src="/assets/libraries/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="/assets/libraries/fuse-6.4.6.basic.min.js"></script>
-
-  <script src="/assets/scripts/scripts.js"></script>
-
-</head>
-
-<body>
-  {% include header.html %}
-
-  <main>
-    {{ content }}
-  </main>
-
-  {% unless layout.hideFooter %}
-  {% include footer.html %}
-  {% endunless %}
-
-  <!-- Matomo -->
-  <script type="text/javascript">
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function () {
-      var u = "//opendata.mfcr.cz/admin/matomo/";
-      _paq.push(['setTrackerUrl', u + 'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-      g.type = 'text/javascript'; g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
-    })();
-  </script>
-  <!-- End Matomo Code -->
-</body>
+{% unless layout.hideFooter %}
+{% include footer.html %}
+{% endunless %}

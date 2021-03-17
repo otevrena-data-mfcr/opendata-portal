@@ -1,0 +1,8 @@
+<style scoped>
+  #iframe {
+    width: 100%;
+    height: {{ include.height | default:"80vh" }};
+    border: 1px solid #ccc;
+  }
+</style>
+<iframe src="{{include.url}}" id="iframe" seamless></iframe>

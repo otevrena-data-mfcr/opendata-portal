@@ -1,0 +1,13 @@
+---
+title: Aplikační rozhraní otevřených dat
+layout: page
+---
+
+{% assign apis_sorted = site.api | sort:"title" %}
+{% for api in apis_sorted %}
+<h2><a href="{{api.url}}">{{api.title}}</a></h2>
+
+<p>{{api.description}}</p>
+
+<a href="{{api.url}}">Více informací</a>
+{% endfor %}

@@ -36,6 +36,8 @@ collections:
     output: true
   apps:
     output: false
+  api:
+    output: true
   posts:
     output: false
   stories:
@@ -51,6 +53,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+  - scope:
+      path: ""
+      type: "api"
+    values:
+      layout: "api"
 
   - scope:
       path: ""
