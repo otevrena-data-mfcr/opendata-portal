@@ -15,7 +15,12 @@ layout: main
       {% elsif story.author %}<span class="item">Autor: {{story.author}}</span>
       {% endif %}
 
-      {% if story.github %}<span class="item">Zdrojový kód: <a href="{{story.github}}">GitHub</a></span>{% endif %}
+      {% if story.sources %}
+      <span class="item">
+        Zdrojový kód:
+        {% for source in story.sources %}<a href="{{source.url}}">{{source.title}}</a>{% if forloop.last == false %},{% endif %}{% endfor %}
+      </span>
+      {% endif %}
 
       {% if story.topics %}
       <span class="item">
@@ -34,28 +39,7 @@ layout: main
     </div>
 
     <div class="content mt-3 mb-5">
-
-      {% if story.format == 'jupyter' %}
-      <div class="jupyter">
-        {{ content }}
-      </div>
-
-      {% elsif story.format == 'markdown' %}
-      <div class="md-content">
-        {{ content }}
-      </div>
-
-      {% elsif story.format == 'html' %}
-      <div class="html">
-        {{ content }}
-      </div>
-
-      {% else %}
-      <div class="html">
-        {{ content }}
-      </div>
-
-      {% endif %}
+      {{ content}}
 
     </div>
 
