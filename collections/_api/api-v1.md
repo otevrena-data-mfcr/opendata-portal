@@ -11,12 +11,12 @@ Toto aplikační rozhraní vzniká na základě poptávky po automatizovaném p�
 
 Toto aplikační rozhraní **negarantuje žádné SLA**, je poskytováno pouze v úrovni [best-effort](https://cs.wikipedia.org/wiki/Best-effort). V případě, že váš byznys stojí na dostupnosti dat, doporučujeme použít jiný zdroj dat. Aktuální stav služeb můžete zjistit [zde]({{site.data.settings.status_url}}).
 
-### Datové sady
+<!-- ### Datové sady
 
 V současnosti je možno skrze toto API dotazovat následující datové sady:
  - Přehled faktur Ministerstva financí (`/faktury`)
  - Číselník odvětvového třídění státního rozpočtu (`/paragraf`)
- - Číselník druhového třídění státního rozpočtu (`/polozka`)
+ - Číselník druhového třídění státního rozpočtu (`/polozka`) -->
 
 ### Verzování
 Aplikační rozhraní bude verzováno. Nové datové sady a nová pole budou vždy přidávány do aktuální verze. V případě, že by bylo potřeba udělat změnu ve stávající struktuře („breaking change“), bude vytvořena nová verze.
