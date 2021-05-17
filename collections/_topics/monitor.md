@@ -6,9 +6,9 @@ topics:
   - hospodareni-statu
   - hospodareni-obci
 datasets:
-  - https://opendata.mfcr.cz/lod/monitor/MONITOR
-  - https://opendata.mfcr.cz/lod/monitor/soap
-  - https://opendata.mfcr.cz/lod/monitor/ciselniky
+  - https://monitor.statnipokladna.cz/api/opendata/monitor/MONITOR
+  - https://monitor.statnipokladna.cz/api/opendata/monitor/soap
+  - https://monitor.statnipokladna.cz/api/opendata/monitor/ciselniky
 ---
 # Datové sady MONITORu
 
