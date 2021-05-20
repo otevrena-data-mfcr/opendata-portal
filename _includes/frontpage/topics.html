@@ -1,6 +1,7 @@
 <div class="topics">
   <div class="row">
-    {% for topic in site.topics %}
+    {% assign topics = site.topics | sort: "title" %}
+    {% for topic in topics %}  
 
     {% assign datasetsCount = topic.datasets | size %}
     <div class="col-md-12 col-lg-4 my-3">
