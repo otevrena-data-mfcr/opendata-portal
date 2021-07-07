@@ -79,7 +79,7 @@ redirect_from:
 </div>
 
 <script type="text/javascript">
-  $.get("https://opendata.mfcr.cz/lod/stats").then(function (data) {
+  $.get("https://opendata.mfcr.cz/stats/stats.json").then(function (data) {
     $("#stats-publishers").text(data.publishers.toLocaleString("cs"));
     $("#stats-datasets").text(data.datasets.toLocaleString("cs"));
 
