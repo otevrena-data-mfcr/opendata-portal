@@ -51,7 +51,7 @@ sources :
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -68,7 +68,7 @@ sources :
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">faktury</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;částka&quot;</span><span class="p">,</span> <span class="s2">&quot;číslo_faktury&quot;</span><span class="p">,</span> <span class="s2">&quot;typ_záznamu&quot;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -84,7 +84,7 @@ sources :
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[73]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -281,7 +281,7 @@ sources :
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">faktury_souhrn</span> <span class="o">=</span> <span class="n">faktury</span><span class="p">[</span><span class="n">faktury</span><span class="p">[</span><span class="s2">&quot;typ_záznamu&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;souhrnný&quot;</span><span class="p">]</span>
@@ -343,7 +343,7 @@ sources :
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">faktury_souhrn</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;položka_rozpočtu&quot;</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">0</span>
@@ -359,7 +359,7 @@ sources :
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[75]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -384,7 +384,7 @@ sources :
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">brezen</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;2021-03-01&quot;</span> <span class="o">&lt;</span> <span class="n">faktury</span><span class="p">[</span><span class="s2">&quot;datum_úhrady&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">faktury</span><span class="p">[</span><span class="s2">&quot;datum_úhrady&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s2">&quot;2021-04-01&quot;</span><span class="p">)</span>
@@ -433,7 +433,7 @@ sources :
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">faktury_03_21_PV</span><span class="p">[[</span><span class="s2">&quot;dodavatel_název&quot;</span><span class="p">,</span> <span class="s2">&quot;částka&quot;</span><span class="p">,</span> <span class="s2">&quot;účel_platby&quot;</span><span class="p">,</span> <span class="s2">&quot;číslo_faktury&quot;</span><span class="p">]]</span>
@@ -449,7 +449,7 @@ sources :
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[77]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
