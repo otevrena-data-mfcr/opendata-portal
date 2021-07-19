@@ -1,0 +1,522 @@
+---
+title: Jak pracovat s datovou sadou Faktury Ministerstva financí
+description: Názorná ukázka práce s denormalizovanou tabulkou v jazyce Python
+type: Návod
+
+date: 2021-07-19
+author: Tomáš Vitvar
+author_mail: tomas.vitvar@mfcr.cz
+
+tags:
+  - Python
+  - Jupyter
+
+sources :
+  - title: GitHub
+    url: https://github.com/otevrena-data-mfcr/opendata-stories/tree/master/navod_faktury
+    
+---
+
+
+<div class="jupyter">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#218;vod">&#218;vod<a class="anchor-link" href="#&#218;vod">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pod tématem <a href="https://opendata.mfcr.cz/topics/hospodareni-mf">Hospodaření Ministerstva financí</a> na našem portálu lze najít celkem šest datových sad, z nichž snad nejzajímavější je <a href="https://opendata.mfcr.cz/catalog/#/datasets/https:%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Ffaktury-ministerstva-financi-cr">přehled uhrazených faktur</a>. Právě této datové sadě se v tomto krátkém článku budeme věnovat, zatímco se budeme pokoušet nastínit základní specifika této datové sady, které uživatel nemůže při jejím zpracování opomenout. Kde se nám tak zdálo vhodné, doplňuje text názorná ukázka možného zpracování dat v programovacím jazyce Python za použití balíčku Pandas.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Denormalizovan&#225;-data">Denormalizovan&#225; data<a class="anchor-link" href="#Denormalizovan&#225;-data">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Uživatel si musí být především vědom, že tato datová sada vznikla denormalizací dat, která jsou jinak v tradičním, relačním modelu (v relační databázi) uložena ve dvou tabulkách. Těmi jsou celkový přehled faktur a k němu příslušné dělení dle položky rozpočtu. Jak to vypadá v praxi, lze vyčíst z letmého pohledu na prvních několik řádků.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">dtype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dodavatel_ičo&quot;</span> <span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;položka_rozpočtu&quot;</span> <span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;účel_platby&quot;</span> <span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+
+<span class="n">faktury</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://opendata.mfcr.cz/exports/faktury/faktury.csv&quot;</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">faktury</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;částka&quot;</span><span class="p">,</span> <span class="s2">&quot;číslo_faktury&quot;</span><span class="p">,</span> <span class="s2">&quot;typ_záznamu&quot;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[73]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>typ_záznamu</th>
+      <th>iri</th>
+      <th>dodavatel_ičo</th>
+      <th>dodavatel_název</th>
+      <th>typ_dokladu</th>
+      <th>částka</th>
+      <th>částka_bez_dph</th>
+      <th>částka_v_měně</th>
+      <th>měna</th>
+      <th>datum_vystavení</th>
+      <th>datum_přijetí</th>
+      <th>datum_splatnosti</th>
+      <th>datum_úhrady</th>
+      <th>částka_k_úhradě</th>
+      <th>částka_k_úhradě_v_měně</th>
+      <th>účel_platby</th>
+      <th>položka_rozpočtu</th>
+      <th>název_položky_rozpočtu</th>
+      <th>částka_za_položku_rozpočtu</th>
+      <th>číslo_faktury</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>137589</th>
+      <td>souhrnný</td>
+      <td>https://opendata.mfcr.cz/lod/faktury/1000001258</td>
+      <td>14890992</td>
+      <td>IBM Česká republika, spol. s r.o.</td>
+      <td>F</td>
+      <td>205128831.6</td>
+      <td>205128831.6</td>
+      <td>205128831.6</td>
+      <td>CZK</td>
+      <td>2010-03-24T00:00:00.000Z</td>
+      <td>2010-03-25T00:00:00.000Z</td>
+      <td>2010-04-15T00:00:00.000Z</td>
+      <td>2010-03-31T00:00:00.000Z</td>
+      <td>205128831.6</td>
+      <td>205128831.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1000001258</td>
+    </tr>
+    <tr>
+      <th>137590</th>
+      <td>položkový</td>
+      <td>https://opendata.mfcr.cz/lod/faktury/100000125...</td>
+      <td>14890992</td>
+      <td>IBM Česká republika, spol. s r.o.</td>
+      <td>F</td>
+      <td>205128831.6</td>
+      <td>205128831.6</td>
+      <td>205128831.6</td>
+      <td>CZK</td>
+      <td>2010-03-24T00:00:00.000Z</td>
+      <td>2010-03-25T00:00:00.000Z</td>
+      <td>2010-04-15T00:00:00.000Z</td>
+      <td>2010-03-31T00:00:00.000Z</td>
+      <td>205128831.6</td>
+      <td>205128831.6</td>
+      <td>NaN</td>
+      <td>6111</td>
+      <td>Programové vybavení</td>
+      <td>205128831.6</td>
+      <td>1000001258</td>
+    </tr>
+    <tr>
+      <th>126316</th>
+      <td>souhrnný</td>
+      <td>https://opendata.mfcr.cz/lod/faktury/1099900086</td>
+      <td>14890992</td>
+      <td>IBM Česká republika, spol. s r.o.</td>
+      <td>F</td>
+      <td>157715251.2</td>
+      <td>157715251.2</td>
+      <td>157715251.2</td>
+      <td>CZK</td>
+      <td>2009-12-18T00:00:00.000Z</td>
+      <td>2011-01-12T00:00:00.000Z</td>
+      <td>2011-01-10T00:00:00.000Z</td>
+      <td>2011-01-18T00:00:00.000Z</td>
+      <td>157715251.2</td>
+      <td>157715251.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1099900086</td>
+    </tr>
+    <tr>
+      <th>126317</th>
+      <td>položkový</td>
+      <td>https://opendata.mfcr.cz/lod/faktury/109990008...</td>
+      <td>14890992</td>
+      <td>IBM Česká republika, spol. s r.o.</td>
+      <td>F</td>
+      <td>157715251.2</td>
+      <td>157715251.2</td>
+      <td>157715251.2</td>
+      <td>CZK</td>
+      <td>2009-12-18T00:00:00.000Z</td>
+      <td>2011-01-12T00:00:00.000Z</td>
+      <td>2011-01-10T00:00:00.000Z</td>
+      <td>2011-01-18T00:00:00.000Z</td>
+      <td>157715251.2</td>
+      <td>157715251.2</td>
+      <td>NaN</td>
+      <td>6111</td>
+      <td>Programové vybavení</td>
+      <td>157715251.2</td>
+      <td>1099900086</td>
+    </tr>
+    <tr>
+      <th>124707</th>
+      <td>souhrnný</td>
+      <td>https://opendata.mfcr.cz/lod/faktury/1100000821</td>
+      <td>14890992</td>
+      <td>IBM Česká republika, spol. s r.o.</td>
+      <td>Z</td>
+      <td>150000000.0</td>
+      <td>150000000.0</td>
+      <td>150000000.0</td>
+      <td>CZK</td>
+      <td>2011-03-01T00:00:00.000Z</td>
+      <td>2011-03-08T00:00:00.000Z</td>
+      <td>2011-03-29T00:00:00.000Z</td>
+      <td>2011-03-29T00:00:00.000Z</td>
+      <td>150000000.0</td>
+      <td>150000000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1100000821</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Zde vidíme, že ke každému souhrnnému záznamu (podle sloupce <em>typ_záznamu</em>) přísluší alespoň jeden (může jich být i více) záznam položkový. Jde-li nám o faktury nehledě na položku rozpočtu, můžeme tyto záznamy vynechat jednoduchým filtrem podle právě zmíněného sloupce.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Souhrnn&#233;-z&#225;znamy">Souhrnn&#233; z&#225;znamy<a class="anchor-link" href="#Souhrnn&#233;-z&#225;znamy">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>V takto vytvořené tabulce pak dává smysl počítat základní statistiky, jakými můžou být například počet faktur uhrazených v měsíci březnu roku 2021, či jejich celková částka (všimněme si, že na rozdíl od sloupce <em>částka_v_měně</em> odpovídají údaje ve sloupci <em>částka</em> vždy Kč).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">faktury_souhrn</span> <span class="o">=</span> <span class="n">faktury</span><span class="p">[</span><span class="n">faktury</span><span class="p">[</span><span class="s2">&quot;typ_záznamu&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;souhrnný&quot;</span><span class="p">]</span>
+
+<span class="n">brezen</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;2021-03-01&quot;</span> <span class="o">&lt;</span> <span class="n">faktury_souhrn</span><span class="p">[</span><span class="s2">&quot;datum_úhrady&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">faktury_souhrn</span><span class="p">[</span><span class="s2">&quot;datum_úhrady&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s2">&quot;2021-04-01&quot;</span><span class="p">)</span>
+
+<span class="n">faktury_03_21</span> <span class="o">=</span> <span class="n">faktury_souhrn</span><span class="p">[</span><span class="n">brezen</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">print_statistika</span><span class="p">(</span><span class="n">pocet</span><span class="p">,</span> <span class="n">soucet_mil</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Počet faktur: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pocet</span><span class="p">))</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Částka v milionech Kč: &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">{:.0f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">soucet_mil</span><span class="p">))</span>
+
+<span class="n">pocet</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">faktury_03_21</span><span class="p">)</span>
+
+<span class="n">soucet_mil</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">faktury_03_21</span><span class="p">[</span><span class="s2">&quot;částka&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+
+<span class="n">print_statistika</span><span class="p">(</span><span class="n">pocet</span><span class="p">,</span> <span class="n">soucet_mil</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Počet faktur: 420
+Částka v milionech Kč: 103
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Polo&#382;kov&#233;-z&#225;znamy">Polo&#382;kov&#233; z&#225;znamy<a class="anchor-link" href="#Polo&#382;kov&#233;-z&#225;znamy">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pokud chceme naopak položku rozpočtu sledovat, můžeme analogicky vyfiltrovat záznamy položkové, případně můžeme v některých případech nechat tabulku tak, jak je, jelikož souhrnné záznamy nikdy položku rozpočtu obsahovat nebudou, jak se můžeme jednoduše přesvědčit.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">faktury_souhrn</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;položka_rozpočtu&quot;</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[75]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Budeme-li chtít kupříkladu spočíst stejné statistiky, jako v předchozím případě, avšak pouze pro položku rozpočtu <em>Programové vybavení</em>, uděláme to třeba takto.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">brezen</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;2021-03-01&quot;</span> <span class="o">&lt;</span> <span class="n">faktury</span><span class="p">[</span><span class="s2">&quot;datum_úhrady&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">faktury</span><span class="p">[</span><span class="s2">&quot;datum_úhrady&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s2">&quot;2021-04-01&quot;</span><span class="p">)</span>
+<span class="n">vybaveni</span> <span class="o">=</span> <span class="p">(</span><span class="n">faktury</span><span class="p">[</span><span class="s2">&quot;název_položky_rozpočtu&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Programové vybavení&quot;</span><span class="p">)</span>
+
+<span class="n">faktury_03_21_PV</span> <span class="o">=</span> <span class="n">faktury</span><span class="p">[</span><span class="n">brezen</span> <span class="o">&amp;</span> <span class="n">vybaveni</span><span class="p">]</span>
+
+<span class="n">pocet</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">faktury_03_21_PV</span><span class="p">)</span>
+            
+<span class="n">soucet_mil</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">faktury_03_21_PV</span><span class="p">[</span><span class="s2">&quot;částka&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+
+<span class="n">print_statistika</span><span class="p">(</span><span class="n">pocet</span><span class="p">,</span> <span class="n">soucet_mil</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Počet faktur: 2
+Částka v milionech Kč: 9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>O jaké faktury jde, můžeme zjistit následovně.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">faktury_03_21_PV</span><span class="p">[[</span><span class="s2">&quot;dodavatel_název&quot;</span><span class="p">,</span> <span class="s2">&quot;částka&quot;</span><span class="p">,</span> <span class="s2">&quot;účel_platby&quot;</span><span class="p">,</span> <span class="s2">&quot;číslo_faktury&quot;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[77]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dodavatel_název</th>
+      <th>částka</th>
+      <th>účel_platby</th>
+      <th>číslo_faktury</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3267</th>
+      <td>ASD Software, s.r.o.</td>
+      <td>386425.0</td>
+      <td>Návrh, dodání a implementace IS APAO - Dodání ...</td>
+      <td>2100000463</td>
+    </tr>
+    <tr>
+      <th>3303</th>
+      <td>Státní pokladna Centrum sdílených služeb, s. p.</td>
+      <td>8178759.0</td>
+      <td>Smlouva o podpoře a rozvoji IISSP a poskytován...</td>
+      <td>2100000454</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Z&#225;v&#283;r">Z&#225;v&#283;r<a class="anchor-link" href="#Z&#225;v&#283;r">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tolik tedy představení faktur, zbytek už je na Vás, na uživatelích našich otevřených dat.</p>
+
+</div>
+</div>
+</div>
+</div>
