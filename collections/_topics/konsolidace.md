@@ -28,7 +28,7 @@ Veřejnost má nyní přístup k podstatným účetním informacím o hospodaře
 
 ## Legislativní rámec
 
-Sestavování účetních výkazů za Českou republiku je upraveno primárně ve třech právních předpisech, a to zákonem č. 563/1991 Sb., o účetnictví, vyhláškou č. 312/2014 Sb. (konsolidační vyhláška státu) a vyhláškou č. 383/2009 Sb. (technická vyhláška o účetních záznamech). Více informací je uvedeno v příloze 1, bod 10.45.
+Sestavování účetních výkazů za Českou republiku je upraveno primárně ve třech právních předpisech, a to zákonem č. 563/1991 Sb., o účetnictví, vyhláškou č. 312/2014 Sb. (konsolidační vyhláška státu) a vyhláškou č. 383/2009 Sb. (technická vyhláška o účetních záznamech).
 
 ## Účetní výkazy za Českou republiku
 
@@ -42,20 +42,20 @@ Výsledné konsolidované účetní výkazy poskytují informace o finanční po
 
 Pro potřeby sestavování účetních výkazů za Českou republiku je využívána řada účetních záznamů, které konsolidované jednotky státu pravidelně zasílají do centrálního systému účetních informací státu. Jedná se zejména o následující účetní záznamy:
 
- - Účetní závěrky (viz příloha 1, bod 10.38),
- - Pomocné analytické přehledy (viz příloha 1, bod 10.39),
- - Pomocné konsolidační přehledy (viz příloha 1, bod 10.41),
- - Seznamy účetních jednotek patřících do dílčího konsolidačního celku státu (viz příloha 1, bod 10.37),
- - Pomocné konsolidační záznamy (viz příloha 1, bod 10.40).
+ - Účetní závěrky,
+ - Pomocné analytické přehledy,
+ - Pomocné konsolidační přehledy,
+ - Seznamy účetních jednotek patřících do dílčího konsolidačního celku státu,
+ - Pomocné konsolidační záznamy.
 
 ## Metody konsolidace
 
 Při sestavování účetních výkazů za Českou republiku jsou používány tři metody konsolidace, které slouží pro zahrnutí účetní jednotky do konsolidovaných účetních výkazů.
 
- - Zjednodušená metoda plné konsolidace (viz příloha 1, bod 10.32),
- - Metoda plné konsolidace (viz příloha 1, bod 10.33)
- - Metoda konsolidace ekvivalencí (viz příloha 1, bod 10.34)
+ - Zjednodušená metoda plné konsolidace
+ - Metoda plné konsolidace
+ - Metoda konsolidace ekvivalencí
 
 ## Konsolidační operace
 
-Konsolidačními operacemi jsou myšleny jednotlivé kroky vedoucí k sestavení účetních výkazů za Českou republiku. Jedná se tedy o použití výše zmíněných metod konsolidace včetně dalších úprav a procesů, jako je například převod zůstatků z minulých let, odsouhlasení vzájemných vztahů nebo vylučování vzájemných vztahů, viz příloha 1, bod 10.35.
+Konsolidačními operacemi jsou myšleny jednotlivé kroky vedoucí k sestavení účetních výkazů za Českou republiku. Jedná se tedy o použití výše zmíněných metod konsolidace včetně dalších úprav a procesů, jako je například převod zůstatků z minulých let, odsouhlasení vzájemných vztahů nebo vylučování vzájemných vztahů.
