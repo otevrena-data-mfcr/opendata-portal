@@ -11,30 +11,30 @@ datasets:
 
 links:
   - title: Webové rozhraní Registru dotací
-    url: https://cedr.mfcr.cz/cedr3internetv419/default.aspx
+    url: https://red.financnisprava.cz/
   - title: Webové rozhraní IS Dotinfo
     url: https://www.dotinfo.cz/
 ---
 
-# Centrální evidence dotací
+# Registr dotací
 
-IS CEDR III, Centrální evidence dotací z rozpočtu nebo také Centrální registr dotací, je databáze obsahující údaje o dotacích, návratných finančních výpomocích a dalších podobných transferech poskytovaných ze státního rozpočtu, státních fondů, státních finančních aktiv a Národního fondu (včetně evropských dotací) a jejich příjemcích.
+IS ReD, Centrální registr dotací z rozpočtu nebo také Centrální evidence dotací, je databáze obsahující údaje o dotacích, návratných finančních výpomocích a dalších podobných transferech poskytovaných ze státního rozpočtu, státních fondů, státních finančních aktiv a Národního fondu (včetně evropských dotací) a jejich příjemcích.
 
-Data jsou poskytována jak v balících CSV, tak ve formátu RDF linked data.
+Data jsou poskytována v balících CSV.
 
 ## Struktura
 
-Hlavními tabulkami jsou **PrijemcePomoci**, **Dotace**, **Rozhodnuti** a **RozpoctoveObdobi**.
+Hlavními tabulkami jsou **Prijemce**, **Dotace**, **Rozhodnuti** a **RozpoctoveObdobi**.
 
-Tabulka **PrijemcePomoci** obsahuje statické informace o příjemcích. Tyto informace jsou přejímány z různých systémů a vázány na různé dotace a proto pro jednoho příjemce obsahuje tabulka několik záznamů. Pro spojení těchto záznamů je k dispozici IČO příjemce. 
+Tabulka **Prijemce** obsahuje statické informace o příjemcích. Tyto informace jsou přejímány z různých systémů a vázány na různé dotace a proto pro jednoho příjemce obsahuje tabulka několik záznamů. Pro spojení těchto záznamů je k dispozici IČO příjemce. 
 
-Tabulka **Dotace** obsahuje metadata o dotaci jako její název (pole **projektNazev**) a kategorizaci.
+Tabulka **Dotace** obsahuje metadata o dotaci jako její název (pole **nazev, identifikator**) a kategorizaci.
 
 Tabulka **Rozhodnuti** obsahuje zejména požadovanou částku (**castkaPozadovana**) a reálně rozho&shy;dnutou částku (**caskaRozhodnuta**), ale také například zdroj, ze kterého mají být tyto částky vyplaceny.
 
 Tabulka **RozpoctoveObdobi** obsahuje výše čerpání v daném ropzočtovém období. Jedná se o pole **castkaCerpana**, **castkaSpotrebovana**, **castkaUvolnena** a **castkaVracena**.
 
-Úplný přehled vazeb mezi tabulkami znázorňuje následující schéma, které je součástí [dokumentace](https://cedropendata.mfcr.cz/c3lod/C3_OpenData%20-%20datov%C3%A1%20sada%20IS%20CEDR%20III.pdf):
+Úplný přehled vazeb mezi tabulkami znázorňuje následující schéma:
 
 [![Struktura Registru dotací](/assets/content/topics/ReD.png)](/assets/content/topics/ReD.png)
 
