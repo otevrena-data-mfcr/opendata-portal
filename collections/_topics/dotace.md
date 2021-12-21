@@ -6,7 +6,7 @@ organizations:
   - gfr
 
 datasets:
-  - https://opendata.mfcr.cz/lod/cedr/cedr
+  - https://opendata.mfcr.cz/lod/katalog/registr-dotaci
   - https://opendata.mfcr.cz/lod/katalog/dotinfo
 
 links:
