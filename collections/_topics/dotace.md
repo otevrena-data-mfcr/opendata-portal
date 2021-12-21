@@ -10,7 +10,7 @@ datasets:
   - https://opendata.mfcr.cz/lod/katalog/dotinfo
 
 links:
-  - title: Webové rozhraní IS CEDR III
+  - title: Webové rozhraní Registru dotací
     url: https://cedr.mfcr.cz/cedr3internetv419/default.aspx
   - title: Webové rozhraní IS Dotinfo
     url: https://www.dotinfo.cz/
@@ -36,7 +36,7 @@ Tabulka **RozpoctoveObdobi** obsahuje výše čerpání v daném ropzočtovém o
 
 Úplný přehled vazeb mezi tabulkami znázorňuje následující schéma, které je součástí [dokumentace](https://cedropendata.mfcr.cz/c3lod/C3_OpenData%20-%20datov%C3%A1%20sada%20IS%20CEDR%20III.pdf):
 
-[![Struktura IS CEDR III](/assets/content/topics/cedr.png)](/assets/content/topics/cedr.png)
+[![Struktura Registru dotací](/assets/content/topics/ReD.png)](/assets/content/topics/ReD.png)
 
 # Dotinfo
 
