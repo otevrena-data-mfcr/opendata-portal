@@ -6,6 +6,6 @@ topics:
   - monitor
 
 datasets:
-  - https://opendata.mfcr.cz/lod/monitor/MonitoringObci
-  - https://opendata.mfcr.cz/lod/monitor/FinM
+  - https://monitor.statnipokladna.cz/api/opendata/monitor/Monitoring-obci
+  - https://monitor.statnipokladna.cz/api/opendata/monitor/FinM
 ---
