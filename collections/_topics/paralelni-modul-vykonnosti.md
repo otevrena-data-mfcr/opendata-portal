@@ -1,5 +1,5 @@
 ---
-title: Paralelní modul výkonnosti
+title: Výkonostní ukazatele
 description:
 
 organizations:
