@@ -38,4 +38,4 @@ Tabulka **RozpoctoveObdobi** obsahuje výše čerpání v daném ropzočtovém o
 
 # Dotinfo
 
-DotInfo byl informační systém, který umožňuje vyhledávání nad poskytovateli dotací a návratných finančních výpomocí ze státního rozpočtu ČR. Na základě zákona č. 484/2020 Sb. ze dne 27. 11. 2020, kterým se mění zákon č. 218/2000 Sb., o rozpočtových pravidlech a o změně některých souvisejících zákonů (rozpočtová pravidla) došlo s účinností od 1. 1. 2022 k ukončení činnosti portálu DotInfo. Katalog obsahuje data shromážděná v systému DotInfo do 31. 12. 2021.
+DotInfo byl informační systém, který umožňoval vyhledávání nad poskytovateli dotací a návratných finančních výpomocí ze státního rozpočtu ČR. Na základě zákona č. 484/2020 Sb. ze dne 27. 11. 2020, kterým se mění zákon č. 218/2000 Sb., o rozpočtových pravidlech a o změně některých souvisejících zákonů (rozpočtová pravidla) došlo s účinností od 1. 1. 2022 k ukončení činnosti portálu DotInfo. Katalog obsahuje data shromážděná v systému DotInfo do 31. 12. 2021.
