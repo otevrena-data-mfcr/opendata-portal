@@ -13,7 +13,7 @@ stories:
 
 links:
   - title: Vývoj stavebního spoření na webu MF
-    url: https://www.mfcr.cz/cs/soukromy-sektor/stavebni-sporeni/vyvoj-stavebniho-sporeni
+    url: https://www.mfcr.cz/cs/financni-trh/stavebni-sporeni/vyvoj-stavebniho-sporeni
 ---
 
 
