@@ -9,7 +9,7 @@ datasets:
 links:
   - title: Webové rozhraní IS ARES
     description: Webový formulář sloužící k vyhledávání v registru ARES
-    url: https://wwwinfo.mfcr.cz/ares/ares_es.html.cz
+    url: https://ares.gov.cz/
 ---
 
 # Data ke stažení
