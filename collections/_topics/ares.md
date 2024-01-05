@@ -9,7 +9,7 @@ datasets:
 links:
   - title: Webové rozhraní IS ARES
     description: Webový formulář sloužící k vyhledávání v registru ARES
-    url: https://ares.gov.cz/
+    url: https://ares.gov.cz/ekonomicke-subjekty
 ---
 
 # Data ke stažení
