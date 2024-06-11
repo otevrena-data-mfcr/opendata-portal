@@ -7,9 +7,9 @@ datasets:
 
 links:
   - title: Makroekonomická predikce na webu MF
-    url: https://www.mfcr.cz/cs/verejny-sektor/makroekonomika/makroekonomicka-predikce
+    url: https://www.mfcr.cz/cs/rozpoctova-politika/makroekonomika/makroekonomicka-predikce/2023
   - title: Konvergenční program ČR
-    url: https://www.mfcr.cz/cs/zahranicni-sektor/pristoupeni-cr-k-eurozone/konvergencni-program
+    url: https://www.mfcr.cz/cs/rozpoctova-politika/makroekonomika/konvergencni-program/2023
 ---
 
 # Čistá pozice ČR vůči EU

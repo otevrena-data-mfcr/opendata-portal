@@ -10,7 +10,7 @@ datasets:
   
 links:
   - title: Penzijní připojištění a spoření na webu MF
-    url: https://www.mfcr.cz/cs/soukromy-sektor/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni
+    url: https://www.mfcr.cz/cs/financni-trh/soukrome-penzijni-systemy/iii-pilir-doplnkove-penzijni-sporeni-a-p/vyvoj-penzijniho-pripojisteni
 ---
 
 # Úvod
