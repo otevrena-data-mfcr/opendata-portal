@@ -5,12 +5,12 @@ description: Faktury, smlouvy a objednávky Ministerstva financí
 organizations:
   - mf
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/smlouvy-ministerstva-financi-cr-seznam-smluv
-  - https://opendata.mfcr.cz/lod/katalog/vazebni-tabulka-smluv-faktur-ministerstva-financi-cr
-  - https://opendata.mfcr.cz/lod/katalog/faktury-ministerstva-financi-cr
-  - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-detail
-  - https://opendata.mfcr.cz/lod/katalog/objednavky-ministerstva-financi-cr-seznam-objednavek
-  - https://opendata.mfcr.cz/lod/katalog/report-provoznich-nakladu-mf
+  - https://data.mf.gov.cz/lod/katalog/smlouvy-ministerstva-financi-cr-seznam-smluv
+  - https://data.mf.gov.cz/lod/katalog/vazebni-tabulka-smluv-faktur-ministerstva-financi-cr
+  - https://data.mf.gov.cz/lod/katalog/faktury-ministerstva-financi-cr
+  - https://data.mf.gov.cz/lod/katalog/objednavky-ministerstva-financi-cr-detail
+  - https://data.mf.gov.cz/lod/katalog/objednavky-ministerstva-financi-cr-seznam-objednavek
+  - https://data.mf.gov.cz/lod/katalog/report-provoznich-nakladu-mf
 
 toc: false
 ---

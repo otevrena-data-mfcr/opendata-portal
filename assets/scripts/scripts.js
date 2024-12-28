@@ -1,3 +1,5 @@
+---
+---
 $(document).ready(function () {
 
   function assignAnimatedScroll(target, topOffset) {
@@ -91,7 +93,9 @@ WHERE {
   OPTIONAL { ?iri dcat:accessURL ?accessURL } 
 }`;
 
-    $.get("https://opendata.mfcr.cz/lod/sparql", { query: datasetQuery })
+    var sparql_url = "{{site.sparql_url}}";
+
+    $.get(sparql_url, { query: datasetQuery })
       .then(function (result) {
 
         var dataset = result.results.bindings[0];
@@ -106,7 +110,7 @@ WHERE {
         //   self.find(".actions").append(el);
         // }
 
-        $.get("https://opendata.mfcr.cz/lod/sparql", { query: distributionQuery })
+        $.get(sparql_url, { query: distributionQuery })
           .then(function (result) {
 
             var distributions = result.results.bindings;

@@ -3,7 +3,7 @@ title: Fond privatizace
 description: Výdaje za odstraňování ekologických škod vzniklých před privatizací
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/faktury-uhrazene-z-fondu-privatizace
+  - https://data.mf.gov.cz/lod/katalog/faktury-uhrazene-z-fondu-privatizace
 ---
 
 # Faktury fondu privatizace

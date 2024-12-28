@@ -4,7 +4,7 @@ short_title: Administrativní budovy
 description: Informace o státních nemovitostech ze systému CRAB
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/centralni-registr-administrativnich-budov
+  - https://data.mf.gov.cz/lod/katalog/centralni-registr-administrativnich-budov
 
 ---
 

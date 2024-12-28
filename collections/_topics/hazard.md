@@ -3,8 +3,8 @@ title: Hazard
 description: Přehledy povolených zařízení
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/prehled-povolenych-technickych-hernich-zarizeni
-  - https://opendata.mfcr.cz/lod/katalog/prehled-provozovatelu-loterii-jinych-podobnych-her
+  - https://data.mf.gov.cz/lod/katalog/prehled-povolenych-technickych-hernich-zarizeni
+  - https://data.mf.gov.cz/lod/katalog/prehled-provozovatelu-loterii-jinych-podobnych-her
 ---
 
 # Přehled povolených technických herních zařízení

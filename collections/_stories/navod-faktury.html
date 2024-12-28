@@ -29,7 +29,7 @@ sources :
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Pod tématem <a href="https://opendata.mfcr.cz/topics/hospodareni-mf">Hospodaření Ministerstva financí</a> na našem portálu lze najít celkem šest datových sad, z nichž snad nejzajímavější je <a href="https://opendata.mfcr.cz/catalog/#/datasets/https:%2F%2Fopendata.mfcr.cz%2Flod%2Fkatalog%2Ffaktury-ministerstva-financi-cr">přehled uhrazených faktur</a>. Právě této datové sadě se v tomto krátkém článku budeme věnovat, zatímco se budeme pokoušet nastínit základní specifika této datové sady, které uživatel nemůže při jejím zpracování opomenout. Kde se nám tak zdálo vhodné, doplňuje text názorná ukázka možného zpracování dat v programovacím jazyce Python za použití balíčku Pandas.</p>
+<p>Pod tématem <a href="{{site.site_url}}/topics/hospodareni-mf">Hospodaření Ministerstva financí</a> na našem portálu lze najít celkem šest datových sad, z nichž snad nejzajímavější je <a href="{{site.site_url}}/catalog/#/datasets/https:%2F%2Fdata.mf.gov.cz%2Flod%2Fkatalog%2Ffaktury-ministerstva-financi-cr">přehled uhrazených faktur</a>. Právě této datové sadě se v tomto krátkém článku budeme věnovat, zatímco se budeme pokoušet nastínit základní specifika této datové sady, které uživatel nemůže při jejím zpracování opomenout. Kde se nám tak zdálo vhodné, doplňuje text názorná ukázka možného zpracování dat v programovacím jazyce Python za použití balíčku Pandas.</p>
 
 </div>
 </div>
@@ -58,7 +58,7 @@ sources :
 
 <span class="n">dtype</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;dodavatel_ičo&quot;</span> <span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;položka_rozpočtu&quot;</span> <span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;účel_platby&quot;</span> <span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
 
-<span class="n">faktury</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://opendata.mfcr.cz/exports/faktury/faktury.csv&quot;</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="p">)</span>
+<span class="n">faktury</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;{{site.site_url}}/exports/faktury/faktury.csv&quot;</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -133,7 +133,7 @@ sources :
     <tr>
       <th>137589</th>
       <td>souhrnný</td>
-      <td>https://opendata.mfcr.cz/lod/faktury/1000001258</td>
+      <td>{{site.site_url}}/lod/faktury/1000001258</td>
       <td>14890992</td>
       <td>IBM Česká republika, spol. s r.o.</td>
       <td>F</td>
@@ -156,7 +156,7 @@ sources :
     <tr>
       <th>137590</th>
       <td>položkový</td>
-      <td>https://opendata.mfcr.cz/lod/faktury/100000125...</td>
+      <td>{{site.site_url}}/lod/faktury/100000125...</td>
       <td>14890992</td>
       <td>IBM Česká republika, spol. s r.o.</td>
       <td>F</td>
@@ -179,7 +179,7 @@ sources :
     <tr>
       <th>126316</th>
       <td>souhrnný</td>
-      <td>https://opendata.mfcr.cz/lod/faktury/1099900086</td>
+      <td>{{site.site_url}}/lod/faktury/1099900086</td>
       <td>14890992</td>
       <td>IBM Česká republika, spol. s r.o.</td>
       <td>F</td>
@@ -202,7 +202,7 @@ sources :
     <tr>
       <th>126317</th>
       <td>položkový</td>
-      <td>https://opendata.mfcr.cz/lod/faktury/109990008...</td>
+      <td>{{site.site_url}}/lod/faktury/109990008...</td>
       <td>14890992</td>
       <td>IBM Česká republika, spol. s r.o.</td>
       <td>F</td>
@@ -225,7 +225,7 @@ sources :
     <tr>
       <th>124707</th>
       <td>souhrnný</td>
-      <td>https://opendata.mfcr.cz/lod/faktury/1100000821</td>
+      <td>{{site.site_url}}/lod/faktury/1100000821</td>
       <td>14890992</td>
       <td>IBM Česká republika, spol. s r.o.</td>
       <td>Z</td>

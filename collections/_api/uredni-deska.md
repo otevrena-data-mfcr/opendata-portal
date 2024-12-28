@@ -12,4 +12,4 @@ Dokumentace OFN je na adrese [https://ofn.gov.cz/úřední-desky/](https://ofn.g
 
 # Náhled
 
-{% include components/iframe.html url="https://opendata.mfcr.cz/uredni-deska/uredni-deska.json" %}
+{% include components/iframe.html url=site.uredni_deska_url %}

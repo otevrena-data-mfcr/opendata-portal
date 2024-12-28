@@ -7,7 +7,7 @@ organizations:
   - mf
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/nahrady-skod
+  - https://data.mf.gov.cz/lod/katalog/nahrady-skod
 ---
 
 # Popis

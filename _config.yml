@@ -2,14 +2,20 @@
 title: Portál otevřených dat Ministerstva financí
 title_short: Otevřená data MFČR
 description: Otevřená data Ministerstva financí
-email: martin.kopecek@mfcr.cz
+email: ales.petrak@mfcr.cz
 
-site_url: "https://opendata.mfcr.cz"
-exports_url: "https://opendata.mfcr.cz/exports"
+site_url: "https://data.mf.gov.cz"
+
+api_url: "https://data.mf.gov.cz/api/v1"
+stats_url: "https://data.mf.gov.cz/stats"
+sparql_url: "https://data.mf.gov.cz/lod/sparql"
+exports_url: "https://data.mf.gov.cz/exports"
+gateway_url: "https://data.mf.gov.cz/gateway/"
+uredni_deska_url: "https://data.mf.gov.cz/uredni-deska/uredni-deska.json"
 catalog_url: "/catalog"
 
 # BUILD SETTINGS
-url: https://opendata.mfcr.cz
+url: https://data.mf.gov.cz
 exclude:
   - docker-compose.yml
   - docker-compose.prod.yml

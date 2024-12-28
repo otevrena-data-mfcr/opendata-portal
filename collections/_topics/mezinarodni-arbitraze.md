@@ -7,7 +7,7 @@ organizations:
   - mf
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/naklady-statu-za-pravni-zastoupeni
+  - https://data.mf.gov.cz/lod/katalog/naklady-statu-za-pravni-zastoupeni
 ---
 
 # Popis

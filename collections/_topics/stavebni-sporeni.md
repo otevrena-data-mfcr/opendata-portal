@@ -6,7 +6,7 @@ organizations:
   - mf
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/vyvoj-stavebniho-sporeni
+  - https://data.mf.gov.cz/lod/katalog/vyvoj-stavebniho-sporeni
 
 stories:
   - navod-sporeni

@@ -6,7 +6,7 @@ description: Metadata o datových sadách (tzv. katalogizační záznamy) publik
 # Popis
 SPARQL endpoint je aplikační rozhraní určené pro komunikaci našeho lokálního katalogu otevřených dat s jinými katalogy, zejména s Národním katalogem otevřených dat. Obsahuje veškeré metadatové záznamy datových sad a distribucí.
 
-Dotaz v jazyce SPARQL se zadává metodou GET na URL `https://opendata.mfcr.cz/lod/sparql` pomocí parametru `query`.
+Dotaz v jazyce SPARQL se zadává metodou GET na URL `{{site.sparql_url}}` pomocí parametru `query`.
 
 # Dokumentace 
 
@@ -28,4 +28,4 @@ WHERE {
 LIMIT 20
 {% endcapture %}
 
-{% include components/sparql-ui.html url="https://opendata.mfcr.cz/lod/sparql" query=sparql_query %}
+{% include components/sparql-ui.html url=site.sparql_url query=sparql_query %}

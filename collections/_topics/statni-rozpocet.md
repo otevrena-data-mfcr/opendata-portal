@@ -6,8 +6,8 @@ topics:
   - monitor
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/rozpoctova-skladba
-  - https://opendata.mfcr.cz/lod/katalog/pokladni-plneni-statniho-rozpoctu
+  - https://data.mf.gov.cz/lod/katalog/rozpoctova-skladba
+  - https://data.mf.gov.cz/lod/katalog/pokladni-plneni-statniho-rozpoctu
 
 ---
 

@@ -23,7 +23,7 @@ title: Statistiky
 
 <script type="text/javascript">
 
-  $.get("https://opendata.mfcr.cz/lod/stats/distributions", function (data) {
+  $.get("{{site.site_url}}/lod/stats/distributions", function (data) {
     const tbody = $("#stats-table tbody");
 
     data.forEach(function (distribution) {

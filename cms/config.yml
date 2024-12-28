@@ -2,7 +2,7 @@ backend:
   name: github
   repo: otevrena-data-mfcr/opendata-web
   branch: master # Branch to update
-  base_url: https://opendata.mfcr.cz # Path to ext auth provider
+  base_url: https://data.mf.gov.cz # Path to ext auth provider
 
 publish_mode: editorial_workflow
 

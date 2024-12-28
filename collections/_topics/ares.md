@@ -4,7 +4,7 @@ short_title: ARES
 description: Informace o ekonomických subjektech v České republice
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/ares-administrativni-registr-ekonomickych-subjektu
+  - https://data.mf.gov.cz/lod/katalog/ares-administrativni-registr-ekonomickych-subjektu
 
 links:
   - title: Webové rozhraní IS ARES

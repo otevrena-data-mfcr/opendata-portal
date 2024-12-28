@@ -6,8 +6,8 @@ organizations:
   - gfr
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/registr-dotaci
-  - https://opendata.mfcr.cz/lod/katalog/dotinfo
+  - https://data.mf.gov.cz/lod/katalog/registr-dotaci
+  - https://data.mf.gov.cz/lod/katalog/dotinfo
 
 links:
   - title: Webové rozhraní Registru dotací

@@ -3,7 +3,7 @@ title: Hospodaření ÚZSVM
 description: Hospodaření Úřadu pro zastupování státu ve věcech majetkových
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/prehled-faktur-uzsvm
+  - https://data.mf.gov.cz/lod/katalog/prehled-faktur-uzsvm
 
 ---
 

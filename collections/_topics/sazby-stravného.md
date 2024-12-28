@@ -3,7 +3,7 @@ title: Sazby stravného
 description: Sazby zahraničního stravného
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/zakladni-sazby-zahranicniho-stravneho
+  - https://data.mf.gov.cz/lod/katalog/zakladni-sazby-zahranicniho-stravneho
 
 ---
 

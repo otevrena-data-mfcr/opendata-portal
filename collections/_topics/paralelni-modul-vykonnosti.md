@@ -6,7 +6,7 @@ organizations:
  - gfr
 
 datasets:
- - https://opendata.mfcr.cz/lod/katalog/paralelni-modul-vykonnost
+ - https://data.mf.gov.cz/lod/katalog/paralelni-modul-vykonnost
 
 ---
 

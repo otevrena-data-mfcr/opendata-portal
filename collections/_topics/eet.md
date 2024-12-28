@@ -4,7 +4,7 @@ short_title: EET
 description: Kontroly v oblasti Elektronické evidence tržeb
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/kontroly-v-oblasti-eet-za-rok-2018
+  - https://data.mf.gov.cz/lod/katalog/kontroly-v-oblasti-eet-za-rok-2018
 
 links:
   - title: Kontroly v oblasti EET v PDF

@@ -3,7 +3,7 @@ title: Makroekonomika
 description: Makroekonomické predikce Ministerstva financí
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/cista-pozice-cr-vuci-eu
+  - https://data.mf.gov.cz/lod/katalog/cista-pozice-cr-vuci-eu
 
 links:
   - title: Makroekonomická predikce na webu MF

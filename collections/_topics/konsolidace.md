@@ -2,7 +2,7 @@
 title: Účetní výkazy za Českou republiku
 
 datasets:
-  - https://opendata.mfcr.cz/lod/katalog/ucetni-vykazy-za-ceskou-republiku
+  - https://data.mf.gov.cz/lod/katalog/ucetni-vykazy-za-ceskou-republiku
 
 links:
   - title: Zprávy o účetních výkazech za Českou republiku 

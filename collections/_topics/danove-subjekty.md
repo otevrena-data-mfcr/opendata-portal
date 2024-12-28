@@ -2,7 +2,7 @@
 title: Počet evidovaných a aktivních daňových subjektů
 
 datasets:
- - https://opendata.mfcr.cz/lod/katalog/pocet-aktivnich-evidovanych-danovych-subjektu
+ - https://data.mf.gov.cz/lod/katalog/pocet-aktivnich-evidovanych-danovych-subjektu
 ---
 
 ## Poznámky:

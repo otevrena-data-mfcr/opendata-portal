@@ -23,8 +23,8 @@ Aplikační rozhraní bude verzováno. Nové datové sady a nová pole budou vž
 
 # Dokumentace 
 
-Dokumentace je poskytována formou OpenAPI schématu na adrese `https://opendata.mfcr.cz/api/v1`.
+Dokumentace je poskytována formou OpenAPI schématu na adrese `{{site.api_url}}`.
 
 # Vyzkoušejte si
 
-{% include components/openapi-ui.html url="https://opendata.mfcr.cz/api/v1" %}
+{% include components/openapi-ui.html url=site.api_url %}
