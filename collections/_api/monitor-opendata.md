@@ -10,4 +10,4 @@ Opendata služba portálu MONITOR je určena k získání kmenových a transakč
 
 ## Dokumentace
 
-Dokumentace tohoto API je na adrese [https://monitor.statnipokladna.cz/datovy-katalog/open-data](https://monitor.statnipokladna.cz/datovy-katalog/open-data)
+Dokumentace tohoto API je na adrese [https://monitor.statnipokladna.gov.cz/datovy-katalog/open-data](https://monitor.statnipokladna.gov.cz/datovy-katalog/open-data)

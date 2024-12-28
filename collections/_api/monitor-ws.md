@@ -10,4 +10,4 @@ Webová služba portálu MONITOR je určena k získání transakčních dat výk
 
 ## Dokumentace
 
-Dokumentace tohoto API je na adrese [https://monitor.statnipokladna.cz/datovy-katalog/webova-sluzba](https://monitor.statnipokladna.cz/datovy-katalog/webova-sluzba)
+Dokumentace tohoto API je na adrese [https://monitor.statnipokladna.gov.cz/datovy-katalog/webova-sluzba](https://monitor.statnipokladna.gov.cz/datovy-katalog/webova-sluzba)

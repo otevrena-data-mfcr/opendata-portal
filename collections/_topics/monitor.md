@@ -6,9 +6,9 @@ topics:
   - hospodareni-statu
   - hospodareni-obci
 datasets:
-  - https://monitor.statnipokladna.cz/api/opendata/monitor/MONITOR
-  - https://monitor.statnipokladna.cz/api/opendata/monitor/soap
-  - https://monitor.statnipokladna.cz/api/opendata/monitor/ciselniky
+  - https://monitor.statnipokladna.gov.cz/api/opendata/monitor/MONITOR
+  - https://monitor.statnipokladna.gov.cz/api/opendata/monitor/soap
+  - https://monitor.statnipokladna.gov.cz/api/opendata/monitor/ciselniky
 ---
 # Datové sady MONITORu
 
@@ -43,11 +43,11 @@ V rámci datové sady MONITOR Státní pokladny najdete následující podříze
 
 Webová služba portálu MONITOR je určena k získání transakčních dat výkazů účetních jednotek. Dle požadavku uživatele lze získat transakční data výkazu pro účetní jednotku za jednotlivá období v podobě XML.
 
-[Popis webové služby](https://monitor.statnipokladna.cz/datovy-katalog/webova-sluzby)
+[Popis webové služby](https://monitor.statnipokladna.gov.cz/datovy-katalog/webova-sluzby)
 
 # Licenční podmínky
 
-Data publikována prostřednictvím aplikace MONITOR podléhají speciálním licenčním podmínkám. Jejich znění najdete na [webu MONITORu](https://monitor.statnipokladna.cz/datovy-katalog/licence)
+Data publikována prostřednictvím aplikace MONITOR podléhají speciálním licenčním podmínkám. Jejich znění najdete na [webu MONITORu](https://monitor.statnipokladna.gov.cz/datovy-katalog/licence)
 
 # O portálu MONITOR
 
