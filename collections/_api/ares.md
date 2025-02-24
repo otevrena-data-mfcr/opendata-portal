@@ -4,16 +4,23 @@ description: Součástí informačního systému ARES je i XML rozhraní pro vyh
 ---
 
 # Popis
-Součástí informačního systému ARES je i XML rozhraní pro vyhledání subjektu a zpřístupnění jeho veřejných údajů ze zdrojových registrů. Služby XML může využívat každý, pokud bude respektovat podmínky provozu. Jsou nastaveny určité limity pro počty dotazů, které může jeden uživatel během dne do ARES poslat. V době od 8:00 do 18:00 se předpokládá větší množství dotazujících uživatelů, proto je pro tuto dobu omezení počtu dotazů přísnější. Hodnoty limitů pro denní a noční provoz jsou uvedeny v podmínkách provozu.
+Součástí informačního systému ARES je i API rozhraní pro vyhledání subjektu a zpřístupnění jeho veřejných údajů ze zdrojových registrů. Služby může využívat každý, pokud bude respektovat podmínky provozu. Jsou nastaveny určité limity pro počty dotazů, které může jeden uživatel do ARES poslat. 
 
-V případě odůvodněné mimořádné potřeby využívat XML služby ARES v nadlimitním režimu je možné:
+Účelem provozování aplikace je poskytnout rychlé a obecně dostupné informace o jednotlivých subjektech. K tomuto účelu není pro běžného uživatele přístup k aplikaci ARES omezen. S ohledem na charakter provozu ARES a jeho zabezpečení si Ministerstvo financí vyhrazuje právo omezit nebo znemožnit přístup k www aplikaci ARES uživatelům, kteří:
+     - odešlou k vyřízení více než 500 dotazů za minutu 
+     - se snaží o porušení bezpečnostní ochrany www serveru Ministerstva financí,
+     - opakovaně posílají nesprávně vyplněné dotazy,
+     - opakovaně posílají stejné dotazy,
+     - mají větší počet současně zadaných dotazů (pro automatizované dotazy),
+     - obcházejí povolené limity využíváním dotazování z většího množství IP adres,
+     - automatizovaně propátrávají databázi náhodnými údaji nebo generují většinu nesprávných dotazů.
+ 
+Služby si můžete vyzkoušet ve Swagger UI 
 
- - požádat ministerstvo financí na adrese ares@mfcr.cz o možnost zvýšení limitu a sdělit předpokládaný počet dotazů,
- - dodat seznam IP adres, ze kterých se bude na XML služby ARES přistupovat,
- - dodat kontaktní e-mailové adresy pro možnost zasílání upozornění o případných výpadcích v provozu IS ARES.
+ARES - Technická dokumentace Katalog veřejných služeb - CZ 
 
-Kompletní technická dokumentace je na vyžádání na adrese [ares@mfcr.cz](mailto:ares@mfcr.cz).
+ARES - Technical documentation Catalog of public services - ENG
 
-# Dokumentace
+JSON příloha AresRestApi
 
-Dokumentace tohoto API je na adrese [https://wwwinfo.mfcr.cz/ares/ares_xml.html.cz](https://wwwinfo.mfcr.cz/ares/ares_xml.html.cz)
+Changelog k API
