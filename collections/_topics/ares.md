@@ -40,85 +40,29 @@ Veřejnými rejstříky právnických a fyzických osob se podle § 1 tohoto zá
  - Ministerstvo financí nepovažuje za vhodné modifikovat data způsobem, který by zkresloval jejich význam,bez uvedení, že tomu tak bylo učiněno.
 
 
-# XML služby
+# Služby
 
 ## Podmínky provozu
-Součástí informačního systému ARES je i XML rozhraní pro vyhledání subjektu a zpřístupnění jeho veřejných údajů ze zdrojových registrů. Služby XML může využívat každý, pokud bude respektovat [podmínky provozu](https://wwwinfo.mfcr.cz/ares/ares_podminky.html.cz). Jsou nastaveny určité limity pro počty dotazů, které může jeden uživatel během dne do ARES poslat. V době od 8:00 do 18:00 se předpokládá větší množství dotazujících uživatelů, proto je pro tuto dobu omezení počtudotazů přísnější. Hodnoty limitů pro denní a noční provoz jsou uvedeny v [podmínkách provozu](https://wwwinfo.mfcr.cz/ares/ares_podminky.html.cz).
+Součástí informačního systému ARES je i API rozhraní pro vyhledání subjektu a zpřístupnění jeho veřejných údajů ze zdrojových registrů. Služby může využívat každý, pokud bude respektovat podmínky provozu. Jsou nastaveny určité limity pro počty dotazů, které může jeden uživatel do ARES poslat. 
 
-V případě odůvodněné mimořádné potřeby využívat XML služby ARES v nadlimitním režimu je možné: 
- 1. požádat ministerstvo financí na adrese [ares@mfcr.cz](mailto:ares@mfcr.cz) o možnost zvýšení limitu a sdělit předpokládaný počet dotazů,
- 2. dodat seznam IP adres, ze kterých se bude na XML služby ARES přistupovat,
- 3. dodat kontaktní e-mailové adresy pro možnost zasílání upozornění opřípadných výpadcích v provozu IS ARES.
+Účelem provozování aplikace je poskytnout rychlé a obecně dostupné informace o jednotlivých subjektech. K tomuto účelu není pro běžného uživatele přístup k aplikaci ARES omezen. S ohledem na charakter provozu ARES a jeho zabezpečení si Ministerstvo financí vyhrazuje právo omezit nebo znemožnit přístup k www aplikaci ARES uživatelům, kteří:
+     - odešlou k vyřízení více než 500 dotazů za minutu 
+     - se snaží o porušení bezpečnostní ochrany www serveru Ministerstva financí,
+     - opakovaně posílají nesprávně vyplněné dotazy,
+     - opakovaně posílají stejné dotazy,
+     - mají větší počet současně zadaných dotazů (pro automatizované dotazy),
+     - obcházejí povolené limity využíváním dotazování z většího množství IP adres,
+     - automatizovaně propátrávají databázi náhodnými údaji nebo generují většinu nesprávných dotazů.
+ 
+Služby si můžete vyzkoušet ve [Swagger UI](https://ares.gov.cz/swagger-ui/)
 
+[ARES - Technická dokumentace Katalog veřejných služeb - CZ](https://www.mfcr.cz/assets/attachments/2023-08-01_ARES-Technicka-dokumentace-Katalog-verejnych-sluzeb_v06.pdf)
 
-Kompletní technická dokumentace je na vyžádání na adrese [ares@mfcr.cz](mailto:ares@mfcr.cz).
+[ARES - Technical documentation Catalog of public services - ENG](https://www.mfcr.cz/assets/attachments/2024-02-16_ARES-Technical-documentation-Catalog-of-public-services.pdf)
 
+[JSON příloha AresRestApi](https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/v3/api-docs)
 
-
-## Popis rozhraní
-
-Popis schémat je dostupný na této adrese.Celé ke stažení - na druhém řádku kliknout na ares.gz (lze rozbalit např. WinZipem).
-
-Popis xml elementů lze vyčíst ze schémat.
-
-(zpět)
-
-
-
-## Přístup pomocí metody GET
-
-Následující seznam nabízí výběr aplikací, které poskytují data zARES v XML pro dotazy metodou GET bez nutnosti digitálního podpisu. Název služby je současně příkladem dotazu do příslušné služby. 
- - základní dotaz na výpis identifikačních údajů: Standard (doplňující informace)
- - dotaz na seznam registrací subjektu ve zdrojích VR, RES a RŽP: Seznam_Reg
- - základní výpis z více registrů: Basic (doplňující informace)
- - výpis dat z Veřejného rejstříku: Vypis_OR(doplňující informace)
- - výpis dat z Registru živnostenského podnikání: Vypis_RZP(doplňující informace)
- - výpis dat ze statistického registru RES: Vypis_RES(doplňující informace)
- - výpis dat z Registru církví a náboženských společností: Vypis_CNS
- - výpis dat z Centrální evidence úpadců: Vypis_CEU
- - přehled ekonomických subjektů (doplňující informace nebo formulář)
- - dotaz na standardizovanou adresu (doplňující informace nebo formulář)
- - přehled změn ekonomických subjektů (doplňující informace nebo formulář)
- - výpis dat z Národního registru poskytovatelů zdravotních služeb: Vypis_RZZ
- - výpis dat ze zemědělského registru: Vypis_SZR
- - výpis dat z Registru politických stran a hnutí: Vypis_PSH
- - výpis dat z Rejstříku škol: Vypis_SKO(doplňující informace)
- - elektronický opis Veřejného rejstříku: Vypis_VREO(doplňující informace)
-
-### Poznámky a doporučení
-- Výstupy jsou uváděny buď v plné verzi, tj. plnými názvy elementů, neboúsporné ve zkratkách (parametr ver). Implicitně jsou nastaveny u jednotlivých výstupů úsporné verze, protože šetří přenosové linky. Pokud to je možné, doporučujeme parametr ver nepoužívat. Převod mezi plnými názvy a zkratkamije v souboru zkratek.
-- Pokud nevyhovují výstupy ve zkratkách, je možno volat plné verze s parametrem:
-  - VR - ver=1.0.2,
-  - RŽP - ver=1.0.4,
-  - RCNS - ver=1.0.1,
-  - RES - ver=1.0.0,
-  - Basic - ver=1.0.2,
-- SKO - ver=1.0.4.
-- Formát výstupu je určen parametrem xml. Tento parametr je náhradou za dvojici parametrů odp, xslt v předchozí verzi ARES. Po přechodnou dobu budou funkční obě verze parametrů. Přípustné hodnoty parametru xml: 
-  - xml=0 výstup je v xml 
-  - xml=1 výstup je v html, transformce z xml probíhá v prohlížeči uživatele 
-  - xml=2 výstup je v html, transformace z xml probíhá na serveru 
-
-- Implicitní nastavení transformací je v prohlížeči klienta, protože při opakovaných dotazech je pro klienta i server rychlejší.
-- Pokud by se html po transformaci na klientu nezobrazovalo korektně, použijte transformaci na serveru (ve formuláři volba "HTML server").
-- V případě výskytu problémů s transformacemi jako první radu doporučujeme vymazání cache Vašeho prohlížeče, ukončení práce v prohlížeči a případně i restart počítače. Pokud tato jednoduchá rada nepomůže, můžete kontaktovattechnickou podporu na adrese ares@mfcr.cz.Prosím, v e-mailu uveďte informace o:
-    1. hardware Vašeho počítače (stačí typ procesoru a množství paměti RAM)
-    2. číslo verze Vašeho operačního systému
-    3. číslo verze Vámi používaného prohlížeče
-
-## Přístup pomocí metody POST
-
-Automatizovaně lze k některým službám přistupovat metodou POST(aplikace je dostupná na této adrese).
-
-Počet elementů <Dotaz> v jednom volání je omezen na maximální hodnotu 100.
-- základní standardní dotaz: Standard
-- základní výpis přes více registrů: Basic
-- Veřejný rejstřík: Vypis_OR
-- Registr živnostenského podnikání: Vypis_RZP
-- statistický RES: Vypis_RES
-- dotaz na seznam registrací subjektu v VR, RES, RŽP: Seznam_Reg
-- dotaz na standardizovanou adresu: Stdadr
-- přehled změn ekonomických subjektů: zm
+Changelog k API
 
 
 # O IS ARES
@@ -126,6 +70,6 @@ Administrativní registr ekonomických subjektů je informační systém, který
 
 Ekonomické subjekty, které z jakéhokoli důvodu nemají uvedené IČO a nelze je jednoznačně identifikovat, nemusí být zobrazené (nalezené).
 
-V IS ARES se nelze registrovat přímo. Je nutné postupovat ve shodě s příslušnými zákonya registrovat se na registračních místech příslušných orgánů veřejné správy. Stejně tak změny údajů či ukončení registrace je nutné nahlásit na instituci, která vede příslušný zdrojový registr. Seznam zdrojových registrů a zodpovědných institucí je uveden na stránce [ÚŘADY REGISTRACE](https://wwwinfo.mfcr.cz/ares/ares_rm.html.cz).
+V IS ARES se nelze registrovat přímo. Je nutné postupovat ve shodě s příslušnými zákonya registrovat se na registračních místech příslušných orgánů veřejné správy. Stejně tak změny údajů či ukončení registrace je nutné nahlásit na instituci, která vede příslušný zdrojový registr. 
 
 Uveřejňovaná data v ARES jsou v souladu s nařízením (EU) 2016/679 – GDPR, o ochraně osobních údajů.
