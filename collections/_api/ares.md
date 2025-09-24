@@ -1,5 +1,5 @@
 ---
-title: ARES - XML služby
+title: ARES služby
 description: Součástí informačního systému ARES je i rozhraní pro vyhledání subjektu a zpřístupnění jeho veřejných údajů ze zdrojových registrů.
 ---
 
