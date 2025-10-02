@@ -46,13 +46,13 @@ Veřejnými rejstříky právnických a fyzických osob se podle § 1 tohoto zá
 Součástí informačního systému ARES je i API rozhraní pro vyhledání subjektu a zpřístupnění jeho veřejných údajů ze zdrojových registrů. Služby může využívat každý, pokud bude respektovat podmínky provozu. Jsou nastaveny určité limity pro počty dotazů, které může jeden uživatel do ARES poslat. 
 
 Účelem provozování aplikace je poskytnout rychlé a obecně dostupné informace o jednotlivých subjektech. K tomuto účelu není pro běžného uživatele přístup k aplikaci ARES omezen. S ohledem na charakter provozu ARES a jeho zabezpečení si Ministerstvo financí vyhrazuje právo omezit nebo znemožnit přístup k www aplikaci ARES uživatelům, kteří:
-     - odešlou k vyřízení více než 500 dotazů za minutu 
-     - se snaží o porušení bezpečnostní ochrany www serveru Ministerstva financí,
-     - opakovaně posílají nesprávně vyplněné dotazy,
-     - opakovaně posílají stejné dotazy,
-     - mají větší počet současně zadaných dotazů (pro automatizované dotazy),
-     - obcházejí povolené limity využíváním dotazování z většího množství IP adres,
-     - automatizovaně propátrávají databázi náhodnými údaji nebo generují většinu nesprávných dotazů.
+ - odešlou k vyřízení více než 500 dotazů za minutu 
+ - se snaží o porušení bezpečnostní ochrany www serveru Ministerstva financí,
+ - opakovaně posílají nesprávně vyplněné dotazy,
+ - opakovaně posílají stejné dotazy,
+ - mají větší počet současně zadaných dotazů (pro automatizované dotazy),
+ - obcházejí povolené limity využíváním dotazování z většího množství IP adres,
+ - automatizovaně propátrávají databázi náhodnými údaji nebo generují většinu nesprávných dotazů.
  
 Služby si můžete vyzkoušet ve [Swagger UI](https://ares.gov.cz/swagger-ui/)
 
