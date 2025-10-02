@@ -15,12 +15,12 @@ Součástí informačního systému ARES je i API rozhraní pro vyhledání subj
  - obcházejí povolené limity využíváním dotazování z většího množství IP adres,
  - automatizovaně propátrávají databázi náhodnými údaji nebo generují většinu nesprávných dotazů.
  
-Služby si můžete vyzkoušet ve Swagger UI 
+Služby si můžete vyzkoušet ve [Swagger UI](https://ares.gov.cz/swagger-ui/)
 
-ARES - Technická dokumentace Katalog veřejných služeb - CZ 
+[ARES - Technická dokumentace Katalog veřejných služeb - CZ](https://www.mfcr.cz/assets/attachments/2023-08-01_ARES-Technicka-dokumentace-Katalog-verejnych-sluzeb_v06.pdf)
 
-ARES - Technical documentation Catalog of public services - ENG
+[ARES - Technical documentation Catalog of public services - ENG](https://www.mfcr.cz/assets/attachments/2024-02-16_ARES-Technical-documentation-Catalog-of-public-services.pdf)
 
-JSON příloha AresRestApi
+[JSON příloha AresRestApi](https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/v3/api-docs)
 
-Changelog k API
+[Changelog k API](https://ares.gov.cz/stranky/changelog-api)
