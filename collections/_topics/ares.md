@@ -62,7 +62,7 @@ Služby si můžete vyzkoušet ve [Swagger UI](https://ares.gov.cz/swagger-ui/)
 
 [JSON příloha AresRestApi](https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/v3/api-docs)
 
-Changelog k API
+[Changelog k API](https://ares.gov.cz/stranky/changelog-api)
 
 
 # O IS ARES
